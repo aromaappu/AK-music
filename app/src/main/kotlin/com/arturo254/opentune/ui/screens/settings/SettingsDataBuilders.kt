@@ -8,7 +8,6 @@ package com.aromaappu.akmusic.ui.screens.settings
 
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.navigation.NavController
@@ -39,6 +38,12 @@ fun buildQuickActions(
             onClick = { resetSearch(); navController.navigate("settings/privacy") },
             accentColor = MaterialTheme.colorScheme.error,
         ),
+        SettingsQuickAction(
+            icon = painterResource(R.drawable.storage),
+            label = stringResource(R.string.storage),
+            onClick = { resetSearch(); navController.navigate("settings/storage") },
+            accentColor = MaterialTheme.colorScheme.secondary,
+        ),
     )
 
 @Composable
@@ -59,6 +64,30 @@ fun buildSettingsGroups(
                         accentColor = MaterialTheme.colorScheme.secondary,
                         keywords = listOf("language", "content", "lyrics", "translation", "region"),
                         onClick = { resetSearch(); navController.navigate("settings/content") },
+                    ),
+                ),
+            ),
+        )
+
+        add(
+            SettingsGroup(
+                title = stringResource(R.string.settings_section_storage),
+                items = listOf(
+                    SettingsItem(
+                        icon = painterResource(R.drawable.storage),
+                        title = stringResource(R.string.storage),
+                        subtitle = stringResource(R.string.cache),
+                        accentColor = MaterialTheme.colorScheme.secondary,
+                        keywords = listOf("storage", "cache", "offline", "downloads", "cleanup"),
+                        onClick = { resetSearch(); navController.navigate("settings/storage") },
+                    ),
+                    SettingsItem(
+                        icon = painterResource(R.drawable.restore),
+                        title = stringResource(R.string.backup_restore),
+                        subtitle = stringResource(R.string.action_backup),
+                        accentColor = MaterialTheme.colorScheme.tertiary,
+                        keywords = listOf("backup", "restore", "import", "export", "migration"),
+                        onClick = { resetSearch(); navController.navigate("settings/backup_restore") },
                     ),
                 ),
             ),
@@ -131,30 +160,6 @@ fun buildInternalItems(
             accentColor = MaterialTheme.colorScheme.secondary,
             keywords = listOf("background", "wallpaper", "image", "blur", "gradient"),
             onClick = { resetSearch(); navController.navigate("customize_background") },
-        ),
-        SettingsItem(
-            icon = painterResource(R.drawable.discord),
-            title = stringResource(R.string.discord_integration),
-            subtitle = stringResource(R.string.integration),
-            accentColor = Color(0xFF5865F2),
-            keywords = listOf("discord", "rpc", "rich presence", "status", "activity"),
-            onClick = { resetSearch(); navController.navigate("settings/discord") },
-        ),
-        SettingsItem(
-            icon = painterResource(R.drawable.security),
-            title = stringResource(R.string.advanced_login),
-            subtitle = stringResource(R.string.discord),
-            accentColor = Color(0xFF5865F2),
-            keywords = listOf("token", "login", "authentication", "discord login"),
-            onClick = { resetSearch(); navController.navigate("settings/discord/login") },
-        ),
-        SettingsItem(
-            icon = painterResource(R.drawable.experiment),
-            title = stringResource(R.string.experimental_features),
-            subtitle = stringResource(R.string.experimental_features_description),
-            accentColor = MaterialTheme.colorScheme.tertiary,
-            keywords = listOf("experimental", "labs", "advanced", "discord experimental", "internal"),
-            onClick = { resetSearch(); navController.navigate("settings/discord/experimental") },
         ),
         SettingsItem(
             icon = painterResource(R.drawable.integration),
