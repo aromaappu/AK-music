@@ -197,6 +197,15 @@ object Updater {
         }
     }
 
+    fun isMajorUpdate(latest: String, current: String): Boolean {
+        val latestSemVer = parseSemVerOrNull(latest)
+        val currentSemVer = parseSemVerOrNull(current)
+        if (latestSemVer != null && currentSemVer != null) {
+            return latestSemVer.major > currentSemVer.major
+        }
+        return false
+    }
+
     internal fun findLatestRelease(releases: List<ReleaseInfo>): ReleaseInfo? {
         if (releases.isEmpty()) return null
         val parsed =

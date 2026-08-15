@@ -599,6 +599,9 @@ AK music will only extract your token, and everything else is stored locally.</s
     <string name="new_update_available">New update available</string>
     <string name="release_notes_unavailable">Release notes are unavailable</string>
     <string name="update_text">Update</string>
+    <string name="update_required_title">Major update required</string>
+    <string name="update_required_message">A major update is available. You must update to continue using the app.</string>
+    <string name="update_download_now">Download Now</string>
     <!-- Translate UI strings -->
     <string name="translate">Translate</string>
     <string name="language_label">Language</string>

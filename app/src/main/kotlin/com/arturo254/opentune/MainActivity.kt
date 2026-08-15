@@ -127,6 +127,7 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontVariation
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.TextFieldValue
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.IntOffset
@@ -596,6 +597,7 @@ class MainActivity : ComponentActivity() {
             }
 
             // fetch release notes and show sheet when a new version is detected
+            val showForcedUpdateDialog = remember { mutableStateOf(false) }
             LaunchedEffect(latestVersionName) {
                 if (!Updater.isSameVersion(latestVersionName, BuildConfig.VERSION_NAME)) {
                     Updater.getLatestReleaseNotes().onSuccess {
@@ -604,7 +606,58 @@ class MainActivity : ComponentActivity() {
                         releaseNotesState.value = null
                     }
 
-                    bottomSheetPageState.show(updateSheetContent)
+                    if (Updater.isMajorUpdate(latestVersionName, BuildConfig.VERSION_NAME)) {
+                        showForcedUpdateDialog.value = true
+                    } else {
+                        bottomSheetPageState.show(updateSheetContent)
+                    }
+                }
+            }
+
+            if (showForcedUpdateDialog.value) {
+                Dialog(
+                    onDismissRequest = {},
+                    properties = DialogProperties(
+                        dismissOnBackPress = false,
+                        dismissOnClickOutside = false,
+                        usePlatformDefaultWidth = false,
+                    ),
+                ) {
+                    Column(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(24.dp)
+                            .background(
+                                MaterialTheme.colorScheme.surfaceContainerHigh,
+                                shape = RoundedCornerShape(28.dp),
+                            )
+                            .padding(24.dp),
+                        horizontalAlignment = Alignment.CenterHorizontally,
+                    ) {
+                        Text(
+                            text = stringResource(R.string.update_required_title),
+                            style = MaterialTheme.typography.headlineSmall.copy(fontWeight = FontWeight.Bold),
+                            textAlign = TextAlign.Center,
+                        )
+                        Spacer(Modifier.height(12.dp))
+                        Text(
+                            text = stringResource(R.string.update_required_message),
+                            style = MaterialTheme.typography.bodyMedium,
+                            color = MaterialTheme.colorScheme.onSurfaceVariant,
+                            textAlign = TextAlign.Center,
+                        )
+                        Spacer(Modifier.height(20.dp))
+                        Button(
+                            onClick = {
+                                try {
+                                    uriHandler.openUri(Updater.getLatestDownloadUrl())
+                                } catch (_: Exception) {}
+                            },
+                            modifier = Modifier.fillMaxWidth(),
+                        ) {
+                            Text(text = stringResource(R.string.update_download_now))
+                        }
+                    }
                 }
             }
 
