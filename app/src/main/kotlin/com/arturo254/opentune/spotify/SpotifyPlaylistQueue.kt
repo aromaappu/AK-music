@@ -5,7 +5,7 @@
  * Do not remove or alter this notice. - Per GPL-3.0 Section 4 & Section 5
  */
 
-package com.arturo254.opentune.spotify
+package com.aromaappu.akmusic.spotify
 
 import androidx.media3.common.MediaItem
 import kotlinx.coroutines.Dispatchers
@@ -13,9 +13,9 @@ import kotlinx.coroutines.async
 import kotlinx.coroutines.awaitAll
 import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.withContext
-import com.arturo254.opentune.models.MediaMetadata
-import com.arturo254.opentune.playback.queues.Queue
-import com.arturo254.opentune.spotify.models.SpotifyTrack
+import com.aromaappu.akmusic.models.MediaMetadata
+import com.aromaappu.akmusic.playback.queues.Queue
+import com.aromaappu.akmusic.spotify.models.SpotifyTrack
 
 class SpotifyPlaylistQueue(
     private val playlistId: String,

@@ -4,21 +4,21 @@
  * Licensed Under GPL-3.0 | see git history for contributors
  */
 
-package com.arturo254.opentune.innertube.pages
+package com.aromaappu.akmusic.innertube.pages
 
-import com.arturo254.opentune.innertube.models.Album
-import com.arturo254.opentune.innertube.models.AlbumItem
-import com.arturo254.opentune.innertube.models.Artist
-import com.arturo254.opentune.innertube.models.MusicResponsiveHeaderRenderer
-import com.arturo254.opentune.innertube.models.MusicResponsiveListItemRenderer
-import com.arturo254.opentune.innertube.models.SectionListRenderer
-import com.arturo254.opentune.innertube.models.getContinuation
-import com.arturo254.opentune.innertube.models.SongItem
-import com.arturo254.opentune.innertube.models.getItems
-import com.arturo254.opentune.innertube.models.oddElements
-import com.arturo254.opentune.innertube.models.response.BrowseResponse
-import com.arturo254.opentune.innertube.models.splitBySeparator
-import com.arturo254.opentune.innertube.utils.parseTime
+import com.aromaappu.akmusic.innertube.models.Album
+import com.aromaappu.akmusic.innertube.models.AlbumItem
+import com.aromaappu.akmusic.innertube.models.Artist
+import com.aromaappu.akmusic.innertube.models.MusicResponsiveHeaderRenderer
+import com.aromaappu.akmusic.innertube.models.MusicResponsiveListItemRenderer
+import com.aromaappu.akmusic.innertube.models.SectionListRenderer
+import com.aromaappu.akmusic.innertube.models.getContinuation
+import com.aromaappu.akmusic.innertube.models.SongItem
+import com.aromaappu.akmusic.innertube.models.getItems
+import com.aromaappu.akmusic.innertube.models.oddElements
+import com.aromaappu.akmusic.innertube.models.response.BrowseResponse
+import com.aromaappu.akmusic.innertube.models.splitBySeparator
+import com.aromaappu.akmusic.innertube.utils.parseTime
 
 data class AlbumPage(
     val album: AlbumItem,

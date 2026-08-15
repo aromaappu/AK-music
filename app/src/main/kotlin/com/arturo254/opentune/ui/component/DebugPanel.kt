@@ -6,13 +6,13 @@
 
 
 
-package com.arturo254.opentune.ui.component
+package com.aromaappu.akmusic.ui.component
 
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.res.painterResource
-import com.arturo254.opentune.R
+import com.aromaappu.akmusic.R
 
 /**
  * Returns a `Material3SettingsItem` that can be placed inside a `Material3SettingsGroup`.

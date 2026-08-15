@@ -6,7 +6,7 @@
 
 
 
-package com.arturo254.opentune.ui.screens.settings
+package com.aromaappu.akmusic.ui.screens.settings
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -54,23 +54,23 @@ import androidx.navigation.NavController
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import com.arturo254.opentune.LocalPlayerAwareWindowInsets
-import com.arturo254.opentune.R
-import com.arturo254.opentune.constants.EnableLastFMScrobblingKey
-import com.arturo254.opentune.constants.LastFMSessionKey
-import com.arturo254.opentune.constants.LastFMUsernameKey
-import com.arturo254.opentune.constants.LastFMUseNowPlaying
-import com.arturo254.opentune.constants.ScrobbleDelayPercentKey
-import com.arturo254.opentune.constants.ScrobbleMinSongDurationKey
-import com.arturo254.opentune.constants.ScrobbleDelaySecondsKey
-import com.arturo254.opentune.ui.component.IconButton
-import com.arturo254.opentune.ui.component.PreferenceEntry
-import com.arturo254.opentune.ui.component.PreferenceGroupTitle
-import com.arturo254.opentune.ui.component.SwitchPreference
-import com.arturo254.opentune.ui.utils.backToMain
-import com.arturo254.opentune.utils.rememberPreference
-import com.arturo254.opentune.utils.reportException
-import com.arturo254.opentune.lastfm.LastFM
+import com.aromaappu.akmusic.LocalPlayerAwareWindowInsets
+import com.aromaappu.akmusic.R
+import com.aromaappu.akmusic.constants.EnableLastFMScrobblingKey
+import com.aromaappu.akmusic.constants.LastFMSessionKey
+import com.aromaappu.akmusic.constants.LastFMUsernameKey
+import com.aromaappu.akmusic.constants.LastFMUseNowPlaying
+import com.aromaappu.akmusic.constants.ScrobbleDelayPercentKey
+import com.aromaappu.akmusic.constants.ScrobbleMinSongDurationKey
+import com.aromaappu.akmusic.constants.ScrobbleDelaySecondsKey
+import com.aromaappu.akmusic.ui.component.IconButton
+import com.aromaappu.akmusic.ui.component.PreferenceEntry
+import com.aromaappu.akmusic.ui.component.PreferenceGroupTitle
+import com.aromaappu.akmusic.ui.component.SwitchPreference
+import com.aromaappu.akmusic.ui.utils.backToMain
+import com.aromaappu.akmusic.utils.rememberPreference
+import com.aromaappu.akmusic.utils.reportException
+import com.aromaappu.akmusic.lastfm.LastFM
 import timber.log.Timber
 import kotlin.math.roundToInt
 

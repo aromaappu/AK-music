@@ -6,7 +6,7 @@
 
 
 
-package com.arturo254.opentune.ui.menu
+package com.aromaappu.akmusic.ui.menu
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
@@ -39,19 +39,19 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.TextUnitType
 import androidx.compose.ui.unit.dp
-import com.arturo254.opentune.innertube.YouTube
-import com.arturo254.opentune.innertube.models.SongItem
-import com.arturo254.opentune.LocalDatabase
-import com.arturo254.opentune.R
-import com.arturo254.opentune.constants.ListThumbnailSize
-import com.arturo254.opentune.db.entities.Playlist
-import com.arturo254.opentune.db.entities.Song
-import com.arturo254.opentune.models.toMediaMetadata
-import com.arturo254.opentune.ui.component.CreatePlaylistDialog
-import com.arturo254.opentune.ui.component.DefaultDialog
-import com.arturo254.opentune.ui.component.ListDialog
-import com.arturo254.opentune.ui.component.ListItem
-import com.arturo254.opentune.ui.component.PlaylistListItem
+import com.aromaappu.akmusic.innertube.YouTube
+import com.aromaappu.akmusic.innertube.models.SongItem
+import com.aromaappu.akmusic.LocalDatabase
+import com.aromaappu.akmusic.R
+import com.aromaappu.akmusic.constants.ListThumbnailSize
+import com.aromaappu.akmusic.db.entities.Playlist
+import com.aromaappu.akmusic.db.entities.Song
+import com.aromaappu.akmusic.models.toMediaMetadata
+import com.aromaappu.akmusic.ui.component.CreatePlaylistDialog
+import com.aromaappu.akmusic.ui.component.DefaultDialog
+import com.aromaappu.akmusic.ui.component.ListDialog
+import com.aromaappu.akmusic.ui.component.ListItem
+import com.aromaappu.akmusic.ui.component.PlaylistListItem
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext

@@ -6,7 +6,7 @@
 
 
 
-package com.arturo254.opentune.ui.screens.settings
+package com.aromaappu.akmusic.ui.screens.settings
 
 import android.annotation.SuppressLint
 import android.util.Log
@@ -23,17 +23,17 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
-import com.arturo254.opentune.BuildConfig
-import com.arturo254.opentune.R
+import com.aromaappu.akmusic.BuildConfig
+import com.aromaappu.akmusic.R
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.viewinterop.AndroidView
 import androidx.navigation.NavController
-import com.arturo254.opentune.LocalPlayerAwareWindowInsets
-import com.arturo254.opentune.constants.DiscordTokenKey
-import com.arturo254.opentune.ui.component.IconButton
-import com.arturo254.opentune.ui.utils.backToMain
-import com.arturo254.opentune.utils.rememberPreference
+import com.aromaappu.akmusic.LocalPlayerAwareWindowInsets
+import com.aromaappu.akmusic.constants.DiscordTokenKey
+import com.aromaappu.akmusic.ui.component.IconButton
+import com.aromaappu.akmusic.ui.utils.backToMain
+import com.aromaappu.akmusic.utils.rememberPreference
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 

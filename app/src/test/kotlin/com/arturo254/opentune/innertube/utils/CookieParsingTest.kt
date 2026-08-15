@@ -1,4 +1,4 @@
-package com.arturo254.opentune.innertube.utils
+package com.aromaappu.akmusic.innertube.utils
 
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertTrue

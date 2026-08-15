@@ -8,12 +8,12 @@
 
 
 
-package com.arturo254.opentune.innertube.utils
+package com.aromaappu.akmusic.innertube.utils
 
-import com.arturo254.opentune.innertube.YouTube
-import com.arturo254.opentune.innertube.pages.LibraryPage
-import com.arturo254.opentune.innertube.pages.PlaylistContinuationPage
-import com.arturo254.opentune.innertube.pages.PlaylistPage
+import com.aromaappu.akmusic.innertube.YouTube
+import com.aromaappu.akmusic.innertube.pages.LibraryPage
+import com.aromaappu.akmusic.innertube.pages.PlaylistContinuationPage
+import com.aromaappu.akmusic.innertube.pages.PlaylistPage
 import java.security.MessageDigest
 
 @JvmName("completedLibrary")

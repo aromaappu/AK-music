@@ -4,7 +4,7 @@
  * Licensed Under GPL-3.0 | see git history for contributors
  */
 
-package com.arturo254.opentune.innertube.utils
+package com.aromaappu.akmusic.innertube.utils
 
 import kotlin.io.encoding.Base64
 import kotlin.io.encoding.ExperimentalEncodingApi

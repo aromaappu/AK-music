@@ -6,7 +6,7 @@
 
 
 
-package com.arturo254.opentune.ui.menu
+package com.aromaappu.akmusic.ui.menu
 
 import android.content.Intent
 import android.content.res.Configuration
@@ -53,25 +53,25 @@ import androidx.core.net.toUri
 import androidx.media3.exoplayer.offline.Download
 import androidx.media3.exoplayer.offline.DownloadRequest
 import androidx.media3.exoplayer.offline.DownloadService
-import com.arturo254.opentune.innertube.YouTube
-import com.arturo254.opentune.LocalDatabase
-import com.arturo254.opentune.LocalDownloadUtil
-import com.arturo254.opentune.LocalPlayerConnection
-import com.arturo254.opentune.R
-import com.arturo254.opentune.db.entities.Playlist
-import com.arturo254.opentune.db.entities.PlaylistSong
-import com.arturo254.opentune.db.entities.Song
-import com.arturo254.opentune.extensions.toMediaItem
-import com.arturo254.opentune.playback.ExoDownloadService
-import com.arturo254.opentune.playback.queues.ListQueue
-import com.arturo254.opentune.playback.queues.YouTubeQueue
-import com.arturo254.opentune.ui.component.DefaultDialog
-import com.arturo254.opentune.ui.component.AssignTagsDialog
-import com.arturo254.opentune.ui.component.EditPlaylistDialog
-import com.arturo254.opentune.ui.component.MenuSurfaceSection
-import com.arturo254.opentune.ui.component.NewAction
-import com.arturo254.opentune.ui.component.NewActionGrid
-import com.arturo254.opentune.ui.component.PlaylistListItem
+import com.aromaappu.akmusic.innertube.YouTube
+import com.aromaappu.akmusic.LocalDatabase
+import com.aromaappu.akmusic.LocalDownloadUtil
+import com.aromaappu.akmusic.LocalPlayerConnection
+import com.aromaappu.akmusic.R
+import com.aromaappu.akmusic.db.entities.Playlist
+import com.aromaappu.akmusic.db.entities.PlaylistSong
+import com.aromaappu.akmusic.db.entities.Song
+import com.aromaappu.akmusic.extensions.toMediaItem
+import com.aromaappu.akmusic.playback.ExoDownloadService
+import com.aromaappu.akmusic.playback.queues.ListQueue
+import com.aromaappu.akmusic.playback.queues.YouTubeQueue
+import com.aromaappu.akmusic.ui.component.DefaultDialog
+import com.aromaappu.akmusic.ui.component.AssignTagsDialog
+import com.aromaappu.akmusic.ui.component.EditPlaylistDialog
+import com.aromaappu.akmusic.ui.component.MenuSurfaceSection
+import com.aromaappu.akmusic.ui.component.NewAction
+import com.aromaappu.akmusic.ui.component.NewActionGrid
+import com.aromaappu.akmusic.ui.component.PlaylistListItem
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

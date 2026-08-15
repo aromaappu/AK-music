@@ -88,7 +88,6 @@
     <string name="default_style">デフォルト</string>
     <string name="secondary_color_style">二次</string>
     <string name="enable_squiggly_slider">波線スライダーを有効にする</string>
-    <string name="enable_swipe_thumbnail">スワイプによる曲変更を有効にする</string>
     <string name="swipe_song_to_add">曲を左にスワイプしてキューに追加するか、右にスワイプして次に再生します</string>
     <string name="lyrics_click_change">クリックすると歌詞が変わります</string>
     <string name="lyrics_auto_scroll">自動スクロール歌詞</string>

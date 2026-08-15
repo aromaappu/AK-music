@@ -1,4 +1,4 @@
-package com.arturo254.opentune.ui.screens.settings
+package com.aromaappu.akmusic.ui.screens.settings
 
 import android.annotation.SuppressLint
 import android.app.Activity
@@ -39,9 +39,9 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.viewinterop.AndroidView
-import com.arturo254.opentune.R
-import com.arturo254.opentune.innertube.utils.PoTokenGenerator
-import com.arturo254.opentune.ui.component.IconButton
+import com.aromaappu.akmusic.R
+import com.aromaappu.akmusic.innertube.utils.PoTokenGenerator
+import com.aromaappu.akmusic.ui.component.IconButton
 
 class PoTokenExtractionActivity : ComponentActivity() {
 

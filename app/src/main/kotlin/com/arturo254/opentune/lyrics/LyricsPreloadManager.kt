@@ -4,7 +4,7 @@
  * Licensed Under GPL-3.0 | see git history for contributors
  */
 
-package com.arturo254.opentune.lyrics
+package com.aromaappu.akmusic.lyrics
 
 import android.util.Log
 import androidx.datastore.preferences.core.booleanPreferencesKey
@@ -17,14 +17,14 @@ import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.cancel
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
-import com.arturo254.opentune.constants.PreloadQueueLyricsEnabledKey
-import com.arturo254.opentune.constants.QueueLyricsPreloadCountKey
-import com.arturo254.opentune.db.MusicDatabase
-import com.arturo254.opentune.db.entities.LyricsEntity
-import com.arturo254.opentune.models.MediaMetadata
-import com.arturo254.opentune.utils.NetworkConnectivityObserver
-import com.arturo254.opentune.utils.dataStore
-import com.arturo254.opentune.utils.reportException
+import com.aromaappu.akmusic.constants.PreloadQueueLyricsEnabledKey
+import com.aromaappu.akmusic.constants.QueueLyricsPreloadCountKey
+import com.aromaappu.akmusic.db.MusicDatabase
+import com.aromaappu.akmusic.db.entities.LyricsEntity
+import com.aromaappu.akmusic.models.MediaMetadata
+import com.aromaappu.akmusic.utils.NetworkConnectivityObserver
+import com.aromaappu.akmusic.utils.dataStore
+import com.aromaappu.akmusic.utils.reportException
 import javax.inject.Inject
 
 /**

@@ -5,7 +5,7 @@
  */
 
 
-package com.arturo254.opentune.ui.screens.playlist
+package com.aromaappu.akmusic.ui.screens.playlist
 
 import android.widget.Toast
 import androidx.compose.foundation.clickable
@@ -40,18 +40,18 @@ import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import com.arturo254.opentune.LocalDatabase
-import com.arturo254.opentune.LocalPlayerConnection
-import com.arturo254.opentune.R
-import com.arturo254.opentune.extensions.toMediaItem
-import com.arturo254.opentune.extensions.togglePlayPause
-import com.arturo254.opentune.innertube.models.SongItem
-import com.arturo254.opentune.playback.queues.ListQueue
-import com.arturo254.opentune.ui.component.DefaultDialog
-import com.arturo254.opentune.ui.component.IconButton
-import com.arturo254.opentune.ui.component.NavigationTitle
-import com.arturo254.opentune.ui.component.YouTubeListItem
-import com.arturo254.opentune.viewmodels.LocalPlaylistViewModel
+import com.aromaappu.akmusic.LocalDatabase
+import com.aromaappu.akmusic.LocalPlayerConnection
+import com.aromaappu.akmusic.R
+import com.aromaappu.akmusic.extensions.toMediaItem
+import com.aromaappu.akmusic.extensions.togglePlayPause
+import com.aromaappu.akmusic.innertube.models.SongItem
+import com.aromaappu.akmusic.playback.queues.ListQueue
+import com.aromaappu.akmusic.ui.component.DefaultDialog
+import com.aromaappu.akmusic.ui.component.IconButton
+import com.aromaappu.akmusic.ui.component.NavigationTitle
+import com.aromaappu.akmusic.ui.component.YouTubeListItem
+import com.aromaappu.akmusic.viewmodels.LocalPlaylistViewModel
 
 @Composable
 fun PlaylistSuggestionsSection(

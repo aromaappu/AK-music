@@ -4,7 +4,7 @@
  * Licensed Under GPL-3.0 | see git history for contributors
  */
 
-package com.arturo254.opentune.ui.screens.settings
+package com.aromaappu.akmusic.ui.screens.settings
 
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
@@ -12,8 +12,8 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.navigation.NavController
-import com.arturo254.opentune.BuildConfig
-import com.arturo254.opentune.R
+import com.aromaappu.akmusic.BuildConfig
+import com.aromaappu.akmusic.R
 
 @Composable
 fun buildQuickActions(
@@ -137,7 +137,7 @@ fun buildSettingsGroups(
                         SettingsItem(
                             icon = painterResource(R.drawable.info),
                             title = stringResource(R.string.about),
-                            subtitle = "OpenTune",
+                            subtitle = "AK music",
                             accentColor = MaterialTheme.colorScheme.onSurfaceVariant,
                             keywords = listOf("about", "app info", "license", "contributors"),
                             onClick = { resetSearch(); navController.navigate("settings/about") },

@@ -4,7 +4,7 @@
  * Licensed Under GPL-3.0 | see git history for contributors
  */
 
-package com.arturo254.opentune.ui.screens.settings
+package com.aromaappu.akmusic.ui.screens.settings
 
 import android.Manifest
 import android.content.pm.PackageManager
@@ -46,12 +46,12 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.core.content.ContextCompat
 import androidx.navigation.NavController
-import com.arturo254.opentune.BuildConfig
-import com.arturo254.opentune.R
-import com.arturo254.opentune.ui.component.IconButton
-import com.arturo254.opentune.ui.component.TopSearch
-import com.arturo254.opentune.ui.utils.backToMain
-import com.arturo254.opentune.utils.Updater
+import com.aromaappu.akmusic.BuildConfig
+import com.aromaappu.akmusic.R
+import com.aromaappu.akmusic.ui.component.IconButton
+import com.aromaappu.akmusic.ui.component.TopSearch
+import com.aromaappu.akmusic.ui.utils.backToMain
+import com.aromaappu.akmusic.utils.Updater
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

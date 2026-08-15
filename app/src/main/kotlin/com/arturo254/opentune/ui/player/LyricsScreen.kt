@@ -6,7 +6,7 @@
 
 
 
-package com.arturo254.opentune.ui.player
+package com.aromaappu.akmusic.ui.player
 
 import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.layout.Arrangement
@@ -65,34 +65,34 @@ import coil3.request.ImageRequest
 import coil3.request.allowHardware
 import coil3.size.Size
 import coil3.toBitmap
-import com.arturo254.opentune.LocalDatabase
-import com.arturo254.opentune.LocalPlayerConnection
-import com.arturo254.opentune.R
-import com.arturo254.opentune.constants.PlayerBackgroundStyle
-import com.arturo254.opentune.constants.PlayerBackgroundStyleKey
-import com.arturo254.opentune.constants.SliderStyle
-import com.arturo254.opentune.constants.SliderStyleKey
-import com.arturo254.opentune.db.entities.LyricsEntity
-import com.arturo254.opentune.extensions.togglePlayPause
-import com.arturo254.opentune.extensions.toggleRepeatMode
-import com.arturo254.opentune.models.MediaMetadata
-import com.arturo254.opentune.ui.component.Lyrics
-import com.arturo254.opentune.ui.component.LyricsV2
-import com.arturo254.opentune.constants.UseLyricsV2Key
-import com.arturo254.opentune.ui.component.LocalMenuState
-import com.arturo254.opentune.ui.component.BigSeekBar
+import com.aromaappu.akmusic.LocalDatabase
+import com.aromaappu.akmusic.LocalPlayerConnection
+import com.aromaappu.akmusic.R
+import com.aromaappu.akmusic.constants.PlayerBackgroundStyle
+import com.aromaappu.akmusic.constants.PlayerBackgroundStyleKey
+import com.aromaappu.akmusic.constants.SliderStyle
+import com.aromaappu.akmusic.constants.SliderStyleKey
+import com.aromaappu.akmusic.db.entities.LyricsEntity
+import com.aromaappu.akmusic.extensions.togglePlayPause
+import com.aromaappu.akmusic.extensions.toggleRepeatMode
+import com.aromaappu.akmusic.models.MediaMetadata
+import com.aromaappu.akmusic.ui.component.Lyrics
+import com.aromaappu.akmusic.ui.component.LyricsV2
+import com.aromaappu.akmusic.constants.UseLyricsV2Key
+import com.aromaappu.akmusic.ui.component.LocalMenuState
+import com.aromaappu.akmusic.ui.component.BigSeekBar
 import androidx.navigation.NavController
-import com.arturo254.opentune.constants.BlurRadiusKey
-import com.arturo254.opentune.ui.menu.LyricsMenu
-import com.arturo254.opentune.ui.theme.PlayerColorExtractor
-import com.arturo254.opentune.utils.rememberEnumPreference
-import com.arturo254.opentune.utils.rememberPreference
-import com.arturo254.opentune.constants.PlayerCustomImageUriKey
-import com.arturo254.opentune.constants.PlayerCustomBlurKey
-import com.arturo254.opentune.constants.PlayerCustomContrastKey
-import com.arturo254.opentune.constants.PlayerCustomBrightnessKey
-import com.arturo254.opentune.constants.DisableBlurKey
-import com.arturo254.opentune.di.LyricsHelperEntryPoint
+import com.aromaappu.akmusic.constants.BlurRadiusKey
+import com.aromaappu.akmusic.ui.menu.LyricsMenu
+import com.aromaappu.akmusic.ui.theme.PlayerColorExtractor
+import com.aromaappu.akmusic.utils.rememberEnumPreference
+import com.aromaappu.akmusic.utils.rememberPreference
+import com.aromaappu.akmusic.constants.PlayerCustomImageUriKey
+import com.aromaappu.akmusic.constants.PlayerCustomBlurKey
+import com.aromaappu.akmusic.constants.PlayerCustomContrastKey
+import com.aromaappu.akmusic.constants.PlayerCustomBrightnessKey
+import com.aromaappu.akmusic.constants.DisableBlurKey
+import com.aromaappu.akmusic.di.LyricsHelperEntryPoint
 import dagger.hilt.android.EntryPointAccessors
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
@@ -100,7 +100,7 @@ import kotlinx.coroutines.isActive
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import kotlin.runCatching
-import com.arturo254.opentune.utils.makeTimeString
+import com.aromaappu.akmusic.utils.makeTimeString
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

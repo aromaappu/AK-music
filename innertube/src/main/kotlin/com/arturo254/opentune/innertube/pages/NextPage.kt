@@ -4,17 +4,17 @@
  * Licensed Under GPL-3.0 | see git history for contributors
  */
 
-package com.arturo254.opentune.innertube.pages
+package com.aromaappu.akmusic.innertube.pages
 
-import com.arturo254.opentune.innertube.models.Album
-import com.arturo254.opentune.innertube.models.Artist
-import com.arturo254.opentune.innertube.models.BrowseEndpoint
-import com.arturo254.opentune.innertube.models.PlaylistPanelVideoRenderer
-import com.arturo254.opentune.innertube.models.SongItem
-import com.arturo254.opentune.innertube.models.WatchEndpoint
-import com.arturo254.opentune.innertube.models.oddElements
-import com.arturo254.opentune.innertube.models.splitBySeparator
-import com.arturo254.opentune.innertube.utils.parseTime
+import com.aromaappu.akmusic.innertube.models.Album
+import com.aromaappu.akmusic.innertube.models.Artist
+import com.aromaappu.akmusic.innertube.models.BrowseEndpoint
+import com.aromaappu.akmusic.innertube.models.PlaylistPanelVideoRenderer
+import com.aromaappu.akmusic.innertube.models.SongItem
+import com.aromaappu.akmusic.innertube.models.WatchEndpoint
+import com.aromaappu.akmusic.innertube.models.oddElements
+import com.aromaappu.akmusic.innertube.models.splitBySeparator
+import com.aromaappu.akmusic.innertube.utils.parseTime
 
 data class NextResult(
     val title: String? = null,

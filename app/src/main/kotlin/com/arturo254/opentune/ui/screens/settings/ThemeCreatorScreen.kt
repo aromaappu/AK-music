@@ -6,7 +6,7 @@
 
 
 
-package com.arturo254.opentune.ui.screens.settings
+package com.aromaappu.akmusic.ui.screens.settings
 
 import android.widget.Toast
 import androidx.activity.compose.rememberLauncherForActivityResult
@@ -102,17 +102,17 @@ import androidx.navigation.NavController
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import com.arturo254.opentune.LocalPlayerAwareWindowInsets
-import com.arturo254.opentune.R
-import com.arturo254.opentune.constants.CustomThemeColorKey
-import com.arturo254.opentune.constants.DynamicThemeKey
-import com.arturo254.opentune.ui.component.IconButton
-import com.arturo254.opentune.ui.theme.OpenTuneTheme
-import com.arturo254.opentune.ui.theme.ColorSaver
-import com.arturo254.opentune.ui.theme.ThemeSeedPalette
-import com.arturo254.opentune.ui.theme.ThemeSeedPaletteCodec
-import com.arturo254.opentune.ui.utils.backToMain
-import com.arturo254.opentune.utils.rememberPreference
+import com.aromaappu.akmusic.LocalPlayerAwareWindowInsets
+import com.aromaappu.akmusic.R
+import com.aromaappu.akmusic.constants.CustomThemeColorKey
+import com.aromaappu.akmusic.constants.DynamicThemeKey
+import com.aromaappu.akmusic.ui.component.IconButton
+import com.aromaappu.akmusic.ui.theme.OpenTuneTheme
+import com.aromaappu.akmusic.ui.theme.ColorSaver
+import com.aromaappu.akmusic.ui.theme.ThemeSeedPalette
+import com.aromaappu.akmusic.ui.theme.ThemeSeedPaletteCodec
+import com.aromaappu.akmusic.ui.utils.backToMain
+import com.aromaappu.akmusic.utils.rememberPreference
 
 private enum class SeedRole {
     PRIMARY,
@@ -286,7 +286,7 @@ fun ThemeCreatorScreen(
                     onClick = {
                         val safeName = themeName
                             .trim()
-                            .ifBlank { "OpenTune Theme" }
+                            .ifBlank { "AK music Theme" }
                             .replace(Regex("[^a-zA-Z0-9 _\\-]"), "_")
                             .take(64)
                         exportLauncher.launch("$safeName.json")
@@ -625,7 +625,7 @@ private fun ThemeRichPreview(
         var checkboxOn by rememberSaveable { mutableStateOf(true) }
         var radioSelected by rememberSaveable { mutableStateOf(0) }
         var sliderValue by rememberSaveable { mutableStateOf(0.62f) }
-        var query by rememberSaveable { mutableStateOf("OpenTune") }
+        var query by rememberSaveable { mutableStateOf("AK music") }
 
         Card(
             modifier = modifier

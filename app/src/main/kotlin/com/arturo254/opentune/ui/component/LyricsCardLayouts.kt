@@ -4,7 +4,7 @@
  * Licensed Under GPL-3.0 | see git history for contributors
  */
 
-package com.arturo254.opentune.ui.component
+package com.aromaappu.akmusic.ui.component
 
 import android.annotation.SuppressLint
 import androidx.compose.foundation.Image
@@ -43,10 +43,10 @@ import coil3.request.ImageRequest
 import coil3.request.crossfade
 import com.skydoves.cloudy.cloudy
 import com.skydoves.cloudy.liquidGlass
-import com.arturo254.opentune.R
-import com.arturo254.opentune.constants.UseSystemFontKey
-import com.arturo254.opentune.models.MediaMetadata
-import com.arturo254.opentune.utils.rememberPreference
+import com.aromaappu.akmusic.R
+import com.aromaappu.akmusic.constants.UseSystemFontKey
+import com.aromaappu.akmusic.models.MediaMetadata
+import com.aromaappu.akmusic.utils.rememberPreference
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Constantes compartidas entre layouts

@@ -4,7 +4,7 @@
  * Licensed Under GPL-3.0 | see git history for contributors
  */
 
-package com.arturo254.opentune.ui.screens.settings
+package com.aromaappu.akmusic.ui.screens.settings
 
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.foundation.layout.Arrangement
@@ -66,25 +66,25 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import coil3.annotation.ExperimentalCoilApi
 import coil3.imageLoader
-import com.arturo254.opentune.LocalPlayerAwareWindowInsets
-import com.arturo254.opentune.LocalPlayerConnection
-import com.arturo254.opentune.R
-import com.arturo254.opentune.canvas.CanvasCacheManager
-import com.arturo254.opentune.constants.MaxCanvasCacheSizeKey
-import com.arturo254.opentune.constants.MaxImageCacheSizeKey
-import com.arturo254.opentune.constants.MaxSongCacheSizeKey
-import com.arturo254.opentune.constants.SmartTrimmerKey
-import com.arturo254.opentune.extensions.directorySizeBytes
-import com.arturo254.opentune.extensions.tryOrNull
-import com.arturo254.opentune.ui.component.ActionPromptDialog
-import com.arturo254.opentune.ui.component.IconButton
-import com.arturo254.opentune.ui.component.ListPreference
-import com.arturo254.opentune.ui.component.PreferenceEntry
-import com.arturo254.opentune.ui.component.SwitchPreference
-import com.arturo254.opentune.ui.player.CanvasArtworkPlaybackCache
-import com.arturo254.opentune.ui.utils.backToMain
-import com.arturo254.opentune.ui.utils.formatFileSize
-import com.arturo254.opentune.utils.rememberPreference
+import com.aromaappu.akmusic.LocalPlayerAwareWindowInsets
+import com.aromaappu.akmusic.LocalPlayerConnection
+import com.aromaappu.akmusic.R
+import com.aromaappu.akmusic.canvas.CanvasCacheManager
+import com.aromaappu.akmusic.constants.MaxCanvasCacheSizeKey
+import com.aromaappu.akmusic.constants.MaxImageCacheSizeKey
+import com.aromaappu.akmusic.constants.MaxSongCacheSizeKey
+import com.aromaappu.akmusic.constants.SmartTrimmerKey
+import com.aromaappu.akmusic.extensions.directorySizeBytes
+import com.aromaappu.akmusic.extensions.tryOrNull
+import com.aromaappu.akmusic.ui.component.ActionPromptDialog
+import com.aromaappu.akmusic.ui.component.IconButton
+import com.aromaappu.akmusic.ui.component.ListPreference
+import com.aromaappu.akmusic.ui.component.PreferenceEntry
+import com.aromaappu.akmusic.ui.component.SwitchPreference
+import com.aromaappu.akmusic.ui.player.CanvasArtworkPlaybackCache
+import com.aromaappu.akmusic.ui.utils.backToMain
+import com.aromaappu.akmusic.ui.utils.formatFileSize
+import com.aromaappu.akmusic.utils.rememberPreference
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.isActive
@@ -192,7 +192,7 @@ fun StorageSettings(
         if (maxImageCacheSize == 0) {
             coroutineScope.launch(Dispatchers.IO) {
                 imageDiskCache.clear()
-                com.arturo254.opentune.utils.ArtworkStorage.clear(context)
+                com.aromaappu.akmusic.utils.ArtworkStorage.clear(context)
             }
         }
     }
@@ -440,7 +440,7 @@ fun StorageSettings(
                     onConfirm = {
                         coroutineScope.launch(Dispatchers.IO) {
                             imageDiskCache.clear()
-                            com.arturo254.opentune.utils.ArtworkStorage.clear(context)
+                            com.aromaappu.akmusic.utils.ArtworkStorage.clear(context)
                         }
                         clearImageCacheDialog = false
                     },
@@ -478,7 +478,7 @@ fun StorageSettings(
                             downloadCache.keys.forEach { key -> downloadCache.removeResource(key) }
                             playerCache.keys.forEach { key -> playerCache.removeResource(key) }
                             imageDiskCache.clear()
-                            com.arturo254.opentune.utils.ArtworkStorage.clear(context)
+                            com.aromaappu.akmusic.utils.ArtworkStorage.clear(context)
                             CanvasArtworkPlaybackCache.clear()
                             CanvasCacheManager.clearCache()
                         }

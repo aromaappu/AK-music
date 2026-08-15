@@ -6,13 +6,13 @@
 
 
 
-package com.arturo254.opentune.utils
+package com.aromaappu.akmusic.utils
 
 import android.content.Context
-import com.arturo254.opentune.R
-import com.arturo254.opentune.db.entities.Song
-import com.arturo254.opentune.constants.*
-import com.arturo254.opentune.utils.dataStore
+import com.aromaappu.akmusic.R
+import com.aromaappu.akmusic.db.entities.Song
+import com.aromaappu.akmusic.constants.*
+import com.aromaappu.akmusic.utils.dataStore
 import com.my.kizzy.rpc.KizzyRPC
 import com.my.kizzy.rpc.RpcImage
 import timber.log.Timber
@@ -30,7 +30,7 @@ class DiscordRPC(
         private const val PAUSE_IMAGE_URL =
             "https://raw.githubusercontent.com/koiverse/ArchiveTune/main/fastlane/metadata/android/en-US/images/RPC/pause_icon.png"
         private const val APP_ICON_URL = 
-            "https://raw.githubusercontent.com/Arturo254/OpenTune/refs/heads/master/assets/icon.png"
+            "https://raw.githubusercontent.com/aromaappu/AK-music/refs/heads/master/assets/icon.png"
         private const val logtag = "DiscordRPC"
     }
 
@@ -188,7 +188,7 @@ class DiscordRPC(
         val button1UrlSource = context.dataStore[DiscordActivityButton1UrlSourceKey] ?: "songurl"
         val button1CustomUrl = context.dataStore[DiscordActivityButton1CustomUrlKey] ?: ""
         val button2UrlSource = context.dataStore[DiscordActivityButton2UrlSourceKey] ?: "custom"
-        val button2CustomUrl = context.dataStore[DiscordActivityButton2CustomUrlKey] ?: "https://github.com/Arturo254/OpenTune"
+        val button2CustomUrl = context.dataStore[DiscordActivityButton2CustomUrlKey] ?: "https://github.com/aromaappu/AK-music"
 
         val resolvedButton1Url = resolveUrl(button1UrlSource, song, button1CustomUrl)
         val resolvedButton2Url = resolveUrl(button2UrlSource, song, button2CustomUrl)
@@ -419,7 +419,7 @@ class DiscordRPC(
         } catch (ex: Exception) {
             val msg = ex.message ?: ex.toString()
             Timber.tag("DiscordRPC").e("refreshActivity updateSong failed: %s", msg)
-            com.arturo254.opentune.utils.GlobalLog.append(
+            com.aromaappu.akmusic.utils.GlobalLog.append(
                 android.util.Log.ERROR,
                 "DiscordRPC",
                 "refreshActivity updateSong failed: $msg\n${ex.stackTraceToString()}"

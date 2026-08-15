@@ -6,11 +6,11 @@
 
 
 
-package com.arturo254.opentune.lastfm
+package com.aromaappu.akmusic.lastfm
 
-import com.arturo254.opentune.lastfm.models.Authentication
-import com.arturo254.opentune.lastfm.models.LastFmError
-import com.arturo254.opentune.lastfm.models.TokenResponse
+import com.aromaappu.akmusic.lastfm.models.Authentication
+import com.aromaappu.akmusic.lastfm.models.LastFmError
+import com.aromaappu.akmusic.lastfm.models.TokenResponse
 import io.ktor.client.HttpClient
 import io.ktor.client.call.body
 import io.ktor.client.engine.okhttp.OkHttp
@@ -58,7 +58,7 @@ object LastFM {
         format: String = "json"
     ) {
         contentType(ContentType.Application.FormUrlEncoded)
-        userAgent("OpenTune (https://github.com/Arturo254/OpenTune)")
+        userAgent("OpenTune (https://github.com/aromaappu/AK-music)")
         val paramsForSig = mutableMapOf(
             "method" to method,
             "api_key" to apiKey

@@ -6,16 +6,16 @@
 
 
 
-package com.arturo254.opentune.extensions
+package com.aromaappu.akmusic.extensions
 
 import android.content.Context
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
-import com.arturo254.opentune.constants.InnerTubeCookieKey
-import com.arturo254.opentune.constants.YtmSyncKey
-import com.arturo254.opentune.utils.dataStore
-import com.arturo254.opentune.utils.get
-import com.arturo254.opentune.innertube.utils.parseCookieString
+import com.aromaappu.akmusic.constants.InnerTubeCookieKey
+import com.aromaappu.akmusic.constants.YtmSyncKey
+import com.aromaappu.akmusic.utils.dataStore
+import com.aromaappu.akmusic.utils.get
+import com.aromaappu.akmusic.innertube.utils.parseCookieString
 
 fun Context.isSyncEnabled(): Boolean {
     return dataStore.get(YtmSyncKey, true) && isUserLoggedIn()

@@ -104,7 +104,6 @@
     <string name="default_style">Padrão</string>
     <string name="secondary_color_style">Secundário</string>
     <string name="enable_squiggly_slider">Ativar slider de onda</string>
-    <string name="enable_swipe_thumbnail">Ativar opção de deslizar para trocar de música</string>
     <string name="swipe_song_to_add">Deslize a música para a esquerda para adicioná-la à fila ou para a direita para reproduzi-la em seguida</string>
     <string name="lyrics_click_change">Mudar letras no clique</string>
     <string name="lyrics_auto_scroll">Letras com rolagem automática</string>

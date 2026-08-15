@@ -4,7 +4,7 @@
  * Licensed Under GPL-3.0 | see git history for contributors
  */
 
-package com.arturo254.opentune.ui.player
+package com.aromaappu.akmusic.ui.player
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -75,27 +75,27 @@ import androidx.media3.common.Player
 import androidx.media3.ui.AspectRatioFrameLayout
 import coil3.compose.AsyncImage
 import coil3.compose.rememberAsyncImagePainter
-import com.arturo254.opentune.LocalPlayerConnection
-import com.arturo254.opentune.R
-import com.arturo254.opentune.canvas.models.CanvasArtwork
-import com.arturo254.opentune.constants.CanvasSource
-import com.arturo254.opentune.constants.CropThumbnailToSquareKey
-import com.arturo254.opentune.constants.HidePlayerThumbnailKey
-import com.arturo254.opentune.constants.MaxCanvasCacheSizeKey
-import com.arturo254.opentune.constants.OpenTuneCanvasKey
-import com.arturo254.opentune.constants.PlayerBackgroundStyle
-import com.arturo254.opentune.constants.PlayerBackgroundStyleKey
-import com.arturo254.opentune.constants.PlayerDesignStyle
-import com.arturo254.opentune.constants.PlayerDesignStyleKey
-import com.arturo254.opentune.constants.PlayerHorizontalPadding
-import com.arturo254.opentune.constants.SeekExtraSeconds
-import com.arturo254.opentune.constants.SwipeThumbnailKey
-import com.arturo254.opentune.constants.ThumbnailCornerRadiusKey
-import com.arturo254.opentune.extensions.metadata
-import com.arturo254.opentune.extensions.toMediaItem
-import com.arturo254.opentune.ui.utils.highRes
-import com.arturo254.opentune.utils.rememberEnumPreference
-import com.arturo254.opentune.utils.rememberPreference
+import com.aromaappu.akmusic.LocalPlayerConnection
+import com.aromaappu.akmusic.R
+import com.aromaappu.akmusic.canvas.models.CanvasArtwork
+import com.aromaappu.akmusic.constants.CanvasSource
+import com.aromaappu.akmusic.constants.CropThumbnailToSquareKey
+import com.aromaappu.akmusic.constants.HidePlayerThumbnailKey
+import com.aromaappu.akmusic.constants.MaxCanvasCacheSizeKey
+import com.aromaappu.akmusic.constants.OpenTuneCanvasKey
+import com.aromaappu.akmusic.constants.PlayerBackgroundStyle
+import com.aromaappu.akmusic.constants.PlayerBackgroundStyleKey
+import com.aromaappu.akmusic.constants.PlayerDesignStyle
+import com.aromaappu.akmusic.constants.PlayerDesignStyleKey
+import com.aromaappu.akmusic.constants.PlayerHorizontalPadding
+import com.aromaappu.akmusic.constants.SeekExtraSeconds
+import com.aromaappu.akmusic.constants.SwipeThumbnailKey
+import com.aromaappu.akmusic.constants.ThumbnailCornerRadiusKey
+import com.aromaappu.akmusic.extensions.metadata
+import com.aromaappu.akmusic.extensions.toMediaItem
+import com.aromaappu.akmusic.ui.utils.highRes
+import com.aromaappu.akmusic.utils.rememberEnumPreference
+import com.aromaappu.akmusic.utils.rememberPreference
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
@@ -411,17 +411,17 @@ fun Thumbnail(
 
         if (currentItem > currentMediaIndex && canSkipNext) {
             playerConnection.player.seekToNext()
-            if (com.arturo254.opentune.ui.screens.settings.DiscordPresenceManager.isRunning()) {
+            if (com.aromaappu.akmusic.ui.screens.settings.DiscordPresenceManager.isRunning()) {
                 try {
-                    com.arturo254.opentune.ui.screens.settings.DiscordPresenceManager.restart()
+                    com.aromaappu.akmusic.ui.screens.settings.DiscordPresenceManager.restart()
                 } catch (_: Exception) {
                 }
             }
         } else if (currentItem < currentMediaIndex && canSkipPrevious) {
             playerConnection.player.seekToPreviousMediaItem()
-            if (com.arturo254.opentune.ui.screens.settings.DiscordPresenceManager.isRunning()) {
+            if (com.aromaappu.akmusic.ui.screens.settings.DiscordPresenceManager.isRunning()) {
                 try {
-                    com.arturo254.opentune.ui.screens.settings.DiscordPresenceManager.restart()
+                    com.aromaappu.akmusic.ui.screens.settings.DiscordPresenceManager.restart()
                 } catch (_: Exception) {
                 }
             }
@@ -668,9 +668,9 @@ fun Thumbnail(
                                                         skipAmount / 1000
                                                     )
                                                 }
-                                                if (com.arturo254.opentune.ui.screens.settings.DiscordPresenceManager.isRunning()) {
+                                                if (com.aromaappu.akmusic.ui.screens.settings.DiscordPresenceManager.isRunning()) {
                                                     try {
-                                                        com.arturo254.opentune.ui.screens.settings.DiscordPresenceManager.restart()
+                                                        com.aromaappu.akmusic.ui.screens.settings.DiscordPresenceManager.restart()
                                                     } catch (_: Exception) {
                                                     }
                                                 }

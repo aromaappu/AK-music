@@ -4,8 +4,8 @@
  * Licensed Under GPL-3.0 | see git history for contributors
  */
 
-package com.arturo254.opentune.ui.screens
-import com.arturo254.opentune.ui.screens.DownloadQueueScreen
+package com.aromaappu.akmusic.ui.screens
+import com.aromaappu.akmusic.ui.screens.DownloadQueueScreen
 
 import android.net.Uri
 import android.os.Build
@@ -48,55 +48,55 @@ import androidx.navigation.NavHostController
 import androidx.navigation.NavType
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
-import com.arturo254.opentune.R
-import com.arturo254.opentune.constants.DarkModeKey
-import com.arturo254.opentune.constants.PureBlackKey
-import com.arturo254.opentune.ui.component.BottomSheet
-import com.arturo254.opentune.ui.component.BottomSheetMenu
-import com.arturo254.opentune.ui.component.LocalMenuState
-import com.arturo254.opentune.ui.component.WidgetSettings
-import com.arturo254.opentune.ui.component.rememberBottomSheetState
-import com.arturo254.opentune.ui.screens.BrowseScreen
-import com.arturo254.opentune.ui.screens.artist.ArtistAlbumsScreen
-import com.arturo254.opentune.ui.screens.artist.ArtistItemsScreen
-import com.arturo254.opentune.ui.screens.artist.ArtistScreen
-import com.arturo254.opentune.ui.screens.artist.ArtistSongsScreen
-import com.arturo254.opentune.ui.screens.library.LibraryScreen
-import com.arturo254.opentune.ui.screens.playlist.AutoPlaylistScreen
-import com.arturo254.opentune.ui.screens.playlist.LocalPlaylistScreen
-import com.arturo254.opentune.ui.screens.playlist.OnlinePlaylistScreen
-import com.arturo254.opentune.ui.screens.playlist.TopPlaylistScreen
-import com.arturo254.opentune.ui.screens.playlist.CachePlaylistScreen
-import com.arturo254.opentune.ui.screens.search.OnlineSearchResult
-import com.arturo254.opentune.ui.screens.settings.AboutScreen
-import com.arturo254.opentune.ui.screens.settings.AccountSettings
-import com.arturo254.opentune.ui.screens.settings.AppearanceSettings
-import com.arturo254.opentune.ui.screens.settings.CustomizeBackground
-import com.arturo254.opentune.ui.screens.settings.BackupAndRestore
-import com.arturo254.opentune.ui.screens.settings.ChangelogScreen
-import com.arturo254.opentune.ui.screens.settings.ContentSettings
-import com.arturo254.opentune.ui.screens.settings.DarkMode
-import com.arturo254.opentune.ui.screens.settings.DiscordLoginScreen
-import com.arturo254.opentune.ui.screens.settings.DiscordSettings
-import com.arturo254.opentune.ui.screens.settings.DebugSettings
-import com.arturo254.opentune.ui.screens.settings.LastFMSettings
-import com.arturo254.opentune.ui.screens.settings.MusicTogetherScreen
-import com.arturo254.opentune.ui.screens.settings.PalettePickerScreen
-import com.arturo254.opentune.ui.screens.settings.PlayerSettings
-import com.arturo254.opentune.ui.screens.settings.PoTokenScreen
-import com.arturo254.opentune.ui.screens.settings.PrivacySettings
-import com.arturo254.opentune.ui.screens.settings.SettingsScreen
-import com.arturo254.opentune.ui.screens.settings.StorageSettings
-import com.arturo254.opentune.ui.screens.settings.ThemeCreatorScreen
-import com.arturo254.opentune.ui.screens.settings.UpdateScreen
-import com.arturo254.opentune.ui.screens.musicrecognition.MusicRecognitionRoute
-import com.arturo254.opentune.ui.screens.musicrecognition.MusicRecognitionScreen
-import com.arturo254.opentune.ui.screens.playlist.SpotifyPlaylistScreen
-import com.arturo254.opentune.ui.screens.settings.AODSettings
+import com.aromaappu.akmusic.R
+import com.aromaappu.akmusic.constants.DarkModeKey
+import com.aromaappu.akmusic.constants.PureBlackKey
+import com.aromaappu.akmusic.ui.component.BottomSheet
+import com.aromaappu.akmusic.ui.component.BottomSheetMenu
+import com.aromaappu.akmusic.ui.component.LocalMenuState
+import com.aromaappu.akmusic.ui.component.WidgetSettings
+import com.aromaappu.akmusic.ui.component.rememberBottomSheetState
+import com.aromaappu.akmusic.ui.screens.BrowseScreen
+import com.aromaappu.akmusic.ui.screens.artist.ArtistAlbumsScreen
+import com.aromaappu.akmusic.ui.screens.artist.ArtistItemsScreen
+import com.aromaappu.akmusic.ui.screens.artist.ArtistScreen
+import com.aromaappu.akmusic.ui.screens.artist.ArtistSongsScreen
+import com.aromaappu.akmusic.ui.screens.library.LibraryScreen
+import com.aromaappu.akmusic.ui.screens.playlist.AutoPlaylistScreen
+import com.aromaappu.akmusic.ui.screens.playlist.LocalPlaylistScreen
+import com.aromaappu.akmusic.ui.screens.playlist.OnlinePlaylistScreen
+import com.aromaappu.akmusic.ui.screens.playlist.TopPlaylistScreen
+import com.aromaappu.akmusic.ui.screens.playlist.CachePlaylistScreen
+import com.aromaappu.akmusic.ui.screens.search.OnlineSearchResult
+import com.aromaappu.akmusic.ui.screens.settings.AboutScreen
+import com.aromaappu.akmusic.ui.screens.settings.AccountSettings
+import com.aromaappu.akmusic.ui.screens.settings.AppearanceSettings
+import com.aromaappu.akmusic.ui.screens.settings.CustomizeBackground
+import com.aromaappu.akmusic.ui.screens.settings.BackupAndRestore
+import com.aromaappu.akmusic.ui.screens.settings.ChangelogScreen
+import com.aromaappu.akmusic.ui.screens.settings.ContentSettings
+import com.aromaappu.akmusic.ui.screens.settings.DarkMode
+import com.aromaappu.akmusic.ui.screens.settings.DiscordLoginScreen
+import com.aromaappu.akmusic.ui.screens.settings.DiscordSettings
+import com.aromaappu.akmusic.ui.screens.settings.DebugSettings
+import com.aromaappu.akmusic.ui.screens.settings.LastFMSettings
+import com.aromaappu.akmusic.ui.screens.settings.MusicTogetherScreen
+import com.aromaappu.akmusic.ui.screens.settings.PalettePickerScreen
+import com.aromaappu.akmusic.ui.screens.settings.PlayerSettings
+import com.aromaappu.akmusic.ui.screens.settings.PoTokenScreen
+import com.aromaappu.akmusic.ui.screens.settings.PrivacySettings
+import com.aromaappu.akmusic.ui.screens.settings.SettingsScreen
+import com.aromaappu.akmusic.ui.screens.settings.StorageSettings
+import com.aromaappu.akmusic.ui.screens.settings.ThemeCreatorScreen
+import com.aromaappu.akmusic.ui.screens.settings.UpdateScreen
+import com.aromaappu.akmusic.ui.screens.musicrecognition.MusicRecognitionRoute
+import com.aromaappu.akmusic.ui.screens.musicrecognition.MusicRecognitionScreen
+import com.aromaappu.akmusic.ui.screens.playlist.SpotifyPlaylistScreen
+import com.aromaappu.akmusic.ui.screens.settings.AODSettings
 
-import com.arturo254.opentune.ui.utils.ShowMediaInfo
-import com.arturo254.opentune.utils.rememberEnumPreference
-import com.arturo254.opentune.utils.rememberPreference
+import com.aromaappu.akmusic.ui.utils.ShowMediaInfo
+import com.aromaappu.akmusic.utils.rememberEnumPreference
+import com.aromaappu.akmusic.utils.rememberPreference
 
 @RequiresApi(Build.VERSION_CODES.R)
 @OptIn(ExperimentalMaterial3Api::class)
@@ -385,7 +385,7 @@ fun NavGraphBuilder.navigationBuilder(
         LastFMSettings(navController, scrollBehavior)
     }
     composable("settings/discord/experimental") {
-        com.arturo254.opentune.ui.screens.settings.DiscordExperimental(navController)
+        com.aromaappu.akmusic.ui.screens.settings.DiscordExperimental(navController)
     }
     composable("settings/misc") {
         DebugSettings(navController)

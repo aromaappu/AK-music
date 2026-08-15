@@ -6,7 +6,7 @@
 
 
 
-package com.arturo254.opentune
+package com.aromaappu.akmusic
 
 import android.app.Application
 import android.app.ActivityManager
@@ -23,20 +23,20 @@ import coil3.disk.directory
 import coil3.request.CachePolicy
 import coil3.request.allowHardware
 import coil3.request.crossfade
-import com.arturo254.opentune.constants.*
-import com.arturo254.opentune.extensions.*
-import com.arturo254.opentune.ui.screens.settings.ThemePalettes
-import com.arturo254.opentune.ui.theme.ThemeSeedPalette
-import com.arturo254.opentune.ui.theme.ThemeSeedPaletteCodec
-import com.arturo254.opentune.utils.dataStore
-import com.arturo254.opentune.utils.PreferenceStore
-import com.arturo254.opentune.utils.get
-import com.arturo254.opentune.utils.reportException
-import com.arturo254.opentune.innertube.YouTube
-import com.arturo254.opentune.innertube.models.YouTubeLocale
-import com.arturo254.opentune.kugou.KuGou
-import com.arturo254.opentune.lastfm.LastFM
-import com.arturo254.opentune.ui.player.CanvasArtworkPlaybackCache
+import com.aromaappu.akmusic.constants.*
+import com.aromaappu.akmusic.extensions.*
+import com.aromaappu.akmusic.ui.screens.settings.ThemePalettes
+import com.aromaappu.akmusic.ui.theme.ThemeSeedPalette
+import com.aromaappu.akmusic.ui.theme.ThemeSeedPaletteCodec
+import com.aromaappu.akmusic.utils.dataStore
+import com.aromaappu.akmusic.utils.PreferenceStore
+import com.aromaappu.akmusic.utils.get
+import com.aromaappu.akmusic.utils.reportException
+import com.aromaappu.akmusic.innertube.YouTube
+import com.aromaappu.akmusic.innertube.models.YouTubeLocale
+import com.aromaappu.akmusic.kugou.KuGou
+import com.aromaappu.akmusic.lastfm.LastFM
+import com.aromaappu.akmusic.ui.player.CanvasArtworkPlaybackCache
 import dagger.hilt.android.HiltAndroidApp
 import kotlinx.coroutines.DelicateCoroutinesApi
 import kotlinx.coroutines.Dispatchers
@@ -89,7 +89,7 @@ class App : Application(), SingletonImageLoader.Factory {
         PreferenceStore.start(this)
         Timber.plant(Timber.DebugTree())
         try {
-            Timber.plant(com.arturo254.opentune.utils.GlobalLogTree())
+            Timber.plant(com.aromaappu.akmusic.utils.GlobalLogTree())
         } catch (_: Exception) {}
 
         initializeCriticalSync()

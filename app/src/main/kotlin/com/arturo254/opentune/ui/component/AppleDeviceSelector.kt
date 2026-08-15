@@ -1,4 +1,4 @@
-package com.arturo254.opentune.ui.component
+package com.aromaappu.akmusic.ui.component
 
 import android.content.Context
 import android.media.AudioDeviceInfo
@@ -40,7 +40,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.window.Dialog
 import androidx.compose.ui.window.DialogProperties
-import com.arturo254.opentune.R
+import com.aromaappu.akmusic.R
 
 @RequiresApi(Build.VERSION_CODES.S)
 @Composable

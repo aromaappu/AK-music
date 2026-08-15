@@ -4,9 +4,9 @@
  * Licensed Under GPL-3.0 | see git history for contributors
  */
 
-package com.arturo254.opentune.utils
+package com.aromaappu.akmusic.utils
 
-import com.arturo254.opentune.innertube.models.YouTubeClient
+import com.aromaappu.akmusic.innertube.models.YouTubeClient
 import okhttp3.HttpUrl
 import okhttp3.HttpUrl.Companion.toHttpUrlOrNull
 import okhttp3.Request

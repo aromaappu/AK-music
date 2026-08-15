@@ -8,7 +8,7 @@
 
 @file:OptIn(ExperimentalMaterial3ExpressiveApi::class)
 
-package com.arturo254.opentune.ui.player
+package com.aromaappu.akmusic.ui.player
 
 import android.content.Intent
 import android.net.Uri
@@ -41,8 +41,8 @@ import androidx.compose.ui.unit.dp
 import androidx.media3.common.PlaybackException
 import android.widget.Toast
 import androidx.compose.foundation.layout.Spacer
-import com.arturo254.opentune.MainActivity
-import com.arturo254.opentune.R
+import com.aromaappu.akmusic.MainActivity
+import com.aromaappu.akmusic.R
 
 @Composable
 fun PlaybackError(

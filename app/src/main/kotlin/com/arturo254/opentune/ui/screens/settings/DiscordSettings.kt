@@ -6,7 +6,7 @@
 
 
 
-package com.arturo254.opentune.ui.screens.settings
+package com.aromaappu.akmusic.ui.screens.settings
 
 import android.content.Intent
 import android.net.Uri
@@ -24,7 +24,7 @@ import androidx.compose.runtime.*
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import com.arturo254.opentune.R
+import com.aromaappu.akmusic.R
 import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.platform.LocalContext
@@ -39,23 +39,23 @@ import androidx.media3.common.Player.STATE_READY
 import androidx.navigation.NavController
 import androidx.datastore.preferences.core.stringPreferencesKey
 import coil3.compose.AsyncImage
-import com.arturo254.opentune.LocalPlayerAwareWindowInsets
-import com.arturo254.opentune.LocalPlayerConnection
-import com.arturo254.opentune.constants.*
-import com.arturo254.opentune.db.entities.Song
-import com.arturo254.opentune.ui.component.IconButton
-import com.arturo254.opentune.ui.component.PreferenceEntry
-import com.arturo254.opentune.ui.component.SwitchPreference
-import com.arturo254.opentune.ui.utils.backToMain
-import com.arturo254.opentune.utils.makeTimeString
-import com.arturo254.opentune.utils.rememberEnumPreference
-import com.arturo254.opentune.utils.rememberPreference
+import com.aromaappu.akmusic.LocalPlayerAwareWindowInsets
+import com.aromaappu.akmusic.LocalPlayerConnection
+import com.aromaappu.akmusic.constants.*
+import com.aromaappu.akmusic.db.entities.Song
+import com.aromaappu.akmusic.ui.component.IconButton
+import com.aromaappu.akmusic.ui.component.PreferenceEntry
+import com.aromaappu.akmusic.ui.component.SwitchPreference
+import com.aromaappu.akmusic.ui.utils.backToMain
+import com.aromaappu.akmusic.utils.makeTimeString
+import com.aromaappu.akmusic.utils.rememberEnumPreference
+import com.aromaappu.akmusic.utils.rememberPreference
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.TextButton
 import com.my.kizzy.rpc.KizzyRPC
 import timber.log.Timber
 import kotlinx.coroutines.*
-import com.arturo254.opentune.utils.ArtworkStorage
+import com.aromaappu.akmusic.utils.ArtworkStorage
 
 enum class ActivitySource { ARTIST, ALBUM, SONG, APP }
 
@@ -962,7 +962,7 @@ fun RichPresence(
    val (button1CustomUrl) = rememberPreference(DiscordActivityButton1CustomUrlKey, "")
 
    val (button2UrlSource) = rememberPreference(DiscordActivityButton2UrlSourceKey, "custom")
-   val (button2CustomUrl) = rememberPreference(DiscordActivityButton2CustomUrlKey, "https://github.com/Arturo254/OpenTune")
+   val (button2CustomUrl) = rememberPreference(DiscordActivityButton2CustomUrlKey, "https://github.com/aromaappu/AK-music")
 
 // Large text source + custom
    val (largeTextSource) = rememberPreference(DiscordLargeTextSourceKey, "album")
@@ -1033,7 +1033,7 @@ fun RichPresence(
                                 model = when (largeImageType) {
                                     "thumbnail" -> song?.song?.thumbnailUrl
                                     "artist" -> song?.artists?.firstOrNull()?.thumbnailUrl
-                                    "appicon" -> "https://raw.githubusercontent.com/Arturo254/OpenTune/refs/heads/master/assets/icon.png"
+                                    "appicon" -> "https://raw.githubusercontent.com/aromaappu/AK-music/refs/heads/master/assets/icon.png"
                                     "custom" -> largeImageCustomUrl.ifBlank { song?.song?.thumbnailUrl }
                                     else -> song?.song?.thumbnailUrl
                                 },
@@ -1057,7 +1057,7 @@ fun RichPresence(
                             val smallModel = when (smallImageType.lowercase()) {
                                 "thumbnail" -> songThumb  // Only show song thumbnail, no fallback
                                 "artist" -> artistThumb   // Only show artist thumbnail, no fallback to song
-                                "appicon" -> "https://raw.githubusercontent.com/Arturo254/OpenTune/refs/heads/master/assets/icon.png"
+                                "appicon" -> "https://raw.githubusercontent.com/aromaappu/AK-music/refs/heads/master/assets/icon.png"
                                 "custom" -> smallImageCustomUrl.takeIf { it.isNotBlank() } ?: songThumb  // Custom with fallback to song only
                                 "dontshow", "none" -> null
                                 else -> artistThumb  // Default to artist without fallback

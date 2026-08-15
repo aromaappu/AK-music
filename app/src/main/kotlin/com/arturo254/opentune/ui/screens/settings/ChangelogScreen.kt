@@ -4,7 +4,7 @@
  * Licensed Under GPL-3.0 | see git history for contributors
  */
 
-package com.arturo254.opentune.ui.screens.settings
+package com.aromaappu.akmusic.ui.screens.settings
 
 import android.annotation.SuppressLint
 import androidx.compose.foundation.layout.*
@@ -15,7 +15,7 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import com.arturo254.opentune.R
+import com.aromaappu.akmusic.R
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
@@ -23,16 +23,16 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import kotlinx.coroutines.launch
-import com.arturo254.opentune.LocalPlayerAwareWindowInsets
-import com.arturo254.opentune.constants.UpdateChannel
-import com.arturo254.opentune.constants.UpdateChannelKey
-import com.arturo254.opentune.ui.component.IconButton
-import com.arturo254.opentune.ui.component.MarkdownText
-import com.arturo254.opentune.ui.utils.backToMain
-import com.arturo254.opentune.utils.NightlyInfo
-import com.arturo254.opentune.utils.ReleaseInfo
-import com.arturo254.opentune.utils.Updater
-import com.arturo254.opentune.utils.dataStore
+import com.aromaappu.akmusic.LocalPlayerAwareWindowInsets
+import com.aromaappu.akmusic.constants.UpdateChannel
+import com.aromaappu.akmusic.constants.UpdateChannelKey
+import com.aromaappu.akmusic.ui.component.IconButton
+import com.aromaappu.akmusic.ui.component.MarkdownText
+import com.aromaappu.akmusic.ui.utils.backToMain
+import com.aromaappu.akmusic.utils.NightlyInfo
+import com.aromaappu.akmusic.utils.ReleaseInfo
+import com.aromaappu.akmusic.utils.Updater
+import com.aromaappu.akmusic.utils.dataStore
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.map
 import java.text.SimpleDateFormat

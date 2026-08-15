@@ -6,13 +6,13 @@
 
 
 
-package com.arturo254.opentune.viewmodels
+package com.aromaappu.akmusic.viewmodels
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.arturo254.opentune.db.MusicDatabase
-import com.arturo254.opentune.innertube.YouTube
-import com.arturo254.opentune.utils.reportException
+import com.aromaappu.akmusic.db.MusicDatabase
+import com.aromaappu.akmusic.innertube.YouTube
+import com.aromaappu.akmusic.utils.reportException
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.MutableStateFlow

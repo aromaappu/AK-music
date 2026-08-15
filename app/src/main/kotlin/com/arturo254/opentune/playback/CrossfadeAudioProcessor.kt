@@ -20,7 +20,7 @@
  *   getOutput()  → dequeueOutputToByteBuffer()
  */
 
-package com.arturo254.opentune.playback
+package com.aromaappu.akmusic.playback
 
 import androidx.media3.common.C
 import androidx.media3.common.audio.AudioProcessor

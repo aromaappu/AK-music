@@ -5,7 +5,7 @@
  * Do not remove or alter this notice. - Per GPL-3.0 Section 4 & Section 5
  */
 
-package com.arturo254.opentune.utils
+package com.aromaappu.akmusic.utils
 
 import android.content.Context
 import android.webkit.CookieManager

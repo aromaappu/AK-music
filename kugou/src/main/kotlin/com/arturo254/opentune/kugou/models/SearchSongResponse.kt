@@ -6,7 +6,7 @@
 
 
 
-package com.arturo254.opentune.kugou.models
+package com.aromaappu.akmusic.kugou.models
 
 import kotlinx.serialization.Serializable
 

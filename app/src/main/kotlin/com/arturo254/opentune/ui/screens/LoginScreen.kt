@@ -6,7 +6,7 @@
 
 
 
-package com.arturo254.opentune.ui.screens
+package com.aromaappu.akmusic.ui.screens
 
 import android.annotation.SuppressLint
 import android.net.Uri
@@ -29,20 +29,20 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.viewinterop.AndroidView
 import androidx.navigation.NavController
-import com.arturo254.opentune.LocalPlayerAwareWindowInsets
-import com.arturo254.opentune.R
-import com.arturo254.opentune.constants.AccountChannelHandleKey
-import com.arturo254.opentune.constants.AccountEmailKey
-import com.arturo254.opentune.constants.AccountNameKey
-import com.arturo254.opentune.constants.DataSyncIdKey
-import com.arturo254.opentune.constants.InnerTubeCookieKey
-import com.arturo254.opentune.constants.PoTokenKey
-import com.arturo254.opentune.constants.VisitorDataKey
-import com.arturo254.opentune.ui.component.IconButton
-import com.arturo254.opentune.ui.utils.backToMain
-import com.arturo254.opentune.utils.rememberPreference
-import com.arturo254.opentune.utils.reportException
-import com.arturo254.opentune.innertube.YouTube
+import com.aromaappu.akmusic.LocalPlayerAwareWindowInsets
+import com.aromaappu.akmusic.R
+import com.aromaappu.akmusic.constants.AccountChannelHandleKey
+import com.aromaappu.akmusic.constants.AccountEmailKey
+import com.aromaappu.akmusic.constants.AccountNameKey
+import com.aromaappu.akmusic.constants.DataSyncIdKey
+import com.aromaappu.akmusic.constants.InnerTubeCookieKey
+import com.aromaappu.akmusic.constants.PoTokenKey
+import com.aromaappu.akmusic.constants.VisitorDataKey
+import com.aromaappu.akmusic.ui.component.IconButton
+import com.aromaappu.akmusic.ui.utils.backToMain
+import com.aromaappu.akmusic.utils.rememberPreference
+import com.aromaappu.akmusic.utils.reportException
+import com.aromaappu.akmusic.innertube.YouTube
 import androidx.compose.runtime.rememberCoroutineScope
 import kotlinx.coroutines.DelicateCoroutinesApi
 import kotlinx.coroutines.launch

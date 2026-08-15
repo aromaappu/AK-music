@@ -6,14 +6,14 @@
 
 
 
-package com.arturo254.opentune.extensions
+package com.aromaappu.akmusic.extensions
 
-import com.arturo254.opentune.models.PersistQueue
-import com.arturo254.opentune.models.QueueData
-import com.arturo254.opentune.models.QueueType
-import com.arturo254.opentune.models.MediaMetadata
-import com.arturo254.opentune.playback.queues.*
-import com.arturo254.opentune.db.entities.AlbumEntity
+import com.aromaappu.akmusic.models.PersistQueue
+import com.aromaappu.akmusic.models.QueueData
+import com.aromaappu.akmusic.models.QueueType
+import com.aromaappu.akmusic.models.MediaMetadata
+import com.aromaappu.akmusic.playback.queues.*
+import com.aromaappu.akmusic.db.entities.AlbumEntity
 
 fun Queue.toPersistQueue(
     title: String?,

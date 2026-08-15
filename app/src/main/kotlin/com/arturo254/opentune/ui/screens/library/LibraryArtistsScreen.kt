@@ -6,7 +6,7 @@
 
 
 
-package com.arturo254.opentune.ui.screens.library
+package com.aromaappu.akmusic.ui.screens.library
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.layout.Box
@@ -51,30 +51,30 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.navigation.NavController
 import androidx.navigation.compose.currentBackStackEntryAsState
-import com.arturo254.opentune.LocalPlayerAwareWindowInsets
-import com.arturo254.opentune.R
-import com.arturo254.opentune.constants.ArtistFilter
-import com.arturo254.opentune.constants.ArtistFilterKey
-import com.arturo254.opentune.constants.ArtistSortDescendingKey
-import com.arturo254.opentune.constants.ArtistSortType
-import com.arturo254.opentune.constants.ArtistSortTypeKey
-import com.arturo254.opentune.constants.ArtistViewTypeKey
-import com.arturo254.opentune.constants.CONTENT_TYPE_ARTIST
-import com.arturo254.opentune.constants.CONTENT_TYPE_HEADER
-import com.arturo254.opentune.constants.GridItemSize
-import com.arturo254.opentune.constants.GridItemsSizeKey
-import com.arturo254.opentune.constants.GridThumbnailHeight
-import com.arturo254.opentune.constants.LibraryViewType
-import com.arturo254.opentune.constants.YtmSyncKey
-import com.arturo254.opentune.ui.component.ChipsRow
-import com.arturo254.opentune.ui.component.EmptyPlaceholder
-import com.arturo254.opentune.ui.component.LibraryArtistGridItem
-import com.arturo254.opentune.ui.component.LibraryArtistListItem
-import com.arturo254.opentune.ui.component.LocalMenuState
-import com.arturo254.opentune.ui.component.SortHeader
-import com.arturo254.opentune.utils.rememberEnumPreference
-import com.arturo254.opentune.utils.rememberPreference
-import com.arturo254.opentune.viewmodels.LibraryArtistsViewModel
+import com.aromaappu.akmusic.LocalPlayerAwareWindowInsets
+import com.aromaappu.akmusic.R
+import com.aromaappu.akmusic.constants.ArtistFilter
+import com.aromaappu.akmusic.constants.ArtistFilterKey
+import com.aromaappu.akmusic.constants.ArtistSortDescendingKey
+import com.aromaappu.akmusic.constants.ArtistSortType
+import com.aromaappu.akmusic.constants.ArtistSortTypeKey
+import com.aromaappu.akmusic.constants.ArtistViewTypeKey
+import com.aromaappu.akmusic.constants.CONTENT_TYPE_ARTIST
+import com.aromaappu.akmusic.constants.CONTENT_TYPE_HEADER
+import com.aromaappu.akmusic.constants.GridItemSize
+import com.aromaappu.akmusic.constants.GridItemsSizeKey
+import com.aromaappu.akmusic.constants.GridThumbnailHeight
+import com.aromaappu.akmusic.constants.LibraryViewType
+import com.aromaappu.akmusic.constants.YtmSyncKey
+import com.aromaappu.akmusic.ui.component.ChipsRow
+import com.aromaappu.akmusic.ui.component.EmptyPlaceholder
+import com.aromaappu.akmusic.ui.component.LibraryArtistGridItem
+import com.aromaappu.akmusic.ui.component.LibraryArtistListItem
+import com.aromaappu.akmusic.ui.component.LocalMenuState
+import com.aromaappu.akmusic.ui.component.SortHeader
+import com.aromaappu.akmusic.utils.rememberEnumPreference
+import com.aromaappu.akmusic.utils.rememberPreference
+import com.aromaappu.akmusic.viewmodels.LibraryArtistsViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 

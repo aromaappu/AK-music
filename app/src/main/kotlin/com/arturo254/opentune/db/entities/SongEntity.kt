@@ -6,14 +6,14 @@
 
 
 
-package com.arturo254.opentune.db.entities
+package com.aromaappu.akmusic.db.entities
 
 import androidx.compose.runtime.Immutable
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.Index
 import androidx.room.PrimaryKey
-import com.arturo254.opentune.innertube.YouTube
+import com.aromaappu.akmusic.innertube.YouTube
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.cancel

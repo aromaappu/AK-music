@@ -6,7 +6,7 @@
 
 
 
-package com.arturo254.opentune
+package com.aromaappu.akmusic
 
 import android.content.Intent
 import android.os.Build
@@ -53,8 +53,8 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.foundation.shape.RoundedCornerShape
-import com.arturo254.opentune.MainActivity
-import com.arturo254.opentune.ui.theme.OpenTuneTheme
+import com.aromaappu.akmusic.MainActivity
+import com.aromaappu.akmusic.ui.theme.OpenTuneTheme
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale

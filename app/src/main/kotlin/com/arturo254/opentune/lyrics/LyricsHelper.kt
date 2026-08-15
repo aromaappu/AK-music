@@ -6,21 +6,21 @@
 
 
 
-package com.arturo254.opentune.lyrics
+package com.aromaappu.akmusic.lyrics
 
 import android.content.Context
 import android.util.Log
 import android.util.LruCache
-import com.arturo254.opentune.utils.GlobalLog
-import com.arturo254.opentune.constants.PreferredLyricsProvider
-import com.arturo254.opentune.constants.PreferredLyricsProviderKey
-import com.arturo254.opentune.constants.ProviderOrderKey
-import com.arturo254.opentune.db.entities.LyricsEntity.Companion.LYRICS_NOT_FOUND
-import com.arturo254.opentune.extensions.toEnum
-import com.arturo254.opentune.models.MediaMetadata
-import com.arturo254.opentune.utils.dataStore
-import com.arturo254.opentune.utils.reportException
-import com.arturo254.opentune.utils.NetworkConnectivityObserver
+import com.aromaappu.akmusic.utils.GlobalLog
+import com.aromaappu.akmusic.constants.PreferredLyricsProvider
+import com.aromaappu.akmusic.constants.PreferredLyricsProviderKey
+import com.aromaappu.akmusic.constants.ProviderOrderKey
+import com.aromaappu.akmusic.db.entities.LyricsEntity.Companion.LYRICS_NOT_FOUND
+import com.aromaappu.akmusic.extensions.toEnum
+import com.aromaappu.akmusic.models.MediaMetadata
+import com.aromaappu.akmusic.utils.dataStore
+import com.aromaappu.akmusic.utils.reportException
+import com.aromaappu.akmusic.utils.NetworkConnectivityObserver
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Job

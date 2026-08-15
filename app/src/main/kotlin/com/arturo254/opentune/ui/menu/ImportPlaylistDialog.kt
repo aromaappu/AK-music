@@ -6,7 +6,7 @@
 
 
 
-package com.arturo254.opentune.ui.menu
+package com.aromaappu.akmusic.ui.menu
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -16,7 +16,7 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.material3.SnackbarHostState
 import androidx.compose.material3.TextButton
-import com.arturo254.opentune.ui.component.DefaultDialog
+import com.aromaappu.akmusic.ui.component.DefaultDialog
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -30,11 +30,11 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.unit.dp
-import com.arturo254.opentune.LocalDatabase
-import com.arturo254.opentune.R
-import com.arturo254.opentune.db.entities.PlaylistEntity
-import com.arturo254.opentune.db.entities.PlaylistSongMap
-import com.arturo254.opentune.ui.component.TextFieldDialog
+import com.aromaappu.akmusic.LocalDatabase
+import com.aromaappu.akmusic.R
+import com.aromaappu.akmusic.db.entities.PlaylistEntity
+import com.aromaappu.akmusic.db.entities.PlaylistSongMap
+import com.aromaappu.akmusic.ui.component.TextFieldDialog
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.firstOrNull
 import kotlinx.coroutines.launch

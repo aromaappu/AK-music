@@ -6,7 +6,7 @@
 
 
 
-package com.arturo254.opentune.di
+package com.aromaappu.akmusic.di
 
 import android.content.Context
 import androidx.media3.database.DatabaseProvider
@@ -18,11 +18,11 @@ import androidx.media3.datasource.cache.ContentMetadataMutations
 import androidx.media3.datasource.cache.LeastRecentlyUsedCacheEvictor
 import androidx.media3.datasource.cache.NoOpCacheEvictor
 import androidx.media3.datasource.cache.SimpleCache
-import com.arturo254.opentune.constants.MaxSongCacheSizeKey
-import com.arturo254.opentune.db.InternalDatabase
-import com.arturo254.opentune.db.MusicDatabase
-import com.arturo254.opentune.utils.dataStore
-import com.arturo254.opentune.utils.get
+import com.aromaappu.akmusic.constants.MaxSongCacheSizeKey
+import com.aromaappu.akmusic.db.InternalDatabase
+import com.aromaappu.akmusic.db.MusicDatabase
+import com.aromaappu.akmusic.utils.dataStore
+import com.aromaappu.akmusic.utils.get
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

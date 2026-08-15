@@ -1,4 +1,4 @@
-package com.arturo254.opentune.utils
+package com.aromaappu.akmusic.utils
 
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse

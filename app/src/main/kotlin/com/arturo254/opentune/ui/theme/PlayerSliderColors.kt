@@ -6,7 +6,7 @@
 
 
 
-package com.arturo254.opentune.ui.theme
+package com.aromaappu.akmusic.ui.theme
 
 import androidx.compose.material3.SliderColors
 import androidx.compose.material3.SliderDefaults

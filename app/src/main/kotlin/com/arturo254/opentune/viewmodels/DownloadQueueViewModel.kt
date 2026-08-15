@@ -4,7 +4,7 @@
  * Licensed Under GPL-3.0 | see git history for contributors
  */
 
-package com.arturo254.opentune.viewmodels
+package com.aromaappu.akmusic.viewmodels
 
 import android.content.Context
 import android.content.Intent
@@ -13,10 +13,10 @@ import androidx.lifecycle.viewModelScope
 import androidx.media3.common.util.Util
 import androidx.media3.exoplayer.offline.Download
 import androidx.media3.exoplayer.offline.DownloadService
-import com.arturo254.opentune.db.MusicDatabase
-import com.arturo254.opentune.db.entities.Song
-import com.arturo254.opentune.playback.DownloadUtil
-import com.arturo254.opentune.playback.ExoDownloadService
+import com.aromaappu.akmusic.db.MusicDatabase
+import com.aromaappu.akmusic.db.entities.Song
+import com.aromaappu.akmusic.playback.DownloadUtil
+import com.aromaappu.akmusic.playback.ExoDownloadService
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.flow.SharingStarted

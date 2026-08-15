@@ -6,7 +6,7 @@
 
 
 
-package com.arturo254.opentune.ui.screens.settings
+package com.aromaappu.akmusic.ui.screens.settings
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
@@ -38,46 +38,46 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import com.arturo254.opentune.LocalPlayerAwareWindowInsets
-import com.arturo254.opentune.R
-import com.arturo254.opentune.constants.ArtistSeparatorsKey
-import com.arturo254.opentune.constants.ExternalDownloaderEnabledKey
-import com.arturo254.opentune.constants.ExternalDownloaderPackageKey
-import com.arturo254.opentune.constants.AudioNormalizationKey
-import com.arturo254.opentune.constants.AudioOffload
-import com.arturo254.opentune.constants.AudioQuality
-import com.arturo254.opentune.constants.AudioQualityKey
-import com.arturo254.opentune.constants.NetworkMeteredKey
-import com.arturo254.opentune.constants.AutoDownloadOnLikeKey
-import com.arturo254.opentune.constants.AutoStartOnBluetoothKey
-import com.arturo254.opentune.constants.AutoSkipNextOnErrorKey
-import com.arturo254.opentune.constants.PauseOnDeviceMuteKey
-import com.arturo254.opentune.constants.PermanentShuffleKey
-import com.arturo254.opentune.constants.PersistentQueueKey
+import com.aromaappu.akmusic.LocalPlayerAwareWindowInsets
+import com.aromaappu.akmusic.R
+import com.aromaappu.akmusic.constants.ArtistSeparatorsKey
+import com.aromaappu.akmusic.constants.ExternalDownloaderEnabledKey
+import com.aromaappu.akmusic.constants.ExternalDownloaderPackageKey
+import com.aromaappu.akmusic.constants.AudioNormalizationKey
+import com.aromaappu.akmusic.constants.AudioOffload
+import com.aromaappu.akmusic.constants.AudioQuality
+import com.aromaappu.akmusic.constants.AudioQualityKey
+import com.aromaappu.akmusic.constants.NetworkMeteredKey
+import com.aromaappu.akmusic.constants.AutoDownloadOnLikeKey
+import com.aromaappu.akmusic.constants.AutoStartOnBluetoothKey
+import com.aromaappu.akmusic.constants.AutoSkipNextOnErrorKey
+import com.aromaappu.akmusic.constants.PauseOnDeviceMuteKey
+import com.aromaappu.akmusic.constants.PermanentShuffleKey
+import com.aromaappu.akmusic.constants.PersistentQueueKey
 
-import com.arturo254.opentune.constants.SkipSilenceKey
-import com.arturo254.opentune.constants.StopMusicOnTaskClearKey
-import com.arturo254.opentune.constants.WakelockKey
-import com.arturo254.opentune.constants.HistoryDuration
-import com.arturo254.opentune.constants.AudioCrossfadeDurationKey
-import com.arturo254.opentune.constants.PlayerStreamClient
-import com.arturo254.opentune.constants.PlayerStreamClientKey
-import com.arturo254.opentune.constants.SeekExtraSeconds
-import com.arturo254.opentune.ui.component.ArtistSeparatorsDialog
-import com.arturo254.opentune.ui.component.TagsManagementDialog
-import com.arturo254.opentune.ui.component.TextFieldDialog
-import com.arturo254.opentune.ui.component.EnumListPreference
-import com.arturo254.opentune.ui.component.IconButton
-import com.arturo254.opentune.ui.component.ListDialog
-import com.arturo254.opentune.ui.component.PreferenceEntry
-import com.arturo254.opentune.ui.component.PreferenceGroupTitle
-import com.arturo254.opentune.ui.component.SliderPreference
-import com.arturo254.opentune.ui.component.CrossfadeSliderPreference
-import com.arturo254.opentune.ui.component.SwitchPreference
-import com.arturo254.opentune.ui.utils.backToMain
-import com.arturo254.opentune.utils.rememberEnumPreference
-import com.arturo254.opentune.utils.rememberPreference
-import com.arturo254.opentune.LocalDatabase
+import com.aromaappu.akmusic.constants.SkipSilenceKey
+import com.aromaappu.akmusic.constants.StopMusicOnTaskClearKey
+import com.aromaappu.akmusic.constants.WakelockKey
+import com.aromaappu.akmusic.constants.HistoryDuration
+import com.aromaappu.akmusic.constants.AudioCrossfadeDurationKey
+import com.aromaappu.akmusic.constants.PlayerStreamClient
+import com.aromaappu.akmusic.constants.PlayerStreamClientKey
+import com.aromaappu.akmusic.constants.SeekExtraSeconds
+import com.aromaappu.akmusic.ui.component.ArtistSeparatorsDialog
+import com.aromaappu.akmusic.ui.component.TagsManagementDialog
+import com.aromaappu.akmusic.ui.component.TextFieldDialog
+import com.aromaappu.akmusic.ui.component.EnumListPreference
+import com.aromaappu.akmusic.ui.component.IconButton
+import com.aromaappu.akmusic.ui.component.ListDialog
+import com.aromaappu.akmusic.ui.component.PreferenceEntry
+import com.aromaappu.akmusic.ui.component.PreferenceGroupTitle
+import com.aromaappu.akmusic.ui.component.SliderPreference
+import com.aromaappu.akmusic.ui.component.CrossfadeSliderPreference
+import com.aromaappu.akmusic.ui.component.SwitchPreference
+import com.aromaappu.akmusic.ui.utils.backToMain
+import com.aromaappu.akmusic.utils.rememberEnumPreference
+import com.aromaappu.akmusic.utils.rememberPreference
+import com.aromaappu.akmusic.LocalDatabase
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

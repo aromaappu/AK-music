@@ -6,7 +6,7 @@
 
 
 
-package com.arturo254.opentune.db
+package com.aromaappu.akmusic.db
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -29,27 +29,27 @@ import androidx.sqlite.db.SupportSQLiteOpenHelper
 import androidx.sqlite.db.framework.FrameworkSQLiteOpenHelperFactory
 import kotlinx.coroutines.suspendCancellableCoroutine
 import kotlinx.coroutines.withTimeout
-import com.arturo254.opentune.db.entities.AlbumArtistMap
-import com.arturo254.opentune.db.entities.AlbumEntity
-import com.arturo254.opentune.db.entities.ArtistEntity
-import com.arturo254.opentune.db.entities.Event
-import com.arturo254.opentune.db.entities.FormatEntity
-import com.arturo254.opentune.db.entities.LyricsEntity
-import com.arturo254.opentune.db.entities.PlaylistEntity
-import com.arturo254.opentune.db.entities.PlayCountEntity
-import com.arturo254.opentune.db.entities.PlaylistSongMap
-import com.arturo254.opentune.db.entities.PlaylistSongMapPreview
-import com.arturo254.opentune.db.entities.RelatedSongMap
-import com.arturo254.opentune.db.entities.SearchHistory
-import com.arturo254.opentune.db.entities.SetVideoIdEntity
-import com.arturo254.opentune.db.entities.SongAlbumMap
-import com.arturo254.opentune.db.entities.SongArtistMap
-import com.arturo254.opentune.db.entities.SongEntity
-import com.arturo254.opentune.db.entities.SortedSongAlbumMap
-import com.arturo254.opentune.db.entities.SortedSongArtistMap
-import com.arturo254.opentune.db.entities.TagEntity
-import com.arturo254.opentune.db.entities.PlaylistTagMap
-import com.arturo254.opentune.extensions.toSQLiteQuery
+import com.aromaappu.akmusic.db.entities.AlbumArtistMap
+import com.aromaappu.akmusic.db.entities.AlbumEntity
+import com.aromaappu.akmusic.db.entities.ArtistEntity
+import com.aromaappu.akmusic.db.entities.Event
+import com.aromaappu.akmusic.db.entities.FormatEntity
+import com.aromaappu.akmusic.db.entities.LyricsEntity
+import com.aromaappu.akmusic.db.entities.PlaylistEntity
+import com.aromaappu.akmusic.db.entities.PlayCountEntity
+import com.aromaappu.akmusic.db.entities.PlaylistSongMap
+import com.aromaappu.akmusic.db.entities.PlaylistSongMapPreview
+import com.aromaappu.akmusic.db.entities.RelatedSongMap
+import com.aromaappu.akmusic.db.entities.SearchHistory
+import com.aromaappu.akmusic.db.entities.SetVideoIdEntity
+import com.aromaappu.akmusic.db.entities.SongAlbumMap
+import com.aromaappu.akmusic.db.entities.SongArtistMap
+import com.aromaappu.akmusic.db.entities.SongEntity
+import com.aromaappu.akmusic.db.entities.SortedSongAlbumMap
+import com.aromaappu.akmusic.db.entities.SortedSongArtistMap
+import com.aromaappu.akmusic.db.entities.TagEntity
+import com.aromaappu.akmusic.db.entities.PlaylistTagMap
+import com.aromaappu.akmusic.extensions.toSQLiteQuery
 import java.time.Instant
 import java.time.LocalDateTime
 import java.time.ZoneOffset

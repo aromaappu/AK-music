@@ -4,7 +4,7 @@
  * Licensed Under GPL-3.0 | see git history for contributors
  */
 
-package com.arturo254.opentune.innertube.models
+package com.aromaappu.akmusic.innertube.models
 
 data class SearchSuggestions(
     val queries: List<String>,

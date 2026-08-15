@@ -1,4 +1,4 @@
-package com.arturo254.opentune.ui.player
+package com.aromaappu.akmusic.ui.player
 
 import android.view.ViewGroup.LayoutParams.MATCH_PARENT
 import androidx.compose.animation.core.animateFloatAsState
@@ -25,9 +25,9 @@ import androidx.media3.datasource.DefaultDataSource
 import androidx.media3.datasource.okhttp.OkHttpDataSource
 import androidx.media3.ui.AspectRatioFrameLayout
 import androidx.media3.ui.PlayerView
-import com.arturo254.opentune.canvas.CanvasCacheManager
-import com.arturo254.opentune.innertube.YouTube
-import com.arturo254.opentune.innertube.models.YouTubeClient
+import com.aromaappu.akmusic.canvas.CanvasCacheManager
+import com.aromaappu.akmusic.innertube.YouTube
+import com.aromaappu.akmusic.innertube.models.YouTubeClient
 import okhttp3.OkHttpClient
 import timber.log.Timber
 import java.util.Locale

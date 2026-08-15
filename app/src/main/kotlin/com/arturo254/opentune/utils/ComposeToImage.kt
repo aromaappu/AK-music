@@ -4,7 +4,7 @@
  * Licensed Under GPL-3.0 | see git history for contributors
  */
 
-package com.arturo254.opentune.utils
+package com.aromaappu.akmusic.utils
 
 import android.content.ContentValues
 import android.content.Context
@@ -33,11 +33,11 @@ import coil3.toBitmap
 import android.view.View
 import android.view.PixelCopy
 import androidx.core.view.drawToBitmap
-import com.arturo254.opentune.R
-import com.arturo254.opentune.ui.component.LyricsBackgroundType
-import com.arturo254.opentune.ui.component.LyricsCardConfig
-import com.arturo254.opentune.ui.component.LyricsGlassStyle
-import com.arturo254.opentune.ui.component.LyricsLayoutStyle
+import com.aromaappu.akmusic.R
+import com.aromaappu.akmusic.ui.component.LyricsBackgroundType
+import com.aromaappu.akmusic.ui.component.LyricsCardConfig
+import com.aromaappu.akmusic.ui.component.LyricsGlassStyle
+import com.aromaappu.akmusic.ui.component.LyricsLayoutStyle
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import kotlinx.coroutines.suspendCancellableCoroutine

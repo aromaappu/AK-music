@@ -10,9 +10,9 @@
  *   - GET /artwork/url?url=APPLE_MUSIC_URL
  */
 
-package com.arturo254.opentune.canvas.providers
+package com.aromaappu.akmusic.canvas.providers
 
-import com.arturo254.opentune.canvas.models.CanvasArtwork
+import com.aromaappu.akmusic.canvas.models.CanvasArtwork
 import io.ktor.client.HttpClient
 import io.ktor.client.call.body
 import io.ktor.client.engine.okhttp.OkHttp

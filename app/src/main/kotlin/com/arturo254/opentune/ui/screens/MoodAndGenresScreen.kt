@@ -6,7 +6,7 @@
 
 
 
-package com.arturo254.opentune.ui.screens
+package com.aromaappu.akmusic.ui.screens
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
@@ -43,12 +43,12 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.navigation.NavController
 import androidx.navigation.compose.currentBackStackEntryAsState
-import com.arturo254.opentune.LocalPlayerAwareWindowInsets
-import com.arturo254.opentune.R
-import com.arturo254.opentune.ui.component.NavigationTitle
-import com.arturo254.opentune.ui.component.shimmer.ShimmerHost
-import com.arturo254.opentune.ui.component.shimmer.TextPlaceholder
-import com.arturo254.opentune.viewmodels.MoodAndGenresViewModel
+import com.aromaappu.akmusic.LocalPlayerAwareWindowInsets
+import com.aromaappu.akmusic.R
+import com.aromaappu.akmusic.ui.component.NavigationTitle
+import com.aromaappu.akmusic.ui.component.shimmer.ShimmerHost
+import com.aromaappu.akmusic.ui.component.shimmer.TextPlaceholder
+import com.aromaappu.akmusic.viewmodels.MoodAndGenresViewModel
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable

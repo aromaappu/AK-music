@@ -6,12 +6,12 @@
 
 
 
-package com.arturo254.opentune.ui.screens
+package com.aromaappu.akmusic.ui.screens
 
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
 import androidx.compose.runtime.Immutable
-import com.arturo254.opentune.R
+import com.aromaappu.akmusic.R
 
 @Immutable
 sealed class Screens(

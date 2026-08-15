@@ -5,7 +5,7 @@
  */
 
 
-package com.arturo254.opentune.viewmodels
+package com.aromaappu.akmusic.viewmodels
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -47,7 +47,7 @@ class AboutViewModel : ViewModel() {
 
             val result = withContext(Dispatchers.IO) {
                 try {
-                    val url = URL("https://api.github.com/repos/Arturo254/OpenTune/contributors")
+                    val url = URL("https://api.github.com/repos/aromaappu/AK-music/contributors")
                     val connection = url.openConnection() as HttpURLConnection
                     connection.requestMethod = "GET"
                     connection.connectTimeout = 5000
@@ -97,9 +97,9 @@ class AboutViewModel : ViewModel() {
         return listOf(
             Contributor(
                 avatarUrl = "https://avatars.githubusercontent.com/u/87346871?v=4",
-                name = "亗 Arturo254",
+                name = "Aromal",
                 role = "Lead Developer",
-                profileUrl = "https://github.com/Arturo254",
+                profileUrl = "https://github.com/aromaappu",
             ),
             Contributor(
                 avatarUrl = "https://avatars.githubusercontent.com/u/138934847?v=4",

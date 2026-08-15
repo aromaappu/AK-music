@@ -6,7 +6,7 @@
 
 
 
-package com.arturo254.opentune.extensions
+package com.aromaappu.akmusic.extensions
 
 fun <T> tryOrNull(block: () -> T): T? =
     try {

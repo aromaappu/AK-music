@@ -6,7 +6,7 @@
 
 @file:OptIn(ExperimentalMaterial3ExpressiveApi::class)
 
-package com.arturo254.opentune.ui.player
+package com.aromaappu.akmusic.ui.player
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
@@ -25,18 +25,11 @@ import androidx.compose.ui.platform.LocalLayoutDirection
 import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import com.arturo254.opentune.LocalPlayerConnection
-import com.arturo254.opentune.constants.SwipeSensitivityKey
-import com.arturo254.opentune.ui.component.BottomSheetState
-import com.arturo254.opentune.utils.rememberPreference
+import com.aromaappu.akmusic.LocalPlayerConnection
+import com.aromaappu.akmusic.constants.SwipeSensitivityKey
+import com.aromaappu.akmusic.ui.component.BottomSheetState
+import com.aromaappu.akmusic.utils.rememberPreference
 import kotlin.math.roundToInt
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.rememberGraphicsLayer
-import androidx.compose.animation.core.Animatable
-import androidx.compose.runtime.remember
-import com.arturo254.opentune.constants.EnableLiquidGlassKey
-import com.arturo254.opentune.ui.component.LocalBackdrop
-import com.arturo254.opentune.ui.component.drawBackdropCustomShape
 
 
 @Composable
@@ -71,12 +64,7 @@ private fun NewMiniPlayer(
     val layoutDirection = LocalLayoutDirection.current
     val coroutineScope = rememberCoroutineScope()
     val swipeSensitivity by rememberPreference(SwipeSensitivityKey, 0.73f)
-    val swipeThumbnail by rememberPreference(com.arturo254.opentune.constants.SwipeThumbnailKey, true)
-    val enableLiquidGlass by rememberPreference(EnableLiquidGlassKey, defaultValue = false)
-
-    val layer = rememberGraphicsLayer()
-    val luminanceAnimation = remember { Animatable(0.3f) }
-    val backdrop = LocalBackdrop.current
+    val swipeThumbnail by rememberPreference(com.aromaappu.akmusic.constants.SwipeThumbnailKey, true)
 
     val backgroundColor = MaterialTheme.colorScheme.surfaceContainer
 
@@ -95,18 +83,8 @@ private fun NewMiniPlayer(
                 .fillMaxWidth()
                 .height(64.dp)
                 .offset { IntOffset(offsetX.roundToInt(), 0) }
-                .let {
-                    if (enableLiquidGlass && backdrop != null) {
-                        it.drawBackdropCustomShape(
-                            backdrop = backdrop,
-                            layer = layer,
-                            luminanceAnimation = luminanceAnimation.value,
-                            shape = RoundedCornerShape(32.dp)
-                        )
-                    } else it
-                }
                 .clip(RoundedCornerShape(32.dp))
-                .background(color = if (enableLiquidGlass) Color.Transparent else backgroundColor)
+                .background(color = backgroundColor)
         ) {
             NewMiniPlayerContent(
                 pureBlack = pureBlack,

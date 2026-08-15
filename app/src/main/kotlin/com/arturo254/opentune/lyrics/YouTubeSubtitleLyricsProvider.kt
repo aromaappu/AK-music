@@ -6,10 +6,10 @@
 
 
 
-package com.arturo254.opentune.lyrics
+package com.aromaappu.akmusic.lyrics
 
 import android.content.Context
-import com.arturo254.opentune.innertube.YouTube
+import com.aromaappu.akmusic.innertube.YouTube
 
 object YouTubeSubtitleLyricsProvider : LyricsProvider {
     override val name = "YouTube Subtitle"

@@ -8,7 +8,7 @@
 
 @file:Suppress("DEPRECATION")
 
-package com.arturo254.opentune.playback
+package com.aromaappu.akmusic.playback
 
 import android.app.PendingIntent
 import android.app.ActivityManager
@@ -82,114 +82,114 @@ import androidx.media3.session.MediaSessionService
 import androidx.media3.session.MediaSession
 import androidx.media3.session.SessionToken
 import com.google.common.util.concurrent.MoreExecutors
-import com.arturo254.opentune.innertube.YouTube
-import com.arturo254.opentune.innertube.models.SongItem
-import com.arturo254.opentune.lyrics.LyricsPreloadManager
-import com.arturo254.opentune.innertube.models.WatchEndpoint
-import com.arturo254.opentune.MainActivity
-import com.arturo254.opentune.R
-import com.arturo254.opentune.constants.AudioNormalizationKey
-import com.arturo254.opentune.constants.AudioOffload
-import com.arturo254.opentune.constants.AudioCrossfadeDurationKey
-import com.arturo254.opentune.constants.AudioQualityKey
-import com.arturo254.opentune.constants.AutoLoadMoreKey
-import com.arturo254.opentune.constants.AutoDownloadOnLikeKey
-import com.arturo254.opentune.constants.AutoSkipNextOnErrorKey
-import com.arturo254.opentune.constants.AutoStartOnBluetoothKey
-import com.arturo254.opentune.constants.InnerTubeCookieKey
-import com.arturo254.opentune.constants.DiscordTokenKey
-import com.arturo254.opentune.constants.EqualizerBandLevelsMbKey
-import com.arturo254.opentune.constants.EqualizerBassBoostEnabledKey
-import com.arturo254.opentune.constants.EqualizerBassBoostStrengthKey
-import com.arturo254.opentune.constants.EqualizerEnabledKey
-import com.arturo254.opentune.constants.EqualizerOutputGainEnabledKey
-import com.arturo254.opentune.constants.EqualizerOutputGainMbKey
-import com.arturo254.opentune.constants.EqualizerSelectedProfileIdKey
-import com.arturo254.opentune.constants.EqualizerVirtualizerEnabledKey
-import com.arturo254.opentune.constants.EqualizerVirtualizerStrengthKey
-import com.arturo254.opentune.constants.EnableDiscordRPCKey
-import com.arturo254.opentune.constants.HideExplicitKey
-import com.arturo254.opentune.constants.HideVideoKey
-import com.arturo254.opentune.constants.HistoryDuration
-import com.arturo254.opentune.constants.MediaSessionConstants.CommandToggleLike
-import com.arturo254.opentune.constants.MediaSessionConstants.CommandToggleStartRadio
-import com.arturo254.opentune.constants.MediaSessionConstants.CommandToggleRepeatMode
-import com.arturo254.opentune.constants.MediaSessionConstants.CommandToggleShuffle
-import com.arturo254.opentune.constants.PauseListenHistoryKey
-import com.arturo254.opentune.constants.PauseOnDeviceMuteKey
-import com.arturo254.opentune.constants.PermanentShuffleKey
-import com.arturo254.opentune.constants.PersistentQueueKey
-import com.arturo254.opentune.constants.PlayerStreamClient
-import com.arturo254.opentune.constants.PlayerStreamClientKey
-import com.arturo254.opentune.constants.PlayerVolumeKey
-import com.arturo254.opentune.constants.RepeatModeKey
-import com.arturo254.opentune.constants.ShowLyricsKey
-import com.arturo254.opentune.constants.SkipSilenceKey
-import com.arturo254.opentune.constants.MaxSongCacheSizeKey
-import com.arturo254.opentune.constants.SmartTrimmerKey
-import com.arturo254.opentune.constants.StopMusicOnTaskClearKey
-import com.arturo254.opentune.constants.WakelockKey
-import com.arturo254.opentune.constants.YtmSyncKey
-import com.arturo254.opentune.db.MusicDatabase
-import com.arturo254.opentune.db.entities.Event
-import com.arturo254.opentune.db.entities.FormatEntity
-import com.arturo254.opentune.db.entities.LyricsEntity
-import com.arturo254.opentune.db.entities.RelatedSongMap
-import com.arturo254.opentune.db.entities.Song
-import com.arturo254.opentune.db.entities.SongEntity
-import com.arturo254.opentune.db.entities.ArtistEntity
-import com.arturo254.opentune.db.entities.AlbumEntity
-import com.arturo254.opentune.di.DownloadCache
-import com.arturo254.opentune.di.PlayerCache
-import com.arturo254.opentune.extensions.SilentHandler
-import com.arturo254.opentune.extensions.collect
-import com.arturo254.opentune.extensions.collectLatest
-import com.arturo254.opentune.extensions.currentMetadata
-import com.arturo254.opentune.extensions.directorySizeBytes
-import com.arturo254.opentune.extensions.findNextMediaItemById
-import com.arturo254.opentune.extensions.mediaItems
-import com.arturo254.opentune.extensions.metadata
-import com.arturo254.opentune.extensions.setOffloadEnabled
-import com.arturo254.opentune.extensions.togglePlayPause
-import com.arturo254.opentune.extensions.toMediaItem
-import com.arturo254.opentune.extensions.toPersistQueue
-import com.arturo254.opentune.extensions.toQueue
-import com.arturo254.opentune.lyrics.LyricsHelper
-import com.arturo254.opentune.models.PersistQueue
-import com.arturo254.opentune.models.PersistPlayerState
-import com.arturo254.opentune.models.toMediaMetadata
-import com.arturo254.opentune.playback.queues.EmptyQueue
-import com.arturo254.opentune.playback.queues.Queue
-import com.arturo254.opentune.playback.queues.YouTubeQueue
-import com.arturo254.opentune.playback.queues.filterExplicit
-import com.arturo254.opentune.playback.queues.filterVideo
-import com.arturo254.opentune.utils.CoilBitmapLoader
-import com.arturo254.opentune.utils.DiscordRPC
-import com.arturo254.opentune.ui.screens.settings.DiscordPresenceManager
-import com.arturo254.opentune.utils.SyncUtils
-import com.arturo254.opentune.utils.YTPlayerUtils
-import com.arturo254.opentune.utils.StreamClientUtils
-import com.arturo254.opentune.utils.dataStore
-import com.arturo254.opentune.utils.enumPreference
-import com.arturo254.opentune.utils.get
-import com.arturo254.opentune.utils.getAsync
-import com.arturo254.opentune.utils.getPresenceIntervalMillis
-import com.arturo254.opentune.utils.reportException
-import com.arturo254.opentune.utils.NetworkConnectivityObserver
+import com.aromaappu.akmusic.innertube.YouTube
+import com.aromaappu.akmusic.innertube.models.SongItem
+import com.aromaappu.akmusic.lyrics.LyricsPreloadManager
+import com.aromaappu.akmusic.innertube.models.WatchEndpoint
+import com.aromaappu.akmusic.MainActivity
+import com.aromaappu.akmusic.R
+import com.aromaappu.akmusic.constants.AudioNormalizationKey
+import com.aromaappu.akmusic.constants.AudioOffload
+import com.aromaappu.akmusic.constants.AudioCrossfadeDurationKey
+import com.aromaappu.akmusic.constants.AudioQualityKey
+import com.aromaappu.akmusic.constants.AutoLoadMoreKey
+import com.aromaappu.akmusic.constants.AutoDownloadOnLikeKey
+import com.aromaappu.akmusic.constants.AutoSkipNextOnErrorKey
+import com.aromaappu.akmusic.constants.AutoStartOnBluetoothKey
+import com.aromaappu.akmusic.constants.InnerTubeCookieKey
+import com.aromaappu.akmusic.constants.DiscordTokenKey
+import com.aromaappu.akmusic.constants.EqualizerBandLevelsMbKey
+import com.aromaappu.akmusic.constants.EqualizerBassBoostEnabledKey
+import com.aromaappu.akmusic.constants.EqualizerBassBoostStrengthKey
+import com.aromaappu.akmusic.constants.EqualizerEnabledKey
+import com.aromaappu.akmusic.constants.EqualizerOutputGainEnabledKey
+import com.aromaappu.akmusic.constants.EqualizerOutputGainMbKey
+import com.aromaappu.akmusic.constants.EqualizerSelectedProfileIdKey
+import com.aromaappu.akmusic.constants.EqualizerVirtualizerEnabledKey
+import com.aromaappu.akmusic.constants.EqualizerVirtualizerStrengthKey
+import com.aromaappu.akmusic.constants.EnableDiscordRPCKey
+import com.aromaappu.akmusic.constants.HideExplicitKey
+import com.aromaappu.akmusic.constants.HideVideoKey
+import com.aromaappu.akmusic.constants.HistoryDuration
+import com.aromaappu.akmusic.constants.MediaSessionConstants.CommandToggleLike
+import com.aromaappu.akmusic.constants.MediaSessionConstants.CommandToggleStartRadio
+import com.aromaappu.akmusic.constants.MediaSessionConstants.CommandToggleRepeatMode
+import com.aromaappu.akmusic.constants.MediaSessionConstants.CommandToggleShuffle
+import com.aromaappu.akmusic.constants.PauseListenHistoryKey
+import com.aromaappu.akmusic.constants.PauseOnDeviceMuteKey
+import com.aromaappu.akmusic.constants.PermanentShuffleKey
+import com.aromaappu.akmusic.constants.PersistentQueueKey
+import com.aromaappu.akmusic.constants.PlayerStreamClient
+import com.aromaappu.akmusic.constants.PlayerStreamClientKey
+import com.aromaappu.akmusic.constants.PlayerVolumeKey
+import com.aromaappu.akmusic.constants.RepeatModeKey
+import com.aromaappu.akmusic.constants.ShowLyricsKey
+import com.aromaappu.akmusic.constants.SkipSilenceKey
+import com.aromaappu.akmusic.constants.MaxSongCacheSizeKey
+import com.aromaappu.akmusic.constants.SmartTrimmerKey
+import com.aromaappu.akmusic.constants.StopMusicOnTaskClearKey
+import com.aromaappu.akmusic.constants.WakelockKey
+import com.aromaappu.akmusic.constants.YtmSyncKey
+import com.aromaappu.akmusic.db.MusicDatabase
+import com.aromaappu.akmusic.db.entities.Event
+import com.aromaappu.akmusic.db.entities.FormatEntity
+import com.aromaappu.akmusic.db.entities.LyricsEntity
+import com.aromaappu.akmusic.db.entities.RelatedSongMap
+import com.aromaappu.akmusic.db.entities.Song
+import com.aromaappu.akmusic.db.entities.SongEntity
+import com.aromaappu.akmusic.db.entities.ArtistEntity
+import com.aromaappu.akmusic.db.entities.AlbumEntity
+import com.aromaappu.akmusic.di.DownloadCache
+import com.aromaappu.akmusic.di.PlayerCache
+import com.aromaappu.akmusic.extensions.SilentHandler
+import com.aromaappu.akmusic.extensions.collect
+import com.aromaappu.akmusic.extensions.collectLatest
+import com.aromaappu.akmusic.extensions.currentMetadata
+import com.aromaappu.akmusic.extensions.directorySizeBytes
+import com.aromaappu.akmusic.extensions.findNextMediaItemById
+import com.aromaappu.akmusic.extensions.mediaItems
+import com.aromaappu.akmusic.extensions.metadata
+import com.aromaappu.akmusic.extensions.setOffloadEnabled
+import com.aromaappu.akmusic.extensions.togglePlayPause
+import com.aromaappu.akmusic.extensions.toMediaItem
+import com.aromaappu.akmusic.extensions.toPersistQueue
+import com.aromaappu.akmusic.extensions.toQueue
+import com.aromaappu.akmusic.lyrics.LyricsHelper
+import com.aromaappu.akmusic.models.PersistQueue
+import com.aromaappu.akmusic.models.PersistPlayerState
+import com.aromaappu.akmusic.models.toMediaMetadata
+import com.aromaappu.akmusic.playback.queues.EmptyQueue
+import com.aromaappu.akmusic.playback.queues.Queue
+import com.aromaappu.akmusic.playback.queues.YouTubeQueue
+import com.aromaappu.akmusic.playback.queues.filterExplicit
+import com.aromaappu.akmusic.playback.queues.filterVideo
+import com.aromaappu.akmusic.utils.CoilBitmapLoader
+import com.aromaappu.akmusic.utils.DiscordRPC
+import com.aromaappu.akmusic.ui.screens.settings.DiscordPresenceManager
+import com.aromaappu.akmusic.utils.SyncUtils
+import com.aromaappu.akmusic.utils.YTPlayerUtils
+import com.aromaappu.akmusic.utils.StreamClientUtils
+import com.aromaappu.akmusic.utils.dataStore
+import com.aromaappu.akmusic.utils.enumPreference
+import com.aromaappu.akmusic.utils.get
+import com.aromaappu.akmusic.utils.getAsync
+import com.aromaappu.akmusic.utils.getPresenceIntervalMillis
+import com.aromaappu.akmusic.utils.reportException
+import com.aromaappu.akmusic.utils.NetworkConnectivityObserver
 import dagger.hilt.android.AndroidEntryPoint
-import com.arturo254.opentune.ui.screens.settings.ListenBrainzManager
-import com.arturo254.opentune.constants.ListenBrainzEnabledKey
-import com.arturo254.opentune.constants.ListenBrainzTokenKey
-import com.arturo254.opentune.lastfm.LastFM
-import com.arturo254.opentune.constants.EnableLastFMScrobblingKey
-import com.arturo254.opentune.constants.LastFMUseNowPlaying
-import com.arturo254.opentune.constants.ScrobbleDelayPercentKey
-import com.arturo254.opentune.constants.ScrobbleMinSongDurationKey
-import com.arturo254.opentune.constants.ScrobbleDelaySecondsKey
-import com.arturo254.opentune.constants.TogetherClientIdKey
-import com.arturo254.opentune.widget.PlayerWidgetActions
-import com.arturo254.opentune.widget.PlayerWidgetState
-import com.arturo254.opentune.widget.PlayerWidgetUpdater
+import com.aromaappu.akmusic.ui.screens.settings.ListenBrainzManager
+import com.aromaappu.akmusic.constants.ListenBrainzEnabledKey
+import com.aromaappu.akmusic.constants.ListenBrainzTokenKey
+import com.aromaappu.akmusic.lastfm.LastFM
+import com.aromaappu.akmusic.constants.EnableLastFMScrobblingKey
+import com.aromaappu.akmusic.constants.LastFMUseNowPlaying
+import com.aromaappu.akmusic.constants.ScrobbleDelayPercentKey
+import com.aromaappu.akmusic.constants.ScrobbleMinSongDurationKey
+import com.aromaappu.akmusic.constants.ScrobbleDelaySecondsKey
+import com.aromaappu.akmusic.constants.TogetherClientIdKey
+import com.aromaappu.akmusic.widget.PlayerWidgetActions
+import com.aromaappu.akmusic.widget.PlayerWidgetState
+import com.aromaappu.akmusic.widget.PlayerWidgetUpdater
 import com.arturo254.jossredconnect.JossRedClient
 import kotlinx.coroutines.TimeoutCancellationException
 import kotlinx.coroutines.withTimeout
@@ -237,7 +237,7 @@ import android.app.Notification
 import android.os.Build
 import android.content.pm.ServiceInfo
 import androidx.core.app.NotificationCompat
-import com.arturo254.opentune.constants.JossRedMultimediaKey
+import com.aromaappu.akmusic.constants.JossRedMultimediaKey
 
 @OptIn(ExperimentalCoroutinesApi::class, FlowPreview::class)
 @AndroidEntryPoint
@@ -281,7 +281,7 @@ class MusicService :
     private val audioQuality by enumPreference(
         this,
         AudioQualityKey,
-        com.arturo254.opentune.constants.AudioQuality.AUTO
+        com.aromaappu.akmusic.constants.AudioQuality.AUTO
     )
     private val preferredStreamClient by enumPreference(
         this,
@@ -339,7 +339,7 @@ class MusicService :
     @Volatile
     private var lastLoginRecoveryPrompt: Pair<String, Long>? = null
 
-    val currentMediaMetadata = MutableStateFlow<com.arturo254.opentune.models.MediaMetadata?>(null)
+    val currentMediaMetadata = MutableStateFlow<com.aromaappu.akmusic.models.MediaMetadata?>(null)
     val queueRestoreCompleted = MutableStateFlow(false)
     private val currentSong =
         currentMediaMetadata
@@ -431,7 +431,7 @@ class MusicService :
     private var discordRpc: DiscordRPC? = null
     private var lastDiscordUpdateTime = 0L
 
-    private var scrobbleManager: com.arturo254.opentune.utils.ScrobbleManager? = null
+    private var scrobbleManager: com.aromaappu.akmusic.utils.ScrobbleManager? = null
 
     val automixItems = MutableStateFlow<List<MediaItem>>(emptyList())
     val automixLoading = MutableStateFlow(false)
@@ -447,17 +447,17 @@ class MusicService :
     @Volatile
     private var hasCalledStartForeground = false
 
-    val togetherSessionState = MutableStateFlow<com.arturo254.opentune.together.TogetherSessionState>(
-        com.arturo254.opentune.together.TogetherSessionState.Idle,
+    val togetherSessionState = MutableStateFlow<com.aromaappu.akmusic.together.TogetherSessionState>(
+        com.aromaappu.akmusic.together.TogetherSessionState.Idle,
     )
-    private var togetherServer: com.arturo254.opentune.together.TogetherServer? = null
-    private var togetherOnlineHost: com.arturo254.opentune.together.TogetherOnlineHost? = null
-    private var togetherClient: com.arturo254.opentune.together.TogetherClient? = null
+    private var togetherServer: com.aromaappu.akmusic.together.TogetherServer? = null
+    private var togetherOnlineHost: com.aromaappu.akmusic.together.TogetherOnlineHost? = null
+    private var togetherClient: com.aromaappu.akmusic.together.TogetherClient? = null
     private var togetherBroadcastJob: Job? = null
     private var togetherOnlineConnectJob: Job? = null
     private var togetherClientEventsJob: Job? = null
     private var togetherHeartbeatJob: Job? = null
-    private var togetherClock: com.arturo254.opentune.together.TogetherClock? = null
+    private var togetherClock: com.aromaappu.akmusic.together.TogetherClock? = null
     private var togetherSelfParticipantId: String? = null
     private var togetherLastAppliedQueueHash: String? = null
     private var togetherIsOnlineSession: Boolean = false
@@ -474,7 +474,7 @@ class MusicService :
     @Volatile
     private var togetherLastSentControlAtElapsedMs: Long = 0L
     @Volatile
-    private var togetherLastSentControlAction: com.arturo254.opentune.together.ControlAction? = null
+    private var togetherLastSentControlAction: com.aromaappu.akmusic.together.ControlAction? = null
     @Volatile
     private var togetherPendingGuestControl: TogetherPendingGuestControl? = null
 
@@ -588,7 +588,7 @@ class MusicService :
             cancelIdleStop()
             return
         }
-        val togetherIdle = togetherSessionState.value is com.arturo254.opentune.together.TogetherSessionState.Idle
+        val togetherIdle = togetherSessionState.value is com.aromaappu.akmusic.together.TogetherSessionState.Idle
         if (!togetherIdle) {
             cancelIdleStop()
             return
@@ -611,7 +611,7 @@ class MusicService :
                     player.isPlaying ||
                         (player.playWhenReady && (currentState == Player.STATE_BUFFERING || currentState == Player.STATE_READY))
                 if (shouldKeep) return@launch
-                if (togetherSessionState.value !is com.arturo254.opentune.together.TogetherSessionState.Idle) return@launch
+                if (togetherSessionState.value !is com.aromaappu.akmusic.together.TogetherSessionState.Idle) return@launch
                 stopForegroundAndSelf()
             }
     }
@@ -1004,7 +1004,7 @@ class MusicService :
                     val minSongDuration = dataStore.get(ScrobbleMinSongDurationKey, LastFM.DEFAULT_SCROBBLE_MIN_SONG_DURATION)
                     val delaySeconds = dataStore.get(ScrobbleDelaySecondsKey, LastFM.DEFAULT_SCROBBLE_DELAY_SECONDS)
                     
-                    scrobbleManager = com.arturo254.opentune.utils.ScrobbleManager(
+                    scrobbleManager = com.aromaappu.akmusic.utils.ScrobbleManager(
                         ioScope,
                         minSongDuration = minSongDuration,
                         scrobbleDelayPercent = delayPercent,
@@ -1342,8 +1342,8 @@ class MusicService :
     }
 
     private fun isTogetherGuestSession(): Boolean {
-        val joined = togetherSessionState.value as? com.arturo254.opentune.together.TogetherSessionState.Joined
-        return joined?.role is com.arturo254.opentune.together.TogetherRole.Guest
+        val joined = togetherSessionState.value as? com.aromaappu.akmusic.together.TogetherSessionState.Joined
+        return joined?.role is com.aromaappu.akmusic.together.TogetherRole.Guest
     }
 
     private fun handleDeviceMuteStateChanged() {
@@ -1578,8 +1578,8 @@ class MusicService :
         queue: Queue,
         playWhenReady: Boolean = true,
     ) {
-        val joined = togetherSessionState.value as? com.arturo254.opentune.together.TogetherSessionState.Joined
-        if (!isTogetherApplyingRemote() && joined?.role is com.arturo254.opentune.together.TogetherRole.Guest) {
+        val joined = togetherSessionState.value as? com.aromaappu.akmusic.together.TogetherSessionState.Joined
+        if (!isTogetherApplyingRemote() && joined?.role is com.aromaappu.akmusic.together.TogetherRole.Guest) {
             if (!joined.roomState.settings.allowGuestsToControlPlayback) {
                 showTogetherNotice(getString(R.string.not_allowed), key = "GUEST_PLAYQUEUE_DISABLED")
                 return
@@ -1608,7 +1608,7 @@ class MusicService :
                 }
 
                 val track =
-                    com.arturo254.opentune.together.TogetherTrack(
+                    com.aromaappu.akmusic.together.TogetherTrack(
                         id = trackId,
                         title = meta?.title ?: trackId,
                         artists = meta?.artists?.map { it.name }.orEmpty(),
@@ -1617,7 +1617,7 @@ class MusicService :
                     )
 
                 val ops =
-                    com.arturo254.opentune.together.TogetherGuestPlaybackPlanner.planPlayTrackNow(
+                    com.aromaappu.akmusic.together.TogetherGuestPlaybackPlanner.planPlayTrackNow(
                         roomState = joined.roomState,
                         track = track,
                         positionMs = initialStatus.position,
@@ -1632,8 +1632,8 @@ class MusicService :
                 showTogetherNotice(getString(R.string.together_requesting_song_change), key = "GUEST_PLAYQUEUE_REQUEST")
                 ops.forEach { op ->
                     when (op) {
-                        is com.arturo254.opentune.together.TogetherGuestOp.Control -> requestTogetherControl(op.action)
-                        is com.arturo254.opentune.together.TogetherGuestOp.AddTrack -> requestTogetherAddTrack(op.track, op.mode)
+                        is com.aromaappu.akmusic.together.TogetherGuestOp.Control -> requestTogetherControl(op.action)
+                        is com.aromaappu.akmusic.together.TogetherGuestOp.AddTrack -> requestTogetherAddTrack(op.track, op.mode)
                     }
                 }
             }
@@ -1753,8 +1753,8 @@ class MusicService :
     }
 
     fun startRadioSeamlessly() {
-        val joined = togetherSessionState.value as? com.arturo254.opentune.together.TogetherSessionState.Joined
-        if (!isTogetherApplyingRemote() && joined?.role is com.arturo254.opentune.together.TogetherRole.Guest) {
+        val joined = togetherSessionState.value as? com.aromaappu.akmusic.together.TogetherSessionState.Joined
+        if (!isTogetherApplyingRemote() && joined?.role is com.aromaappu.akmusic.together.TogetherRole.Guest) {
             if (!joined.roomState.settings.allowGuestsToControlPlayback) {
                 showTogetherNotice(getString(R.string.not_allowed), key = "GUEST_RADIO_DISABLED")
                 return
@@ -2142,14 +2142,14 @@ class MusicService :
     }
 
     fun playNext(items: List<MediaItem>) {
-        val joined = togetherSessionState.value as? com.arturo254.opentune.together.TogetherSessionState.Joined
-        if (joined?.role is com.arturo254.opentune.together.TogetherRole.Guest) {
+        val joined = togetherSessionState.value as? com.aromaappu.akmusic.together.TogetherSessionState.Joined
+        if (joined?.role is com.aromaappu.akmusic.together.TogetherRole.Guest) {
             if (!joined.roomState.settings.allowGuestsToAddTracks) {
                 return
             }
             val tracks =
                 items.mapNotNull { it.metadata }.map { meta ->
-                    com.arturo254.opentune.together.TogetherTrack(
+                    com.aromaappu.akmusic.together.TogetherTrack(
                         id = meta.id,
                         title = meta.title,
                         artists = meta.artists.map { it.name },
@@ -2158,7 +2158,7 @@ class MusicService :
                     )
                 }
             tracks.asReversed().forEach { track ->
-                requestTogetherAddTrack(track, com.arturo254.opentune.together.AddTrackMode.PLAY_NEXT)
+                requestTogetherAddTrack(track, com.aromaappu.akmusic.together.AddTrackMode.PLAY_NEXT)
             }
             return
         }
@@ -2171,14 +2171,14 @@ class MusicService :
     }
 
     fun addToQueue(items: List<MediaItem>) {
-        val joined = togetherSessionState.value as? com.arturo254.opentune.together.TogetherSessionState.Joined
-        if (joined?.role is com.arturo254.opentune.together.TogetherRole.Guest) {
+        val joined = togetherSessionState.value as? com.aromaappu.akmusic.together.TogetherSessionState.Joined
+        if (joined?.role is com.aromaappu.akmusic.together.TogetherRole.Guest) {
             if (!joined.roomState.settings.allowGuestsToAddTracks) {
                 return
             }
             val tracks =
                 items.mapNotNull { it.metadata }.map { meta ->
-                    com.arturo254.opentune.together.TogetherTrack(
+                    com.aromaappu.akmusic.together.TogetherTrack(
                         id = meta.id,
                         title = meta.title,
                         artists = meta.artists.map { it.name },
@@ -2187,7 +2187,7 @@ class MusicService :
                     )
                 }
             tracks.forEach { track ->
-                requestTogetherAddTrack(track, com.arturo254.opentune.together.AddTrackMode.ADD_TO_QUEUE)
+                requestTogetherAddTrack(track, com.aromaappu.akmusic.together.AddTrackMode.ADD_TO_QUEUE)
             }
             return
         }
@@ -2199,11 +2199,11 @@ class MusicService :
     fun startTogetherHost(
         port: Int,
         displayName: String,
-        settings: com.arturo254.opentune.together.TogetherRoomSettings,
+        settings: com.aromaappu.akmusic.together.TogetherRoomSettings,
     ) {
         ensureScopesActive()
         scope.launch(SilentHandler) {
-            togetherSessionState.value = com.arturo254.opentune.together.TogetherSessionState.Idle
+            togetherSessionState.value = com.aromaappu.akmusic.together.TogetherSessionState.Idle
         }
 
         ioScope.launch(SilentHandler) {
@@ -2214,16 +2214,16 @@ class MusicService :
             val sessionId = java.util.UUID.randomUUID().toString()
             val sessionKey = java.util.UUID.randomUUID().toString()
             val joinInfo =
-                com.arturo254.opentune.together.TogetherJoinInfo(
+                com.aromaappu.akmusic.together.TogetherJoinInfo(
                     host = localIp ?: "127.0.0.1",
                     port = port,
                     sessionId = sessionId,
                     sessionKey = sessionKey,
                 )
-            val joinLink = com.arturo254.opentune.together.TogetherLink.encode(joinInfo)
+            val joinLink = com.aromaappu.akmusic.together.TogetherLink.encode(joinInfo)
 
             val server =
-                com.arturo254.opentune.together.TogetherServer(
+                com.aromaappu.akmusic.together.TogetherServer(
                     scope = ioScope,
                     sessionId = sessionId,
                     sessionKey = sessionKey,
@@ -2242,7 +2242,7 @@ class MusicService :
 
             scope.launch(SilentHandler) {
                 togetherSessionState.value =
-                    com.arturo254.opentune.together.TogetherSessionState.Hosting(
+                    com.aromaappu.akmusic.together.TogetherSessionState.Hosting(
                         sessionId = sessionId,
                         joinLink = joinLink,
                         localAddressHint = localIp,
@@ -2258,7 +2258,7 @@ class MusicService :
                         val state = buildTogetherRoomState(sessionId = sessionId, hostId = togetherHostId)
                         server.broadcastRoomState(state)
                         scope.launch(SilentHandler) {
-                            val hosting = togetherSessionState.value as? com.arturo254.opentune.together.TogetherSessionState.Hosting
+                            val hosting = togetherSessionState.value as? com.aromaappu.akmusic.together.TogetherSessionState.Hosting
                             if (hosting?.sessionId == sessionId) {
                                 togetherSessionState.value =
                                     hosting.copy(
@@ -2277,7 +2277,7 @@ class MusicService :
     }
 
     private fun togetherOnlineErrorMessage(t: Throwable): String {
-        if (t is com.arturo254.opentune.together.TogetherOnlineApiException) {
+        if (t is com.aromaappu.akmusic.together.TogetherOnlineApiException) {
             val code = t.statusCode
             return when {
                 code == 404 -> getString(R.string.together_session_not_found)
@@ -2297,22 +2297,22 @@ class MusicService :
 
     fun startTogetherOnlineHost(
         displayName: String,
-        settings: com.arturo254.opentune.together.TogetherRoomSettings,
+        settings: com.aromaappu.akmusic.together.TogetherRoomSettings,
     ) {
         ensureScopesActive()
         scope.launch(SilentHandler) {
-            togetherSessionState.value = com.arturo254.opentune.together.TogetherSessionState.Idle
+            togetherSessionState.value = com.aromaappu.akmusic.together.TogetherSessionState.Idle
         }
 
         ioScope.launch(SilentHandler) {
             stopTogetherInternal()
             togetherIsOnlineSession = true
 
-            val baseUrl = com.arturo254.opentune.together.TogetherOnlineEndpoint.baseUrlOrNull(dataStore)
+            val baseUrl = com.aromaappu.akmusic.together.TogetherOnlineEndpoint.baseUrlOrNull(dataStore)
             if (baseUrl == null) {
                 scope.launch(SilentHandler) {
                     togetherSessionState.value =
-                        com.arturo254.opentune.together.TogetherSessionState.Error(
+                        com.aromaappu.akmusic.together.TogetherSessionState.Error(
                             message = getString(R.string.together_online_not_configured),
                             recoverable = true,
                         )
@@ -2320,11 +2320,11 @@ class MusicService :
                 return@launch
             }
 
-            val togetherToken = com.arturo254.opentune.BuildConfig.TOGETHER_BEARER_TOKEN.trim().takeIf { it.isNotBlank() }
+            val togetherToken = com.aromaappu.akmusic.BuildConfig.TOGETHER_BEARER_TOKEN.trim().takeIf { it.isNotBlank() }
             if (togetherToken == null) {
                 scope.launch(SilentHandler) {
                     togetherSessionState.value =
-                        com.arturo254.opentune.together.TogetherSessionState.Error(
+                        com.aromaappu.akmusic.together.TogetherSessionState.Error(
                             message = getString(R.string.together_token_missing),
                             recoverable = true,
                         )
@@ -2332,7 +2332,7 @@ class MusicService :
                 return@launch
             }
 
-            val api = com.arturo254.opentune.together.TogetherOnlineApi(baseUrl = baseUrl, bearerToken = togetherToken)
+            val api = com.aromaappu.akmusic.together.TogetherOnlineApi(baseUrl = baseUrl, bearerToken = togetherToken)
             val hostName = displayName.trim().ifBlank { getString(R.string.app_name) }
 
             val created =
@@ -2344,7 +2344,7 @@ class MusicService :
                 }.getOrElse { t ->
                     scope.launch(SilentHandler) {
                         togetherSessionState.value =
-                            com.arturo254.opentune.together.TogetherSessionState.Error(
+                            com.aromaappu.akmusic.together.TogetherSessionState.Error(
                                 message = togetherOnlineErrorMessage(t),
                                 recoverable = true,
                             )
@@ -2354,7 +2354,7 @@ class MusicService :
                 }
 
             val onlineHost =
-                com.arturo254.opentune.together.TogetherOnlineHost(
+                com.aromaappu.akmusic.together.TogetherOnlineHost(
                     externalScope = ioScope,
                     sessionId = created.sessionId,
                     sessionKey = created.hostKey,
@@ -2375,7 +2375,7 @@ class MusicService :
 
             scope.launch(SilentHandler) {
                 togetherSessionState.value =
-                    com.arturo254.opentune.together.TogetherSessionState.HostingOnline(
+                    com.aromaappu.akmusic.together.TogetherSessionState.HostingOnline(
                         sessionId = created.sessionId,
                         code = created.code,
                         settings = created.settings,
@@ -2384,14 +2384,14 @@ class MusicService :
             }
 
             val wsUrl =
-                com.arturo254.opentune.together.TogetherOnlineEndpoint.onlineWebSocketUrlOrNull(
+                com.aromaappu.akmusic.together.TogetherOnlineEndpoint.onlineWebSocketUrlOrNull(
                     rawWsUrl = created.wsUrl,
                     baseUrl = baseUrl,
                 )
             if (wsUrl == null) {
                 scope.launch(SilentHandler) {
                     togetherSessionState.value =
-                        com.arturo254.opentune.together.TogetherSessionState.Error(
+                        com.aromaappu.akmusic.together.TogetherSessionState.Error(
                             message = "Connection failed: Invalid server websocket URL",
                             recoverable = true,
                         )
@@ -2417,7 +2417,7 @@ class MusicService :
                         onlineHost.broadcastRoomState(state)
                         scope.launch(SilentHandler) {
                             val hosting =
-                                togetherSessionState.value as? com.arturo254.opentune.together.TogetherSessionState.HostingOnline
+                                togetherSessionState.value as? com.aromaappu.akmusic.together.TogetherSessionState.HostingOnline
                             if (hosting?.sessionId == created.sessionId) {
                                 val currentSettings = onlineHost.currentSettings()
                                 togetherSessionState.value =
@@ -2442,11 +2442,11 @@ class MusicService :
         displayName: String,
     ) {
         ensureScopesActive()
-        val joinInfo = com.arturo254.opentune.together.TogetherLink.decode(rawLink)
+        val joinInfo = com.aromaappu.akmusic.together.TogetherLink.decode(rawLink)
         if (joinInfo == null) {
             scope.launch(SilentHandler) {
                 togetherSessionState.value =
-                    com.arturo254.opentune.together.TogetherSessionState.Error(
+                    com.aromaappu.akmusic.together.TogetherSessionState.Error(
                         message = getString(R.string.invalid_link),
                         recoverable = true,
                     )
@@ -2455,19 +2455,19 @@ class MusicService :
         }
 
         scope.launch(SilentHandler) {
-            togetherSessionState.value = com.arturo254.opentune.together.TogetherSessionState.Joining(joinInfo.toDeepLink())
+            togetherSessionState.value = com.aromaappu.akmusic.together.TogetherSessionState.Joining(joinInfo.toDeepLink())
         }
 
         ioScope.launch(SilentHandler) {
             stopTogetherInternal()
             togetherIsOnlineSession = false
             val client =
-                com.arturo254.opentune.together.TogetherClient(
+                com.aromaappu.akmusic.together.TogetherClient(
                     ioScope,
                     clientId = getOrCreateTogetherClientId(),
                 )
             togetherClient = client
-            togetherClock = com.arturo254.opentune.together.TogetherClock()
+            togetherClock = com.aromaappu.akmusic.together.TogetherClock()
             togetherSelfParticipantId = null
             togetherLastAppliedQueueHash = null
 
@@ -2476,19 +2476,19 @@ class MusicService :
                 ioScope.launch(SilentHandler) {
                 client.events.collect { event ->
                     when (event) {
-                        is com.arturo254.opentune.together.TogetherClientEvent.Welcome -> {
+                        is com.aromaappu.akmusic.together.TogetherClientEvent.Welcome -> {
                             togetherSelfParticipantId = event.welcome.participantId
                             scope.launch(SilentHandler) {
                                 val state = togetherSessionState.value
-                                if (state is com.arturo254.opentune.together.TogetherSessionState.Joining) {
+                                if (state is com.aromaappu.akmusic.together.TogetherSessionState.Joining) {
                                     val selfName = displayName.trim().ifBlank { getString(R.string.together_role_guest) }
                                     val initial =
-                                        com.arturo254.opentune.together.TogetherRoomState(
+                                        com.aromaappu.akmusic.together.TogetherRoomState(
                                             sessionId = joinInfo.sessionId,
                                             hostId = togetherHostId,
                                             participants =
                                                 listOf(
-                                                    com.arturo254.opentune.together.TogetherParticipant(
+                                                    com.aromaappu.akmusic.together.TogetherParticipant(
                                                         id = event.welcome.participantId,
                                                         name = selfName,
                                                         isHost = false,
@@ -2507,8 +2507,8 @@ class MusicService :
                                             sentAtElapsedRealtimeMs = android.os.SystemClock.elapsedRealtime(),
                                         )
                                     togetherSessionState.value =
-                                        com.arturo254.opentune.together.TogetherSessionState.Joined(
-                                            role = com.arturo254.opentune.together.TogetherRole.Guest,
+                                        com.aromaappu.akmusic.together.TogetherSessionState.Joined(
+                                            role = com.aromaappu.akmusic.together.TogetherRole.Guest,
                                             sessionId = joinInfo.sessionId,
                                             selfParticipantId = event.welcome.participantId,
                                             roomState = initial,
@@ -2518,15 +2518,15 @@ class MusicService :
                             startTogetherHeartbeat(joinInfo.sessionId, client)
                         }
 
-                        is com.arturo254.opentune.together.TogetherClientEvent.RoomState -> {
+                        is com.aromaappu.akmusic.together.TogetherClientEvent.RoomState -> {
                             applyRemoteRoomState(event.state)
                         }
 
-                        is com.arturo254.opentune.together.TogetherClientEvent.JoinDecision -> {
+                        is com.aromaappu.akmusic.together.TogetherClientEvent.JoinDecision -> {
                             if (!event.decision.approved) {
                                 scope.launch(SilentHandler) {
                                     togetherSessionState.value =
-                                        com.arturo254.opentune.together.TogetherSessionState.Error(
+                                        com.aromaappu.akmusic.together.TogetherSessionState.Error(
                                             message = getString(R.string.not_allowed),
                                             recoverable = true,
                                         )
@@ -2535,14 +2535,14 @@ class MusicService :
                             }
                         }
 
-                        is com.arturo254.opentune.together.TogetherClientEvent.ServerIssue -> {
+                        is com.aromaappu.akmusic.together.TogetherClientEvent.ServerIssue -> {
                             Timber.tag("Together").w("server issue (lan) code=${event.code.orEmpty()} message=${event.message}")
                             when (event.code) {
                                 "GUEST_CONTROL_DISABLED" -> {
                                     showTogetherNotice(event.message, key = "GUEST_CONTROL_DISABLED")
                                     val joined =
-                                        togetherSessionState.value as? com.arturo254.opentune.together.TogetherSessionState.Joined
-                                    if (joined?.role is com.arturo254.opentune.together.TogetherRole.Guest) {
+                                        togetherSessionState.value as? com.aromaappu.akmusic.together.TogetherSessionState.Joined
+                                    if (joined?.role is com.aromaappu.akmusic.together.TogetherRole.Guest) {
                                         togetherPendingGuestControl = null
                                         togetherLastSentControlAction = null
                                         scope.launch(SilentHandler) { applyRemoteRoomState(joined.roomState) }
@@ -2560,7 +2560,7 @@ class MusicService :
                                 else -> {
                                     scope.launch(SilentHandler) {
                                         togetherSessionState.value =
-                                            com.arturo254.opentune.together.TogetherSessionState.Error(
+                                            com.aromaappu.akmusic.together.TogetherSessionState.Error(
                                                 message = event.message,
                                                 recoverable = true,
                                             )
@@ -2570,7 +2570,7 @@ class MusicService :
                             }
                         }
 
-                        is com.arturo254.opentune.together.TogetherClientEvent.HeartbeatPong -> {
+                        is com.aromaappu.akmusic.together.TogetherClientEvent.HeartbeatPong -> {
                             val clock = togetherClock ?: return@collect
                             clock.onPong(
                                 sentAtElapsedMs = event.pong.clientElapsedRealtimeMs,
@@ -2579,10 +2579,10 @@ class MusicService :
                             )
                         }
 
-                        is com.arturo254.opentune.together.TogetherClientEvent.Error -> {
+                        is com.aromaappu.akmusic.together.TogetherClientEvent.Error -> {
                             scope.launch(SilentHandler) {
                                 togetherSessionState.value =
-                                    com.arturo254.opentune.together.TogetherSessionState.Error(
+                                    com.aromaappu.akmusic.together.TogetherSessionState.Error(
                                         message = event.message,
                                         recoverable = true,
                                     )
@@ -2590,16 +2590,16 @@ class MusicService :
                             ioScope.launch(SilentHandler) { stopTogetherInternal() }
                         }
 
-                        com.arturo254.opentune.together.TogetherClientEvent.Disconnected -> {
+                        com.aromaappu.akmusic.together.TogetherClientEvent.Disconnected -> {
                             val current = togetherSessionState.value
-                            if (current is com.arturo254.opentune.together.TogetherSessionState.Idle) return@collect
+                            if (current is com.aromaappu.akmusic.together.TogetherSessionState.Idle) return@collect
                             scope.launch(SilentHandler) {
                                 val currentState = togetherSessionState.value
                                 togetherSessionState.value =
-                                    com.arturo254.opentune.together.TogetherSessionState.Error(
+                                    com.aromaappu.akmusic.together.TogetherSessionState.Error(
                                         message =
-                                            if (currentState is com.arturo254.opentune.together.TogetherSessionState.Joined &&
-                                                currentState.role is com.arturo254.opentune.together.TogetherRole.Guest
+                                            if (currentState is com.aromaappu.akmusic.together.TogetherSessionState.Joined &&
+                                                currentState.role is com.aromaappu.akmusic.together.TogetherRole.Guest
                                             ) {
                                                 getString(R.string.together_host_left_session)
                                             } else {
@@ -2627,7 +2627,7 @@ class MusicService :
         if (trimmedCode.isBlank()) {
             scope.launch(SilentHandler) {
                 togetherSessionState.value =
-                    com.arturo254.opentune.together.TogetherSessionState.Error(
+                    com.aromaappu.akmusic.together.TogetherSessionState.Error(
                         message = getString(R.string.invalid_code),
                         recoverable = true,
                     )
@@ -2636,18 +2636,18 @@ class MusicService :
         }
 
         scope.launch(SilentHandler) {
-            togetherSessionState.value = com.arturo254.opentune.together.TogetherSessionState.JoiningOnline(trimmedCode)
+            togetherSessionState.value = com.aromaappu.akmusic.together.TogetherSessionState.JoiningOnline(trimmedCode)
         }
 
         ioScope.launch(SilentHandler) {
             stopTogetherInternal()
             togetherIsOnlineSession = true
 
-            val baseUrl = com.arturo254.opentune.together.TogetherOnlineEndpoint.baseUrlOrNull(dataStore)
+            val baseUrl = com.aromaappu.akmusic.together.TogetherOnlineEndpoint.baseUrlOrNull(dataStore)
             if (baseUrl == null) {
                 scope.launch(SilentHandler) {
                     togetherSessionState.value =
-                        com.arturo254.opentune.together.TogetherSessionState.Error(
+                        com.aromaappu.akmusic.together.TogetherSessionState.Error(
                             message = getString(R.string.together_online_not_configured),
                             recoverable = true,
                         )
@@ -2655,11 +2655,11 @@ class MusicService :
                 return@launch
             }
 
-            val togetherToken = com.arturo254.opentune.BuildConfig.TOGETHER_BEARER_TOKEN.trim().takeIf { it.isNotBlank() }
+            val togetherToken = com.aromaappu.akmusic.BuildConfig.TOGETHER_BEARER_TOKEN.trim().takeIf { it.isNotBlank() }
             if (togetherToken == null) {
                 scope.launch(SilentHandler) {
                     togetherSessionState.value =
-                        com.arturo254.opentune.together.TogetherSessionState.Error(
+                        com.aromaappu.akmusic.together.TogetherSessionState.Error(
                             message = getString(R.string.together_token_missing),
                             recoverable = true,
                         )
@@ -2667,13 +2667,13 @@ class MusicService :
                 return@launch
             }
 
-            val api = com.arturo254.opentune.together.TogetherOnlineApi(baseUrl = baseUrl, bearerToken = togetherToken)
+            val api = com.aromaappu.akmusic.together.TogetherOnlineApi(baseUrl = baseUrl, bearerToken = togetherToken)
             val resolved =
                 runCatching { api.resolveCode(trimmedCode) }
                     .getOrElse { t ->
                         scope.launch(SilentHandler) {
                             togetherSessionState.value =
-                                com.arturo254.opentune.together.TogetherSessionState.Error(
+                                com.aromaappu.akmusic.together.TogetherSessionState.Error(
                                     message = togetherOnlineErrorMessage(t),
                                     recoverable = true,
                                 )
@@ -2683,13 +2683,13 @@ class MusicService :
                     }
 
             val client =
-                com.arturo254.opentune.together.TogetherClient(
+                com.aromaappu.akmusic.together.TogetherClient(
                     ioScope,
                     clientId = getOrCreateTogetherClientId(),
                     bearerToken = togetherToken,
                 )
             togetherClient = client
-            togetherClock = com.arturo254.opentune.together.TogetherClock()
+            togetherClock = com.aromaappu.akmusic.together.TogetherClock()
             togetherSelfParticipantId = null
             togetherLastAppliedQueueHash = null
 
@@ -2698,19 +2698,19 @@ class MusicService :
                 ioScope.launch(SilentHandler) {
                     client.events.collect { event ->
                         when (event) {
-                            is com.arturo254.opentune.together.TogetherClientEvent.Welcome -> {
+                            is com.aromaappu.akmusic.together.TogetherClientEvent.Welcome -> {
                                 togetherSelfParticipantId = event.welcome.participantId
                                 scope.launch(SilentHandler) {
                                     val state = togetherSessionState.value
-                                    if (state is com.arturo254.opentune.together.TogetherSessionState.JoiningOnline) {
+                                    if (state is com.aromaappu.akmusic.together.TogetherSessionState.JoiningOnline) {
                                         val selfName = displayName.trim().ifBlank { getString(R.string.together_role_guest) }
                                         val initial =
-                                            com.arturo254.opentune.together.TogetherRoomState(
+                                            com.aromaappu.akmusic.together.TogetherRoomState(
                                                 sessionId = resolved.sessionId,
                                                 hostId = togetherHostId,
                                                 participants =
                                                     listOf(
-                                                        com.arturo254.opentune.together.TogetherParticipant(
+                                                        com.aromaappu.akmusic.together.TogetherParticipant(
                                                             id = event.welcome.participantId,
                                                             name = selfName,
                                                             isHost = false,
@@ -2729,8 +2729,8 @@ class MusicService :
                                                 sentAtElapsedRealtimeMs = android.os.SystemClock.elapsedRealtime(),
                                             )
                                         togetherSessionState.value =
-                                            com.arturo254.opentune.together.TogetherSessionState.Joined(
-                                                role = com.arturo254.opentune.together.TogetherRole.Guest,
+                                            com.aromaappu.akmusic.together.TogetherSessionState.Joined(
+                                                role = com.aromaappu.akmusic.together.TogetherRole.Guest,
                                                 sessionId = resolved.sessionId,
                                                 selfParticipantId = event.welcome.participantId,
                                                 roomState = initial,
@@ -2740,15 +2740,15 @@ class MusicService :
                                 startTogetherHeartbeat(resolved.sessionId, client)
                             }
 
-                            is com.arturo254.opentune.together.TogetherClientEvent.RoomState -> {
+                            is com.aromaappu.akmusic.together.TogetherClientEvent.RoomState -> {
                                 applyRemoteRoomState(event.state)
                             }
 
-                            is com.arturo254.opentune.together.TogetherClientEvent.JoinDecision -> {
+                            is com.aromaappu.akmusic.together.TogetherClientEvent.JoinDecision -> {
                                 if (!event.decision.approved) {
                                     scope.launch(SilentHandler) {
                                         togetherSessionState.value =
-                                            com.arturo254.opentune.together.TogetherSessionState.Error(
+                                            com.aromaappu.akmusic.together.TogetherSessionState.Error(
                                                 message = getString(R.string.not_allowed),
                                                 recoverable = true,
                                             )
@@ -2757,14 +2757,14 @@ class MusicService :
                                 }
                             }
 
-                            is com.arturo254.opentune.together.TogetherClientEvent.ServerIssue -> {
+                            is com.aromaappu.akmusic.together.TogetherClientEvent.ServerIssue -> {
                                 Timber.tag("Together").w("server issue (online) code=${event.code.orEmpty()} message=${event.message}")
                                 when (event.code) {
                                     "GUEST_CONTROL_DISABLED" -> {
                                         showTogetherNotice(event.message, key = "GUEST_CONTROL_DISABLED")
                                         val joined =
-                                            togetherSessionState.value as? com.arturo254.opentune.together.TogetherSessionState.Joined
-                                        if (joined?.role is com.arturo254.opentune.together.TogetherRole.Guest) {
+                                            togetherSessionState.value as? com.aromaappu.akmusic.together.TogetherSessionState.Joined
+                                        if (joined?.role is com.aromaappu.akmusic.together.TogetherRole.Guest) {
                                             togetherPendingGuestControl = null
                                             togetherLastSentControlAction = null
                                             scope.launch(SilentHandler) { applyRemoteRoomState(joined.roomState) }
@@ -2782,7 +2782,7 @@ class MusicService :
                                     else -> {
                                         scope.launch(SilentHandler) {
                                             togetherSessionState.value =
-                                                com.arturo254.opentune.together.TogetherSessionState.Error(
+                                                com.aromaappu.akmusic.together.TogetherSessionState.Error(
                                                     message = event.message,
                                                     recoverable = true,
                                                 )
@@ -2792,7 +2792,7 @@ class MusicService :
                                 }
                             }
 
-                            is com.arturo254.opentune.together.TogetherClientEvent.HeartbeatPong -> {
+                            is com.aromaappu.akmusic.together.TogetherClientEvent.HeartbeatPong -> {
                                 val clock = togetherClock ?: return@collect
                                 clock.onPong(
                                     sentAtElapsedMs = event.pong.clientElapsedRealtimeMs,
@@ -2801,10 +2801,10 @@ class MusicService :
                                 )
                             }
 
-                            is com.arturo254.opentune.together.TogetherClientEvent.Error -> {
+                            is com.aromaappu.akmusic.together.TogetherClientEvent.Error -> {
                                 scope.launch(SilentHandler) {
                                     togetherSessionState.value =
-                                        com.arturo254.opentune.together.TogetherSessionState.Error(
+                                        com.aromaappu.akmusic.together.TogetherSessionState.Error(
                                             message = event.message,
                                             recoverable = true,
                                         )
@@ -2812,16 +2812,16 @@ class MusicService :
                                 ioScope.launch(SilentHandler) { stopTogetherInternal() }
                             }
 
-                            com.arturo254.opentune.together.TogetherClientEvent.Disconnected -> {
+                            com.aromaappu.akmusic.together.TogetherClientEvent.Disconnected -> {
                                 val current = togetherSessionState.value
-                                if (current is com.arturo254.opentune.together.TogetherSessionState.Idle) return@collect
+                                if (current is com.aromaappu.akmusic.together.TogetherSessionState.Idle) return@collect
                                 scope.launch(SilentHandler) {
                                     val currentState = togetherSessionState.value
                                     togetherSessionState.value =
-                                        com.arturo254.opentune.together.TogetherSessionState.Error(
+                                        com.aromaappu.akmusic.together.TogetherSessionState.Error(
                                             message =
-                                                if (currentState is com.arturo254.opentune.together.TogetherSessionState.Joined &&
-                                                    currentState.role is com.arturo254.opentune.together.TogetherRole.Guest
+                                                if (currentState is com.aromaappu.akmusic.together.TogetherSessionState.Joined &&
+                                                    currentState.role is com.aromaappu.akmusic.together.TogetherRole.Guest
                                                 ) {
                                                     getString(R.string.together_host_left_session)
                                                 } else {
@@ -2837,14 +2837,14 @@ class MusicService :
                 }
 
             val wsUrl =
-                com.arturo254.opentune.together.TogetherOnlineEndpoint.onlineWebSocketUrlOrNull(
+                com.aromaappu.akmusic.together.TogetherOnlineEndpoint.onlineWebSocketUrlOrNull(
                     rawWsUrl = resolved.wsUrl,
                     baseUrl = baseUrl,
                 )
             if (wsUrl == null) {
                 scope.launch(SilentHandler) {
                     togetherSessionState.value =
-                        com.arturo254.opentune.together.TogetherSessionState.Error(
+                        com.aromaappu.akmusic.together.TogetherSessionState.Error(
                             message = "Connection failed: Invalid server websocket URL",
                             recoverable = true,
                         )
@@ -2865,12 +2865,12 @@ class MusicService :
     fun leaveTogether() {
         ensureScopesActive()
         scope.launch(SilentHandler) {
-            togetherSessionState.value = com.arturo254.opentune.together.TogetherSessionState.Idle
+            togetherSessionState.value = com.aromaappu.akmusic.together.TogetherSessionState.Idle
         }
         ioScope.launch(SilentHandler) { stopTogetherInternal() }
     }
 
-    fun updateTogetherSettings(settings: com.arturo254.opentune.together.TogetherRoomSettings) {
+    fun updateTogetherSettings(settings: com.aromaappu.akmusic.together.TogetherRoomSettings) {
         val server = togetherServer
         val onlineHost = togetherOnlineHost
         if (server == null && onlineHost == null) return
@@ -2904,14 +2904,14 @@ class MusicService :
         }
     }
 
-    fun requestTogetherControl(action: com.arturo254.opentune.together.ControlAction) {
+    fun requestTogetherControl(action: com.aromaappu.akmusic.together.ControlAction) {
         val client =
             togetherClient ?: run {
                 showTogetherNotice(getString(R.string.network_unavailable), key = "TOGETHER_CLIENT_MISSING")
                 return
             }
-        val state = togetherSessionState.value as? com.arturo254.opentune.together.TogetherSessionState.Joined ?: return
-        if (state.role !is com.arturo254.opentune.together.TogetherRole.Guest) return
+        val state = togetherSessionState.value as? com.aromaappu.akmusic.together.TogetherSessionState.Joined ?: return
+        if (state.role !is com.aromaappu.akmusic.together.TogetherRole.Guest) return
         if (!state.roomState.settings.allowGuestsToControlPlayback) {
             Timber.tag("Together").i("control blocked locally (disabled) action=${action::class.java.simpleName}")
             showTogetherNotice(getString(R.string.not_allowed), key = "GUEST_CONTROL_DISABLED_LOCAL")
@@ -2927,13 +2927,13 @@ class MusicService :
         val timeout = if (togetherIsOnlineSession) 5000L else 2000L
         togetherPendingGuestControl =
             when (action) {
-                com.arturo254.opentune.together.ControlAction.Play ->
+                com.aromaappu.akmusic.together.ControlAction.Play ->
                     TogetherPendingGuestControl(desiredIsPlaying = true, requestedAtElapsedMs = now, expiresAtElapsedMs = now + timeout)
-                com.arturo254.opentune.together.ControlAction.Pause ->
+                com.aromaappu.akmusic.together.ControlAction.Pause ->
                     TogetherPendingGuestControl(desiredIsPlaying = false, requestedAtElapsedMs = now, expiresAtElapsedMs = now + timeout)
-                is com.arturo254.opentune.together.ControlAction.SeekToIndex ->
+                is com.aromaappu.akmusic.together.ControlAction.SeekToIndex ->
                     TogetherPendingGuestControl(desiredIndex = action.index.coerceAtLeast(0), requestedAtElapsedMs = now, expiresAtElapsedMs = now + timeout)
-                is com.arturo254.opentune.together.ControlAction.SeekToTrack ->
+                is com.aromaappu.akmusic.together.ControlAction.SeekToTrack ->
                     TogetherPendingGuestControl(
                         desiredTrackId = action.trackId.trim().ifBlank { null },
                         requestedAtElapsedMs = now,
@@ -2945,12 +2945,12 @@ class MusicService :
     }
 
     fun requestTogetherAddTrack(
-        track: com.arturo254.opentune.together.TogetherTrack,
-        mode: com.arturo254.opentune.together.AddTrackMode,
+        track: com.aromaappu.akmusic.together.TogetherTrack,
+        mode: com.aromaappu.akmusic.together.AddTrackMode,
     ) {
         val client = togetherClient ?: return
-        val state = togetherSessionState.value as? com.arturo254.opentune.together.TogetherSessionState.Joined ?: return
-        if (state.role !is com.arturo254.opentune.together.TogetherRole.Guest) return
+        val state = togetherSessionState.value as? com.aromaappu.akmusic.together.TogetherSessionState.Joined ?: return
+        if (state.role !is com.aromaappu.akmusic.together.TogetherRole.Guest) return
         if (!state.roomState.settings.allowGuestsToAddTracks) {
             Timber.tag("Together").i("add blocked locally (disabled) mode=$mode trackId=${track.id}")
             showTogetherNotice(getString(R.string.not_allowed), key = "GUEST_ADD_DISABLED_LOCAL")
@@ -2960,27 +2960,27 @@ class MusicService :
     }
 
     private suspend fun handleTogetherHostEvent(
-        event: com.arturo254.opentune.together.TogetherServerEvent,
-        currentSettings: suspend () -> com.arturo254.opentune.together.TogetherRoomSettings,
+        event: com.aromaappu.akmusic.together.TogetherServerEvent,
+        currentSettings: suspend () -> com.aromaappu.akmusic.together.TogetherRoomSettings,
     ) {
         when (event) {
-            is com.arturo254.opentune.together.TogetherServerEvent.ControlRequested -> {
+            is com.aromaappu.akmusic.together.TogetherServerEvent.ControlRequested -> {
                 val settings = currentSettings()
                 if (!settings.allowGuestsToControlPlayback) return
                 applyHostControl(event.request.action)
             }
 
-            is com.arturo254.opentune.together.TogetherServerEvent.AddTrackRequested -> {
+            is com.aromaappu.akmusic.together.TogetherServerEvent.AddTrackRequested -> {
                 val settings = currentSettings()
                 if (!settings.allowGuestsToAddTracks) return
                 applyHostAddTrack(event.request.track, event.request.mode)
             }
 
-            is com.arturo254.opentune.together.TogetherServerEvent.Error -> {
+            is com.aromaappu.akmusic.together.TogetherServerEvent.Error -> {
                 val current = togetherSessionState.value
-                if (current is com.arturo254.opentune.together.TogetherSessionState.Idle) return
+                if (current is com.aromaappu.akmusic.together.TogetherSessionState.Idle) return
                 togetherSessionState.value =
-                    com.arturo254.opentune.together.TogetherSessionState.Error(
+                    com.aromaappu.akmusic.together.TogetherSessionState.Error(
                         message = event.message,
                         recoverable = true,
                     )
@@ -2991,28 +2991,28 @@ class MusicService :
         }
     }
 
-    private suspend fun applyHostControl(action: com.arturo254.opentune.together.ControlAction) {
+    private suspend fun applyHostControl(action: com.aromaappu.akmusic.together.ControlAction) {
         withContext(Dispatchers.Main) {
             when (action) {
-                com.arturo254.opentune.together.ControlAction.Play -> {
+                com.aromaappu.akmusic.together.ControlAction.Play -> {
                     if (!player.playWhenReady) {
                         player.prepare()
                         player.playWhenReady = true
                     }
                 }
 
-                com.arturo254.opentune.together.ControlAction.Pause -> {
+                com.aromaappu.akmusic.together.ControlAction.Pause -> {
                     if (player.playWhenReady) {
                         player.playWhenReady = false
                     }
                 }
 
-                is com.arturo254.opentune.together.ControlAction.SeekTo -> {
+                is com.aromaappu.akmusic.together.ControlAction.SeekTo -> {
                     player.seekTo(action.positionMs.coerceAtLeast(0L))
                     player.prepare()
                 }
 
-                com.arturo254.opentune.together.ControlAction.SkipNext -> {
+                com.aromaappu.akmusic.together.ControlAction.SkipNext -> {
                     if (player.hasNextMediaItem()) {
                         player.seekToNext()
                         player.prepare()
@@ -3020,7 +3020,7 @@ class MusicService :
                     }
                 }
 
-                com.arturo254.opentune.together.ControlAction.SkipPrevious -> {
+                com.aromaappu.akmusic.together.ControlAction.SkipPrevious -> {
                     if (player.hasPreviousMediaItem()) {
                         player.seekToPrevious()
                         player.prepare()
@@ -3028,7 +3028,7 @@ class MusicService :
                     }
                 }
 
-                is com.arturo254.opentune.together.ControlAction.SeekToTrack -> {
+                is com.aromaappu.akmusic.together.ControlAction.SeekToTrack -> {
                     val trackId = action.trackId.trim()
                     if (trackId.isNotBlank()) {
                         val idx =
@@ -3043,7 +3043,7 @@ class MusicService :
                     }
                 }
 
-                is com.arturo254.opentune.together.ControlAction.SeekToIndex -> {
+                is com.aromaappu.akmusic.together.ControlAction.SeekToIndex -> {
                     val idx = action.index.coerceAtLeast(0)
                     if (idx < player.mediaItemCount) {
                         player.seekTo(idx, action.positionMs.coerceAtLeast(0L))
@@ -3051,13 +3051,13 @@ class MusicService :
                     }
                 }
 
-                is com.arturo254.opentune.together.ControlAction.SetRepeatMode -> {
+                is com.aromaappu.akmusic.together.ControlAction.SetRepeatMode -> {
                     if (player.repeatMode != action.repeatMode) {
                         player.repeatMode = action.repeatMode
                     }
                 }
 
-                is com.arturo254.opentune.together.ControlAction.SetShuffleEnabled -> {
+                is com.aromaappu.akmusic.together.ControlAction.SetShuffleEnabled -> {
                     if (player.shuffleModeEnabled != action.shuffleEnabled) {
                         player.shuffleModeEnabled = action.shuffleEnabled
                     }
@@ -3067,14 +3067,14 @@ class MusicService :
     }
 
     private suspend fun applyHostAddTrack(
-        track: com.arturo254.opentune.together.TogetherTrack,
-        mode: com.arturo254.opentune.together.AddTrackMode,
+        track: com.aromaappu.akmusic.together.TogetherTrack,
+        mode: com.aromaappu.akmusic.together.AddTrackMode,
     ) {
         val mediaItem = track.toMediaMetadata().toMediaItem()
         withContext(Dispatchers.Main) {
             when (mode) {
-                com.arturo254.opentune.together.AddTrackMode.PLAY_NEXT -> playNext(listOf(mediaItem))
-                com.arturo254.opentune.together.AddTrackMode.ADD_TO_QUEUE -> addToQueue(listOf(mediaItem))
+                com.aromaappu.akmusic.together.AddTrackMode.PLAY_NEXT -> playNext(listOf(mediaItem))
+                com.aromaappu.akmusic.together.AddTrackMode.ADD_TO_QUEUE -> addToQueue(listOf(mediaItem))
             }
         }
     }
@@ -3082,11 +3082,11 @@ class MusicService :
     private suspend fun buildTogetherRoomState(
         sessionId: String,
         hostId: String,
-    ): com.arturo254.opentune.together.TogetherRoomState {
+    ): com.aromaappu.akmusic.together.TogetherRoomState {
         return withContext(Dispatchers.Main) {
             val tracks =
                 player.mediaItems.mapNotNull { it.metadata }.map { meta ->
-                    com.arturo254.opentune.together.TogetherTrack(
+                    com.aromaappu.akmusic.together.TogetherTrack(
                         id = meta.id,
                         title = meta.title,
                         artists = meta.artists.map { it.name },
@@ -3095,12 +3095,12 @@ class MusicService :
                     )
                 }
 
-            val queueHash = com.arturo254.opentune.utils.md5(tracks.joinToString(separator = "|") { it.id })
+            val queueHash = com.aromaappu.akmusic.utils.md5(tracks.joinToString(separator = "|") { it.id })
 
-            com.arturo254.opentune.together.TogetherRoomState(
+            com.aromaappu.akmusic.together.TogetherRoomState(
                 sessionId = sessionId,
                 hostId = hostId,
-                settings = com.arturo254.opentune.together.TogetherRoomSettings(),
+                settings = com.aromaappu.akmusic.together.TogetherRoomSettings(),
                 participants = emptyList(),
                 queue = tracks,
                 queueHash = queueHash,
@@ -3114,7 +3114,7 @@ class MusicService :
         }
     }
 
-    private suspend fun applyRemoteRoomState(state: com.arturo254.opentune.together.TogetherRoomState) {
+    private suspend fun applyRemoteRoomState(state: com.aromaappu.akmusic.together.TogetherRoomState) {
         val pid = togetherSelfParticipantId ?: return
         val now = android.os.SystemClock.elapsedRealtime()
 
@@ -3158,7 +3158,7 @@ class MusicService :
                 val desiredIds = state.queue.map { it.id }
                 val desiredHash = state.queueHash
                 val localIds = player.mediaItems.mapNotNull { it.metadata?.id ?: it.mediaId }.filter { it.isNotBlank() }
-                val localHash = if (localIds.isEmpty()) "" else com.arturo254.opentune.utils.md5(localIds.joinToString(separator = "|"))
+                val localHash = if (localIds.isEmpty()) "" else com.aromaappu.akmusic.utils.md5(localIds.joinToString(separator = "|"))
                 val needsRebuild =
                     desiredItems.isNotEmpty() &&
                         (
@@ -3171,7 +3171,7 @@ class MusicService :
                     val startIndex = state.currentIndex.coerceIn(0, desiredItems.lastIndex)
                     suppressAutoPlayback = false
                     currentQueue =
-                        com.arturo254.opentune.playback.queues.ListQueue(
+                        com.aromaappu.akmusic.playback.queues.ListQueue(
                             title = getString(R.string.music_player),
                             items = desiredItems,
                             startIndex = startIndex,
@@ -3223,8 +3223,8 @@ class MusicService :
                 togetherLastAppliedRoomStateSentAtElapsedMs = sentAt
 
                 togetherSessionState.value =
-                    com.arturo254.opentune.together.TogetherSessionState.Joined(
-                        role = com.arturo254.opentune.together.TogetherRole.Guest,
+                    com.aromaappu.akmusic.together.TogetherSessionState.Joined(
+                        role = com.aromaappu.akmusic.together.TogetherRole.Guest,
                         sessionId = state.sessionId,
                         selfParticipantId = pid,
                         roomState = state,
@@ -3235,7 +3235,7 @@ class MusicService :
         }
     }
 
-    private fun startTogetherHeartbeat(sessionId: String, client: com.arturo254.opentune.together.TogetherClient) {
+    private fun startTogetherHeartbeat(sessionId: String, client: com.aromaappu.akmusic.together.TogetherClient) {
         togetherHeartbeatJob?.cancel()
         togetherHeartbeatJob =
             ioScope.launch(SilentHandler) {
@@ -3290,11 +3290,11 @@ class MusicService :
         togetherServer = null
     }
 
-    private fun com.arturo254.opentune.together.TogetherTrack.toMediaMetadata(): com.arturo254.opentune.models.MediaMetadata {
-        return com.arturo254.opentune.models.MediaMetadata(
+    private fun com.aromaappu.akmusic.together.TogetherTrack.toMediaMetadata(): com.aromaappu.akmusic.models.MediaMetadata {
+        return com.aromaappu.akmusic.models.MediaMetadata(
             id = id,
             title = title,
-            artists = artists.map { name -> com.arturo254.opentune.models.MediaMetadata.Artist(id = null, name = name) },
+            artists = artists.map { name -> com.aromaappu.akmusic.models.MediaMetadata.Artist(id = null, name = name) },
             duration = durationSec,
             thumbnailUrl = thumbnailUrl,
         )
@@ -3579,8 +3579,8 @@ class MusicService :
         lyricsPreloadManager?.onSongChanged(currentIndex, queue)
     }
 
-    val joined = togetherSessionState.value as? com.arturo254.opentune.together.TogetherSessionState.Joined
-    if (joined?.role is com.arturo254.opentune.together.TogetherRole.Guest &&
+    val joined = togetherSessionState.value as? com.aromaappu.akmusic.together.TogetherSessionState.Joined
+    if (joined?.role is com.aromaappu.akmusic.together.TogetherRole.Guest &&
         reason == Player.MEDIA_ITEM_TRANSITION_REASON_SEEK
     ) {
         if (!joined.roomState.settings.allowGuestsToControlPlayback) {
@@ -3596,12 +3596,12 @@ class MusicService :
             val trackId = (mediaItem?.metadata ?: player.currentMetadata)?.id?.trim().orEmpty()
             requestTogetherControl(
                 if (trackId.isBlank()) {
-                    com.arturo254.opentune.together.ControlAction.SeekToIndex(
+                    com.aromaappu.akmusic.together.ControlAction.SeekToIndex(
                         index = index,
                         positionMs = player.currentPosition.coerceAtLeast(0L),
                     )
                 } else {
-                    com.arturo254.opentune.together.ControlAction.SeekToTrack(
+                    com.aromaappu.akmusic.together.ControlAction.SeekToTrack(
                         trackId = trackId,
                         positionMs = player.currentPosition.coerceAtLeast(0L),
                     )
@@ -3859,8 +3859,8 @@ class MusicService :
                 currentMediaMetadata.value = player.currentMetadata
             }
         }
-    val joined = togetherSessionState.value as? com.arturo254.opentune.together.TogetherSessionState.Joined
-    if (joined?.role is com.arturo254.opentune.together.TogetherRole.Guest &&
+    val joined = togetherSessionState.value as? com.aromaappu.akmusic.together.TogetherSessionState.Joined
+    if (joined?.role is com.aromaappu.akmusic.together.TogetherRole.Guest &&
         events.contains(Player.EVENT_PLAY_WHEN_READY_CHANGED)
     ) {
         if (!joined.roomState.settings.allowGuestsToControlPlayback) {
@@ -3876,9 +3876,9 @@ class MusicService :
             if (!isEcho) {
                 val action =
                     if (playWhenReady) {
-                        com.arturo254.opentune.together.ControlAction.Play
+                        com.aromaappu.akmusic.together.ControlAction.Play
                     } else {
-                        com.arturo254.opentune.together.ControlAction.Pause
+                        com.aromaappu.akmusic.together.ControlAction.Pause
                     }
                 requestTogetherControl(action)
             }
@@ -4065,15 +4065,15 @@ class MusicService :
 
     override fun onShuffleModeEnabledChanged(shuffleModeEnabled: Boolean) {
         updateNotification()
-        val joined = togetherSessionState.value as? com.arturo254.opentune.together.TogetherSessionState.Joined
-        if (joined?.role is com.arturo254.opentune.together.TogetherRole.Guest) {
+        val joined = togetherSessionState.value as? com.aromaappu.akmusic.together.TogetherSessionState.Joined
+        if (joined?.role is com.aromaappu.akmusic.together.TogetherRole.Guest) {
             if (!isTogetherApplyingRemote()) {
                 if (!joined.roomState.settings.allowGuestsToControlPlayback) {
                     scope.launch(SilentHandler) { applyRemoteRoomState(joined.roomState) }
                     return
                 }
                 requestTogetherControl(
-                    com.arturo254.opentune.together.ControlAction.SetShuffleEnabled(
+                    com.aromaappu.akmusic.together.ControlAction.SetShuffleEnabled(
                         shuffleEnabled = shuffleModeEnabled,
                     ),
                 )
@@ -4094,15 +4094,15 @@ class MusicService :
 
     override fun onRepeatModeChanged(repeatMode: Int) {
         updateNotification()
-        val joined = togetherSessionState.value as? com.arturo254.opentune.together.TogetherSessionState.Joined
-        if (joined?.role is com.arturo254.opentune.together.TogetherRole.Guest) {
+        val joined = togetherSessionState.value as? com.aromaappu.akmusic.together.TogetherSessionState.Joined
+        if (joined?.role is com.aromaappu.akmusic.together.TogetherRole.Guest) {
             if (!isTogetherApplyingRemote()) {
                 if (!joined.roomState.settings.allowGuestsToControlPlayback) {
                     scope.launch(SilentHandler) { applyRemoteRoomState(joined.roomState) }
                     return
                 }
                 requestTogetherControl(
-                    com.arturo254.opentune.together.ControlAction.SetRepeatMode(
+                    com.aromaappu.akmusic.together.ControlAction.SetRepeatMode(
                         repeatMode = repeatMode,
                     ),
                 )
@@ -4764,7 +4764,7 @@ class MusicService :
     }
 
     // Create a transient Song object from current Player MediaMetadata when the DB doesn't have it.
-    private fun createTransientSongFromMedia(media: com.arturo254.opentune.models.MediaMetadata): Song {
+    private fun createTransientSongFromMedia(media: com.aromaappu.akmusic.models.MediaMetadata): Song {
         val songEntity = SongEntity(
             id = media.id,
             title = media.title,
@@ -4849,7 +4849,7 @@ class MusicService :
         }
     }
 
-    private fun MediaItem.toPersistableMetadata(): com.arturo254.opentune.models.MediaMetadata? {
+    private fun MediaItem.toPersistableMetadata(): com.aromaappu.akmusic.models.MediaMetadata? {
         val tagged = metadata
         if (tagged != null) return tagged
 
@@ -4870,17 +4870,17 @@ class MusicService :
             artistText
                 ?.split(",")
                 ?.mapNotNull { it.trim().takeIf(String::isNotBlank) }
-                ?.map { name -> com.arturo254.opentune.models.MediaMetadata.Artist(id = null, name = name) }
+                ?.map { name -> com.aromaappu.akmusic.models.MediaMetadata.Artist(id = null, name = name) }
                 .orEmpty()
 
         val thumbnailUrl = mediaMetadata.artworkUri?.toString()
         val albumTitle = mediaMetadata.albumTitle?.toString()?.trim().takeIf { !it.isNullOrBlank() }
         val album =
             albumTitle?.let { titleValue ->
-                com.arturo254.opentune.models.MediaMetadata.Album(id = titleValue, title = titleValue)
+                com.aromaappu.akmusic.models.MediaMetadata.Album(id = titleValue, title = titleValue)
             }
 
-        return com.arturo254.opentune.models.MediaMetadata(
+        return com.aromaappu.akmusic.models.MediaMetadata(
             id = id,
             title = title,
             artists = artists,
@@ -5065,17 +5065,17 @@ class MusicService :
         try {
             val state = togetherSessionState.value
             val isHostSessionActive =
-                state is com.arturo254.opentune.together.TogetherSessionState.Hosting ||
-                    state is com.arturo254.opentune.together.TogetherSessionState.HostingOnline ||
-                    (state is com.arturo254.opentune.together.TogetherSessionState.Joined &&
-                        state.role is com.arturo254.opentune.together.TogetherRole.Host)
+                state is com.aromaappu.akmusic.together.TogetherSessionState.Hosting ||
+                    state is com.aromaappu.akmusic.together.TogetherSessionState.HostingOnline ||
+                    (state is com.aromaappu.akmusic.together.TogetherSessionState.Joined &&
+                        state.role is com.aromaappu.akmusic.together.TogetherRole.Host)
 
             val isPlaybackInactive = player.playbackState == Player.STATE_IDLE || player.mediaItemCount == 0
 
             if (shouldStopServiceOnTaskRemoved(stopMusicOnTaskClearEnabled, isHostSessionActive, isPlaybackInactive)) {
                 if (isHostSessionActive && isPlaybackInactive) {
                     runCatching { scope.launch { stopTogetherInternal() } }
-                    runCatching { togetherSessionState.value = com.arturo254.opentune.together.TogetherSessionState.Idle }
+                    runCatching { togetherSessionState.value = com.aromaappu.akmusic.together.TogetherSessionState.Idle }
                     stopSelf()
                     return
                 }

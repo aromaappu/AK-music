@@ -6,7 +6,7 @@
 
 
 
-package com.arturo254.opentune.playback
+package com.aromaappu.akmusic.playback
 
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf

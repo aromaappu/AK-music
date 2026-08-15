@@ -6,7 +6,7 @@
 
 
 
-package com.arturo254.opentune.ui.component
+package com.aromaappu.akmusic.ui.component
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -27,7 +27,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import com.arturo254.opentune.R
+import com.aromaappu.akmusic.R
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import org.jsoup.Jsoup
@@ -76,7 +76,7 @@ suspend fun fetchReleaseNotesMarkdown(): String {
     return withContext(Dispatchers.IO) {
         try {
             val document =
-                Jsoup.connect("https://github.com/Arturo254/OpenTune/releases/latest").get()
+                Jsoup.connect("https://github.com/aromaappu/AK-music/releases/latest").get()
             // Obtener el contenido HTML del release
             val changelogElement = document.selectFirst(".markdown-body")
 

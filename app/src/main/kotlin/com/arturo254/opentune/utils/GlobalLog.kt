@@ -6,7 +6,7 @@
 
 
 
-package com.arturo254.opentune.utils
+package com.aromaappu.akmusic.utils
 
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow

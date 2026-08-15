@@ -6,7 +6,7 @@
 
 
 
-package com.arturo254.opentune.ui.component
+package com.aromaappu.akmusic.ui.component
 
 import androidx.activity.compose.BackHandler
 import androidx.compose.animation.core.Animatable
@@ -52,9 +52,9 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.Velocity
 import androidx.compose.ui.unit.dp
-import com.arturo254.opentune.constants.BottomSheetAnimationSpec
-import com.arturo254.opentune.constants.BottomSheetSoftAnimationSpec
-import com.arturo254.opentune.utils.rememberPreference
+import com.aromaappu.akmusic.constants.BottomSheetAnimationSpec
+import com.aromaappu.akmusic.constants.BottomSheetSoftAnimationSpec
+import com.aromaappu.akmusic.utils.rememberPreference
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.CoroutineStart
 import kotlinx.coroutines.launch

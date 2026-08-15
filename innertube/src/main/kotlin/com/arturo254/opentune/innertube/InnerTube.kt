@@ -4,31 +4,31 @@
  * Licensed Under GPL-3.0 | see git history for contributors
  */
 
-package com.arturo254.opentune.innertube
+package com.aromaappu.akmusic.innertube
 
-import com.arturo254.opentune.innertube.models.Context
-import com.arturo254.opentune.innertube.models.MediaInfo
-import com.arturo254.opentune.innertube.models.ReturnYouTubeDislikeResponse
-import com.arturo254.opentune.innertube.models.YouTubeClient
-import com.arturo254.opentune.innertube.models.YouTubeLocale
-import com.arturo254.opentune.innertube.models.body.AccountMenuBody
-import com.arturo254.opentune.innertube.models.body.Action
-import com.arturo254.opentune.innertube.models.body.BrowseBody
-import com.arturo254.opentune.innertube.models.body.CreatePlaylistBody
-import com.arturo254.opentune.innertube.models.body.EditPlaylistBody
-import com.arturo254.opentune.innertube.models.body.GetQueueBody
-import com.arturo254.opentune.innertube.models.body.GetSearchSuggestionsBody
-import com.arturo254.opentune.innertube.models.body.GetTranscriptBody
-import com.arturo254.opentune.innertube.models.body.LikeBody
-import com.arturo254.opentune.innertube.models.body.NextBody
-import com.arturo254.opentune.innertube.models.body.PlayerBody
-import com.arturo254.opentune.innertube.models.body.PlaylistDeleteBody
-import com.arturo254.opentune.innertube.models.body.SearchBody
-import com.arturo254.opentune.innertube.models.body.SubscribeBody
-import com.arturo254.opentune.innertube.models.response.NextResponse
-import com.arturo254.opentune.innertube.proxy.RotatingProxySelector
-import com.arturo254.opentune.innertube.utils.parseCookieString
-import com.arturo254.opentune.innertube.utils.sha1
+import com.aromaappu.akmusic.innertube.models.Context
+import com.aromaappu.akmusic.innertube.models.MediaInfo
+import com.aromaappu.akmusic.innertube.models.ReturnYouTubeDislikeResponse
+import com.aromaappu.akmusic.innertube.models.YouTubeClient
+import com.aromaappu.akmusic.innertube.models.YouTubeLocale
+import com.aromaappu.akmusic.innertube.models.body.AccountMenuBody
+import com.aromaappu.akmusic.innertube.models.body.Action
+import com.aromaappu.akmusic.innertube.models.body.BrowseBody
+import com.aromaappu.akmusic.innertube.models.body.CreatePlaylistBody
+import com.aromaappu.akmusic.innertube.models.body.EditPlaylistBody
+import com.aromaappu.akmusic.innertube.models.body.GetQueueBody
+import com.aromaappu.akmusic.innertube.models.body.GetSearchSuggestionsBody
+import com.aromaappu.akmusic.innertube.models.body.GetTranscriptBody
+import com.aromaappu.akmusic.innertube.models.body.LikeBody
+import com.aromaappu.akmusic.innertube.models.body.NextBody
+import com.aromaappu.akmusic.innertube.models.body.PlayerBody
+import com.aromaappu.akmusic.innertube.models.body.PlaylistDeleteBody
+import com.aromaappu.akmusic.innertube.models.body.SearchBody
+import com.aromaappu.akmusic.innertube.models.body.SubscribeBody
+import com.aromaappu.akmusic.innertube.models.response.NextResponse
+import com.aromaappu.akmusic.innertube.proxy.RotatingProxySelector
+import com.aromaappu.akmusic.innertube.utils.parseCookieString
+import com.aromaappu.akmusic.innertube.utils.sha1
 import io.ktor.client.HttpClient
 import io.ktor.client.call.body
 import io.ktor.client.engine.okhttp.OkHttp

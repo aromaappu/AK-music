@@ -6,7 +6,7 @@
 
 
 
-package com.arturo254.opentune.ui.player
+package com.aromaappu.akmusic.ui.player
 
 import androidx.activity.compose.BackHandler
 import android.annotation.SuppressLint
@@ -79,28 +79,28 @@ import androidx.media3.common.Player
 import androidx.media3.common.Timeline
 import androidx.media3.exoplayer.source.ShuffleOrder.DefaultShuffleOrder
 import androidx.navigation.NavController
-import com.arturo254.opentune.LocalPlayerConnection
-import com.arturo254.opentune.R
-import com.arturo254.opentune.constants.ListItemHeight
-import com.arturo254.opentune.constants.PlayerDesignStyle
-import com.arturo254.opentune.constants.PlayerDesignStyleKey
-import com.arturo254.opentune.constants.QueueEditLockKey
-import com.arturo254.opentune.constants.AutoLoadMoreKey
-import com.arturo254.opentune.extensions.metadata
-import com.arturo254.opentune.extensions.move
-import com.arturo254.opentune.extensions.togglePlayPause
-import com.arturo254.opentune.extensions.toggleRepeatMode
-import com.arturo254.opentune.models.MediaMetadata
-import com.arturo254.opentune.ui.component.BottomSheet
-import com.arturo254.opentune.ui.component.BottomSheetState
-import com.arturo254.opentune.ui.component.LocalBottomSheetPageState
-import com.arturo254.opentune.ui.component.LocalMenuState
-import com.arturo254.opentune.ui.component.MediaMetadataListItem
-import com.arturo254.opentune.ui.menu.PlayerMenu
-import com.arturo254.opentune.ui.menu.SelectionMediaMetadataMenu
-import com.arturo254.opentune.ui.utils.ShowMediaInfo
-import com.arturo254.opentune.utils.rememberEnumPreference
-import com.arturo254.opentune.utils.rememberPreference
+import com.aromaappu.akmusic.LocalPlayerConnection
+import com.aromaappu.akmusic.R
+import com.aromaappu.akmusic.constants.ListItemHeight
+import com.aromaappu.akmusic.constants.PlayerDesignStyle
+import com.aromaappu.akmusic.constants.PlayerDesignStyleKey
+import com.aromaappu.akmusic.constants.QueueEditLockKey
+import com.aromaappu.akmusic.constants.AutoLoadMoreKey
+import com.aromaappu.akmusic.extensions.metadata
+import com.aromaappu.akmusic.extensions.move
+import com.aromaappu.akmusic.extensions.togglePlayPause
+import com.aromaappu.akmusic.extensions.toggleRepeatMode
+import com.aromaappu.akmusic.models.MediaMetadata
+import com.aromaappu.akmusic.ui.component.BottomSheet
+import com.aromaappu.akmusic.ui.component.BottomSheetState
+import com.aromaappu.akmusic.ui.component.LocalBottomSheetPageState
+import com.aromaappu.akmusic.ui.component.LocalMenuState
+import com.aromaappu.akmusic.ui.component.MediaMetadataListItem
+import com.aromaappu.akmusic.ui.menu.PlayerMenu
+import com.aromaappu.akmusic.ui.menu.SelectionMediaMetadataMenu
+import com.aromaappu.akmusic.ui.utils.ShowMediaInfo
+import com.aromaappu.akmusic.utils.rememberEnumPreference
+import com.aromaappu.akmusic.utils.rememberPreference
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
@@ -156,8 +156,8 @@ fun Queue(
     var infiniteQueueEnabled by rememberPreference(AutoLoadMoreKey, defaultValue = true)
     val togetherSessionState by playerConnection.service.togetherSessionState.collectAsState()
     val togetherForcesLock =
-        togetherSessionState is com.arturo254.opentune.together.TogetherSessionState.Joined &&
-                (togetherSessionState as com.arturo254.opentune.together.TogetherSessionState.Joined).role is com.arturo254.opentune.together.TogetherRole.Guest
+        togetherSessionState is com.aromaappu.akmusic.together.TogetherSessionState.Joined &&
+                (togetherSessionState as com.aromaappu.akmusic.together.TogetherSessionState.Joined).role is com.aromaappu.akmusic.together.TogetherRole.Guest
     val effectiveLocked = locked || togetherForcesLock
 
     val playerDesignStyle by rememberEnumPreference(
@@ -774,9 +774,9 @@ fun Queue(
                                                                 playerConnection.player.togglePlayPause()
                                                             } else {
                                                                 val joined =
-                                                                    togetherSessionState as? com.arturo254.opentune.together.TogetherSessionState.Joined
+                                                                    togetherSessionState as? com.aromaappu.akmusic.together.TogetherSessionState.Joined
                                                                 val isGuest =
-                                                                    joined?.role is com.arturo254.opentune.together.TogetherRole.Guest
+                                                                    joined?.role is com.aromaappu.akmusic.together.TogetherRole.Guest
                                                                 if (isGuest) {
                                                                     if (joined?.roomState?.settings?.allowGuestsToControlPlayback != true) {
                                                                         Toast.makeText(
@@ -798,7 +798,7 @@ fun Queue(
                                                                         Toast.LENGTH_SHORT
                                                                     ).show()
                                                                     playerConnection.service.requestTogetherControl(
-                                                                        com.arturo254.opentune.together.ControlAction.SeekToTrack(
+                                                                        com.aromaappu.akmusic.together.ControlAction.SeekToTrack(
                                                                             trackId = trackId,
                                                                             positionMs = 0L,
                                                                         ),

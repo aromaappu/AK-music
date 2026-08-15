@@ -6,7 +6,7 @@
 
 
 
-package com.arturo254.opentune.ui.component
+package com.aromaappu.akmusic.ui.component
 
 
 import androidx.compose.foundation.ExperimentalFoundationApi
@@ -19,16 +19,16 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.navigation.NavController
-import com.arturo254.opentune.R
-import com.arturo254.opentune.db.entities.Album
-import com.arturo254.opentune.db.entities.Artist
-import com.arturo254.opentune.db.entities.Playlist
-import com.arturo254.opentune.innertube.models.PlaylistItem
-import com.arturo254.opentune.innertube.models.WatchEndpoint
-import com.arturo254.opentune.ui.menu.AlbumMenu
-import com.arturo254.opentune.ui.menu.ArtistMenu
-import com.arturo254.opentune.ui.menu.PlaylistMenu
-import com.arturo254.opentune.ui.menu.YouTubePlaylistMenu
+import com.aromaappu.akmusic.R
+import com.aromaappu.akmusic.db.entities.Album
+import com.aromaappu.akmusic.db.entities.Artist
+import com.aromaappu.akmusic.db.entities.Playlist
+import com.aromaappu.akmusic.innertube.models.PlaylistItem
+import com.aromaappu.akmusic.innertube.models.WatchEndpoint
+import com.aromaappu.akmusic.ui.menu.AlbumMenu
+import com.aromaappu.akmusic.ui.menu.ArtistMenu
+import com.aromaappu.akmusic.ui.menu.PlaylistMenu
+import com.aromaappu.akmusic.ui.menu.YouTubePlaylistMenu
 import kotlinx.coroutines.CoroutineScope
 
 @Composable

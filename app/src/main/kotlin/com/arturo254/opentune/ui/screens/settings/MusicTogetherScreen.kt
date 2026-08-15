@@ -4,7 +4,7 @@
  * Licensed Under GPL-3.0 | see git history for contributors
  */
 
-package com.arturo254.opentune.ui.screens.settings
+package com.aromaappu.akmusic.ui.screens.settings
 
 import android.annotation.SuppressLint
 import android.content.Intent
@@ -88,24 +88,24 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import kotlinx.coroutines.flow.MutableStateFlow
-import com.arturo254.opentune.LocalPlayerAwareWindowInsets
-import com.arturo254.opentune.LocalPlayerConnection
-import com.arturo254.opentune.R
-import com.arturo254.opentune.constants.TogetherAllowGuestsToAddTracksKey
-import com.arturo254.opentune.constants.TogetherAllowGuestsToControlPlaybackKey
-import com.arturo254.opentune.constants.TogetherDefaultPortKey
-import com.arturo254.opentune.constants.TogetherDisplayNameKey
-import com.arturo254.opentune.constants.TogetherLastJoinLinkKey
-import com.arturo254.opentune.constants.TogetherRequireHostApprovalToJoinKey
-import com.arturo254.opentune.constants.TogetherWelcomeShownKey
-import com.arturo254.opentune.together.TogetherLink
-import com.arturo254.opentune.together.TogetherRole
-import com.arturo254.opentune.together.TogetherRoomSettings
-import com.arturo254.opentune.together.TogetherSessionState
-import com.arturo254.opentune.ui.component.IconButton as AtIconButton
-import com.arturo254.opentune.ui.component.TextFieldDialog
-import com.arturo254.opentune.ui.utils.backToMain
-import com.arturo254.opentune.utils.rememberPreference
+import com.aromaappu.akmusic.LocalPlayerAwareWindowInsets
+import com.aromaappu.akmusic.LocalPlayerConnection
+import com.aromaappu.akmusic.R
+import com.aromaappu.akmusic.constants.TogetherAllowGuestsToAddTracksKey
+import com.aromaappu.akmusic.constants.TogetherAllowGuestsToControlPlaybackKey
+import com.aromaappu.akmusic.constants.TogetherDefaultPortKey
+import com.aromaappu.akmusic.constants.TogetherDisplayNameKey
+import com.aromaappu.akmusic.constants.TogetherLastJoinLinkKey
+import com.aromaappu.akmusic.constants.TogetherRequireHostApprovalToJoinKey
+import com.aromaappu.akmusic.constants.TogetherWelcomeShownKey
+import com.aromaappu.akmusic.together.TogetherLink
+import com.aromaappu.akmusic.together.TogetherRole
+import com.aromaappu.akmusic.together.TogetherRoomSettings
+import com.aromaappu.akmusic.together.TogetherSessionState
+import com.aromaappu.akmusic.ui.component.IconButton as AtIconButton
+import com.aromaappu.akmusic.ui.component.TextFieldDialog
+import com.aromaappu.akmusic.ui.utils.backToMain
+import com.aromaappu.akmusic.utils.rememberPreference
 
 @SuppressLint("LocalContextGetResourceValueCall")
 @OptIn(ExperimentalMaterial3Api::class)
@@ -1211,7 +1211,7 @@ private fun LanSessionLinkCard(
 
 @Composable
 private fun OnlineParticipantsCard(
-    participants: List<com.arturo254.opentune.together.TogetherParticipant>,
+    participants: List<com.aromaappu.akmusic.together.TogetherParticipant>,
     hostApprovalEnabled: Boolean,
     onApprove: (participantId: String, approved: Boolean) -> Unit,
     onKick: (participantId: String) -> Unit,

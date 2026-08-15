@@ -5,7 +5,7 @@
  * Do not remove or alter this notice. - Per GPL-3.0 Section 4 & Section 5
  */
 
-package com.arturo254.opentune.ui.screens.library
+package com.aromaappu.akmusic.ui.screens.library
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -30,11 +30,11 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.NavController
-import com.arturo254.opentune.LocalPlayerAwareWindowInsets
-import com.arturo254.opentune.R
-import com.arturo254.opentune.spotify.SpotifyLibraryViewModel
-import com.arturo254.opentune.ui.component.ExpressivePullToRefreshBox
-import com.arturo254.opentune.ui.component.SpotifyLibraryPlaylistListItem
+import com.aromaappu.akmusic.LocalPlayerAwareWindowInsets
+import com.aromaappu.akmusic.R
+import com.aromaappu.akmusic.spotify.SpotifyLibraryViewModel
+import com.aromaappu.akmusic.ui.component.ExpressivePullToRefreshBox
+import com.aromaappu.akmusic.ui.component.SpotifyLibraryPlaylistListItem
 
 @Composable
 fun LibrarySpotifyPlaylistsScreen(

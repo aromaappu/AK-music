@@ -111,7 +111,6 @@
     <string name="default_style">За замовчуванням</string>
     <string name="secondary_color_style">Вторинний</string>
     <string name="enable_squiggly_slider">Увімкнути хвилястий повзунок</string>
-    <string name="enable_swipe_thumbnail">Увімкнути перемикання пісень свайпом</string>
     <string name="swipe_song_to_add">Проведіть пальцем по пісні вліво, щоб додати її до черги, або вправо, щоб відтворити її наступною</string>
     <string name="lyrics_click_change">Зміна тексту пісні одним кліком</string>
     <string name="lyrics_auto_scroll">Автоматична прокрутка тексту пісні</string>

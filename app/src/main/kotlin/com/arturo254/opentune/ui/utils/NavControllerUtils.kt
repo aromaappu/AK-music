@@ -6,10 +6,10 @@
 
 
 
-package com.arturo254.opentune.ui.utils
+package com.aromaappu.akmusic.ui.utils
 
 import androidx.navigation.NavController
-import com.arturo254.opentune.ui.screens.Screens
+import com.aromaappu.akmusic.ui.screens.Screens
 
 fun NavController.backToMain() {
     val mainRoutes = Screens.MainScreens.map { it.route }

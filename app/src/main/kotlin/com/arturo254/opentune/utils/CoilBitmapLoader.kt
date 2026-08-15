@@ -6,12 +6,12 @@
 
 
 
- package com.arturo254.opentune.utils
+ package com.aromaappu.akmusic.utils
 
 import android.content.Context
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
-import com.arturo254.opentune.utils.reportException
+import com.aromaappu.akmusic.utils.reportException
 import android.net.Uri
 import androidx.core.graphics.createBitmap
 import androidx.media3.common.util.BitmapLoader

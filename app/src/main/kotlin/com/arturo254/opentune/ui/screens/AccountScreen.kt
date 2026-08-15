@@ -6,7 +6,7 @@
 
 
 
-package com.arturo254.opentune.ui.screens
+package com.aromaappu.akmusic.ui.screens
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.combinedClickable
@@ -32,21 +32,21 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.navigation.NavController
-import com.arturo254.opentune.LocalPlayerAwareWindowInsets
-import com.arturo254.opentune.R
-import com.arturo254.opentune.constants.GridThumbnailHeight
-import com.arturo254.opentune.ui.component.ChipsRow
-import com.arturo254.opentune.ui.component.IconButton
-import com.arturo254.opentune.ui.component.LocalMenuState
-import com.arturo254.opentune.ui.component.YouTubeGridItem
-import com.arturo254.opentune.ui.component.shimmer.GridItemPlaceHolder
-import com.arturo254.opentune.ui.component.shimmer.ShimmerHost
-import com.arturo254.opentune.ui.menu.YouTubeAlbumMenu
-import com.arturo254.opentune.ui.menu.YouTubeArtistMenu
-import com.arturo254.opentune.ui.menu.YouTubePlaylistMenu
-import com.arturo254.opentune.ui.utils.backToMain
-import com.arturo254.opentune.viewmodels.AccountViewModel
-import com.arturo254.opentune.viewmodels.AccountContentType
+import com.aromaappu.akmusic.LocalPlayerAwareWindowInsets
+import com.aromaappu.akmusic.R
+import com.aromaappu.akmusic.constants.GridThumbnailHeight
+import com.aromaappu.akmusic.ui.component.ChipsRow
+import com.aromaappu.akmusic.ui.component.IconButton
+import com.aromaappu.akmusic.ui.component.LocalMenuState
+import com.aromaappu.akmusic.ui.component.YouTubeGridItem
+import com.aromaappu.akmusic.ui.component.shimmer.GridItemPlaceHolder
+import com.aromaappu.akmusic.ui.component.shimmer.ShimmerHost
+import com.aromaappu.akmusic.ui.menu.YouTubeAlbumMenu
+import com.aromaappu.akmusic.ui.menu.YouTubeArtistMenu
+import com.aromaappu.akmusic.ui.menu.YouTubePlaylistMenu
+import com.aromaappu.akmusic.ui.utils.backToMain
+import com.aromaappu.akmusic.viewmodels.AccountViewModel
+import com.aromaappu.akmusic.viewmodels.AccountContentType
 
 @OptIn(ExperimentalMaterial3Api::class, ExperimentalFoundationApi::class)
 @Composable

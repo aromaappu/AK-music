@@ -4,14 +4,14 @@
  * Licensed Under GPL-3.0 | see git history for contributors
  */
 
-package com.arturo254.opentune.innertube.pages
+package com.aromaappu.akmusic.innertube.pages
 
-import com.arturo254.opentune.innertube.models.AlbumItem
-import com.arturo254.opentune.innertube.models.AlbumReleaseType
-import com.arturo254.opentune.innertube.models.Artist
-import com.arturo254.opentune.innertube.models.MusicTwoRowItemRenderer
-import com.arturo254.opentune.innertube.models.oddElements
-import com.arturo254.opentune.innertube.models.splitBySeparator
+import com.aromaappu.akmusic.innertube.models.AlbumItem
+import com.aromaappu.akmusic.innertube.models.AlbumReleaseType
+import com.aromaappu.akmusic.innertube.models.Artist
+import com.aromaappu.akmusic.innertube.models.MusicTwoRowItemRenderer
+import com.aromaappu.akmusic.innertube.models.oddElements
+import com.aromaappu.akmusic.innertube.models.splitBySeparator
 
 object NewReleaseAlbumPage {
     fun fromMusicTwoRowItemRenderer(renderer: MusicTwoRowItemRenderer): AlbumItem? {

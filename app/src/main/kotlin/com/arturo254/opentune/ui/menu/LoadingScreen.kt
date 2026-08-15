@@ -6,7 +6,7 @@
 
 
 
-package com.arturo254.opentune.ui.menu
+package com.aromaappu.akmusic.ui.menu
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column

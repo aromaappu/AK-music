@@ -6,7 +6,7 @@
 
 
 
-package com.arturo254.opentune.ui.component
+package com.aromaappu.akmusic.ui.component
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -42,8 +42,8 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Dialog
 import androidx.compose.ui.window.DialogProperties
-import com.arturo254.opentune.R
-import com.arturo254.opentune.db.MusicDatabase
+import com.aromaappu.akmusic.R
+import com.aromaappu.akmusic.db.MusicDatabase
 
 @OptIn(ExperimentalLayoutApi::class)
 @Composable

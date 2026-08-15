@@ -6,7 +6,7 @@
 
 
 
-package com.arturo254.opentune.ui.menu
+package com.aromaappu.akmusic.ui.menu
 
 import android.annotation.SuppressLint
 import android.content.Intent
@@ -65,32 +65,32 @@ import androidx.media3.exoplayer.offline.Download
 import androidx.media3.exoplayer.offline.DownloadRequest
 import androidx.media3.exoplayer.offline.DownloadService
 import coil3.compose.AsyncImage
-import com.arturo254.opentune.innertube.YouTube
-import com.arturo254.opentune.innertube.models.PlaylistItem
-import com.arturo254.opentune.innertube.models.SongItem
-import com.arturo254.opentune.innertube.utils.completed
-import com.arturo254.opentune.LocalDatabase
-import com.arturo254.opentune.LocalDownloadUtil
-import com.arturo254.opentune.LocalPlayerConnection
-import com.arturo254.opentune.LocalSyncUtils
-import com.arturo254.opentune.R
-import com.arturo254.opentune.constants.ListThumbnailSize
-import com.arturo254.opentune.constants.ThumbnailCornerRadius
-import com.arturo254.opentune.db.entities.PlaylistEntity
-import com.arturo254.opentune.db.entities.PlaylistSongMap
-import com.arturo254.opentune.extensions.toMediaItem
-import com.arturo254.opentune.models.MediaMetadata
-import com.arturo254.opentune.models.toMediaMetadata
-import com.arturo254.opentune.playback.ExoDownloadService
-import com.arturo254.opentune.playback.queues.YouTubeQueue
-import com.arturo254.opentune.ui.component.DefaultDialog
-import com.arturo254.opentune.ui.component.ListDialog
-import com.arturo254.opentune.ui.component.MenuSurfaceSection
-import com.arturo254.opentune.ui.component.NewAction
-import com.arturo254.opentune.ui.component.NewActionGrid
-import com.arturo254.opentune.ui.component.YouTubeListItem
-import com.arturo254.opentune.utils.joinByBullet
-import com.arturo254.opentune.utils.makeTimeString
+import com.aromaappu.akmusic.innertube.YouTube
+import com.aromaappu.akmusic.innertube.models.PlaylistItem
+import com.aromaappu.akmusic.innertube.models.SongItem
+import com.aromaappu.akmusic.innertube.utils.completed
+import com.aromaappu.akmusic.LocalDatabase
+import com.aromaappu.akmusic.LocalDownloadUtil
+import com.aromaappu.akmusic.LocalPlayerConnection
+import com.aromaappu.akmusic.LocalSyncUtils
+import com.aromaappu.akmusic.R
+import com.aromaappu.akmusic.constants.ListThumbnailSize
+import com.aromaappu.akmusic.constants.ThumbnailCornerRadius
+import com.aromaappu.akmusic.db.entities.PlaylistEntity
+import com.aromaappu.akmusic.db.entities.PlaylistSongMap
+import com.aromaappu.akmusic.extensions.toMediaItem
+import com.aromaappu.akmusic.models.MediaMetadata
+import com.aromaappu.akmusic.models.toMediaMetadata
+import com.aromaappu.akmusic.playback.ExoDownloadService
+import com.aromaappu.akmusic.playback.queues.YouTubeQueue
+import com.aromaappu.akmusic.ui.component.DefaultDialog
+import com.aromaappu.akmusic.ui.component.ListDialog
+import com.aromaappu.akmusic.ui.component.MenuSurfaceSection
+import com.aromaappu.akmusic.ui.component.NewAction
+import com.aromaappu.akmusic.ui.component.NewActionGrid
+import com.aromaappu.akmusic.ui.component.YouTubeListItem
+import com.aromaappu.akmusic.utils.joinByBullet
+import com.aromaappu.akmusic.utils.makeTimeString
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

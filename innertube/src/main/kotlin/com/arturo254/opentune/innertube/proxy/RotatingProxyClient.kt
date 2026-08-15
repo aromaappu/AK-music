@@ -4,7 +4,7 @@
  * Licensed Under GPL-3.0 | see git history for contributors
  */
 
-package com.arturo254.opentune.innertube.proxy
+package com.aromaappu.akmusic.innertube.proxy
 
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext

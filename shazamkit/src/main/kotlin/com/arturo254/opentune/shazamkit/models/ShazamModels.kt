@@ -1,4 +1,4 @@
-package com.arturo254.opentune.shazamkit.models
+package com.aromaappu.akmusic.shazamkit.models
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable

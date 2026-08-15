@@ -4,14 +4,14 @@
  * Licensed Under GPL-3.0 | see git history for contributors
  */
 
-package com.arturo254.opentune.ui.component
+package com.aromaappu.akmusic.ui.component
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import com.arturo254.opentune.R
+import com.aromaappu.akmusic.R
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Layout styles — cada valor representa un diseño visual distinto para la tarjeta

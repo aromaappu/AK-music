@@ -5,7 +5,7 @@
  * Do not remove or alter this notice. - Per GPL-3.0 Section 4 & Section 5
  */
 
-package com.arturo254.opentune.spotify
+package com.aromaappu.akmusic.spotify
 
 import androidx.compose.runtime.Immutable
 import androidx.lifecycle.SavedStateHandle
@@ -19,9 +19,9 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
-import com.arturo254.opentune.spotify.models.SpotifyPlaylist
-import com.arturo254.opentune.spotify.models.SpotifyTrack
-import com.arturo254.opentune.utils.reportException
+import com.aromaappu.akmusic.spotify.models.SpotifyPlaylist
+import com.aromaappu.akmusic.spotify.models.SpotifyTrack
+import com.aromaappu.akmusic.utils.reportException
 import javax.inject.Inject
 
 @HiltViewModel

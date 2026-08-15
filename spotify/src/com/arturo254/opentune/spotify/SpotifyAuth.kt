@@ -5,13 +5,13 @@
  * Do not remove or alter this notice. - Per GPL-3.0 Section 4 & Section 5
  */
 
-package com.arturo254.opentune.spotify
+package com.aromaappu.akmusic.spotify
 
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
-import com.arturo254.opentune.spotify.models.SpotifyInternalToken
+import com.aromaappu.akmusic.spotify.models.SpotifyInternalToken
 import java.net.HttpURLConnection
 import java.net.URL
 import javax.crypto.Mac

@@ -4,17 +4,17 @@
  * Licensed Under GPL-3.0 | see git history for contributors
  */
 
-package com.arturo254.opentune.widget
+package com.aromaappu.akmusic.widget
 
 import android.content.Context
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.preferencesDataStore
-import com.arturo254.opentune.constants.WidgetBackgroundMode
-import com.arturo254.opentune.constants.WidgetBackgroundModeKey
-import com.arturo254.opentune.constants.WidgetCornerRadiusKey
-import com.arturo254.opentune.constants.WidgetScrimOpacityKey
-import com.arturo254.opentune.constants.WidgetShowProgressBarKey
+import com.aromaappu.akmusic.constants.WidgetBackgroundMode
+import com.aromaappu.akmusic.constants.WidgetBackgroundModeKey
+import com.aromaappu.akmusic.constants.WidgetCornerRadiusKey
+import com.aromaappu.akmusic.constants.WidgetScrimOpacityKey
+import com.aromaappu.akmusic.constants.WidgetShowProgressBarKey
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 

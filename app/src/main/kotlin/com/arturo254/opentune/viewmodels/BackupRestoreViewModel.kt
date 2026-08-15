@@ -4,7 +4,7 @@
  * Licensed Under GPL-3.0 | see git history for contributors
  */
 
-package com.arturo254.opentune.viewmodels
+package com.aromaappu.akmusic.viewmodels
 
 import android.content.Context
 import android.content.Intent
@@ -19,20 +19,20 @@ import androidx.datastore.preferences.core.stringSetPreferencesKey
 import androidx.datastore.preferences.core.edit
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.arturo254.opentune.MainActivity
-import com.arturo254.opentune.R
-import com.arturo254.opentune.db.InternalDatabase
-import com.arturo254.opentune.db.MusicDatabase
-import com.arturo254.opentune.db.entities.ArtistEntity
-import com.arturo254.opentune.db.entities.Song
-import com.arturo254.opentune.db.entities.SongEntity
-import com.arturo254.opentune.extensions.div
-import com.arturo254.opentune.extensions.zipInputStream
-import com.arturo254.opentune.extensions.zipOutputStream
-import com.arturo254.opentune.playback.MusicService
-import com.arturo254.opentune.playback.MusicService.Companion.PERSISTENT_QUEUE_FILE
-import com.arturo254.opentune.utils.dataStore
-import com.arturo254.opentune.utils.reportException
+import com.aromaappu.akmusic.MainActivity
+import com.aromaappu.akmusic.R
+import com.aromaappu.akmusic.db.InternalDatabase
+import com.aromaappu.akmusic.db.MusicDatabase
+import com.aromaappu.akmusic.db.entities.ArtistEntity
+import com.aromaappu.akmusic.db.entities.Song
+import com.aromaappu.akmusic.db.entities.SongEntity
+import com.aromaappu.akmusic.extensions.div
+import com.aromaappu.akmusic.extensions.zipInputStream
+import com.aromaappu.akmusic.extensions.zipOutputStream
+import com.aromaappu.akmusic.playback.MusicService
+import com.aromaappu.akmusic.playback.MusicService.Companion.PERSISTENT_QUEUE_FILE
+import com.aromaappu.akmusic.utils.dataStore
+import com.aromaappu.akmusic.utils.reportException
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow

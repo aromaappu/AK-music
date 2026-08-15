@@ -101,7 +101,6 @@
     <string name="past_year">Möödunud aastal</string>
     <string name="follow_theme">Järgi rakenduse kujundust</string>
     <string name="gradient">Gradient</string>
-    <string name="enable_swipe_thumbnail">Vaheta lugusid viipamisega</string>
     <string name="swipe_song_to_add">Vasakule viibates lisad loo esitusjärjekorda ja paremale viibates märgid ta esitamiseks järgmisena</string>
     <string name="lyrics_click_change">Vaheta laulusõnu klõpsimisega</string>
     <string name="lyrics_auto_scroll">Keri laulusõnu automaatselt</string>

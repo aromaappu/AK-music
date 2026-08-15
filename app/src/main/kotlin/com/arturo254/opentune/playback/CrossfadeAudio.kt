@@ -9,7 +9,7 @@
  *  - Buffer check antes de iniciar — evita arranque con rebuffering
  */
 
-package com.arturo254.opentune.playback
+package com.aromaappu.akmusic.playback
 
 import androidx.media3.common.C
 import androidx.media3.common.MediaItem
@@ -24,8 +24,8 @@ import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.isActive
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import com.arturo254.opentune.db.MusicDatabase
-import com.arturo254.opentune.extensions.metadata
+import com.aromaappu.akmusic.db.MusicDatabase
+import com.aromaappu.akmusic.extensions.metadata
 import kotlin.math.PI
 import kotlin.math.abs
 import kotlin.math.cos

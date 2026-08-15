@@ -4,7 +4,7 @@
  * Licensed Under GPL-3.0 | see git history for contributors
  */
 
-package com.arturo254.opentune.playback
+package com.aromaappu.akmusic.playback
 
 import android.app.Notification
 import android.app.PendingIntent
@@ -19,8 +19,8 @@ import androidx.media3.exoplayer.offline.DownloadNotificationHelper
 import androidx.media3.exoplayer.offline.DownloadService
 import androidx.media3.exoplayer.scheduler.PlatformScheduler
 import androidx.media3.exoplayer.scheduler.Scheduler
-import com.arturo254.opentune.MainActivity
-import com.arturo254.opentune.R
+import com.aromaappu.akmusic.MainActivity
+import com.aromaappu.akmusic.R
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
@@ -225,6 +225,6 @@ class ExoDownloadService : DownloadService(
         const val PAUSE_DOWNLOADS = "PAUSE_DOWNLOADS"
         const val RESUME_DOWNLOADS = "RESUME_DOWNLOADS"
         const val EXTRA_DOWNLOAD_ID = "EXTRA_DOWNLOAD_ID"
-        const val ACTION_DOWNLOAD_QUEUE = "com.arturo254.opentune.action.DOWNLOAD_QUEUE"
+        const val ACTION_DOWNLOAD_QUEUE = "com.aromaappu.akmusic.action.DOWNLOAD_QUEUE"
     }
 }

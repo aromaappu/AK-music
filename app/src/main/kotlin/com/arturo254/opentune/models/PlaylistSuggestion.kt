@@ -5,9 +5,9 @@
  */
 
 
-package com.arturo254.opentune.models
+package com.aromaappu.akmusic.models
 
-import com.arturo254.opentune.innertube.models.YTItem
+import com.aromaappu.akmusic.innertube.models.YTItem
 
 data class PlaylistSuggestion(
     val items: List<YTItem>,

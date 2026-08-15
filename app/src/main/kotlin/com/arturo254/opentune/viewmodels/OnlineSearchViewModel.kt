@@ -6,7 +6,7 @@
 
 
 
-package com.arturo254.opentune.viewmodels
+package com.aromaappu.akmusic.viewmodels
 
 import android.content.Context
 import androidx.compose.runtime.getValue
@@ -16,16 +16,16 @@ import androidx.compose.runtime.setValue
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.arturo254.opentune.innertube.YouTube
-import com.arturo254.opentune.innertube.models.filterExplicit
-import com.arturo254.opentune.innertube.models.filterVideo
-import com.arturo254.opentune.innertube.pages.SearchSummaryPage
-import com.arturo254.opentune.constants.HideExplicitKey
-import com.arturo254.opentune.constants.HideVideoKey
-import com.arturo254.opentune.models.ItemsPage
-import com.arturo254.opentune.utils.dataStore
-import com.arturo254.opentune.utils.get
-import com.arturo254.opentune.utils.reportException
+import com.aromaappu.akmusic.innertube.YouTube
+import com.aromaappu.akmusic.innertube.models.filterExplicit
+import com.aromaappu.akmusic.innertube.models.filterVideo
+import com.aromaappu.akmusic.innertube.pages.SearchSummaryPage
+import com.aromaappu.akmusic.constants.HideExplicitKey
+import com.aromaappu.akmusic.constants.HideVideoKey
+import com.aromaappu.akmusic.models.ItemsPage
+import com.aromaappu.akmusic.utils.dataStore
+import com.aromaappu.akmusic.utils.get
+import com.aromaappu.akmusic.utils.reportException
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.flow.MutableStateFlow

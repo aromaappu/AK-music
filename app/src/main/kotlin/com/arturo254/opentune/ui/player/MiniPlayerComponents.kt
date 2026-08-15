@@ -6,7 +6,7 @@
 
 @file:OptIn(ExperimentalMaterial3ExpressiveApi::class)
 
-package com.arturo254.opentune.ui.player
+package com.aromaappu.akmusic.ui.player
 
 import android.os.Build
 import androidx.annotation.RequiresApi
@@ -83,16 +83,15 @@ import androidx.navigation.NavController
 import coil3.compose.AsyncImage
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
-import com.arturo254.opentune.R
-import com.arturo254.opentune.constants.EnableHapticFeedbackKey
-import com.arturo254.opentune.constants.MiniPlayerHeight
-import com.arturo254.opentune.extensions.togglePlayPause
-import com.arturo254.opentune.models.MediaMetadata
-import com.arturo254.opentune.playback.PlayerConnection
-import com.arturo254.opentune.together.TogetherSessionState
-import com.arturo254.opentune.ui.component.BottomSheetState
-import com.arturo254.opentune.utils.rememberHaptic
-import com.arturo254.opentune.utils.rememberPreference
+import com.aromaappu.akmusic.R
+import com.aromaappu.akmusic.constants.MiniPlayerHeight
+import com.aromaappu.akmusic.extensions.togglePlayPause
+import com.aromaappu.akmusic.models.MediaMetadata
+import com.aromaappu.akmusic.playback.PlayerConnection
+import com.aromaappu.akmusic.together.TogetherSessionState
+import com.aromaappu.akmusic.ui.component.BottomSheetState
+import com.aromaappu.akmusic.utils.rememberHaptic
+import com.aromaappu.akmusic.utils.rememberPreference
 import kotlin.math.absoluteValue
 import kotlin.math.roundToInt
 
@@ -188,13 +187,13 @@ fun SwipeableMiniPlayerBox(
 
                                     if (isRightSwipe && canSkipPrevious) {
                                         playerConnection.player.seekToPreviousMediaItem()
-                                        if (com.arturo254.opentune.ui.screens.settings.DiscordPresenceManager.isRunning()) {
-                                            try { com.arturo254.opentune.ui.screens.settings.DiscordPresenceManager.restart() } catch (_: Exception) {}
+                                        if (com.aromaappu.akmusic.ui.screens.settings.DiscordPresenceManager.isRunning()) {
+                                            try { com.aromaappu.akmusic.ui.screens.settings.DiscordPresenceManager.restart() } catch (_: Exception) {}
                                         }
                                     } else if (!isRightSwipe && canSkipNext) {
                                         playerConnection.player.seekToNext()
-                                        if (com.arturo254.opentune.ui.screens.settings.DiscordPresenceManager.isRunning()) {
-                                            try { com.arturo254.opentune.ui.screens.settings.DiscordPresenceManager.restart() } catch (_: Exception) {}
+                                        if (com.aromaappu.akmusic.ui.screens.settings.DiscordPresenceManager.isRunning()) {
+                                            try { com.aromaappu.akmusic.ui.screens.settings.DiscordPresenceManager.restart() } catch (_: Exception) {}
                                         }
                                     }
                                 }
@@ -578,8 +577,7 @@ private fun MiniPlayerPlayPauseButton(
     )
 
     val animationKey by rememberUpdatedState(isPlaying)
-    val (enableHaptic) = rememberPreference(EnableHapticFeedbackKey, true)
-    val haptic = rememberHaptic(enabled = enableHaptic)
+    val haptic = rememberHaptic()
 
     FilledIconButton(
         onClick = {

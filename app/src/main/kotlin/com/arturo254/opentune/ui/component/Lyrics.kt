@@ -6,7 +6,7 @@
 
 
 
-package com.arturo254.opentune.ui.component
+package com.aromaappu.akmusic.ui.component
 
 import android.annotation.SuppressLint
 import android.content.Intent
@@ -136,42 +136,42 @@ import coil3.ImageLoader
 import coil3.request.ImageRequest
 import coil3.request.allowHardware
 import coil3.toBitmap
-import com.arturo254.opentune.LocalPlayerConnection
-import com.arturo254.opentune.R
-import com.arturo254.opentune.constants.DarkModeKey
-import com.arturo254.opentune.constants.LyricsClickKey
-import com.arturo254.opentune.constants.LyricsRomanizeJapaneseKey
-import com.arturo254.opentune.constants.LyricsRomanizeKoreanKey
-import com.arturo254.opentune.constants.LyricsScrollKey
-import com.arturo254.opentune.constants.LyricsTextPositionKey
-import com.arturo254.opentune.constants.LyricsAnimationStyle
-import com.arturo254.opentune.constants.LyricsAnimationStyleKey
-import com.arturo254.opentune.constants.LyricsLineBlurKey
-import com.arturo254.opentune.constants.LyricsTextSizeKey
-import com.arturo254.opentune.constants.LyricsLineSpacingKey
-import com.arturo254.opentune.constants.PlayerBackgroundStyle
-import com.arturo254.opentune.constants.PlayerBackgroundStyleKey
-import com.arturo254.opentune.constants.UseSystemFontKey
-import com.arturo254.opentune.db.entities.LyricsEntity.Companion.LYRICS_NOT_FOUND
-import com.arturo254.opentune.lyrics.LyricsEntry
-import com.arturo254.opentune.lyrics.LyricsRomanizationPreferences
-import com.arturo254.opentune.lyrics.LyricsUtils.isChinese
-import com.arturo254.opentune.lyrics.LyricsUtils.findCurrentLineIndex
-import com.arturo254.opentune.lyrics.LyricsUtils.isJapanese
-import com.arturo254.opentune.lyrics.LyricsUtils.isKorean
-import com.arturo254.opentune.lyrics.LyricsUtils.isTtml
-import com.arturo254.opentune.lyrics.LyricsUtils.parseLyrics
-import com.arturo254.opentune.lyrics.LyricsUtils.parseTtml
-import com.arturo254.opentune.lyrics.LyricsUtils.romanizeJapanese
-import com.arturo254.opentune.lyrics.LyricsUtils.romanizeKorean
-import com.arturo254.opentune.ui.component.shimmer.ShimmerHost
-import com.arturo254.opentune.ui.component.shimmer.TextPlaceholder
-import com.arturo254.opentune.ui.screens.settings.DarkMode
-import com.arturo254.opentune.ui.screens.settings.LyricsPosition
-import com.arturo254.opentune.ui.utils.smoothFadingEdge
-import com.arturo254.opentune.utils.ComposeToImage
-import com.arturo254.opentune.utils.rememberEnumPreference
-import com.arturo254.opentune.utils.rememberPreference
+import com.aromaappu.akmusic.LocalPlayerConnection
+import com.aromaappu.akmusic.R
+import com.aromaappu.akmusic.constants.DarkModeKey
+import com.aromaappu.akmusic.constants.LyricsClickKey
+import com.aromaappu.akmusic.constants.LyricsRomanizeJapaneseKey
+import com.aromaappu.akmusic.constants.LyricsRomanizeKoreanKey
+import com.aromaappu.akmusic.constants.LyricsScrollKey
+import com.aromaappu.akmusic.constants.LyricsTextPositionKey
+import com.aromaappu.akmusic.constants.LyricsAnimationStyle
+import com.aromaappu.akmusic.constants.LyricsAnimationStyleKey
+import com.aromaappu.akmusic.constants.LyricsLineBlurKey
+import com.aromaappu.akmusic.constants.LyricsTextSizeKey
+import com.aromaappu.akmusic.constants.LyricsLineSpacingKey
+import com.aromaappu.akmusic.constants.PlayerBackgroundStyle
+import com.aromaappu.akmusic.constants.PlayerBackgroundStyleKey
+import com.aromaappu.akmusic.constants.UseSystemFontKey
+import com.aromaappu.akmusic.db.entities.LyricsEntity.Companion.LYRICS_NOT_FOUND
+import com.aromaappu.akmusic.lyrics.LyricsEntry
+import com.aromaappu.akmusic.lyrics.LyricsRomanizationPreferences
+import com.aromaappu.akmusic.lyrics.LyricsUtils.isChinese
+import com.aromaappu.akmusic.lyrics.LyricsUtils.findCurrentLineIndex
+import com.aromaappu.akmusic.lyrics.LyricsUtils.isJapanese
+import com.aromaappu.akmusic.lyrics.LyricsUtils.isKorean
+import com.aromaappu.akmusic.lyrics.LyricsUtils.isTtml
+import com.aromaappu.akmusic.lyrics.LyricsUtils.parseLyrics
+import com.aromaappu.akmusic.lyrics.LyricsUtils.parseTtml
+import com.aromaappu.akmusic.lyrics.LyricsUtils.romanizeJapanese
+import com.aromaappu.akmusic.lyrics.LyricsUtils.romanizeKorean
+import com.aromaappu.akmusic.ui.component.shimmer.ShimmerHost
+import com.aromaappu.akmusic.ui.component.shimmer.TextPlaceholder
+import com.aromaappu.akmusic.ui.screens.settings.DarkMode
+import com.aromaappu.akmusic.ui.screens.settings.LyricsPosition
+import com.aromaappu.akmusic.ui.utils.smoothFadingEdge
+import com.aromaappu.akmusic.utils.ComposeToImage
+import com.aromaappu.akmusic.utils.rememberEnumPreference
+import com.aromaappu.akmusic.utils.rememberPreference
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.isActive
@@ -482,7 +482,7 @@ fun Lyrics(
                             try {
                                 newEntry.romanizedTextFlow.value = romanizeJapanese(entry.text)
                             } catch (e: Exception) {
-                                com.arturo254.opentune.utils.reportException(e)
+                                com.aromaappu.akmusic.utils.reportException(e)
                             }
                         }
                     }
@@ -493,7 +493,7 @@ fun Lyrics(
                             try {
                                 newEntry.romanizedTextFlow.value = romanizeKorean(entry.text)
                             } catch (e: Exception) {
-                                com.arturo254.opentune.utils.reportException(e)
+                                com.aromaappu.akmusic.utils.reportException(e)
                             }
                         }
                     }
@@ -512,7 +512,7 @@ fun Lyrics(
                             try {
                                 newEntry.romanizedTextFlow.value = romanizeJapanese(entry.text)
                             } catch (e: Exception) {
-                                com.arturo254.opentune.utils.reportException(e)
+                                com.aromaappu.akmusic.utils.reportException(e)
                             }
                         }
                     }
@@ -523,7 +523,7 @@ fun Lyrics(
                             try {
                                 newEntry.romanizedTextFlow.value = romanizeKorean(entry.text)
                             } catch (e: Exception) {
-                                com.arturo254.opentune.utils.reportException(e)
+                                com.aromaappu.akmusic.utils.reportException(e)
                             }
                         }
                     }
@@ -541,7 +541,7 @@ fun Lyrics(
                             try {
                                 newEntry.romanizedTextFlow.value = romanizeJapanese(line)
                             } catch (e: Exception) {
-                                com.arturo254.opentune.utils.reportException(e)
+                                com.aromaappu.akmusic.utils.reportException(e)
                             }
                         }
                     }
@@ -552,7 +552,7 @@ fun Lyrics(
                             try {
                                 newEntry.romanizedTextFlow.value = romanizeKorean(line)
                             } catch (e: Exception) {
-                                com.arturo254.opentune.utils.reportException(e)
+                                com.aromaappu.akmusic.utils.reportException(e)
                             }
                         }
                     }

@@ -4,15 +4,15 @@
  * Licensed Under GPL-3.0 | see git history for contributors
  */
 
-package com.arturo254.opentune.innertube.pages
+package com.aromaappu.akmusic.innertube.pages
 
-import com.arturo254.opentune.innertube.models.Album
-import com.arturo254.opentune.innertube.models.Artist
-import com.arturo254.opentune.innertube.models.MusicResponsiveListItemRenderer
-import com.arturo254.opentune.innertube.models.PlaylistItem
-import com.arturo254.opentune.innertube.models.SongItem
-import com.arturo254.opentune.innertube.models.oddElements
-import com.arturo254.opentune.innertube.utils.parseTime
+import com.aromaappu.akmusic.innertube.models.Album
+import com.aromaappu.akmusic.innertube.models.Artist
+import com.aromaappu.akmusic.innertube.models.MusicResponsiveListItemRenderer
+import com.aromaappu.akmusic.innertube.models.PlaylistItem
+import com.aromaappu.akmusic.innertube.models.SongItem
+import com.aromaappu.akmusic.innertube.models.oddElements
+import com.aromaappu.akmusic.innertube.utils.parseTime
 
 data class PlaylistPage(
     val playlist: PlaylistItem,

@@ -6,7 +6,7 @@
 
 
 
-package com.arturo254.opentune.viewmodels
+package com.aromaappu.akmusic.viewmodels
 
 import android.content.Context
 import androidx.lifecycle.SavedStateHandle
@@ -32,32 +32,32 @@ import kotlinx.coroutines.sync.withPermit
 import kotlinx.coroutines.sync.withLock
 import kotlinx.coroutines.withContext
 import kotlinx.coroutines.Dispatchers
-import com.arturo254.opentune.constants.PlaylistSongSortDescendingKey
-import com.arturo254.opentune.constants.PlaylistSongSortType
-import com.arturo254.opentune.constants.PlaylistSongSortTypeKey
-import com.arturo254.opentune.constants.HideExplicitKey
-import com.arturo254.opentune.constants.HideVideoKey
-import com.arturo254.opentune.R
-import com.arturo254.opentune.db.MusicDatabase
-import com.arturo254.opentune.db.entities.PlaylistSong
-import com.arturo254.opentune.extensions.reversed
-import com.arturo254.opentune.extensions.toEnum
-import com.arturo254.opentune.innertube.YouTube
-import com.arturo254.opentune.innertube.models.SongItem
-import com.arturo254.opentune.innertube.models.YTItem
-import com.arturo254.opentune.innertube.models.filterExplicit
-import com.arturo254.opentune.innertube.models.filterVideo
-import com.arturo254.opentune.innertube.pages.SearchResult
-import com.arturo254.opentune.models.PlaylistSuggestion
-import com.arturo254.opentune.models.PlaylistSuggestionPage
-import com.arturo254.opentune.models.PlaylistSuggestionQuery
-import com.arturo254.opentune.utils.PlaylistSuggestionQueryBuilder
-import com.arturo254.opentune.utils.SyncUtils
-import com.arturo254.opentune.utils.dataStore
-import com.arturo254.opentune.utils.reportException
+import com.aromaappu.akmusic.constants.PlaylistSongSortDescendingKey
+import com.aromaappu.akmusic.constants.PlaylistSongSortType
+import com.aromaappu.akmusic.constants.PlaylistSongSortTypeKey
+import com.aromaappu.akmusic.constants.HideExplicitKey
+import com.aromaappu.akmusic.constants.HideVideoKey
+import com.aromaappu.akmusic.R
+import com.aromaappu.akmusic.db.MusicDatabase
+import com.aromaappu.akmusic.db.entities.PlaylistSong
+import com.aromaappu.akmusic.extensions.reversed
+import com.aromaappu.akmusic.extensions.toEnum
+import com.aromaappu.akmusic.innertube.YouTube
+import com.aromaappu.akmusic.innertube.models.SongItem
+import com.aromaappu.akmusic.innertube.models.YTItem
+import com.aromaappu.akmusic.innertube.models.filterExplicit
+import com.aromaappu.akmusic.innertube.models.filterVideo
+import com.aromaappu.akmusic.innertube.pages.SearchResult
+import com.aromaappu.akmusic.models.PlaylistSuggestion
+import com.aromaappu.akmusic.models.PlaylistSuggestionPage
+import com.aromaappu.akmusic.models.PlaylistSuggestionQuery
+import com.aromaappu.akmusic.utils.PlaylistSuggestionQueryBuilder
+import com.aromaappu.akmusic.utils.SyncUtils
+import com.aromaappu.akmusic.utils.dataStore
+import com.aromaappu.akmusic.utils.reportException
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
-import com.arturo254.opentune.models.toMediaMetadata
+import com.aromaappu.akmusic.models.toMediaMetadata
 import java.text.Collator
 import java.util.Locale
 import javax.inject.Inject
@@ -360,7 +360,7 @@ constructor(
         }
     }
     
-    suspend fun addSongToPlaylist(song: com.arturo254.opentune.innertube.models.SongItem, browseId: String?): Boolean {
+    suspend fun addSongToPlaylist(song: com.aromaappu.akmusic.innertube.models.SongItem, browseId: String?): Boolean {
         return try {
             if (browseId != null) {
                 // Add to YouTube playlist
@@ -375,8 +375,8 @@ constructor(
                 if (p == null) {
                     // If not found, we can't add to it.
                     // This might happen if it's a special playlist that hasn't been created yet.
-                    if (playlistId == com.arturo254.opentune.db.entities.PlaylistEntity.LIKED_PLAYLIST_ID) {
-                        insert(com.arturo254.opentune.db.entities.PlaylistEntity(id = playlistId, name = context.getString(R.string.liked_songs), isEditable = false, bookmarkedAt = java.time.LocalDateTime.now()))
+                    if (playlistId == com.aromaappu.akmusic.db.entities.PlaylistEntity.LIKED_PLAYLIST_ID) {
+                        insert(com.aromaappu.akmusic.db.entities.PlaylistEntity(id = playlistId, name = context.getString(R.string.liked_songs), isEditable = false, bookmarkedAt = java.time.LocalDateTime.now()))
                     } else {
                         return@withTransaction false
                     }
@@ -389,7 +389,7 @@ constructor(
                 val maxPosition = maxPlaylistSongPosition(playlistId)
                 val position = (maxPosition ?: -1) + 1
                 insert(
-                    com.arturo254.opentune.db.entities.PlaylistSongMap(
+                    com.aromaappu.akmusic.db.entities.PlaylistSongMap(
                         songId = song.id,
                         playlistId = playlistId,
                         position = position,

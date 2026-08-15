@@ -4,7 +4,7 @@
  * Licensed Under GPL-3.0 | see git history for contributors
  */
 
-package com.arturo254.opentune.ui.screens.settings
+package com.aromaappu.akmusic.ui.screens.settings
 
 import android.content.Intent
 import android.os.Build
@@ -28,15 +28,15 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.navigation.NavController
-import com.arturo254.opentune.innertube.YouTube
-import com.arturo254.opentune.LocalPlayerAwareWindowInsets
-import com.arturo254.opentune.R
-import com.arturo254.opentune.constants.*
-import com.arturo254.opentune.ui.component.*
-import com.arturo254.opentune.ui.utils.backToMain
-import com.arturo254.opentune.utils.rememberEnumPreference
-import com.arturo254.opentune.utils.rememberPreference
-import com.arturo254.opentune.utils.setAppLocale
+import com.aromaappu.akmusic.innertube.YouTube
+import com.aromaappu.akmusic.LocalPlayerAwareWindowInsets
+import com.aromaappu.akmusic.R
+import com.aromaappu.akmusic.constants.*
+import com.aromaappu.akmusic.ui.component.*
+import com.aromaappu.akmusic.ui.utils.backToMain
+import com.aromaappu.akmusic.utils.rememberEnumPreference
+import com.aromaappu.akmusic.utils.rememberPreference
+import com.aromaappu.akmusic.utils.setAppLocale
 import java.net.Proxy
 import java.util.Locale
 import androidx.core.net.toUri

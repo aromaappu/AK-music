@@ -8,7 +8,7 @@
 
 
 
-package com.arturo254.opentune.ui.player
+package com.aromaappu.akmusic.ui.player
 
 import android.content.ClipboardManager
 import android.content.Context
@@ -114,9 +114,6 @@ import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalView
 import androidx.compose.ui.window.DialogWindowProvider
-import androidx.core.view.WindowCompat
-import androidx.core.view.WindowInsetsCompat
-import androidx.core.view.WindowInsetsControllerCompat
 import androidx.media3.common.C
 import androidx.media3.common.Player.STATE_BUFFERING
 import androidx.media3.common.Player.STATE_READY
@@ -126,50 +123,49 @@ import coil3.imageLoader
 import coil3.request.ImageRequest
 import coil3.request.allowHardware
 import coil3.toBitmap
-import com.arturo254.opentune.R
-import com.arturo254.opentune.LocalDownloadUtil
-import com.arturo254.opentune.LocalPlayerConnection
-import com.arturo254.opentune.constants.DarkModeKey
-import com.arturo254.opentune.constants.PlayerDesignStyle
-import com.arturo254.opentune.constants.PlayerDesignStyleKey
-import com.arturo254.opentune.constants.UseNewMiniPlayerDesignKey
-import com.arturo254.opentune.constants.PlayerBackgroundStyle
-import com.arturo254.opentune.constants.PlayerBackgroundStyleKey
-import com.arturo254.opentune.constants.EnableLiquidGlassKey
-import com.arturo254.opentune.constants.PlayerCustomImageUriKey
-import com.arturo254.opentune.constants.PlayerCustomBlurKey
-import com.arturo254.opentune.constants.PlayerCustomContrastKey
-import com.arturo254.opentune.constants.PlayerCustomBrightnessKey
-import com.arturo254.opentune.constants.DisableBlurKey
-import com.arturo254.opentune.constants.PlayerButtonsStyle
-import com.arturo254.opentune.constants.PlayerButtonsStyleKey
-import com.arturo254.opentune.ui.theme.PlayerColorExtractor
-import com.arturo254.opentune.constants.QueuePeekHeight
-import com.arturo254.opentune.constants.SliderStyle
-import com.arturo254.opentune.constants.SliderStyleKey
-import com.arturo254.opentune.extensions.togglePlayPause
-import com.arturo254.opentune.extensions.metadata
-import com.arturo254.opentune.models.MediaMetadata
-import com.arturo254.opentune.ui.component.BottomSheet
-import com.arturo254.opentune.ui.component.BottomSheetState
-import com.arturo254.opentune.ui.component.LocalBottomSheetPageState
-import com.arturo254.opentune.ui.component.LocalMenuState
-import com.arturo254.opentune.ui.component.rememberBottomSheetState
-import com.arturo254.opentune.ui.menu.PlayerMenu
-import com.arturo254.opentune.ui.screens.settings.DarkMode
-import com.arturo254.opentune.ui.utils.ShowMediaInfo
-import com.arturo254.opentune.utils.makeTimeString
-import com.arturo254.opentune.utils.rememberEnumPreference
-import com.arturo254.opentune.utils.rememberPreference
+import com.aromaappu.akmusic.R
+import com.aromaappu.akmusic.LocalDownloadUtil
+import com.aromaappu.akmusic.LocalPlayerConnection
+import com.aromaappu.akmusic.constants.DarkModeKey
+import com.aromaappu.akmusic.constants.PlayerDesignStyle
+import com.aromaappu.akmusic.constants.PlayerDesignStyleKey
+import com.aromaappu.akmusic.constants.UseNewMiniPlayerDesignKey
+import com.aromaappu.akmusic.constants.PlayerBackgroundStyle
+import com.aromaappu.akmusic.constants.PlayerBackgroundStyleKey
+import com.aromaappu.akmusic.constants.PlayerCustomImageUriKey
+import com.aromaappu.akmusic.constants.PlayerCustomBlurKey
+import com.aromaappu.akmusic.constants.PlayerCustomContrastKey
+import com.aromaappu.akmusic.constants.PlayerCustomBrightnessKey
+import com.aromaappu.akmusic.constants.DisableBlurKey
+import com.aromaappu.akmusic.constants.PlayerButtonsStyle
+import com.aromaappu.akmusic.constants.PlayerButtonsStyleKey
+import com.aromaappu.akmusic.ui.theme.PlayerColorExtractor
+import com.aromaappu.akmusic.constants.QueuePeekHeight
+import com.aromaappu.akmusic.constants.SliderStyle
+import com.aromaappu.akmusic.constants.SliderStyleKey
+import com.aromaappu.akmusic.extensions.togglePlayPause
+import com.aromaappu.akmusic.extensions.metadata
+import com.aromaappu.akmusic.models.MediaMetadata
+import com.aromaappu.akmusic.ui.component.BottomSheet
+import com.aromaappu.akmusic.ui.component.BottomSheetState
+import com.aromaappu.akmusic.ui.component.LocalBottomSheetPageState
+import com.aromaappu.akmusic.ui.component.LocalMenuState
+import com.aromaappu.akmusic.ui.component.rememberBottomSheetState
+import com.aromaappu.akmusic.ui.menu.PlayerMenu
+import com.aromaappu.akmusic.ui.screens.settings.DarkMode
+import com.aromaappu.akmusic.ui.utils.ShowMediaInfo
+import com.aromaappu.akmusic.utils.makeTimeString
+import com.aromaappu.akmusic.utils.rememberEnumPreference
+import com.aromaappu.akmusic.utils.rememberPreference
 import androidx.datastore.preferences.core.booleanPreferencesKey
 import coil3.compose.AsyncImage
-import com.arturo254.opentune.canvas.models.CanvasArtwork
-import com.arturo254.opentune.constants.AodAutoActivationKey
-import com.arturo254.opentune.constants.AodFullscreenKey
-import com.arturo254.opentune.constants.BlurRadiusKey
-import com.arturo254.opentune.constants.CanvasSource
-import com.arturo254.opentune.constants.SeekExtraSeconds
-import com.arturo254.opentune.ui.component.COLLAPSED_ANCHOR
+import com.aromaappu.akmusic.canvas.models.CanvasArtwork
+import com.aromaappu.akmusic.constants.AodAutoActivationKey
+import com.aromaappu.akmusic.constants.AodFullscreenKey
+import com.aromaappu.akmusic.constants.BlurRadiusKey
+import com.aromaappu.akmusic.constants.CanvasSource
+import com.aromaappu.akmusic.constants.SeekExtraSeconds
+import com.aromaappu.akmusic.ui.component.COLLAPSED_ANCHOR
 import com.my.kizzy.gateway.entities.presence.Activity
 import com.skydoves.cloudy.cloudy
 import kotlinx.coroutines.Dispatchers
@@ -271,25 +267,6 @@ fun BottomSheetPlayer(
         }
     }
 
-    val (playerFullscreen) = rememberPreference(
-        booleanPreferencesKey("player_fullscreen"),
-        defaultValue = false
-    )
-
-// Activar fullscreen al expandir
-    LaunchedEffect(state.isExpanded, playerFullscreen) {
-        if (state.isExpanded && playerFullscreen && window != null) {
-            WindowCompat.setDecorFitsSystemWindows(window, false)
-            val insetsController = WindowCompat.getInsetsController(window, window.decorView)
-            insetsController.systemBarsBehavior =
-                WindowInsetsControllerCompat.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
-            insetsController.hide(WindowInsetsCompat.Type.systemBars())
-        }
-    }
-
-
-
-
     val (aodAutoTimeoutSeconds) = rememberPreference(AodAutoActivationKey, 0)
 
     var lastInteractionTime by remember { mutableLongStateOf(System.currentTimeMillis()) }
@@ -342,12 +319,7 @@ fun BottomSheetPlayer(
                 if (darkTheme == DarkMode.AUTO) isSystemInDarkTheme else darkTheme == DarkMode.ON
             useDarkTheme && pureBlack
         }
-    val enableLiquidGlass by rememberPreference(EnableLiquidGlassKey, defaultValue = false)
-    val backgroundColor = if (enableLiquidGlass) {
-        val progress = ((state.value - state.collapsedBound) / (state.expandedBound - state.collapsedBound))
-            .coerceIn(0f, 1f)
-        Color.White.copy(alpha = 0.1f * progress)
-    } else if (useBlackBackground && state.value > state.collapsedBound) {
+    val backgroundColor = if (useBlackBackground && state.value > state.collapsedBound) {
         val progress = ((state.value - state.collapsedBound) / (state.expandedBound - state.collapsedBound))
             .coerceIn(0f, 1f)
         Color.Black.copy(alpha = progress)

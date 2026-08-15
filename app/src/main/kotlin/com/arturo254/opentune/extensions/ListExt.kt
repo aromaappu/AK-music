@@ -6,10 +6,10 @@
 
 
 
-package com.arturo254.opentune.extensions
+package com.aromaappu.akmusic.extensions
 
-import com.arturo254.opentune.db.entities.Song
-import com.arturo254.opentune.db.entities.Album
+import com.aromaappu.akmusic.db.entities.Song
+import com.aromaappu.akmusic.db.entities.Album
 
 fun <T> List<T>.reversed(reversed: Boolean) = if (reversed) asReversed() else this
 

@@ -6,7 +6,7 @@
  * Rediseñado con sistema de diseño OpenTune + Material 3 Expressive
  */
 
-package com.arturo254.opentune.ui.screens.settings
+package com.aromaappu.akmusic.ui.screens.settings
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.core.Animatable
@@ -81,12 +81,12 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import coil3.compose.AsyncImage
-import com.arturo254.opentune.BuildConfig
-import com.arturo254.opentune.LocalPlayerAwareWindowInsets
-import com.arturo254.opentune.LocalPlayerConnection
-import com.arturo254.opentune.R
-import com.arturo254.opentune.ui.component.IconButton
-import com.arturo254.opentune.ui.utils.backToMain
+import com.aromaappu.akmusic.BuildConfig
+import com.aromaappu.akmusic.LocalPlayerAwareWindowInsets
+import com.aromaappu.akmusic.LocalPlayerConnection
+import com.aromaappu.akmusic.R
+import com.aromaappu.akmusic.ui.component.IconButton
+import com.aromaappu.akmusic.ui.utils.backToMain
 import kotlinx.coroutines.delay
 
 // ── Shimmer brush (Material 3 Expressive) ──────────────────────────────────
@@ -192,7 +192,7 @@ fun AboutScreen(
             item(key = "license") {
                 LicenseFooterExpressive(
                     onLicenseClick = {
-                        uriHandler.openUri("https://github.com/Arturo254/OpenTune/blob/master/LICENSE")
+                        uriHandler.openUri("https://github.com/aromaappu/AK-music/blob/master/LICENSE")
                     }
                 )
             }

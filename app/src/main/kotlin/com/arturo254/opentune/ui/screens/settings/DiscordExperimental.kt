@@ -6,7 +6,7 @@
 
 
 
-package com.arturo254.opentune.ui.screens.settings
+package com.aromaappu.akmusic.ui.screens.settings
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.clickable
@@ -23,13 +23,13 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import com.arturo254.opentune.R
-import com.arturo254.opentune.constants.*
-import com.arturo254.opentune.ui.component.ListItem
-import com.arturo254.opentune.ui.component.PreferenceEntry
-import com.arturo254.opentune.ui.component.SwitchPreference
-import com.arturo254.opentune.utils.TranslatorLanguages
-import com.arturo254.opentune.utils.rememberPreference
+import com.aromaappu.akmusic.R
+import com.aromaappu.akmusic.constants.*
+import com.aromaappu.akmusic.ui.component.ListItem
+import com.aromaappu.akmusic.ui.component.PreferenceEntry
+import com.aromaappu.akmusic.ui.component.SwitchPreference
+import com.aromaappu.akmusic.utils.TranslatorLanguages
+import com.aromaappu.akmusic.utils.rememberPreference
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -190,7 +190,7 @@ fun DiscordExperimental(
                     val (button2CustomUrl, onButton2CustomUrlChange) =
                         rememberPreference(
                             key = DiscordActivityButton2CustomUrlKey,
-                            defaultValue = "https://github.com/Arturo254/OpenTune"
+                            defaultValue = "https://github.com/aromaappu/AK-music"
                         )
 
                     PreferenceEntry(

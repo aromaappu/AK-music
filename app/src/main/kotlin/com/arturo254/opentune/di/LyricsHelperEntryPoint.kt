@@ -6,10 +6,10 @@
 
 
 
-package com.arturo254.opentune.di
+package com.aromaappu.akmusic.di
 
-import com.arturo254.opentune.lyrics.LyricsHelper
-import com.arturo254.opentune.lyrics.LyricsPreloadManager
+import com.aromaappu.akmusic.lyrics.LyricsHelper
+import com.aromaappu.akmusic.lyrics.LyricsPreloadManager
 import dagger.hilt.EntryPoint
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent

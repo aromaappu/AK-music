@@ -6,16 +6,16 @@
 
 
 
-package com.arturo254.opentune.viewmodels
+package com.aromaappu.akmusic.viewmodels
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.arturo254.opentune.db.MusicDatabase
-import com.arturo254.opentune.db.entities.LyricsEntity
-import com.arturo254.opentune.lyrics.LyricsHelper
-import com.arturo254.opentune.lyrics.LyricsResult
-import com.arturo254.opentune.models.MediaMetadata
-import com.arturo254.opentune.utils.NetworkConnectivityObserver
+import com.aromaappu.akmusic.db.MusicDatabase
+import com.aromaappu.akmusic.db.entities.LyricsEntity
+import com.aromaappu.akmusic.lyrics.LyricsHelper
+import com.aromaappu.akmusic.lyrics.LyricsResult
+import com.aromaappu.akmusic.models.MediaMetadata
+import com.aromaappu.akmusic.utils.NetworkConnectivityObserver
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job

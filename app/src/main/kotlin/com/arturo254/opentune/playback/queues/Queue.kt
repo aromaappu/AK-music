@@ -6,12 +6,12 @@
 
 
 
-package com.arturo254.opentune.playback.queues
+package com.aromaappu.akmusic.playback.queues
 
 import androidx.media3.common.MediaItem
-import com.arturo254.opentune.extensions.ExtraIsMusicVideo
-import com.arturo254.opentune.extensions.metadata
-import com.arturo254.opentune.models.MediaMetadata
+import com.aromaappu.akmusic.extensions.ExtraIsMusicVideo
+import com.aromaappu.akmusic.extensions.metadata
+import com.aromaappu.akmusic.models.MediaMetadata
 
 interface Queue {
     val preloadItem: MediaMetadata?

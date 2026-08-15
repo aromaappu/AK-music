@@ -6,7 +6,7 @@
 
 
 
-package com.arturo254.opentune.ui.component
+package com.aromaappu.akmusic.ui.component
 
 import androidx.activity.compose.BackHandler
 import androidx.compose.animation.AnimatedVisibility
@@ -57,7 +57,7 @@ import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
-import com.arturo254.opentune.R
+import com.aromaappu.akmusic.R
 import kotlinx.coroutines.launch
 
 val LocalBottomSheetPageState = compositionLocalOf { BottomSheetPageState() }

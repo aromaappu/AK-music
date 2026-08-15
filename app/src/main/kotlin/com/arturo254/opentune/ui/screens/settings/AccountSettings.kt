@@ -6,7 +6,7 @@
 
 
 
-package com.arturo254.opentune.ui.screens.settings
+package com.aromaappu.akmusic.ui.screens.settings
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.animateColorAsState
@@ -98,29 +98,29 @@ import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.navigation.NavController
 import coil3.compose.AsyncImage
 import kotlinx.coroutines.launch
-import com.arturo254.opentune.App.Companion.forgetAccount
-import com.arturo254.opentune.BuildConfig
-import com.arturo254.opentune.R
-import com.arturo254.opentune.constants.AccountChannelHandleKey
-import com.arturo254.opentune.constants.AccountEmailKey
-import com.arturo254.opentune.constants.AccountNameKey
-import com.arturo254.opentune.constants.DataSyncIdKey
-import com.arturo254.opentune.constants.InnerTubeCookieKey
-import com.arturo254.opentune.constants.PoTokenKey
-import com.arturo254.opentune.constants.SelectedYtmPlaylistsKey
-import com.arturo254.opentune.constants.UseLoginForBrowse
-import com.arturo254.opentune.constants.VisitorDataKey
-import com.arturo254.opentune.constants.YtmSyncKey
-import com.arturo254.opentune.innertube.YouTube
-import com.arturo254.opentune.innertube.utils.completed
-import com.arturo254.opentune.innertube.utils.parseCookieString
-import com.arturo254.opentune.ui.component.InfoLabel
-import com.arturo254.opentune.ui.component.TextFieldDialog
-import com.arturo254.opentune.ui.screens.buildLoginRoute
-import com.arturo254.opentune.utils.Updater
-import com.arturo254.opentune.utils.dataStore
-import com.arturo254.opentune.utils.rememberPreference
-import com.arturo254.opentune.viewmodels.HomeViewModel
+import com.aromaappu.akmusic.App.Companion.forgetAccount
+import com.aromaappu.akmusic.BuildConfig
+import com.aromaappu.akmusic.R
+import com.aromaappu.akmusic.constants.AccountChannelHandleKey
+import com.aromaappu.akmusic.constants.AccountEmailKey
+import com.aromaappu.akmusic.constants.AccountNameKey
+import com.aromaappu.akmusic.constants.DataSyncIdKey
+import com.aromaappu.akmusic.constants.InnerTubeCookieKey
+import com.aromaappu.akmusic.constants.PoTokenKey
+import com.aromaappu.akmusic.constants.SelectedYtmPlaylistsKey
+import com.aromaappu.akmusic.constants.UseLoginForBrowse
+import com.aromaappu.akmusic.constants.VisitorDataKey
+import com.aromaappu.akmusic.constants.YtmSyncKey
+import com.aromaappu.akmusic.innertube.YouTube
+import com.aromaappu.akmusic.innertube.utils.completed
+import com.aromaappu.akmusic.innertube.utils.parseCookieString
+import com.aromaappu.akmusic.ui.component.InfoLabel
+import com.aromaappu.akmusic.ui.component.TextFieldDialog
+import com.aromaappu.akmusic.ui.screens.buildLoginRoute
+import com.aromaappu.akmusic.utils.Updater
+import com.aromaappu.akmusic.utils.dataStore
+import com.aromaappu.akmusic.utils.rememberPreference
+import com.aromaappu.akmusic.viewmodels.HomeViewModel
 
 @OptIn(ExperimentalMaterial3Api::class, ExperimentalMaterial3ExpressiveApi::class)
 @Composable
@@ -866,18 +866,18 @@ private fun PlaylistSelectionDialog(onDismiss: () -> Unit) {
     }
 
     var loading by remember { mutableStateOf(true) }
-    val playlists = remember { mutableStateListOf<com.arturo254.opentune.innertube.models.PlaylistItem>() }
+    val playlists = remember { mutableStateListOf<com.aromaappu.akmusic.innertube.models.PlaylistItem>() }
 
     LaunchedEffect(Unit) {
         loading = true
-        com.arturo254.opentune.innertube.YouTube
+        com.aromaappu.akmusic.innertube.YouTube
             .library("FEmusic_liked_playlists")
             .completed()
             .onSuccess { page ->
                 playlists.clear()
                 playlists.addAll(
                     page.items
-                        .filterIsInstance<com.arturo254.opentune.innertube.models.PlaylistItem>()
+                        .filterIsInstance<com.aromaappu.akmusic.innertube.models.PlaylistItem>()
                         .filterNot { it.id == "LM" || it.id == "SE" }
                         .reversed()
                 )
@@ -1034,7 +1034,7 @@ private fun PlaylistSelectionDialog(onDismiss: () -> Unit) {
                 Spacer(Modifier.width(8.dp))
                 FilledTonalButton(
                     onClick = {
-                        com.arturo254.opentune.utils.PreferenceStore.launchEdit(context.dataStore) {
+                        com.aromaappu.akmusic.utils.PreferenceStore.launchEdit(context.dataStore) {
                             this[SelectedYtmPlaylistsKey] = selectedList.joinToString(",")
                         }
                         closeSheet(onDismiss)

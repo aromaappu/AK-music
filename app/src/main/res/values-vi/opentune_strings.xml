@@ -103,7 +103,6 @@
     <string name="default_style">Mặc định</string>
     <string name="secondary_color_style">Phụ</string>
     <string name="enable_squiggly_slider">Bật thanh trượt lượn sóng</string>
-    <string name="enable_swipe_thumbnail">Bật vuốt để thay đổi bài hát</string>
     <string name="swipe_song_to_add">Vuốt bài hát sang trái để thêm vào hàng đợi hoặc sang phải để phát tiếp theo</string>
     <string name="lyrics_click_change">Thay đổi lời bài hát khi nhấp</string>
     <string name="lyrics_auto_scroll">Tự động cuộn lời bài hát</string>

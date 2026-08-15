@@ -6,7 +6,7 @@
 
 
 
-package com.arturo254.opentune.playback
+package com.aromaappu.akmusic.playback
 
 import android.content.Context
 import androidx.media3.common.MediaItem
@@ -19,13 +19,13 @@ import androidx.media3.common.Player.COMMAND_SEEK_TO_PREVIOUS_MEDIA_ITEM
 import androidx.media3.common.Player.REPEAT_MODE_OFF
 import androidx.media3.common.Player.STATE_ENDED
 import androidx.media3.common.Timeline
-import com.arturo254.opentune.db.MusicDatabase
-import com.arturo254.opentune.extensions.getCurrentQueueIndex
-import com.arturo254.opentune.extensions.getQueueWindows
-import com.arturo254.opentune.extensions.metadata
-import com.arturo254.opentune.playback.MusicService.MusicBinder
-import com.arturo254.opentune.playback.queues.Queue
-import com.arturo254.opentune.utils.reportException
+import com.aromaappu.akmusic.db.MusicDatabase
+import com.aromaappu.akmusic.extensions.getCurrentQueueIndex
+import com.aromaappu.akmusic.extensions.getQueueWindows
+import com.aromaappu.akmusic.extensions.metadata
+import com.aromaappu.akmusic.playback.MusicService.MusicBinder
+import com.aromaappu.akmusic.playback.queues.Queue
+import com.aromaappu.akmusic.utils.reportException
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -122,35 +122,35 @@ class PlayerConnection(
     }
 
     fun seekToNext() {
-        val state = service.togetherSessionState.value as? com.arturo254.opentune.together.TogetherSessionState.Joined
-        if (state?.role is com.arturo254.opentune.together.TogetherRole.Guest) {
-            service.requestTogetherControl(com.arturo254.opentune.together.ControlAction.SkipNext)
+        val state = service.togetherSessionState.value as? com.aromaappu.akmusic.together.TogetherSessionState.Joined
+        if (state?.role is com.aromaappu.akmusic.together.TogetherRole.Guest) {
+            service.requestTogetherControl(com.aromaappu.akmusic.together.ControlAction.SkipNext)
             return
         }
         player.seekToNext()
         player.prepare()
         player.playWhenReady = true
         // Immediately restart the Discord presence updater so it picks up the new track without waiting
-        if (com.arturo254.opentune.ui.screens.settings.DiscordPresenceManager.isRunning()) {
+        if (com.aromaappu.akmusic.ui.screens.settings.DiscordPresenceManager.isRunning()) {
             try {
-                com.arturo254.opentune.ui.screens.settings.DiscordPresenceManager.restart()
+                com.aromaappu.akmusic.ui.screens.settings.DiscordPresenceManager.restart()
             } catch (_: Exception) {}
         }
     }
 
     fun seekToPrevious() {
-        val state = service.togetherSessionState.value as? com.arturo254.opentune.together.TogetherSessionState.Joined
-        if (state?.role is com.arturo254.opentune.together.TogetherRole.Guest) {
-            service.requestTogetherControl(com.arturo254.opentune.together.ControlAction.SkipPrevious)
+        val state = service.togetherSessionState.value as? com.aromaappu.akmusic.together.TogetherSessionState.Joined
+        if (state?.role is com.aromaappu.akmusic.together.TogetherRole.Guest) {
+            service.requestTogetherControl(com.aromaappu.akmusic.together.ControlAction.SkipPrevious)
             return
         }
         player.seekToPrevious()
         player.prepare()
         player.playWhenReady = true
         // Immediately restart the Discord presence updater so it picks up the new track without waiting
-        if (com.arturo254.opentune.ui.screens.settings.DiscordPresenceManager.isRunning()) {
+        if (com.aromaappu.akmusic.ui.screens.settings.DiscordPresenceManager.isRunning()) {
             try {
-                com.arturo254.opentune.ui.screens.settings.DiscordPresenceManager.restart()
+                com.aromaappu.akmusic.ui.screens.settings.DiscordPresenceManager.restart()
             } catch (_: Exception) {}
         }
     }

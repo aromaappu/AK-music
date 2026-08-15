@@ -4,7 +4,7 @@
  * Licensed Under GPL-3.0 | see git history for contributors
  */
 
-package com.arturo254.opentune.together
+package com.aromaappu.akmusic.together
 
 import androidx.compose.runtime.Immutable
 import io.ktor.client.HttpClient
@@ -41,7 +41,7 @@ sealed interface TogetherClientEvent {
     ) : TogetherClientEvent
 
     data class JoinDecision(
-        val decision: com.arturo254.opentune.together.JoinDecision,
+        val decision: com.aromaappu.akmusic.together.JoinDecision,
     ) : TogetherClientEvent
 
     data class ServerIssue(
@@ -55,7 +55,7 @@ sealed interface TogetherClientEvent {
     ) : TogetherClientEvent
 
     data class HeartbeatPong(
-        val pong: com.arturo254.opentune.together.HeartbeatPong,
+        val pong: com.aromaappu.akmusic.together.HeartbeatPong,
         val receivedAtElapsedRealtimeMs: Long,
     ) : TogetherClientEvent
 
@@ -313,7 +313,7 @@ class TogetherClient(
                                 }
                             }
 
-                            is com.arturo254.opentune.together.JoinDecision -> {
+                            is com.aromaappu.akmusic.together.JoinDecision -> {
                                 if (message.sessionId == sessionId && message.participantId == selfParticipantId) {
                                     _events.tryEmit(TogetherClientEvent.JoinDecision(message))
                                 }

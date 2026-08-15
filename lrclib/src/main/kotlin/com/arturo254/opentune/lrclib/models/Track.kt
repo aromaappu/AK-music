@@ -6,7 +6,7 @@
 
 
 
-package com.arturo254.opentune.lrclib.models
+package com.aromaappu.akmusic.lrclib.models
 
 import kotlinx.serialization.Serializable
 import kotlin.math.abs

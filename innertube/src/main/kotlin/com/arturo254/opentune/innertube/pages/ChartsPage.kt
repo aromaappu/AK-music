@@ -4,9 +4,9 @@
  * Licensed Under GPL-3.0 | see git history for contributors
  */
 
-package com.arturo254.opentune.innertube.pages
+package com.aromaappu.akmusic.innertube.pages
 
-import com.arturo254.opentune.innertube.models.*
+import com.aromaappu.akmusic.innertube.models.*
 
 data class ChartsPage(
     val sections: List<ChartSection>,

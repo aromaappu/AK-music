@@ -4,15 +4,15 @@
  * Licensed Under GPL-3.0 | see git history for contributors
  */
 
-package com.arturo254.opentune.innertube.models.response
+package com.aromaappu.akmusic.innertube.models.response
 
-import com.arturo254.opentune.innertube.models.ResponseContext
-import com.arturo254.opentune.innertube.models.Thumbnails
+import com.aromaappu.akmusic.innertube.models.ResponseContext
+import com.aromaappu.akmusic.innertube.models.Thumbnails
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 /**
- * PlayerResponse with [com.arturo254.opentune.innertube.models.YouTubeClient.WEB_REMIX] client
+ * PlayerResponse with [com.aromaappu.akmusic.innertube.models.YouTubeClient.WEB_REMIX] client
  */
 @Serializable
 data class PlayerResponse(

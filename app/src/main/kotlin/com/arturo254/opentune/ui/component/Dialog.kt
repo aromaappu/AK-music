@@ -6,7 +6,7 @@
 
 
 
-package com.arturo254.opentune.ui.component
+package com.aromaappu.akmusic.ui.component
 
 import android.content.Intent
 import android.net.Uri
@@ -89,8 +89,8 @@ import androidx.compose.ui.window.Dialog
 import androidx.compose.ui.window.DialogProperties
 import androidx.compose.ui.window.Popup
 import androidx.navigation.NavController
-import com.arturo254.opentune.R
-import com.arturo254.opentune.ui.screens.settings.AccountSettings
+import com.aromaappu.akmusic.R
+import com.aromaappu.akmusic.ui.screens.settings.AccountSettings
 import kotlinx.coroutines.delay
 import androidx.compose.ui.platform.LocalContext
 

@@ -4,7 +4,7 @@
  * Licensed Under GPL-3.0 | see git history for contributors
  */
 
-package com.arturo254.opentune.simpmusic
+package com.aromaappu.akmusic.simpmusic
 
 import io.ktor.client.HttpClient
 import io.ktor.client.call.body
@@ -18,8 +18,8 @@ import io.ktor.http.HttpHeaders
 import io.ktor.http.HttpStatusCode
 import io.ktor.serialization.kotlinx.json.json
 import kotlinx.serialization.json.Json
-import com.arturo254.opentune.simpmusic.models.LyricsData
-import com.arturo254.opentune.simpmusic.models.SimpMusicApiResponse
+import com.aromaappu.akmusic.simpmusic.models.LyricsData
+import com.aromaappu.akmusic.simpmusic.models.SimpMusicApiResponse
 import kotlin.math.abs
 
 object SimpMusicLyrics {

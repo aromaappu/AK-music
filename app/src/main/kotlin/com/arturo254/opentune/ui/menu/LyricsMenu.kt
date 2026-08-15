@@ -4,7 +4,7 @@
  * Licensed Under GPL-3.0 | see git history for contributors
  */
 
-package com.arturo254.opentune.ui.menu
+package com.aromaappu.akmusic.ui.menu
 
 import android.R.attr.progress
 import android.annotation.SuppressLint
@@ -61,8 +61,8 @@ import kotlinx.coroutines.withContext
 import kotlinx.coroutines.launch
 import me.bush.translator.Translator
 import me.bush.translator.Language
-import com.arturo254.opentune.utils.TranslatorLanguages
-import com.arturo254.opentune.utils.TranslatorLang
+import com.aromaappu.akmusic.utils.TranslatorLanguages
+import com.aromaappu.akmusic.utils.TranslatorLang
 import androidx.compose.runtime.produceState
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
@@ -81,17 +81,17 @@ import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.platform.LocalDensity
 import androidx.graphics.shapes.RoundedPolygon
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
-import com.arturo254.opentune.LocalDatabase
-import com.arturo254.opentune.R
-import com.arturo254.opentune.db.entities.LyricsEntity
-import com.arturo254.opentune.lyrics.LyricsUtils.isTtml
-import com.arturo254.opentune.lyrics.LyricsUtils.parseLyrics
-import com.arturo254.opentune.lyrics.LyricsUtils.parseTtml
-import com.arturo254.opentune.models.MediaMetadata
-import com.arturo254.opentune.ui.component.DefaultDialog
-import com.arturo254.opentune.ui.component.ListDialog
-import com.arturo254.opentune.ui.component.TextFieldDialog
-import com.arturo254.opentune.viewmodels.LyricsMenuViewModel
+import com.aromaappu.akmusic.LocalDatabase
+import com.aromaappu.akmusic.R
+import com.aromaappu.akmusic.db.entities.LyricsEntity
+import com.aromaappu.akmusic.lyrics.LyricsUtils.isTtml
+import com.aromaappu.akmusic.lyrics.LyricsUtils.parseLyrics
+import com.aromaappu.akmusic.lyrics.LyricsUtils.parseTtml
+import com.aromaappu.akmusic.models.MediaMetadata
+import com.aromaappu.akmusic.ui.component.DefaultDialog
+import com.aromaappu.akmusic.ui.component.ListDialog
+import com.aromaappu.akmusic.ui.component.TextFieldDialog
+import com.aromaappu.akmusic.viewmodels.LyricsMenuViewModel
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.isActive
 import java.util.UUID

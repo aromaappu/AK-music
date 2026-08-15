@@ -4,7 +4,7 @@
  * Licensed Under GPL-3.0 | see git history for contributors
  */
 
-package com.arturo254.opentune.ui.screens.settings
+package com.aromaappu.akmusic.ui.screens.settings
 
 import android.app.Activity
 import android.content.Intent
@@ -71,22 +71,22 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
-import com.arturo254.opentune.LocalPlayerAwareWindowInsets
-import com.arturo254.opentune.R
-import com.arturo254.opentune.constants.InnerTubeCookieKey
-import com.arturo254.opentune.constants.PoTokenGvsKey
-import com.arturo254.opentune.constants.PoTokenPlayerKey
-import com.arturo254.opentune.constants.PoTokenSourceUrlKey
-import com.arturo254.opentune.constants.UseVisitorDataKey
-import com.arturo254.opentune.constants.VisitorDataKey
-import com.arturo254.opentune.constants.WebClientPoTokenEnabledKey
-import com.arturo254.opentune.ui.component.IconButton
-import com.arturo254.opentune.ui.component.PreferenceGroupTitle
-import com.arturo254.opentune.ui.component.SwitchPreference
-import com.arturo254.opentune.ui.utils.backToMain
-import com.arturo254.opentune.utils.rememberPreference
-import com.arturo254.opentune.viewmodels.PoTokenState
-import com.arturo254.opentune.viewmodels.PoTokenViewModel
+import com.aromaappu.akmusic.LocalPlayerAwareWindowInsets
+import com.aromaappu.akmusic.R
+import com.aromaappu.akmusic.constants.InnerTubeCookieKey
+import com.aromaappu.akmusic.constants.PoTokenGvsKey
+import com.aromaappu.akmusic.constants.PoTokenPlayerKey
+import com.aromaappu.akmusic.constants.PoTokenSourceUrlKey
+import com.aromaappu.akmusic.constants.UseVisitorDataKey
+import com.aromaappu.akmusic.constants.VisitorDataKey
+import com.aromaappu.akmusic.constants.WebClientPoTokenEnabledKey
+import com.aromaappu.akmusic.ui.component.IconButton
+import com.aromaappu.akmusic.ui.component.PreferenceGroupTitle
+import com.aromaappu.akmusic.ui.component.SwitchPreference
+import com.aromaappu.akmusic.ui.utils.backToMain
+import com.aromaappu.akmusic.utils.rememberPreference
+import com.aromaappu.akmusic.viewmodels.PoTokenState
+import com.aromaappu.akmusic.viewmodels.PoTokenViewModel
 
 private const val DEFAULT_EXTRACT_URL = "https://youtube.com/account"
 

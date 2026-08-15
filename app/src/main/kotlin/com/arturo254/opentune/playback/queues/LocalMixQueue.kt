@@ -6,14 +6,14 @@
 
 
 
-package com.arturo254.opentune.playback.queues
+package com.aromaappu.akmusic.playback.queues
 
 import androidx.media3.common.MediaItem
-import com.arturo254.opentune.db.MusicDatabase
-import com.arturo254.opentune.extensions.toMediaItem
-import com.arturo254.opentune.innertube.YouTube
-import com.arturo254.opentune.innertube.models.WatchEndpoint
-import com.arturo254.opentune.models.MediaMetadata
+import com.aromaappu.akmusic.db.MusicDatabase
+import com.aromaappu.akmusic.extensions.toMediaItem
+import com.aromaappu.akmusic.innertube.YouTube
+import com.aromaappu.akmusic.innertube.models.WatchEndpoint
+import com.aromaappu.akmusic.models.MediaMetadata
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import kotlinx.coroutines.flow.first

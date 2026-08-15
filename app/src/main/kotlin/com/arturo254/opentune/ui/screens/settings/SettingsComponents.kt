@@ -4,7 +4,7 @@
  * Licensed Under GPL-3.0 | see git history for contributors
  */
 
-package com.arturo254.opentune.ui.screens.settings
+package com.aromaappu.akmusic.ui.screens.settings
 
 import androidx.compose.animation.core.Spring
 import androidx.compose.animation.core.animateFloatAsState
@@ -54,8 +54,8 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
-import com.arturo254.opentune.BuildConfig
-import com.arturo254.opentune.R
+import com.aromaappu.akmusic.BuildConfig
+import com.aromaappu.akmusic.R
 
 @Composable
 fun SettingsProfileHeader(modifier: Modifier = Modifier) {

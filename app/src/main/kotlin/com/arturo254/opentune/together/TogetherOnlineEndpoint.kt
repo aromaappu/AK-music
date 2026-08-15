@@ -4,7 +4,7 @@
  * Licensed Under GPL-3.0 | see git history for contributors
  */
 
-package com.arturo254.opentune.together
+package com.aromaappu.akmusic.together
 
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
@@ -15,13 +15,13 @@ import io.ktor.client.request.get
 import io.ktor.client.statement.bodyAsText
 import java.net.URI
 import java.util.concurrent.TimeUnit
-import com.arturo254.opentune.constants.TogetherOnlineEndpointCacheKey
-import com.arturo254.opentune.constants.TogetherOnlineEndpointLastCheckedAtKey
-import com.arturo254.opentune.utils.getAsync
+import com.aromaappu.akmusic.constants.TogetherOnlineEndpointCacheKey
+import com.aromaappu.akmusic.constants.TogetherOnlineEndpointLastCheckedAtKey
+import com.aromaappu.akmusic.utils.getAsync
 
 object TogetherOnlineEndpoint {
     private const val EndpointSourceUrl =
-        "https://raw.githubusercontent.com/Arturo254/OpenTune/refs/heads/master/OpenTuneServer.txt"
+        "https://raw.githubusercontent.com/aromaappu/AK-music/refs/heads/master/OpenTuneServer.txt"
 
     private const val CacheTtlMs: Long = 6 * 60 * 60 * 1000L
 

@@ -6,7 +6,7 @@
 
 
 
-package com.arturo254.opentune.viewmodels
+package com.aromaappu.akmusic.viewmodels
 
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -14,11 +14,11 @@ import androidx.compose.runtime.setValue
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.arturo254.opentune.innertube.YouTube
-import com.arturo254.opentune.innertube.models.filterExplicit
-import com.arturo254.opentune.innertube.pages.ArtistPage
-import com.arturo254.opentune.db.MusicDatabase
-import com.arturo254.opentune.utils.reportException
+import com.aromaappu.akmusic.innertube.YouTube
+import com.aromaappu.akmusic.innertube.models.filterExplicit
+import com.aromaappu.akmusic.innertube.pages.ArtistPage
+import com.aromaappu.akmusic.db.MusicDatabase
+import com.aromaappu.akmusic.utils.reportException
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.SharingStarted
@@ -26,11 +26,11 @@ import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 import android.content.Context
-import com.arturo254.opentune.constants.HideExplicitKey
-import com.arturo254.opentune.extensions.filterExplicit
-import com.arturo254.opentune.extensions.filterExplicitAlbums
-import com.arturo254.opentune.utils.dataStore
-import com.arturo254.opentune.utils.get
+import com.aromaappu.akmusic.constants.HideExplicitKey
+import com.aromaappu.akmusic.extensions.filterExplicit
+import com.aromaappu.akmusic.extensions.filterExplicitAlbums
+import com.aromaappu.akmusic.utils.dataStore
+import com.aromaappu.akmusic.utils.get
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.distinctUntilChanged

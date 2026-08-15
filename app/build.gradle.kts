@@ -34,7 +34,7 @@ fun fetchGitCommitHash(): String {
     // Fallback: Obtener del repositorio remoto de GitHub sin dependencias externas
     return try {
         println("Fetching latest commit from GitHub API...")
-        val url = URL("https://api.github.com/repos/Arturo254/OpenTune/commits/master")
+        val url = URL("https://api.github.com/repos/aromaappu/AK-music/commits/master")
         val connection = url.openConnection() as HttpURLConnection
         connection.requestMethod = "GET"
         connection.setRequestProperty("Accept", "application/vnd.github.v3+json")
@@ -77,15 +77,15 @@ if (localPropertiesFile.exists()) {
 val gitCommit = fetchGitCommitHash()
 
 android {
-    namespace = "com.arturo254.opentune"
+    namespace = "com.aromaappu.akmusic"
     compileSdk = 36
 
     defaultConfig {
-        applicationId = "com.Arturo254.opentune"
+        applicationId = "com.aromaappu.akmusic"
         minSdk = 26
         targetSdk = 36
-        versionCode = 133
-        versionName = "3.0.6"
+        versionCode = 134
+        versionName = "3.0.7"
 //        versionName = "3.0.2-$gitCommit"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
@@ -237,8 +237,6 @@ dependencies {
     implementation(libs.media)
     implementation(libs.ui.graphics)
     implementation(libs.ui.tooling.preview)
-    implementation(libs.backdrop)
-    implementation(libs.kashif.mehmood.km.backdrop)
     implementation(libs.dev.haze)
     implementation(libs.compose.markdown)
     compileOnly("androidx.compose.ui:ui-tooling-preview:${libs.versions.compose.get()}")

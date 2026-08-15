@@ -6,7 +6,7 @@
 
 
 
-package com.arturo254.opentune.ui.screens
+package com.aromaappu.akmusic.ui.screens
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.combinedClickable
@@ -42,33 +42,33 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.navigation.NavController
-import com.arturo254.opentune.innertube.models.WatchEndpoint
-import com.arturo254.opentune.LocalPlayerAwareWindowInsets
-import com.arturo254.opentune.LocalPlayerConnection
-import com.arturo254.opentune.R
-import com.arturo254.opentune.constants.StatPeriod
-import com.arturo254.opentune.extensions.togglePlayPause
-import com.arturo254.opentune.extensions.toMediaItem
-import com.arturo254.opentune.models.toMediaMetadata
-import com.arturo254.opentune.playback.queues.ListQueue
-import com.arturo254.opentune.playback.queues.YouTubeQueue
-import com.arturo254.opentune.ui.component.ChoiceChipsRow
-import com.arturo254.opentune.ui.component.HideOnScrollFAB
-import com.arturo254.opentune.ui.component.IconButton
-import com.arturo254.opentune.ui.component.LocalAlbumsGrid
-import com.arturo254.opentune.ui.component.LocalArtistsGrid
-import com.arturo254.opentune.ui.component.LocalMenuState
-import com.arturo254.opentune.ui.component.NavigationTitle
-import com.arturo254.opentune.ui.menu.AlbumMenu
-import com.arturo254.opentune.ui.menu.ArtistMenu
-import com.arturo254.opentune.ui.menu.SongMenu
-import com.arturo254.opentune.ui.utils.backToMain
-import com.arturo254.opentune.utils.joinByBullet
-import com.arturo254.opentune.utils.makeTimeString
-import com.arturo254.opentune.utils.rememberPreference
-import com.arturo254.opentune.constants.DisableBlurKey
-import com.arturo254.opentune.ui.component.ListItem
-import com.arturo254.opentune.ui.component.ItemThumbnail
+import com.aromaappu.akmusic.innertube.models.WatchEndpoint
+import com.aromaappu.akmusic.LocalPlayerAwareWindowInsets
+import com.aromaappu.akmusic.LocalPlayerConnection
+import com.aromaappu.akmusic.R
+import com.aromaappu.akmusic.constants.StatPeriod
+import com.aromaappu.akmusic.extensions.togglePlayPause
+import com.aromaappu.akmusic.extensions.toMediaItem
+import com.aromaappu.akmusic.models.toMediaMetadata
+import com.aromaappu.akmusic.playback.queues.ListQueue
+import com.aromaappu.akmusic.playback.queues.YouTubeQueue
+import com.aromaappu.akmusic.ui.component.ChoiceChipsRow
+import com.aromaappu.akmusic.ui.component.HideOnScrollFAB
+import com.aromaappu.akmusic.ui.component.IconButton
+import com.aromaappu.akmusic.ui.component.LocalAlbumsGrid
+import com.aromaappu.akmusic.ui.component.LocalArtistsGrid
+import com.aromaappu.akmusic.ui.component.LocalMenuState
+import com.aromaappu.akmusic.ui.component.NavigationTitle
+import com.aromaappu.akmusic.ui.menu.AlbumMenu
+import com.aromaappu.akmusic.ui.menu.ArtistMenu
+import com.aromaappu.akmusic.ui.menu.SongMenu
+import com.aromaappu.akmusic.ui.utils.backToMain
+import com.aromaappu.akmusic.utils.joinByBullet
+import com.aromaappu.akmusic.utils.makeTimeString
+import com.aromaappu.akmusic.utils.rememberPreference
+import com.aromaappu.akmusic.constants.DisableBlurKey
+import com.aromaappu.akmusic.ui.component.ListItem
+import com.aromaappu.akmusic.ui.component.ItemThumbnail
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -93,10 +93,10 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import coil3.compose.AsyncImage
-import com.arturo254.opentune.db.entities.Artist
-import com.arturo254.opentune.db.entities.Song
-import com.arturo254.opentune.db.entities.SongWithStats
-import com.arturo254.opentune.viewmodels.StatsViewModel
+import com.aromaappu.akmusic.db.entities.Artist
+import com.aromaappu.akmusic.db.entities.Song
+import com.aromaappu.akmusic.db.entities.SongWithStats
+import com.aromaappu.akmusic.viewmodels.StatsViewModel
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 

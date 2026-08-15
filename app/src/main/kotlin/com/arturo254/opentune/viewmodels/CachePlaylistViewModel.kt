@@ -6,25 +6,25 @@
 
 
 
-package com.arturo254.opentune.viewmodels
+package com.aromaappu.akmusic.viewmodels
 
 import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.arturo254.opentune.constants.HideExplicitKey
-import com.arturo254.opentune.db.MusicDatabase
-import com.arturo254.opentune.db.entities.Song
-import com.arturo254.opentune.extensions.filterExplicit
-import com.arturo254.opentune.utils.dataStore
-import com.arturo254.opentune.utils.get
+import com.aromaappu.akmusic.constants.HideExplicitKey
+import com.aromaappu.akmusic.db.MusicDatabase
+import com.aromaappu.akmusic.db.entities.Song
+import com.aromaappu.akmusic.extensions.filterExplicit
+import com.aromaappu.akmusic.utils.dataStore
+import com.aromaappu.akmusic.utils.get
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
 import javax.inject.Inject
-import com.arturo254.opentune.di.PlayerCache
-import com.arturo254.opentune.di.DownloadCache
+import com.aromaappu.akmusic.di.PlayerCache
+import com.aromaappu.akmusic.di.DownloadCache
 import androidx.media3.datasource.cache.Cache
 import java.time.LocalDateTime
 import kotlinx.coroutines.Dispatchers

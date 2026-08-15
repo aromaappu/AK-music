@@ -1,4 +1,4 @@
-package com.arturo254.opentune.together
+package com.aromaappu.akmusic.together
 
 internal sealed interface TogetherGuestOp {
     data class Control(

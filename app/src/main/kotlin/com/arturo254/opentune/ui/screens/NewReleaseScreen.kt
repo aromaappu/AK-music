@@ -5,7 +5,7 @@
  * Licensed Under GPL-3.0 | see git history for contributors
  */
 
-package com.arturo254.opentune.ui.screens
+package com.aromaappu.akmusic.ui.screens
 
 import androidx.compose.animation.AnimatedContent
 import androidx.compose.animation.AnimatedVisibility
@@ -81,18 +81,18 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import coil3.compose.AsyncImage
-import com.arturo254.opentune.LocalPlayerAwareWindowInsets
-import com.arturo254.opentune.LocalPlayerConnection
-import com.arturo254.opentune.R
-import com.arturo254.opentune.innertube.models.AlbumItem
-import com.arturo254.opentune.innertube.models.AlbumReleaseType
-import com.arturo254.opentune.ui.component.IconButton
-import com.arturo254.opentune.ui.component.LocalMenuState
-import com.arturo254.opentune.ui.component.shimmer.ShimmerHost
-import com.arturo254.opentune.ui.menu.YouTubeAlbumMenu
-import com.arturo254.opentune.ui.utils.backToMain
-import com.arturo254.opentune.viewmodels.NewReleaseUiState
-import com.arturo254.opentune.viewmodels.NewReleaseViewModel
+import com.aromaappu.akmusic.LocalPlayerAwareWindowInsets
+import com.aromaappu.akmusic.LocalPlayerConnection
+import com.aromaappu.akmusic.R
+import com.aromaappu.akmusic.innertube.models.AlbumItem
+import com.aromaappu.akmusic.innertube.models.AlbumReleaseType
+import com.aromaappu.akmusic.ui.component.IconButton
+import com.aromaappu.akmusic.ui.component.LocalMenuState
+import com.aromaappu.akmusic.ui.component.shimmer.ShimmerHost
+import com.aromaappu.akmusic.ui.menu.YouTubeAlbumMenu
+import com.aromaappu.akmusic.ui.utils.backToMain
+import com.aromaappu.akmusic.viewmodels.NewReleaseUiState
+import com.aromaappu.akmusic.viewmodels.NewReleaseViewModel
 
 @OptIn(
     ExperimentalFoundationApi::class,
@@ -572,10 +572,10 @@ private fun ReleaseSectionHeader(
 private fun FeaturedCarousel(
     albums: List<AlbumItem>,
     isPlaying: Boolean,
-    mediaMetadata: com.arturo254.opentune.models.MediaMetadata?,
+    mediaMetadata: com.aromaappu.akmusic.models.MediaMetadata?,
     navController: NavController,
     haptic: androidx.compose.ui.hapticfeedback.HapticFeedback,
-    menuState: com.arturo254.opentune.ui.component.MenuState,
+    menuState: com.aromaappu.akmusic.ui.component.MenuState,
     modifier: Modifier = Modifier,
 ) {
     val distinctItems = albums.take(5).distinctBy { it.id }
@@ -821,10 +821,10 @@ private fun ExpressiveCarousel(
     items: List<AlbumItem>,
     releaseType: AlbumReleaseType,
     isPlaying: Boolean,
-    mediaMetadata: com.arturo254.opentune.models.MediaMetadata?,
+    mediaMetadata: com.aromaappu.akmusic.models.MediaMetadata?,
     navController: NavController,
     haptic: androidx.compose.ui.hapticfeedback.HapticFeedback,
-    menuState: com.arturo254.opentune.ui.component.MenuState,
+    menuState: com.aromaappu.akmusic.ui.component.MenuState,
 ) {
     val distinctItems = items.distinctBy { it.id }
     val carouselState = rememberCarouselState { distinctItems.size }

@@ -7,7 +7,7 @@
 
 @file:OptIn(ExperimentalMaterial3ExpressiveApi::class)
 
-package com.arturo254.opentune.ui.screens.playlist
+package com.aromaappu.akmusic.ui.screens.playlist
 
 import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.background
@@ -92,28 +92,28 @@ import coil3.toBitmap
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import com.arturo254.opentune.LocalPlayerAwareWindowInsets
-import com.arturo254.opentune.LocalPlayerConnection
-import com.arturo254.opentune.R
-import com.arturo254.opentune.constants.AppBarHeight
-import com.arturo254.opentune.constants.DisableBlurKey
-import com.arturo254.opentune.extensions.togglePlayPause
-import com.arturo254.opentune.models.MediaMetadata
-import com.arturo254.opentune.spotify.SpotifyMapper
-import com.arturo254.opentune.spotify.SpotifyPlaybackResolver
-import com.arturo254.opentune.spotify.SpotifyPlaylistQueue
-import com.arturo254.opentune.spotify.SpotifyPlaylistViewModel
-import com.arturo254.opentune.spotify.models.SpotifyTrack
-import com.arturo254.opentune.ui.component.DraggableScrollbar
-import com.arturo254.opentune.ui.component.EmptyPlaceholder
-import com.arturo254.opentune.ui.component.IconButton
-import com.arturo254.opentune.ui.component.SpotifyTrackListItem
-import com.arturo254.opentune.ui.theme.PlayerColorExtractor
-import com.arturo254.opentune.ui.utils.backToMain
-import com.arturo254.opentune.ui.utils.resize
-import com.arturo254.opentune.utils.makeTimeString
-import com.arturo254.opentune.utils.rememberPreference
-import com.arturo254.opentune.ui.component.ExpressivePullToRefreshBox
+import com.aromaappu.akmusic.LocalPlayerAwareWindowInsets
+import com.aromaappu.akmusic.LocalPlayerConnection
+import com.aromaappu.akmusic.R
+import com.aromaappu.akmusic.constants.AppBarHeight
+import com.aromaappu.akmusic.constants.DisableBlurKey
+import com.aromaappu.akmusic.extensions.togglePlayPause
+import com.aromaappu.akmusic.models.MediaMetadata
+import com.aromaappu.akmusic.spotify.SpotifyMapper
+import com.aromaappu.akmusic.spotify.SpotifyPlaybackResolver
+import com.aromaappu.akmusic.spotify.SpotifyPlaylistQueue
+import com.aromaappu.akmusic.spotify.SpotifyPlaylistViewModel
+import com.aromaappu.akmusic.spotify.models.SpotifyTrack
+import com.aromaappu.akmusic.ui.component.DraggableScrollbar
+import com.aromaappu.akmusic.ui.component.EmptyPlaceholder
+import com.aromaappu.akmusic.ui.component.IconButton
+import com.aromaappu.akmusic.ui.component.SpotifyTrackListItem
+import com.aromaappu.akmusic.ui.theme.PlayerColorExtractor
+import com.aromaappu.akmusic.ui.utils.backToMain
+import com.aromaappu.akmusic.ui.utils.resize
+import com.aromaappu.akmusic.utils.makeTimeString
+import com.aromaappu.akmusic.utils.rememberPreference
+import com.aromaappu.akmusic.ui.component.ExpressivePullToRefreshBox
 import kotlin.math.abs
 
 @OptIn(ExperimentalMaterial3Api::class)

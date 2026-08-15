@@ -4,7 +4,7 @@
  * Licensed Under GPL-3.0 | see git history for contributors
  */
 
-package com.arturo254.opentune.utils
+package com.aromaappu.akmusic.utils
 
 import android.content.Context
 import android.content.Intent
@@ -12,14 +12,14 @@ import android.net.Uri
 import android.os.Build
 import androidx.core.content.FileProvider
 import androidx.datastore.preferences.core.edit
-import com.arturo254.opentune.BuildConfig
-import com.arturo254.opentune.App
-import com.arturo254.opentune.constants.GitHubReleasesEtagKey
-import com.arturo254.opentune.constants.GitHubReleasesFingerprintKey
-import com.arturo254.opentune.constants.GitHubReleasesJsonKey
-import com.arturo254.opentune.constants.GitHubReleasesLastCheckedAtKey
-import com.arturo254.opentune.constants.UpdateChannel
-import com.arturo254.opentune.constants.UpdateChannelKey
+import com.aromaappu.akmusic.BuildConfig
+import com.aromaappu.akmusic.App
+import com.aromaappu.akmusic.constants.GitHubReleasesEtagKey
+import com.aromaappu.akmusic.constants.GitHubReleasesFingerprintKey
+import com.aromaappu.akmusic.constants.GitHubReleasesJsonKey
+import com.aromaappu.akmusic.constants.GitHubReleasesLastCheckedAtKey
+import com.aromaappu.akmusic.constants.UpdateChannel
+import com.aromaappu.akmusic.constants.UpdateChannelKey
 import io.ktor.client.HttpClient
 import io.ktor.client.call.body
 import io.ktor.client.request.get
@@ -248,7 +248,7 @@ object Updater {
         cachedEtag: String?,
     ): ReleasesNetworkResult {
         val response: HttpResponse =
-            client.get("https://api.github.com/repos/Arturo254/OpenTune/releases?per_page=$perPage") {
+            client.get("https://api.github.com/repos/aromaappu/AK-music/releases?per_page=$perPage") {
                 headers {
                     append("Accept", "application/vnd.github+json")
                     append("User-Agent", "OpenTune")
@@ -412,11 +412,11 @@ object Updater {
 
     private suspend fun resolveApkDownloadUrl(tagName: String): String {
         val fallback =
-            "https://github.com/Arturo254/OpenTune/releases/download/$tagName/$APK_ASSET_NAME"
+            "https://github.com/aromaappu/AK-music/releases/download/$tagName/$APK_ASSET_NAME"
 
         return runCatching {
             val response = client.get(
-                "https://api.github.com/repos/Arturo254/OpenTune/releases/tags/$tagName"
+                "https://api.github.com/repos/aromaappu/AK-music/releases/tags/$tagName"
             ) {
                 headers {
                     append("Accept", "application/vnd.github+json")
@@ -482,7 +482,7 @@ object Updater {
     suspend fun getCommitHistory(count: Int = 20, branch: String = "master"): Result<List<GitCommit>> =
         runCatching {
             val response =
-                client.get("https://api.github.com/repos/Arturo254/OpenTune/commits?sha=$branch&per_page=$count") {
+                client.get("https://api.github.com/repos/aromaappu/AK-music/commits?sha=$branch&per_page=$count") {
                     headers {
                         append("Accept", "application/vnd.github+json")
                         append("User-Agent", "OpenTune")
@@ -513,7 +513,7 @@ object Updater {
         }
         return when (channel) {
             UpdateChannel.STABLE -> {
-                "https://github.com/Arturo254/OpenTune/releases/latest/download/$APK_ASSET_NAME"
+                "https://github.com/aromaappu/AK-music/releases/latest/download/$APK_ASSET_NAME"
             }
             UpdateChannel.NIGHTLY -> {
                 cachedNightlyInfo?.apkUrl

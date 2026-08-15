@@ -7,9 +7,9 @@
  * Retorna MP4 directos (no HLS).
  */
 
-package com.arturo254.opentune.canvas.providers
+package com.aromaappu.akmusic.canvas.providers
 
-import com.arturo254.opentune.canvas.models.CanvasArtwork  // ← Import CORRECTO
+import com.aromaappu.akmusic.canvas.models.CanvasArtwork  // ← Import CORRECTO
 import io.ktor.client.HttpClient
 import io.ktor.client.call.body
 import io.ktor.client.engine.okhttp.OkHttp

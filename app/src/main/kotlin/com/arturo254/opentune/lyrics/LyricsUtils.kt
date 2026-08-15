@@ -6,13 +6,13 @@
 
 
 
-package com.arturo254.opentune.lyrics
+package com.aromaappu.akmusic.lyrics
 
 import android.text.format.DateUtils
 import com.atilika.kuromoji.ipadic.Tokenizer
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
-import com.arturo254.opentune.betterlyrics.TTMLParser
+import com.aromaappu.akmusic.betterlyrics.TTMLParser
 
 
 data class LyricsRomanizationPreferences(

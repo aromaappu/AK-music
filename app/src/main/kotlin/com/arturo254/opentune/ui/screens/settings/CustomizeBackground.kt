@@ -6,7 +6,7 @@
 
 
 
-package com.arturo254.opentune.ui.screens.settings
+package com.aromaappu.akmusic.ui.screens.settings
 
 import android.net.Uri
 import android.content.Intent
@@ -38,13 +38,13 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import coil3.compose.AsyncImage
-import com.arturo254.opentune.constants.PlayerBackgroundStyle
-import com.arturo254.opentune.R
-import com.arturo254.opentune.constants.PlayerCustomBrightnessKey
-import com.arturo254.opentune.constants.PlayerCustomContrastKey
-import com.arturo254.opentune.constants.PlayerCustomImageUriKey
-import com.arturo254.opentune.constants.PlayerCustomBlurKey
-import com.arturo254.opentune.utils.rememberPreference
+import com.aromaappu.akmusic.constants.PlayerBackgroundStyle
+import com.aromaappu.akmusic.R
+import com.aromaappu.akmusic.constants.PlayerCustomBrightnessKey
+import com.aromaappu.akmusic.constants.PlayerCustomContrastKey
+import com.aromaappu.akmusic.constants.PlayerCustomImageUriKey
+import com.aromaappu.akmusic.constants.PlayerCustomBlurKey
+import com.aromaappu.akmusic.utils.rememberPreference
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

@@ -7,7 +7,7 @@
 
 
 
-package com.arturo254.opentune.ui.utils
+package com.aromaappu.akmusic.ui.utils
 
 private const val PlayerArtworkHighResPx = 1080
 

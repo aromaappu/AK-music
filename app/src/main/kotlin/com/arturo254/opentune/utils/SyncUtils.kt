@@ -6,26 +6,26 @@
 
 
 
-package com.arturo254.opentune.utils
+package com.aromaappu.akmusic.utils
 
 import android.content.Context
 import dagger.hilt.android.qualifiers.ApplicationContext
-import com.arturo254.opentune.constants.InnerTubeCookieKey
-import com.arturo254.opentune.constants.SelectedYtmPlaylistsKey
-import com.arturo254.opentune.constants.YtmSyncKey
-import com.arturo254.opentune.innertube.YouTube
-import com.arturo254.opentune.innertube.models.AlbumItem
-import com.arturo254.opentune.innertube.models.ArtistItem
-import com.arturo254.opentune.innertube.models.PlaylistItem
-import com.arturo254.opentune.innertube.models.SongItem
-import com.arturo254.opentune.innertube.utils.completed
-import com.arturo254.opentune.innertube.utils.parseCookieString
-import com.arturo254.opentune.db.MusicDatabase
-import com.arturo254.opentune.db.entities.ArtistEntity
-import com.arturo254.opentune.db.entities.PlaylistEntity
-import com.arturo254.opentune.db.entities.PlaylistSongMap
-import com.arturo254.opentune.db.entities.SongEntity
-import com.arturo254.opentune.models.toMediaMetadata
+import com.aromaappu.akmusic.constants.InnerTubeCookieKey
+import com.aromaappu.akmusic.constants.SelectedYtmPlaylistsKey
+import com.aromaappu.akmusic.constants.YtmSyncKey
+import com.aromaappu.akmusic.innertube.YouTube
+import com.aromaappu.akmusic.innertube.models.AlbumItem
+import com.aromaappu.akmusic.innertube.models.ArtistItem
+import com.aromaappu.akmusic.innertube.models.PlaylistItem
+import com.aromaappu.akmusic.innertube.models.SongItem
+import com.aromaappu.akmusic.innertube.utils.completed
+import com.aromaappu.akmusic.innertube.utils.parseCookieString
+import com.aromaappu.akmusic.db.MusicDatabase
+import com.aromaappu.akmusic.db.entities.ArtistEntity
+import com.aromaappu.akmusic.db.entities.PlaylistEntity
+import com.aromaappu.akmusic.db.entities.PlaylistSongMap
+import com.aromaappu.akmusic.db.entities.SongEntity
+import com.aromaappu.akmusic.models.toMediaMetadata
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.coroutineScope

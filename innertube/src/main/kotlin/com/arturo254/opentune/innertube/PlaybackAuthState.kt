@@ -4,11 +4,11 @@
  * Licensed Under GPL-3.0 | see git history for contributors
  */
 
-package com.arturo254.opentune.innertube
+package com.aromaappu.akmusic.innertube
 
-import com.arturo254.opentune.innertube.models.YouTubeClient
-import com.arturo254.opentune.innertube.utils.parseCookieString
-import com.arturo254.opentune.innertube.utils.sha1
+import com.aromaappu.akmusic.innertube.models.YouTubeClient
+import com.aromaappu.akmusic.innertube.utils.parseCookieString
+import com.aromaappu.akmusic.innertube.utils.sha1
 import java.util.Locale
 
 data class PlaybackAuthState(

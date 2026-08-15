@@ -6,7 +6,7 @@
 
 
 
-package com.arturo254.opentune.ui.screens.artist
+package com.aromaappu.akmusic.ui.screens.artist
 
 import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.ExperimentalFoundationApi
@@ -48,17 +48,17 @@ import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.navigation.NavController
-import com.arturo254.opentune.LocalPlayerAwareWindowInsets
-import com.arturo254.opentune.LocalPlayerConnection
-import com.arturo254.opentune.R
-import com.arturo254.opentune.constants.CONTENT_TYPE_ALBUM
-import com.arturo254.opentune.constants.CONTENT_TYPE_HEADER
-import com.arturo254.opentune.constants.GridThumbnailHeight
-import com.arturo254.opentune.ui.component.IconButton
-import com.arturo254.opentune.ui.component.LibraryAlbumGridItem
-import com.arturo254.opentune.ui.component.LocalMenuState
-import com.arturo254.opentune.ui.utils.backToMain
-import com.arturo254.opentune.viewmodels.ArtistAlbumsViewModel
+import com.aromaappu.akmusic.LocalPlayerAwareWindowInsets
+import com.aromaappu.akmusic.LocalPlayerConnection
+import com.aromaappu.akmusic.R
+import com.aromaappu.akmusic.constants.CONTENT_TYPE_ALBUM
+import com.aromaappu.akmusic.constants.CONTENT_TYPE_HEADER
+import com.aromaappu.akmusic.constants.GridThumbnailHeight
+import com.aromaappu.akmusic.ui.component.IconButton
+import com.aromaappu.akmusic.ui.component.LibraryAlbumGridItem
+import com.aromaappu.akmusic.ui.component.LocalMenuState
+import com.aromaappu.akmusic.ui.utils.backToMain
+import com.aromaappu.akmusic.viewmodels.ArtistAlbumsViewModel
 
 @OptIn(ExperimentalFoundationApi::class, ExperimentalMaterial3Api::class)
 @Composable

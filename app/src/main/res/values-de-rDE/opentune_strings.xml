@@ -89,7 +89,6 @@
     <string name="default_style">Standard</string>
     <string name="secondary_color_style">Sekundär</string>
     <string name="enable_squiggly_slider">Aktivieren Sie den verschnörkelten Schieberegler</string>
-    <string name="enable_swipe_thumbnail">Aktivieren Sie Wischen, um das Lied zu wechseln</string>
     <string name="swipe_song_to_add">Wischen Sie das Lied nach links, um ihn zur Warteschlange hinzuzufügen, oder nach rechts, um ihn als nächstes abzuspielen</string>
     <string name="lyrics_click_change">Liedtext per Klick ändern</string>
     <string name="lyrics_auto_scroll">Songtexte automatisch scrollen</string>

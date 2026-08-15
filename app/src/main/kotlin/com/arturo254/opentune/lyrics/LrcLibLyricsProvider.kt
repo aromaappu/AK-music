@@ -6,13 +6,13 @@
 
 
 
-package com.arturo254.opentune.lyrics
+package com.aromaappu.akmusic.lyrics
 
 import android.content.Context
-import com.arturo254.opentune.lrclib.LrcLib
-import com.arturo254.opentune.constants.EnableLrcLibKey
-import com.arturo254.opentune.utils.dataStore
-import com.arturo254.opentune.utils.get
+import com.aromaappu.akmusic.lrclib.LrcLib
+import com.aromaappu.akmusic.constants.EnableLrcLibKey
+import com.aromaappu.akmusic.utils.dataStore
+import com.aromaappu.akmusic.utils.get
 
 object LrcLibLyricsProvider : LyricsProvider {
     override val name = "LrcLib"

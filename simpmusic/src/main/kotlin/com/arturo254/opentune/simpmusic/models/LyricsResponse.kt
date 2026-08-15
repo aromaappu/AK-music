@@ -4,7 +4,7 @@
  * Licensed Under GPL-3.0 | see git history for contributors
  */
 
-package com.arturo254.opentune.simpmusic.models
+package com.aromaappu.akmusic.simpmusic.models
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable

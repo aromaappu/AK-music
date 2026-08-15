@@ -4,7 +4,7 @@
  * Licensed Under GPL-3.0 | see git history for contributors
  */
 
-package com.arturo254.opentune.ui.utils
+package com.aromaappu.akmusic.ui.utils
 
 import android.text.format.Formatter
 import android.widget.Toast
@@ -42,15 +42,15 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import com.arturo254.opentune.innertube.YouTube
-import com.arturo254.opentune.innertube.models.MediaInfo
-import com.arturo254.opentune.LocalDatabase
-import com.arturo254.opentune.LocalPlayerConnection
-import com.arturo254.opentune.R
-import com.arturo254.opentune.db.entities.FormatEntity
-import com.arturo254.opentune.db.entities.Song
-import com.arturo254.opentune.ui.component.shimmer.ShimmerHost
-import com.arturo254.opentune.ui.component.shimmer.TextPlaceholder
+import com.aromaappu.akmusic.innertube.YouTube
+import com.aromaappu.akmusic.innertube.models.MediaInfo
+import com.aromaappu.akmusic.LocalDatabase
+import com.aromaappu.akmusic.LocalPlayerConnection
+import com.aromaappu.akmusic.R
+import com.aromaappu.akmusic.db.entities.FormatEntity
+import com.aromaappu.akmusic.db.entities.Song
+import com.aromaappu.akmusic.ui.component.shimmer.ShimmerHost
+import com.aromaappu.akmusic.ui.component.shimmer.TextPlaceholder
 import android.content.ClipData
 import android.content.ClipboardManager
 import androidx.compose.foundation.layout.size

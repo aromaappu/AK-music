@@ -5,10 +5,10 @@
  */
 
 
-package com.arturo254.opentune.utils
+package com.aromaappu.akmusic.utils
 
-import com.arturo254.opentune.models.PlaylistSuggestionQuery
-import com.arturo254.opentune.db.entities.PlaylistSong
+import com.aromaappu.akmusic.models.PlaylistSuggestionQuery
+import com.aromaappu.akmusic.db.entities.PlaylistSong
 import java.time.LocalDateTime
 import java.time.Year
 import java.time.format.DateTimeFormatter

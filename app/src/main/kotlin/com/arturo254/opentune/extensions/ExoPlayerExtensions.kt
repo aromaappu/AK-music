@@ -6,7 +6,7 @@
 
 
 
-package com.arturo254.opentune.extensions
+package com.aromaappu.akmusic.extensions
 
 import androidx.media3.exoplayer.ExoPlayer
 import timber.log.Timber

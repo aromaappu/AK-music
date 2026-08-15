@@ -6,7 +6,7 @@
 
 
 
-package com.arturo254.opentune.ui.screens.playlist
+package com.aromaappu.akmusic.ui.screens.playlist
 
 import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.ExperimentalFoundationApi
@@ -105,39 +105,39 @@ import coil3.toBitmap
 import com.valentinilk.shimmer.shimmer
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
-import com.arturo254.opentune.LocalDatabase
-import com.arturo254.opentune.LocalPlayerAwareWindowInsets
-import com.arturo254.opentune.LocalPlayerConnection
-import com.arturo254.opentune.R
-import com.arturo254.opentune.constants.AppBarHeight
-import com.arturo254.opentune.constants.DisableBlurKey
-import com.arturo254.opentune.constants.HideExplicitKey
-import com.arturo254.opentune.db.entities.PlaylistEntity
-import com.arturo254.opentune.db.entities.PlaylistSongMap
-import com.arturo254.opentune.extensions.metadata
-import com.arturo254.opentune.extensions.toMediaItem
-import com.arturo254.opentune.extensions.togglePlayPause
-import com.arturo254.opentune.innertube.models.SongItem
-import com.arturo254.opentune.innertube.models.WatchEndpoint
-import com.arturo254.opentune.models.toMediaMetadata
-import com.arturo254.opentune.playback.queues.YouTubeQueue
-import com.arturo254.opentune.ui.component.DraggableScrollbar
-import com.arturo254.opentune.ui.component.IconButton
-import com.arturo254.opentune.ui.component.LocalMenuState
-import com.arturo254.opentune.ui.component.YouTubeListItem
-import com.arturo254.opentune.ui.component.shimmer.ButtonPlaceholder
-import com.arturo254.opentune.ui.component.shimmer.ListItemPlaceHolder
-import com.arturo254.opentune.ui.component.shimmer.ShimmerHost
-import com.arturo254.opentune.ui.component.shimmer.TextPlaceholder
-import com.arturo254.opentune.ui.menu.SelectionMediaMetadataMenu
-import com.arturo254.opentune.ui.menu.YouTubePlaylistMenu
-import com.arturo254.opentune.ui.menu.YouTubeSongMenu
-import com.arturo254.opentune.ui.theme.PlayerColorExtractor
-import com.arturo254.opentune.ui.utils.ItemWrapper
-import com.arturo254.opentune.ui.utils.backToMain
-import com.arturo254.opentune.ui.utils.formatCompactCount
-import com.arturo254.opentune.utils.rememberPreference
-import com.arturo254.opentune.viewmodels.OnlinePlaylistViewModel
+import com.aromaappu.akmusic.LocalDatabase
+import com.aromaappu.akmusic.LocalPlayerAwareWindowInsets
+import com.aromaappu.akmusic.LocalPlayerConnection
+import com.aromaappu.akmusic.R
+import com.aromaappu.akmusic.constants.AppBarHeight
+import com.aromaappu.akmusic.constants.DisableBlurKey
+import com.aromaappu.akmusic.constants.HideExplicitKey
+import com.aromaappu.akmusic.db.entities.PlaylistEntity
+import com.aromaappu.akmusic.db.entities.PlaylistSongMap
+import com.aromaappu.akmusic.extensions.metadata
+import com.aromaappu.akmusic.extensions.toMediaItem
+import com.aromaappu.akmusic.extensions.togglePlayPause
+import com.aromaappu.akmusic.innertube.models.SongItem
+import com.aromaappu.akmusic.innertube.models.WatchEndpoint
+import com.aromaappu.akmusic.models.toMediaMetadata
+import com.aromaappu.akmusic.playback.queues.YouTubeQueue
+import com.aromaappu.akmusic.ui.component.DraggableScrollbar
+import com.aromaappu.akmusic.ui.component.IconButton
+import com.aromaappu.akmusic.ui.component.LocalMenuState
+import com.aromaappu.akmusic.ui.component.YouTubeListItem
+import com.aromaappu.akmusic.ui.component.shimmer.ButtonPlaceholder
+import com.aromaappu.akmusic.ui.component.shimmer.ListItemPlaceHolder
+import com.aromaappu.akmusic.ui.component.shimmer.ShimmerHost
+import com.aromaappu.akmusic.ui.component.shimmer.TextPlaceholder
+import com.aromaappu.akmusic.ui.menu.SelectionMediaMetadataMenu
+import com.aromaappu.akmusic.ui.menu.YouTubePlaylistMenu
+import com.aromaappu.akmusic.ui.menu.YouTubeSongMenu
+import com.aromaappu.akmusic.ui.theme.PlayerColorExtractor
+import com.aromaappu.akmusic.ui.utils.ItemWrapper
+import com.aromaappu.akmusic.ui.utils.backToMain
+import com.aromaappu.akmusic.ui.utils.formatCompactCount
+import com.aromaappu.akmusic.utils.rememberPreference
+import com.aromaappu.akmusic.viewmodels.OnlinePlaylistViewModel
 
 @OptIn(ExperimentalMaterial3Api::class, ExperimentalFoundationApi::class)
 @Composable

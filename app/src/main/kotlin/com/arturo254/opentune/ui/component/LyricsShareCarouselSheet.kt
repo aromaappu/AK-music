@@ -4,7 +4,7 @@
  * Licensed Under GPL-3.0 | see git history for contributors
  */
 
-package com.arturo254.opentune.ui.component
+package com.aromaappu.akmusic.ui.component
 
 import androidx.compose.animation.AnimatedContent
 import androidx.compose.animation.AnimatedVisibility
@@ -44,8 +44,8 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.arturo254.opentune.R
-import com.arturo254.opentune.models.MediaMetadata
+import com.aromaappu.akmusic.R
+import com.aromaappu.akmusic.models.MediaMetadata
 
 // ─────────────────────────────────────────────────────────────────────────────
 // API pública

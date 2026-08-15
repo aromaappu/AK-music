@@ -6,10 +6,10 @@
 
 
 
-package com.arturo254.opentune.models
+package com.aromaappu.akmusic.models
 
-import com.arturo254.opentune.innertube.models.YTItem
-import com.arturo254.opentune.db.entities.LocalItem
+import com.aromaappu.akmusic.innertube.models.YTItem
+import com.aromaappu.akmusic.db.entities.LocalItem
 
 data class SimilarRecommendation(
     val title: LocalItem,

@@ -4,11 +4,11 @@
  * Licensed Under GPL-3.0 | see git history for contributors
  */
 
-package com.arturo254.opentune.innertube
+package com.aromaappu.akmusic.innertube
 
-import com.arturo254.opentune.innertube.PlaybackAuthState
-import com.arturo254.opentune.innertube.models.YouTubeClient
-import com.arturo254.opentune.innertube.models.response.PlayerResponse
+import com.aromaappu.akmusic.innertube.PlaybackAuthState
+import com.aromaappu.akmusic.innertube.models.YouTubeClient
+import com.aromaappu.akmusic.innertube.models.response.PlayerResponse
 import io.ktor.http.URLBuilder
 import io.ktor.http.parseQueryString
 import okhttp3.HttpUrl.Companion.toHttpUrlOrNull

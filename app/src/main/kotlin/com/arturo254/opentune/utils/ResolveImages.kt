@@ -6,15 +6,15 @@
 
 
 
-package com.arturo254.opentune.utils
+package com.aromaappu.akmusic.utils
 
 import android.content.Context
 import com.my.kizzy.repository.KizzyRepository
 import kotlinx.coroutines.withTimeoutOrNull
-import com.arturo254.opentune.utils.dataStore
-import com.arturo254.opentune.constants.*
+import com.aromaappu.akmusic.utils.dataStore
+import com.aromaappu.akmusic.constants.*
 import timber.log.Timber
-import com.arturo254.opentune.db.entities.Song
+import com.aromaappu.akmusic.db.entities.Song
 import com.my.kizzy.rpc.RpcImage
 
 private const val TAG = "ResolveImages"

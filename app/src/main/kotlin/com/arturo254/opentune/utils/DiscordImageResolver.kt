@@ -6,7 +6,7 @@
 
 
 
-package com.arturo254.opentune.utils
+package com.aromaappu.akmusic.utils
 
 import android.content.Context
 import com.my.kizzy.repository.KizzyRepository
@@ -14,7 +14,7 @@ import com.my.kizzy.rpc.RpcImage
 import kotlinx.coroutines.async
 import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.withTimeoutOrNull
-import com.arturo254.opentune.db.entities.Song
+import com.aromaappu.akmusic.db.entities.Song
 import timber.log.Timber
 
 data class ResolvedDiscordImages(
@@ -179,7 +179,7 @@ object DiscordImageResolver {
                     ?: song.artists.firstOrNull()?.thumbnailUrl?.takeIf { it.isValidHttpUrl() }?.let { RpcImage.ExternalImage(it) }
             }
             "appicon" -> {
-                RpcImage.ExternalImage("https://raw.githubusercontent.com/Arturo254/OpenTune/refs/heads/master/assets/icon.png")
+                RpcImage.ExternalImage("https://raw.githubusercontent.com/aromaappu/AK-music/refs/heads/master/assets/icon.png")
             }
             "custom" -> {
                 val url = customUrl?.takeIf { it.isNotBlank() && it.isValidHttpUrl() }

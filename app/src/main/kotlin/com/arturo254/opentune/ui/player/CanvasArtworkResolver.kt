@@ -8,13 +8,13 @@
  * Orden: Apple Music → Custom Canvas → Tidal (fallback)
  */
 
-package com.arturo254.opentune.ui.player
+package com.aromaappu.akmusic.ui.player
 
-import com.arturo254.opentune.canvas.models.CanvasArtwork
-import com.arturo254.opentune.canvas.providers.AppleMusicArtworkProvider
-import com.arturo254.opentune.canvas.providers.CustomCanvasProvider
-import com.arturo254.opentune.canvas.providers.TidalCanvasProvider
-import com.arturo254.opentune.constants.CanvasSource
+import com.aromaappu.akmusic.canvas.models.CanvasArtwork
+import com.aromaappu.akmusic.canvas.providers.AppleMusicArtworkProvider
+import com.aromaappu.akmusic.canvas.providers.CustomCanvasProvider
+import com.aromaappu.akmusic.canvas.providers.TidalCanvasProvider
+import com.aromaappu.akmusic.constants.CanvasSource
 import timber.log.Timber
 import java.util.Locale
 

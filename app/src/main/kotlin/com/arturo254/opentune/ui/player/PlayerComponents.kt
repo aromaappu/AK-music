@@ -5,7 +5,7 @@
  * Licensed Under GPL-3.0 | see git history for contributors
  */
 
-package com.arturo254.opentune.ui.player
+package com.aromaappu.akmusic.ui.player
 
 import android.content.ClipData
 import android.content.ClipboardManager
@@ -101,29 +101,29 @@ import androidx.navigation.NavController
 import coil3.compose.AsyncImage
 import coil3.compose.rememberAsyncImagePainter
 import me.saket.squiggles.SquigglySlider
-import com.arturo254.opentune.R
-import com.arturo254.opentune.canvas.models.CanvasArtwork
-import com.arturo254.opentune.constants.PlayerBackgroundStyle
-import com.arturo254.opentune.constants.PlayerDesignStyle
-import com.arturo254.opentune.constants.PlayerHorizontalPadding
-import com.arturo254.opentune.constants.SliderStyle
-import com.arturo254.opentune.db.entities.FormatEntity
-import com.arturo254.opentune.extensions.togglePlayPause
-import com.arturo254.opentune.extensions.toggleRepeatMode
-import com.arturo254.opentune.models.MediaMetadata
-import com.arturo254.opentune.playback.PlayerConnection
-import com.arturo254.opentune.ui.component.BottomSheetPageState
-import com.arturo254.opentune.ui.component.BottomSheetState
-import com.arturo254.opentune.ui.component.MenuState
-import com.arturo254.opentune.ui.component.PlayerSliderTrack
-import com.arturo254.opentune.ui.component.ResizableIconButton
-import com.arturo254.opentune.ui.menu.PlayerMenu
-import com.arturo254.opentune.ui.theme.PlayerBackgroundColorUtils
-import com.arturo254.opentune.ui.component.PlayerSliderColors
-import com.arturo254.opentune.ui.component.V8DeviceSelector
-import com.arturo254.opentune.ui.utils.ShowMediaInfo
-import com.arturo254.opentune.ui.utils.highRes
-import com.arturo254.opentune.utils.makeTimeString
+import com.aromaappu.akmusic.R
+import com.aromaappu.akmusic.canvas.models.CanvasArtwork
+import com.aromaappu.akmusic.constants.PlayerBackgroundStyle
+import com.aromaappu.akmusic.constants.PlayerDesignStyle
+import com.aromaappu.akmusic.constants.PlayerHorizontalPadding
+import com.aromaappu.akmusic.constants.SliderStyle
+import com.aromaappu.akmusic.db.entities.FormatEntity
+import com.aromaappu.akmusic.extensions.togglePlayPause
+import com.aromaappu.akmusic.extensions.toggleRepeatMode
+import com.aromaappu.akmusic.models.MediaMetadata
+import com.aromaappu.akmusic.playback.PlayerConnection
+import com.aromaappu.akmusic.ui.component.BottomSheetPageState
+import com.aromaappu.akmusic.ui.component.BottomSheetState
+import com.aromaappu.akmusic.ui.component.MenuState
+import com.aromaappu.akmusic.ui.component.PlayerSliderTrack
+import com.aromaappu.akmusic.ui.component.ResizableIconButton
+import com.aromaappu.akmusic.ui.menu.PlayerMenu
+import com.aromaappu.akmusic.ui.theme.PlayerBackgroundColorUtils
+import com.aromaappu.akmusic.ui.component.PlayerSliderColors
+import com.aromaappu.akmusic.ui.component.V8DeviceSelector
+import com.aromaappu.akmusic.ui.utils.ShowMediaInfo
+import com.aromaappu.akmusic.ui.utils.highRes
+import com.aromaappu.akmusic.utils.makeTimeString
 import com.skydoves.cloudy.cloudy
 import timber.log.Timber
 

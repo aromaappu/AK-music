@@ -6,7 +6,7 @@
 
 
 
-package com.arturo254.opentune.ui.component
+package com.aromaappu.akmusic.ui.component
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -29,9 +29,9 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Dialog
 import androidx.compose.ui.window.DialogProperties
 import kotlin.math.roundToInt
-import com.arturo254.opentune.R
-import com.arturo254.opentune.constants.ThumbnailCornerRadiusKey
-import com.arturo254.opentune.utils.rememberPreference
+import com.aromaappu.akmusic.R
+import com.aromaappu.akmusic.constants.ThumbnailCornerRadiusKey
+import com.aromaappu.akmusic.utils.rememberPreference
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

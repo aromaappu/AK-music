@@ -4,7 +4,7 @@
  * Licensed Under GPL-3.0 | see git history for contributors
  */
 
-package com.arturo254.opentune.together
+package com.aromaappu.akmusic.together
 
 import io.ktor.client.HttpClient
 import io.ktor.client.engine.okhttp.OkHttp

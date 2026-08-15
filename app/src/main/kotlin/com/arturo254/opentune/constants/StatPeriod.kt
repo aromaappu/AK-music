@@ -6,9 +6,9 @@
 
 
 
-package com.arturo254.opentune.constants
+package com.aromaappu.akmusic.constants
 
-import com.arturo254.opentune.ui.screens.OptionStats
+import com.aromaappu.akmusic.ui.screens.OptionStats
 import java.time.LocalDateTime
 import java.time.ZoneOffset
 

@@ -5,7 +5,7 @@
  */
 
 
-package com.arturo254.opentune.ui.screens.library
+package com.aromaappu.akmusic.ui.screens.library
 
 import androidx.annotation.DrawableRes
 import androidx.compose.foundation.ExperimentalFoundationApi
@@ -56,30 +56,30 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.navigation.NavController
 import androidx.navigation.compose.currentBackStackEntryAsState
-import com.arturo254.opentune.LocalDatabase
-import com.arturo254.opentune.LocalPlayerAwareWindowInsets
-import com.arturo254.opentune.R
-import com.arturo254.opentune.constants.PlaylistSortDescendingKey
-import com.arturo254.opentune.constants.PlaylistSortType
-import com.arturo254.opentune.constants.PlaylistSortTypeKey
-import com.arturo254.opentune.constants.PlaylistTagsFilterKey
-import com.arturo254.opentune.constants.ShowCachedPlaylistKey
-import com.arturo254.opentune.constants.ShowDownloadedPlaylistKey
-import com.arturo254.opentune.constants.ShowLikedPlaylistKey
-import com.arturo254.opentune.constants.ShowTopPlaylistKey
-import com.arturo254.opentune.constants.YtmSyncKey
-import com.arturo254.opentune.db.entities.Playlist
-import com.arturo254.opentune.db.entities.PlaylistEntity
-import com.arturo254.opentune.extensions.move
-import com.arturo254.opentune.ui.component.GridPosition
-import com.arturo254.opentune.ui.component.LibraryHeroFavoriteTile
-import com.arturo254.opentune.ui.component.LibraryPinnedCollectionTile
-import com.arturo254.opentune.ui.component.LibraryPlaylistListItem
-import com.arturo254.opentune.ui.component.LocalMenuState
-import com.arturo254.opentune.ui.component.SortHeader
-import com.arturo254.opentune.utils.rememberEnumPreference
-import com.arturo254.opentune.utils.rememberPreference
-import com.arturo254.opentune.viewmodels.LibraryPlaylistsViewModel
+import com.aromaappu.akmusic.LocalDatabase
+import com.aromaappu.akmusic.LocalPlayerAwareWindowInsets
+import com.aromaappu.akmusic.R
+import com.aromaappu.akmusic.constants.PlaylistSortDescendingKey
+import com.aromaappu.akmusic.constants.PlaylistSortType
+import com.aromaappu.akmusic.constants.PlaylistSortTypeKey
+import com.aromaappu.akmusic.constants.PlaylistTagsFilterKey
+import com.aromaappu.akmusic.constants.ShowCachedPlaylistKey
+import com.aromaappu.akmusic.constants.ShowDownloadedPlaylistKey
+import com.aromaappu.akmusic.constants.ShowLikedPlaylistKey
+import com.aromaappu.akmusic.constants.ShowTopPlaylistKey
+import com.aromaappu.akmusic.constants.YtmSyncKey
+import com.aromaappu.akmusic.db.entities.Playlist
+import com.aromaappu.akmusic.db.entities.PlaylistEntity
+import com.aromaappu.akmusic.extensions.move
+import com.aromaappu.akmusic.ui.component.GridPosition
+import com.aromaappu.akmusic.ui.component.LibraryHeroFavoriteTile
+import com.aromaappu.akmusic.ui.component.LibraryPinnedCollectionTile
+import com.aromaappu.akmusic.ui.component.LibraryPlaylistListItem
+import com.aromaappu.akmusic.ui.component.LocalMenuState
+import com.aromaappu.akmusic.ui.component.SortHeader
+import com.aromaappu.akmusic.utils.rememberEnumPreference
+import com.aromaappu.akmusic.utils.rememberPreference
+import com.aromaappu.akmusic.viewmodels.LibraryPlaylistsViewModel
 import sh.calvin.reorderable.ReorderableItem
 import sh.calvin.reorderable.rememberReorderableLazyListState
 

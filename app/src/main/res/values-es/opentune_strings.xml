@@ -120,7 +120,6 @@
     <string name="default_style">Predeterminado</string>
     <string name="secondary_color_style">Secundario</string>
     <string name="enable_squiggly_slider">Activar control deslizante ondulado</string>
-    <string name="enable_swipe_thumbnail">Activar deslizar para cambiar de canción</string>
     <string name="swipe_song_to_add">Desliza la canción a la izquierda para agregarla a la cola o a la derecha para reproducirla después</string>
     <string name="lyrics_click_change">Cambiar letra al hacer clic</string>
     <string name="lyrics_auto_scroll">Desplazamiento automático de letras</string>
@@ -467,5 +466,4 @@
     <string name="your_albums">tus álbumes</string>
     <string name="your_artists">tus artistas</string>
     <string name="more_label">más</string>
-    <string name="player_fullscreen">Reproductor en pantalla completa</string>
 </resources>

@@ -6,7 +6,7 @@
 
 
 
-package com.arturo254.opentune.ui.menu
+package com.aromaappu.akmusic.ui.menu
 
 import android.content.Intent
 import android.content.res.Configuration
@@ -35,15 +35,15 @@ import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import com.arturo254.opentune.innertube.models.ArtistItem
-import com.arturo254.opentune.LocalDatabase
-import com.arturo254.opentune.LocalPlayerConnection
-import com.arturo254.opentune.R
-import com.arturo254.opentune.db.entities.ArtistEntity
-import com.arturo254.opentune.playback.queues.YouTubeQueue
-import com.arturo254.opentune.ui.component.NewAction
-import com.arturo254.opentune.ui.component.NewActionGrid
-import com.arturo254.opentune.ui.component.YouTubeListItem
+import com.aromaappu.akmusic.innertube.models.ArtistItem
+import com.aromaappu.akmusic.LocalDatabase
+import com.aromaappu.akmusic.LocalPlayerConnection
+import com.aromaappu.akmusic.R
+import com.aromaappu.akmusic.db.entities.ArtistEntity
+import com.aromaappu.akmusic.playback.queues.YouTubeQueue
+import com.aromaappu.akmusic.ui.component.NewAction
+import com.aromaappu.akmusic.ui.component.NewActionGrid
+import com.aromaappu.akmusic.ui.component.YouTubeListItem
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

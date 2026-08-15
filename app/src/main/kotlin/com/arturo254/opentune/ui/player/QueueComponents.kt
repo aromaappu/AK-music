@@ -8,7 +8,7 @@
 
 
 
-package com.arturo254.opentune.ui.player
+package com.aromaappu.akmusic.ui.player
 
 import androidx.compose.animation.AnimatedContent
 import androidx.compose.foundation.background
@@ -73,17 +73,17 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.media3.common.Player
 import coil3.compose.AsyncImage
-import com.arturo254.opentune.R
-import com.arturo254.opentune.db.entities.FormatEntity
-import com.arturo254.opentune.models.MediaMetadata
-import com.arturo254.opentune.ui.component.ActionPromptDialog
-import com.arturo254.opentune.ui.component.BottomSheetPageState
-import com.arturo254.opentune.ui.component.BottomSheetState
-import com.arturo254.opentune.ui.component.MenuState
-import com.arturo254.opentune.ui.component.bottomSheetDraggable
-import com.arturo254.opentune.ui.menu.PlayerMenu
-import com.arturo254.opentune.ui.utils.ShowMediaInfo
-import com.arturo254.opentune.utils.makeTimeString
+import com.aromaappu.akmusic.R
+import com.aromaappu.akmusic.db.entities.FormatEntity
+import com.aromaappu.akmusic.models.MediaMetadata
+import com.aromaappu.akmusic.ui.component.ActionPromptDialog
+import com.aromaappu.akmusic.ui.component.BottomSheetPageState
+import com.aromaappu.akmusic.ui.component.BottomSheetState
+import com.aromaappu.akmusic.ui.component.MenuState
+import com.aromaappu.akmusic.ui.component.bottomSheetDraggable
+import com.aromaappu.akmusic.ui.menu.PlayerMenu
+import com.aromaappu.akmusic.ui.utils.ShowMediaInfo
+import com.aromaappu.akmusic.utils.makeTimeString
 import kotlin.math.roundToInt
 
 

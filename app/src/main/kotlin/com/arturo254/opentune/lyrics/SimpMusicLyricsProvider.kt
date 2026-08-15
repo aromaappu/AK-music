@@ -6,13 +6,13 @@
 
 
 
-package com.arturo254.opentune.lyrics
+package com.aromaappu.akmusic.lyrics
 
 import android.content.Context
-import com.arturo254.opentune.constants.EnableSimpMusicLyricsKey
-import com.arturo254.opentune.simpmusic.SimpMusicLyrics
-import com.arturo254.opentune.utils.dataStore
-import com.arturo254.opentune.utils.get
+import com.aromaappu.akmusic.constants.EnableSimpMusicLyricsKey
+import com.aromaappu.akmusic.simpmusic.SimpMusicLyrics
+import com.aromaappu.akmusic.utils.dataStore
+import com.aromaappu.akmusic.utils.get
 
 object SimpMusicLyricsProvider : LyricsProvider {
     override val name: String = "SimpMusic"

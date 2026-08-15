@@ -1,8 +1,8 @@
-package com.arturo254.opentune.shazamkit
+package com.aromaappu.akmusic.shazamkit
 
-import com.arturo254.opentune.shazamkit.models.RecognitionResult
-import com.arturo254.opentune.shazamkit.models.ShazamRequestJson
-import com.arturo254.opentune.shazamkit.models.ShazamResponseJson
+import com.aromaappu.akmusic.shazamkit.models.RecognitionResult
+import com.aromaappu.akmusic.shazamkit.models.ShazamRequestJson
+import com.aromaappu.akmusic.shazamkit.models.ShazamResponseJson
 import io.ktor.client.HttpClient
 import io.ktor.client.call.body
 import io.ktor.client.engine.cio.CIO

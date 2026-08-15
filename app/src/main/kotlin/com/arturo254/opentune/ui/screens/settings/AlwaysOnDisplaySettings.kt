@@ -6,7 +6,7 @@
  * Licensed Under GPL-3.0 | see git history for contributors
  */
 
-package com.arturo254.opentune.ui.screens.settings
+package com.aromaappu.akmusic.ui.screens.settings
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.animateColorAsState
@@ -85,32 +85,32 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
-import com.arturo254.opentune.LocalPlayerAwareWindowInsets
-import com.arturo254.opentune.R
-import com.arturo254.opentune.constants.AodArtShape
-import com.arturo254.opentune.constants.AodArtShapeKey
-import com.arturo254.opentune.constants.AodArtSizeKey
-import com.arturo254.opentune.constants.AodClockFormatKey
-import com.arturo254.opentune.constants.AodControlStyle
-import com.arturo254.opentune.constants.AodControlStyleKey
-import com.arturo254.opentune.constants.AodAutoActivationKey
-import com.arturo254.opentune.constants.AodDarknessKey
-import com.arturo254.opentune.constants.AodFullscreenKey
-import com.arturo254.opentune.constants.AodShowArtistKey
-import com.arturo254.opentune.constants.AodShowClockKey
-import com.arturo254.opentune.constants.AodShowControlsKey
-import com.arturo254.opentune.constants.AodShowProgressKey
-import com.arturo254.opentune.constants.AodShowTimeKey
-import com.arturo254.opentune.constants.AodShowTitleKey
-import com.arturo254.opentune.constants.AodSpotlightIntensityKey
-import com.arturo254.opentune.constants.AodSpotlightPulseKey
-import com.arturo254.opentune.constants.AodStyle
-import com.arturo254.opentune.constants.AodStyleKey
-import com.arturo254.opentune.constants.AodTextScaleKey
-import com.arturo254.opentune.constants.AodTransitionDurationKey
-import com.arturo254.opentune.ui.component.IconButton
-import com.arturo254.opentune.ui.utils.backToMain
-import com.arturo254.opentune.utils.rememberPreference
+import com.aromaappu.akmusic.LocalPlayerAwareWindowInsets
+import com.aromaappu.akmusic.R
+import com.aromaappu.akmusic.constants.AodArtShape
+import com.aromaappu.akmusic.constants.AodArtShapeKey
+import com.aromaappu.akmusic.constants.AodArtSizeKey
+import com.aromaappu.akmusic.constants.AodClockFormatKey
+import com.aromaappu.akmusic.constants.AodControlStyle
+import com.aromaappu.akmusic.constants.AodControlStyleKey
+import com.aromaappu.akmusic.constants.AodAutoActivationKey
+import com.aromaappu.akmusic.constants.AodDarknessKey
+import com.aromaappu.akmusic.constants.AodFullscreenKey
+import com.aromaappu.akmusic.constants.AodShowArtistKey
+import com.aromaappu.akmusic.constants.AodShowClockKey
+import com.aromaappu.akmusic.constants.AodShowControlsKey
+import com.aromaappu.akmusic.constants.AodShowProgressKey
+import com.aromaappu.akmusic.constants.AodShowTimeKey
+import com.aromaappu.akmusic.constants.AodShowTitleKey
+import com.aromaappu.akmusic.constants.AodSpotlightIntensityKey
+import com.aromaappu.akmusic.constants.AodSpotlightPulseKey
+import com.aromaappu.akmusic.constants.AodStyle
+import com.aromaappu.akmusic.constants.AodStyleKey
+import com.aromaappu.akmusic.constants.AodTextScaleKey
+import com.aromaappu.akmusic.constants.AodTransitionDurationKey
+import com.aromaappu.akmusic.ui.component.IconButton
+import com.aromaappu.akmusic.ui.utils.backToMain
+import com.aromaappu.akmusic.utils.rememberPreference
 import me.saket.squiggles.SquigglySlider
 import kotlin.math.PI
 import kotlin.math.absoluteValue

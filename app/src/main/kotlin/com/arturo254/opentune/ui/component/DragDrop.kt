@@ -4,7 +4,7 @@
  * Licensed Under GPL-3.0 | see git history for contributors
  */
 
-package com.arturo254.opentune.ui.component
+package com.aromaappu.akmusic.ui.component
 
 import androidx.compose.animation.animateColorAsState
 import androidx.compose.animation.core.Spring
@@ -57,8 +57,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Dialog
 import androidx.compose.ui.window.DialogProperties
 import androidx.compose.ui.zIndex
-import com.arturo254.opentune.R
-import com.arturo254.opentune.constants.PreferredLyricsProvider
+import com.aromaappu.akmusic.R
+import com.aromaappu.akmusic.constants.PreferredLyricsProvider
 
 /**
  * Estado de drag & drop basado en la posición REAL de los items dentro del

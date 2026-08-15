@@ -6,7 +6,7 @@
 
 
 
-package com.arturo254.opentune.models
+package com.aromaappu.akmusic.models
 
 import java.io.Serializable
 

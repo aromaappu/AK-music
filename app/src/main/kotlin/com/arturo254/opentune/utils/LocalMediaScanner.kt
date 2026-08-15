@@ -4,7 +4,7 @@
  * Licensed Under GPL-3.0 | see git history for contributors
  */
 
-package com.arturo254.opentune.utils
+package com.aromaappu.akmusic.utils
 
 import android.content.ContentUris
 import android.content.Context
@@ -12,11 +12,11 @@ import android.media.MediaMetadataRetriever
 import android.net.Uri
 import android.provider.MediaStore
 import android.provider.OpenableColumns
-import com.arturo254.opentune.db.MusicDatabase
-import com.arturo254.opentune.db.entities.ArtistEntity
-import com.arturo254.opentune.db.entities.Song
-import com.arturo254.opentune.db.entities.SongArtistMap
-import com.arturo254.opentune.db.entities.SongEntity
+import com.aromaappu.akmusic.db.MusicDatabase
+import com.aromaappu.akmusic.db.entities.ArtistEntity
+import com.aromaappu.akmusic.db.entities.Song
+import com.aromaappu.akmusic.db.entities.SongArtistMap
+import com.aromaappu.akmusic.db.entities.SongEntity
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.withContext

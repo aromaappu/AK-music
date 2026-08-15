@@ -6,7 +6,7 @@
 
 
 
-package com.arturo254.opentune.ui.screens
+package com.aromaappu.akmusic.ui.screens
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
@@ -34,27 +34,27 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.navigation.NavController
-import com.arturo254.opentune.R
-import com.arturo254.opentune.innertube.models.SongItem
-import com.arturo254.opentune.innertube.models.WatchEndpoint
-import com.arturo254.opentune.LocalPlayerAwareWindowInsets
-import com.arturo254.opentune.LocalPlayerConnection
-import com.arturo254.opentune.constants.ListItemHeight
-import com.arturo254.opentune.extensions.togglePlayPause
-import com.arturo254.opentune.models.toMediaMetadata
-import com.arturo254.opentune.playback.queues.YouTubeQueue
-import com.arturo254.opentune.ui.component.LocalMenuState
-import com.arturo254.opentune.ui.component.IconButton
-import com.arturo254.opentune.ui.component.NavigationTitle
-import com.arturo254.opentune.ui.component.YouTubeGridItem
-import com.arturo254.opentune.ui.component.YouTubeListItem
-import com.arturo254.opentune.ui.component.shimmer.GridItemPlaceHolder
-import com.arturo254.opentune.ui.component.shimmer.ShimmerHost
-import com.arturo254.opentune.ui.component.shimmer.TextPlaceholder
-import com.arturo254.opentune.ui.menu.YouTubeSongMenu
-import com.arturo254.opentune.ui.utils.backToMain
-import com.arturo254.opentune.ui.utils.SnapLayoutInfoProvider
-import com.arturo254.opentune.viewmodels.ChartsViewModel
+import com.aromaappu.akmusic.R
+import com.aromaappu.akmusic.innertube.models.SongItem
+import com.aromaappu.akmusic.innertube.models.WatchEndpoint
+import com.aromaappu.akmusic.LocalPlayerAwareWindowInsets
+import com.aromaappu.akmusic.LocalPlayerConnection
+import com.aromaappu.akmusic.constants.ListItemHeight
+import com.aromaappu.akmusic.extensions.togglePlayPause
+import com.aromaappu.akmusic.models.toMediaMetadata
+import com.aromaappu.akmusic.playback.queues.YouTubeQueue
+import com.aromaappu.akmusic.ui.component.LocalMenuState
+import com.aromaappu.akmusic.ui.component.IconButton
+import com.aromaappu.akmusic.ui.component.NavigationTitle
+import com.aromaappu.akmusic.ui.component.YouTubeGridItem
+import com.aromaappu.akmusic.ui.component.YouTubeListItem
+import com.aromaappu.akmusic.ui.component.shimmer.GridItemPlaceHolder
+import com.aromaappu.akmusic.ui.component.shimmer.ShimmerHost
+import com.aromaappu.akmusic.ui.component.shimmer.TextPlaceholder
+import com.aromaappu.akmusic.ui.menu.YouTubeSongMenu
+import com.aromaappu.akmusic.ui.utils.backToMain
+import com.aromaappu.akmusic.ui.utils.SnapLayoutInfoProvider
+import com.aromaappu.akmusic.viewmodels.ChartsViewModel
 
 @OptIn(ExperimentalMaterial3Api::class, ExperimentalFoundationApi::class)
 @Composable

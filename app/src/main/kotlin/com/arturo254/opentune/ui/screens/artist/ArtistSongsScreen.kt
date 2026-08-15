@@ -6,7 +6,7 @@
 
 
 
-package com.arturo254.opentune.ui.screens.artist
+package com.aromaappu.akmusic.ui.screens.artist
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.combinedClickable
@@ -40,27 +40,27 @@ import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.navigation.NavController
-import com.arturo254.opentune.LocalPlayerAwareWindowInsets
-import com.arturo254.opentune.LocalPlayerConnection
-import com.arturo254.opentune.R
-import com.arturo254.opentune.constants.ArtistSongSortDescendingKey
-import com.arturo254.opentune.constants.ArtistSongSortType
-import com.arturo254.opentune.constants.ArtistSongSortTypeKey
-import com.arturo254.opentune.constants.CONTENT_TYPE_HEADER
-import com.arturo254.opentune.constants.HideExplicitKey
-import com.arturo254.opentune.extensions.toMediaItem
-import com.arturo254.opentune.extensions.togglePlayPause
-import com.arturo254.opentune.playback.queues.ListQueue
-import com.arturo254.opentune.ui.component.HideOnScrollFAB
-import com.arturo254.opentune.ui.component.IconButton
-import com.arturo254.opentune.ui.component.LocalMenuState
-import com.arturo254.opentune.ui.component.SongListItem
-import com.arturo254.opentune.ui.component.SortHeader
-import com.arturo254.opentune.ui.menu.SongMenu
-import com.arturo254.opentune.ui.utils.backToMain
-import com.arturo254.opentune.utils.rememberEnumPreference
-import com.arturo254.opentune.utils.rememberPreference
-import com.arturo254.opentune.viewmodels.ArtistSongsViewModel
+import com.aromaappu.akmusic.LocalPlayerAwareWindowInsets
+import com.aromaappu.akmusic.LocalPlayerConnection
+import com.aromaappu.akmusic.R
+import com.aromaappu.akmusic.constants.ArtistSongSortDescendingKey
+import com.aromaappu.akmusic.constants.ArtistSongSortType
+import com.aromaappu.akmusic.constants.ArtistSongSortTypeKey
+import com.aromaappu.akmusic.constants.CONTENT_TYPE_HEADER
+import com.aromaappu.akmusic.constants.HideExplicitKey
+import com.aromaappu.akmusic.extensions.toMediaItem
+import com.aromaappu.akmusic.extensions.togglePlayPause
+import com.aromaappu.akmusic.playback.queues.ListQueue
+import com.aromaappu.akmusic.ui.component.HideOnScrollFAB
+import com.aromaappu.akmusic.ui.component.IconButton
+import com.aromaappu.akmusic.ui.component.LocalMenuState
+import com.aromaappu.akmusic.ui.component.SongListItem
+import com.aromaappu.akmusic.ui.component.SortHeader
+import com.aromaappu.akmusic.ui.menu.SongMenu
+import com.aromaappu.akmusic.ui.utils.backToMain
+import com.aromaappu.akmusic.utils.rememberEnumPreference
+import com.aromaappu.akmusic.utils.rememberPreference
+import com.aromaappu.akmusic.viewmodels.ArtistSongsViewModel
 
 @OptIn(ExperimentalFoundationApi::class, ExperimentalMaterial3Api::class)
 @Composable

@@ -4,7 +4,7 @@
  * Licensed Under GPL-3.0 | see git history for contributors
  */
 
-package com.arturo254.opentune.betterlyrics
+package com.aromaappu.akmusic.betterlyrics
 
 import io.ktor.client.HttpClient
 import io.ktor.client.engine.okhttp.OkHttp
@@ -18,7 +18,7 @@ import io.ktor.client.statement.bodyAsText
 import io.ktor.http.isSuccess
 import io.ktor.serialization.kotlinx.json.json
 import kotlinx.serialization.json.Json
-import com.arturo254.opentune.betterlyrics.models.TTMLResponse
+import com.aromaappu.akmusic.betterlyrics.models.TTMLResponse
 
 object BetterLyrics {
     private const val API_BASE_URL = "https://lyrics-api.boidu.dev/"

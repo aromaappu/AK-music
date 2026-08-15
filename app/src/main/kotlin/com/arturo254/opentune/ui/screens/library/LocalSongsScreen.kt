@@ -4,7 +4,7 @@
  * Licensed Under GPL-3.0 | see git history for contributors
  */
 
-package com.arturo254.opentune.ui.screens.library
+package com.aromaappu.akmusic.ui.screens.library
 
 import android.Manifest
 import android.annotation.SuppressLint
@@ -81,20 +81,20 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.core.content.ContextCompat
 import androidx.navigation.NavController
-import com.arturo254.opentune.LocalDatabase
-import com.arturo254.opentune.LocalPlayerAwareWindowInsets
-import com.arturo254.opentune.LocalPlayerConnection
-import com.arturo254.opentune.R
-import com.arturo254.opentune.constants.CONTENT_TYPE_HEADER
-import com.arturo254.opentune.constants.CONTENT_TYPE_SONG
-import com.arturo254.opentune.constants.SelectedLocalFoldersKey
-import com.arturo254.opentune.extensions.toMediaItem
-import com.arturo254.opentune.playback.queues.ListQueue
-import com.arturo254.opentune.ui.component.LocalMenuState
-import com.arturo254.opentune.ui.component.SongListItem
-import com.arturo254.opentune.ui.menu.SongMenu
-import com.arturo254.opentune.utils.LocalMediaScanner
-import com.arturo254.opentune.utils.rememberPreference
+import com.aromaappu.akmusic.LocalDatabase
+import com.aromaappu.akmusic.LocalPlayerAwareWindowInsets
+import com.aromaappu.akmusic.LocalPlayerConnection
+import com.aromaappu.akmusic.R
+import com.aromaappu.akmusic.constants.CONTENT_TYPE_HEADER
+import com.aromaappu.akmusic.constants.CONTENT_TYPE_SONG
+import com.aromaappu.akmusic.constants.SelectedLocalFoldersKey
+import com.aromaappu.akmusic.extensions.toMediaItem
+import com.aromaappu.akmusic.playback.queues.ListQueue
+import com.aromaappu.akmusic.ui.component.LocalMenuState
+import com.aromaappu.akmusic.ui.component.SongListItem
+import com.aromaappu.akmusic.ui.menu.SongMenu
+import com.aromaappu.akmusic.utils.LocalMediaScanner
+import com.aromaappu.akmusic.utils.rememberPreference
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
 import java.io.File

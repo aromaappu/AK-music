@@ -6,6 +6,6 @@
 
 
 
-package com.arturo254.opentune.kugou.models
+package com.aromaappu.akmusic.kugou.models
 
 data class Keyword(val title: String, val artist: String)

@@ -5,10 +5,10 @@
  * Do not remove or alter this notice. - Per GPL-3.0 Section 4 & Section 5
  */
 
-package com.arturo254.opentune.spotify
+package com.aromaappu.akmusic.spotify
 
-import com.arturo254.opentune.spotify.models.SpotifyPlaylist
-import com.arturo254.opentune.spotify.models.SpotifyTrack
+import com.aromaappu.akmusic.spotify.models.SpotifyPlaylist
+import com.aromaappu.akmusic.spotify.models.SpotifyTrack
 
 /**
  * Utility object for creating search queries from Spotify track data.

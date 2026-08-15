@@ -4,7 +4,7 @@
  * Licensed Under GPL-3.0 | see git history for contributors
  */
 
-package com.arturo254.opentune.widget
+package com.aromaappu.akmusic.widget
 
 import android.content.Context
 import android.content.Intent
@@ -12,14 +12,14 @@ import androidx.core.content.ContextCompat
 import androidx.glance.GlanceId
 import androidx.glance.action.ActionParameters
 import androidx.glance.appwidget.action.ActionCallback
-import com.arturo254.opentune.MainActivity
-import com.arturo254.opentune.playback.MusicService
+import com.aromaappu.akmusic.MainActivity
+import com.aromaappu.akmusic.playback.MusicService
 
 object PlayerWidgetActions {
-    const val ACTION_PLAY_PAUSE = "com.arturo254.opentune.widget.action.PLAY_PAUSE"
-    const val ACTION_NEXT = "com.arturo254.opentune.widget.action.NEXT"
-    const val ACTION_PREVIOUS = "com.arturo254.opentune.widget.action.PREVIOUS"
-    const val ACTION_REFRESH = "com.arturo254.opentune.widget.action.REFRESH"
+    const val ACTION_PLAY_PAUSE = "com.aromaappu.akmusic.widget.action.PLAY_PAUSE"
+    const val ACTION_NEXT = "com.aromaappu.akmusic.widget.action.NEXT"
+    const val ACTION_PREVIOUS = "com.aromaappu.akmusic.widget.action.PREVIOUS"
+    const val ACTION_REFRESH = "com.aromaappu.akmusic.widget.action.REFRESH"
 
     fun serviceIntent(context: Context, action: String): Intent =
         Intent(context, MusicService::class.java).setAction(action)

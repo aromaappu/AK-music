@@ -4,23 +4,23 @@
  * Licensed Under GPL-3.0 | see git history for contributors
  */
 
-package com.arturo254.opentune.viewmodels
+package com.aromaappu.akmusic.viewmodels
 
 import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.Dispatchers
-import com.arturo254.opentune.innertube.YouTube
-import com.arturo254.opentune.innertube.models.AlbumItem
-import com.arturo254.opentune.innertube.models.AlbumReleaseType
-import com.arturo254.opentune.innertube.models.filterExplicit
-import com.arturo254.opentune.innertube.models.filterVideo
-import com.arturo254.opentune.constants.HideExplicitKey
-import com.arturo254.opentune.constants.HideVideoKey
-import com.arturo254.opentune.db.MusicDatabase
-import com.arturo254.opentune.utils.dataStore
-import com.arturo254.opentune.utils.get
-import com.arturo254.opentune.utils.reportException
+import com.aromaappu.akmusic.innertube.YouTube
+import com.aromaappu.akmusic.innertube.models.AlbumItem
+import com.aromaappu.akmusic.innertube.models.AlbumReleaseType
+import com.aromaappu.akmusic.innertube.models.filterExplicit
+import com.aromaappu.akmusic.innertube.models.filterVideo
+import com.aromaappu.akmusic.constants.HideExplicitKey
+import com.aromaappu.akmusic.constants.HideVideoKey
+import com.aromaappu.akmusic.db.MusicDatabase
+import com.aromaappu.akmusic.utils.dataStore
+import com.aromaappu.akmusic.utils.get
+import com.aromaappu.akmusic.utils.reportException
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.flow.MutableStateFlow

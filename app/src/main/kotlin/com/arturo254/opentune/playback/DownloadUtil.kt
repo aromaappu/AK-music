@@ -6,7 +6,7 @@
 
 
 
-package com.arturo254.opentune.playback
+package com.aromaappu.akmusic.playback
 
 import android.content.Context
 import android.media.MediaCodecList
@@ -21,23 +21,23 @@ import androidx.media3.datasource.okhttp.OkHttpDataSource
 import androidx.media3.exoplayer.offline.Download
 import androidx.media3.exoplayer.offline.DownloadManager
 import androidx.media3.exoplayer.offline.DownloadNotificationHelper
-import com.arturo254.opentune.innertube.YouTube
-import com.arturo254.opentune.innertube.models.YouTubeClient
-import com.arturo254.opentune.constants.AudioQuality
-import com.arturo254.opentune.constants.AudioQualityKey
-import com.arturo254.opentune.constants.PlayerStreamClient
-import com.arturo254.opentune.constants.PlayerStreamClientKey
-import com.arturo254.opentune.db.MusicDatabase
-import com.arturo254.opentune.db.entities.FormatEntity
-import com.arturo254.opentune.db.entities.SongEntity
-import com.arturo254.opentune.di.DownloadCache
-import com.arturo254.opentune.di.PlayerCache
-import com.arturo254.opentune.utils.YTPlayerUtils
-import com.arturo254.opentune.utils.StreamClientUtils
-import com.arturo254.opentune.utils.enumPreference
-import com.arturo254.opentune.constants.NetworkMeteredKey
-import com.arturo254.opentune.utils.dataStore
-import com.arturo254.opentune.utils.get
+import com.aromaappu.akmusic.innertube.YouTube
+import com.aromaappu.akmusic.innertube.models.YouTubeClient
+import com.aromaappu.akmusic.constants.AudioQuality
+import com.aromaappu.akmusic.constants.AudioQualityKey
+import com.aromaappu.akmusic.constants.PlayerStreamClient
+import com.aromaappu.akmusic.constants.PlayerStreamClientKey
+import com.aromaappu.akmusic.db.MusicDatabase
+import com.aromaappu.akmusic.db.entities.FormatEntity
+import com.aromaappu.akmusic.db.entities.SongEntity
+import com.aromaappu.akmusic.di.DownloadCache
+import com.aromaappu.akmusic.di.PlayerCache
+import com.aromaappu.akmusic.utils.YTPlayerUtils
+import com.aromaappu.akmusic.utils.StreamClientUtils
+import com.aromaappu.akmusic.utils.enumPreference
+import com.aromaappu.akmusic.constants.NetworkMeteredKey
+import com.aromaappu.akmusic.utils.dataStore
+import com.aromaappu.akmusic.utils.get
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.*

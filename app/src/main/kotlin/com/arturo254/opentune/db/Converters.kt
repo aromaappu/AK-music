@@ -6,7 +6,7 @@
 
 
 
-package com.arturo254.opentune.db
+package com.aromaappu.akmusic.db
 
 import androidx.room.TypeConverter
 import java.time.Instant

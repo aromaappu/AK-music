@@ -1,4 +1,4 @@
-package com.arturo254.opentune.ui.screens.settings
+package com.aromaappu.akmusic.ui.screens.settings
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.core.Animatable
@@ -34,7 +34,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.compose.material3.adaptive.currentWindowAdaptiveInfo
 import androidx.window.core.layout.WindowSizeClass
-import com.arturo254.opentune.LocalPlayerAwareWindowInsets
+import com.aromaappu.akmusic.LocalPlayerAwareWindowInsets
 
 enum class SettingsLayoutMode {
     COMPACT,

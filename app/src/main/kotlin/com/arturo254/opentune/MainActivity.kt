@@ -6,7 +6,7 @@
 
 
 
-package com.arturo254.opentune
+package com.aromaappu.akmusic
 
 import android.annotation.SuppressLint
 import android.Manifest
@@ -166,112 +166,107 @@ import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
-import com.arturo254.opentune.utils.PreferenceStore
+import com.aromaappu.akmusic.utils.PreferenceStore
 import kotlinx.coroutines.withContext
-import com.arturo254.opentune.constants.AppBarHeight
-import com.arturo254.opentune.constants.AppLanguageKey
-import com.arturo254.opentune.constants.CustomThemeColorKey
-import com.arturo254.opentune.constants.DarkModeKey
-import com.arturo254.opentune.constants.DefaultOpenTabKey
-import com.arturo254.opentune.constants.DisableScreenshotKey
-import com.arturo254.opentune.constants.DynamicThemeKey
-import com.arturo254.opentune.constants.FloatingToolbarBottomPadding
-import com.arturo254.opentune.constants.FloatingToolbarHeight
-import com.arturo254.opentune.constants.FloatingToolbarHorizontalPadding
-import com.arturo254.opentune.constants.HasPressedStarKey
-import com.arturo254.opentune.constants.LaunchCountKey
-import com.arturo254.opentune.constants.EnableLiquidGlassKey
-import com.arturo254.opentune.constants.LiquidGlassNavBarKey
-import com.arturo254.opentune.constants.LyricsSyncOffsetKey
-import com.arturo254.opentune.constants.MiniPlayerBottomSpacing
-import com.arturo254.opentune.constants.MiniPlayerHeight
-import com.arturo254.opentune.constants.MiniPlayerLastAnchorKey
-import com.arturo254.opentune.constants.NavigationBarAnimationSpec
-import com.arturo254.opentune.constants.PauseSearchHistoryKey
-import com.arturo254.opentune.constants.PureBlackKey
-import com.arturo254.opentune.constants.RemindAfterKey
-import com.arturo254.opentune.constants.SYSTEM_DEFAULT
-import com.arturo254.opentune.constants.SearchSource
-import com.arturo254.opentune.constants.SearchSourceKey
-import com.arturo254.opentune.constants.SlimFloatingToolbarHeight
-import com.arturo254.opentune.constants.SlimNavBarKey
-import com.arturo254.opentune.constants.StopMusicOnTaskClearKey
-import com.arturo254.opentune.constants.UseNewMiniPlayerDesignKey
-import com.arturo254.opentune.constants.UseSystemFontKey
-import com.arturo254.opentune.db.MusicDatabase
-import com.arturo254.opentune.db.entities.SearchHistory
-import com.arturo254.opentune.db.entities.Album
-import com.arturo254.opentune.db.entities.Artist
-import com.arturo254.opentune.db.entities.Playlist
-import com.arturo254.opentune.db.entities.Song
-import com.arturo254.opentune.innertube.YouTube
-import com.arturo254.opentune.innertube.models.AlbumItem
-import com.arturo254.opentune.innertube.models.ArtistItem
-import com.arturo254.opentune.innertube.models.PlaylistItem
-import com.arturo254.opentune.innertube.models.SongItem
-import com.arturo254.opentune.extensions.toMediaItem
-import com.arturo254.opentune.utils.LocalMediaScanner
-import com.arturo254.opentune.models.toMediaMetadata
-import com.arturo254.opentune.playback.DownloadUtil
-import com.arturo254.opentune.playback.MusicService
-import com.arturo254.opentune.playback.MusicService.MusicBinder
-import com.arturo254.opentune.playback.PlayerConnection
-import com.arturo254.opentune.playback.queues.LocalAlbumRadio
-import com.arturo254.opentune.playback.queues.ListQueue
-import com.arturo254.opentune.playback.queues.YouTubeAlbumRadio
-import com.arturo254.opentune.playback.queues.YouTubeQueue
-import com.arturo254.opentune.ui.component.AccountSettingsDialog
-import com.arturo254.opentune.ui.component.BottomSheetMenu
-import com.arturo254.opentune.ui.component.BottomSheetPage
-import com.arturo254.opentune.ui.component.COLLAPSED_ANCHOR
-import com.arturo254.opentune.ui.component.DISMISSED_ANCHOR
-import com.arturo254.opentune.ui.component.EXPANDED_ANCHOR
-import com.arturo254.opentune.ui.component.FloatingNavigationToolbar
-import com.arturo254.opentune.ui.component.IconButton
-import com.arturo254.opentune.ui.component.LocalBottomSheetPageState
-import com.arturo254.opentune.ui.component.LocalMenuState
+import com.aromaappu.akmusic.constants.AppBarHeight
+import com.aromaappu.akmusic.constants.AppLanguageKey
+import com.aromaappu.akmusic.constants.CustomThemeColorKey
+import com.aromaappu.akmusic.constants.DarkModeKey
+import com.aromaappu.akmusic.constants.DefaultOpenTabKey
+import com.aromaappu.akmusic.constants.DisableScreenshotKey
+import com.aromaappu.akmusic.constants.DynamicThemeKey
+import com.aromaappu.akmusic.constants.FloatingToolbarBottomPadding
+import com.aromaappu.akmusic.constants.FloatingToolbarHeight
+import com.aromaappu.akmusic.constants.FloatingToolbarHorizontalPadding
+import com.aromaappu.akmusic.constants.HasPressedStarKey
+import com.aromaappu.akmusic.constants.LaunchCountKey
+import com.aromaappu.akmusic.constants.LyricsSyncOffsetKey
+import com.aromaappu.akmusic.constants.MiniPlayerBottomSpacing
+import com.aromaappu.akmusic.constants.MiniPlayerHeight
+import com.aromaappu.akmusic.constants.MiniPlayerLastAnchorKey
+import com.aromaappu.akmusic.constants.NavigationBarAnimationSpec
+import com.aromaappu.akmusic.constants.PauseSearchHistoryKey
+import com.aromaappu.akmusic.constants.PureBlackKey
+import com.aromaappu.akmusic.constants.RemindAfterKey
+import com.aromaappu.akmusic.constants.SYSTEM_DEFAULT
+import com.aromaappu.akmusic.constants.SearchSource
+import com.aromaappu.akmusic.constants.SearchSourceKey
+import com.aromaappu.akmusic.constants.SlimFloatingToolbarHeight
+import com.aromaappu.akmusic.constants.SlimNavBarKey
+import com.aromaappu.akmusic.constants.StopMusicOnTaskClearKey
+import com.aromaappu.akmusic.constants.UseNewMiniPlayerDesignKey
+import com.aromaappu.akmusic.constants.UseSystemFontKey
+import com.aromaappu.akmusic.db.MusicDatabase
+import com.aromaappu.akmusic.db.entities.SearchHistory
+import com.aromaappu.akmusic.db.entities.Album
+import com.aromaappu.akmusic.db.entities.Artist
+import com.aromaappu.akmusic.db.entities.Playlist
+import com.aromaappu.akmusic.db.entities.Song
+import com.aromaappu.akmusic.innertube.YouTube
+import com.aromaappu.akmusic.innertube.models.AlbumItem
+import com.aromaappu.akmusic.innertube.models.ArtistItem
+import com.aromaappu.akmusic.innertube.models.PlaylistItem
+import com.aromaappu.akmusic.innertube.models.SongItem
+import com.aromaappu.akmusic.extensions.toMediaItem
+import com.aromaappu.akmusic.utils.LocalMediaScanner
+import com.aromaappu.akmusic.models.toMediaMetadata
+import com.aromaappu.akmusic.playback.DownloadUtil
+import com.aromaappu.akmusic.playback.MusicService
+import com.aromaappu.akmusic.playback.MusicService.MusicBinder
+import com.aromaappu.akmusic.playback.PlayerConnection
+import com.aromaappu.akmusic.playback.queues.LocalAlbumRadio
+import com.aromaappu.akmusic.playback.queues.ListQueue
+import com.aromaappu.akmusic.playback.queues.YouTubeAlbumRadio
+import com.aromaappu.akmusic.playback.queues.YouTubeQueue
+import com.aromaappu.akmusic.ui.component.AccountSettingsDialog
+import com.aromaappu.akmusic.ui.component.BottomSheetMenu
+import com.aromaappu.akmusic.ui.component.BottomSheetPage
+import com.aromaappu.akmusic.ui.component.COLLAPSED_ANCHOR
+import com.aromaappu.akmusic.ui.component.DISMISSED_ANCHOR
+import com.aromaappu.akmusic.ui.component.EXPANDED_ANCHOR
+import com.aromaappu.akmusic.ui.component.FloatingNavigationToolbar
+import com.aromaappu.akmusic.ui.component.IconButton
+import com.aromaappu.akmusic.ui.component.LocalBottomSheetPageState
+import com.aromaappu.akmusic.ui.component.LocalMenuState
 import com.mikepenz.markdown.m3.Markdown
-import com.arturo254.opentune.constants.TogetherDisplayNameKey
-import com.arturo254.opentune.ui.component.BottomSheetPageState
-import com.arturo254.opentune.ui.component.MenuState
-import com.arturo254.opentune.ui.component.TopSearch
-import com.arturo254.opentune.ui.component.rememberBottomSheetState
-import com.arturo254.opentune.ui.component.LocalBackdrop
-import com.arturo254.opentune.ui.component.layerBackdrop
-import com.arturo254.opentune.ui.component.rememberBackdrop
-import com.arturo254.opentune.ui.component.shimmer.ShimmerTheme
-import com.arturo254.opentune.ui.menu.YouTubeSongMenu
-import com.arturo254.opentune.ui.player.BottomSheetPlayer
-import com.arturo254.opentune.ui.screens.LOGIN_URL_ARGUMENT
-import com.arturo254.opentune.ui.screens.Screens
-import com.arturo254.opentune.ui.screens.buildLoginRoute
-import com.arturo254.opentune.ui.screens.musicrecognition.MusicRecognitionRoute
-import com.arturo254.opentune.ui.screens.navigationBuilder
-import com.arturo254.opentune.ui.screens.search.LocalSearchScreen
-import com.arturo254.opentune.ui.screens.search.OnlineSearchScreen
-import com.arturo254.opentune.ui.screens.settings.DarkMode
-import com.arturo254.opentune.ui.screens.settings.DiscordPresenceManager
-import com.arturo254.opentune.ui.screens.settings.NavigationTab
-import com.arturo254.opentune.ui.screens.settings.ThemePalettes
-import com.arturo254.opentune.ui.theme.OpenTuneTheme
-import com.arturo254.opentune.ui.theme.ColorSaver
-import com.arturo254.opentune.ui.theme.DefaultThemeColor
-import com.arturo254.opentune.ui.theme.ThemeSeedPalette
-import com.arturo254.opentune.ui.theme.ThemeSeedPaletteCodec
-import com.arturo254.opentune.ui.theme.extractThemeColor
-import com.arturo254.opentune.ui.utils.appBarScrollBehavior
-import com.arturo254.opentune.ui.utils.backToMain
-import com.arturo254.opentune.ui.utils.resetHeightOffset
-import com.arturo254.opentune.utils.SyncUtils
-import com.arturo254.opentune.utils.UpdateNotificationManager
-import com.arturo254.opentune.utils.Updater
-import com.arturo254.opentune.utils.dataStore
-import com.arturo254.opentune.utils.get
-import com.arturo254.opentune.utils.rememberEnumPreference
-import com.arturo254.opentune.utils.rememberPreference
-import com.arturo254.opentune.utils.reportException
-import com.arturo254.opentune.utils.setAppLocale
-import com.arturo254.opentune.viewmodels.HomeViewModel
+import com.aromaappu.akmusic.constants.TogetherDisplayNameKey
+import com.aromaappu.akmusic.ui.component.BottomSheetPageState
+import com.aromaappu.akmusic.ui.component.MenuState
+import com.aromaappu.akmusic.ui.component.TopSearch
+import com.aromaappu.akmusic.ui.component.rememberBottomSheetState
+import com.aromaappu.akmusic.ui.component.shimmer.ShimmerTheme
+import com.aromaappu.akmusic.ui.menu.YouTubeSongMenu
+import com.aromaappu.akmusic.ui.player.BottomSheetPlayer
+import com.aromaappu.akmusic.ui.screens.LOGIN_URL_ARGUMENT
+import com.aromaappu.akmusic.ui.screens.Screens
+import com.aromaappu.akmusic.ui.screens.buildLoginRoute
+import com.aromaappu.akmusic.ui.screens.musicrecognition.MusicRecognitionRoute
+import com.aromaappu.akmusic.ui.screens.navigationBuilder
+import com.aromaappu.akmusic.ui.screens.search.LocalSearchScreen
+import com.aromaappu.akmusic.ui.screens.search.OnlineSearchScreen
+import com.aromaappu.akmusic.ui.screens.settings.DarkMode
+import com.aromaappu.akmusic.ui.screens.settings.DiscordPresenceManager
+import com.aromaappu.akmusic.ui.screens.settings.NavigationTab
+import com.aromaappu.akmusic.ui.screens.settings.ThemePalettes
+import com.aromaappu.akmusic.ui.theme.OpenTuneTheme
+import com.aromaappu.akmusic.ui.theme.ColorSaver
+import com.aromaappu.akmusic.ui.theme.DefaultThemeColor
+import com.aromaappu.akmusic.ui.theme.ThemeSeedPalette
+import com.aromaappu.akmusic.ui.theme.ThemeSeedPaletteCodec
+import com.aromaappu.akmusic.ui.theme.extractThemeColor
+import com.aromaappu.akmusic.ui.utils.appBarScrollBehavior
+import com.aromaappu.akmusic.ui.utils.backToMain
+import com.aromaappu.akmusic.ui.utils.resetHeightOffset
+import com.aromaappu.akmusic.utils.SyncUtils
+import com.aromaappu.akmusic.utils.UpdateNotificationManager
+import com.aromaappu.akmusic.utils.Updater
+import com.aromaappu.akmusic.utils.dataStore
+import com.aromaappu.akmusic.utils.get
+import com.aromaappu.akmusic.utils.rememberEnumPreference
+import com.aromaappu.akmusic.utils.rememberPreference
+import com.aromaappu.akmusic.utils.reportException
+import com.aromaappu.akmusic.utils.setAppLocale
+import com.aromaappu.akmusic.viewmodels.HomeViewModel
 import java.net.URLDecoder
 import java.net.URLEncoder
 import java.util.Locale
@@ -280,9 +275,7 @@ import kotlin.random.Random
 import kotlin.time.Duration.Companion.days
 import androidx.core.graphics.toColorInt
 import androidx.datastore.preferences.core.booleanPreferencesKey
-import com.arturo254.opentune.canvas.CanvasCacheManager
-import com.arturo254.opentune.constants.EnableHapticFeedbackKey
-import com.arturo254.opentune.constants.PlayerFullscreenKey
+import com.aromaappu.akmusic.canvas.CanvasCacheManager
 
 @Suppress("DEPRECATION", "ASSIGNED_BUT_NEVER_ACCESSED_VARIABLE")
 @AndroidEntryPoint
@@ -542,7 +535,6 @@ class MainActivity : ComponentActivity() {
             // instances in different composition scopes which caused the update
             // bottom sheet to not appear and overlay interactions to be blocked).
             val bottomSheetPageState = remember { BottomSheetPageState() }
-            val (liquidGlassNavBar) = rememberPreference(LiquidGlassNavBarKey, defaultValue = false)
             val menuState = remember { MenuState() }
             val uriHandler = LocalUriHandler.current
             val releaseNotesState = remember { mutableStateOf<String?>(null) }
@@ -621,14 +613,10 @@ class MainActivity : ComponentActivity() {
             val darkTheme by rememberEnumPreference(DarkModeKey, defaultValue = DarkMode.AUTO)
             val useSystemFont by rememberPreference(UseSystemFontKey, defaultValue = false)
             val lyricsSyncOffset by rememberPreference(LyricsSyncOffsetKey, defaultValue = 0)
-            val enableLiquidGlass by rememberPreference(EnableLiquidGlassKey, defaultValue = false)
-            val backdrop = rememberBackdrop()
             val isSystemInDarkTheme = isSystemInDarkTheme()
             val useDarkTheme =
-                remember(darkTheme, isSystemInDarkTheme, enableLiquidGlass) {
-                    if (enableLiquidGlass) {
-                        true
-                    } else if (darkTheme == DarkMode.AUTO) {
+                remember(darkTheme, isSystemInDarkTheme) {
+                    if (darkTheme == DarkMode.AUTO) {
                         isSystemInDarkTheme
                     } else {
                         darkTheme == DarkMode.ON
@@ -638,7 +626,7 @@ class MainActivity : ComponentActivity() {
                 setSystemBarAppearance(useDarkTheme)
             }
             val pureBlackEnabled by rememberPreference(PureBlackKey, defaultValue = false)
-            val pureBlack = pureBlackEnabled && useDarkTheme && !enableLiquidGlass
+            val pureBlack = pureBlackEnabled && useDarkTheme
 
             val customThemeSeedPalette = remember(customThemeColorValue) {
                 if (customThemeColorValue.startsWith("#")) {
@@ -749,15 +737,9 @@ class MainActivity : ComponentActivity() {
                     val isYearInMusicScreen = currentRoute == "year_in_music"
                     val isAlwaysOnDisplayScreen = currentRoute == "always_on_display"
 
-
-                    val haptic = LocalHapticFeedback.current
-                    val (enableHapticFeedback) = rememberPreference(EnableHapticFeedbackKey, true)
-                    val customHaptic = remember(haptic, enableHapticFeedback) {
+                    val customHaptic = remember {
                         object : HapticFeedback {
                             override fun performHapticFeedback(hapticFeedbackType: HapticFeedbackType) {
-                                if (enableHapticFeedback) {
-                                    haptic.performHapticFeedback(hapticFeedbackType)
-                                }
                             }
                         }
                     }
@@ -909,27 +891,15 @@ class MainActivity : ComponentActivity() {
                     var yearInMusicSavedPlayerAnchor by rememberSaveable { mutableStateOf(-1) }
 
 
-                    val (playerFullscreen) = rememberPreference(
-                        PlayerFullscreenKey,
-                        defaultValue = false
-                    )
-
                     LaunchedEffect(
                         isYearInMusicScreen,
                         isAlwaysOnDisplayScreen,
-                        isPlayerExpanded,
-                        playerFullscreen
+                        isPlayerExpanded
                     ) {
                         val controller = WindowCompat.getInsetsController(window, window.decorView)
 
                         when {
                             isAlwaysOnDisplayScreen -> {
-                                controller.systemBarsBehavior =
-                                    WindowInsetsControllerCompat.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
-                                controller.hide(WindowInsetsCompat.Type.systemBars())
-                            }
-
-                            isPlayerExpanded && playerFullscreen -> {
                                 controller.systemBarsBehavior =
                                     WindowInsetsControllerCompat.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
                                 controller.hide(WindowInsetsCompat.Type.systemBars())
@@ -1209,7 +1179,6 @@ class MainActivity : ComponentActivity() {
                         LocalSyncUtils provides syncUtils,
                         LocalBottomSheetPageState provides bottomSheetPageState,
                         LocalMenuState provides menuState,
-                        LocalBackdrop provides backdrop,
                     ) {
                         Row {
                             AnimatedVisibility(useRail && shouldShowNavigationBar) {
@@ -1794,7 +1763,6 @@ class MainActivity : ComponentActivity() {
                                 Box(
                                     modifier = Modifier
                                         .fillMaxSize()
-                                        .let { if (enableLiquidGlass) it.layerBackdrop(backdrop) else it }
                                 ) {
                                 var transitionDirection =
                                     AnimatedContentTransitionScope.SlideDirection.Left
@@ -2103,9 +2071,9 @@ class MainActivity : ComponentActivity() {
     }
 
     companion object {
-        const val ACTION_SEARCH = "com.arturo254.opentune.action.SEARCH"
-        const val ACTION_LIBRARY = "com.arturo254.opentune.action.LIBRARY"
-        const val ACTION_DOWNLOAD_QUEUE = "com.arturo254.opentune.action.DOWNLOAD_QUEUE"
+        const val ACTION_SEARCH = "com.aromaappu.akmusic.action.SEARCH"
+        const val ACTION_LIBRARY = "com.aromaappu.akmusic.action.LIBRARY"
+        const val ACTION_DOWNLOAD_QUEUE = "com.aromaappu.akmusic.action.DOWNLOAD_QUEUE"
     }
 }
 

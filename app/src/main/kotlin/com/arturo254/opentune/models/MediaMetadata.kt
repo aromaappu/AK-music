@@ -6,13 +6,13 @@
 
 
 
-package com.arturo254.opentune.models
+package com.aromaappu.akmusic.models
 
 import androidx.compose.runtime.Immutable
-import com.arturo254.opentune.innertube.models.SongItem
-import com.arturo254.opentune.db.entities.Song
-import com.arturo254.opentune.db.entities.SongEntity
-import com.arturo254.opentune.ui.utils.resize
+import com.aromaappu.akmusic.innertube.models.SongItem
+import com.aromaappu.akmusic.db.entities.Song
+import com.aromaappu.akmusic.db.entities.SongEntity
+import com.aromaappu.akmusic.ui.utils.resize
 import java.io.Serializable
 import java.time.LocalDateTime
 
@@ -72,7 +72,7 @@ data class MediaMetadata(
 }
 
 private fun resolveAlbum(
-    album: com.arturo254.opentune.db.entities.Album?,
+    album: com.aromaappu.akmusic.db.entities.Album?,
     albumId: String?,
     albumName: String?
 ): MediaMetadata.Album? =

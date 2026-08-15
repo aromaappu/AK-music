@@ -6,7 +6,7 @@
 
 
 @file:OptIn(ExperimentalMaterial3Api::class)
-package com.arturo254.opentune.ui.component
+package com.aromaappu.akmusic.ui.component
 
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -25,7 +25,7 @@ import androidx.compose.ui.graphics.drawscope.DrawScope
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.LayoutDirection
 import androidx.compose.ui.unit.dp
-import com.arturo254.opentune.ui.theme.PlayerSliderColors
+import com.aromaappu.akmusic.ui.theme.PlayerSliderColors
 @Composable
 fun PlayerSliderTrack(
     sliderState: SliderState,

@@ -4,7 +4,7 @@
  * Licensed Under GPL-3.0 | see git history for contributors
  */
 
-package com.arturo254.opentune.widget
+package com.aromaappu.akmusic.widget
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -52,9 +52,9 @@ import androidx.glance.text.FontWeight
 import androidx.glance.text.Text
 import androidx.glance.text.TextStyle
 import androidx.glance.unit.ColorProvider
-import com.arturo254.opentune.R
-import com.arturo254.opentune.constants.WidgetBackgroundMode
-import com.arturo254.opentune.widget.PlayerWidgetActions.openAppIntent
+import com.aromaappu.akmusic.R
+import com.aromaappu.akmusic.constants.WidgetBackgroundMode
+import com.aromaappu.akmusic.widget.PlayerWidgetActions.openAppIntent
 import kotlinx.coroutines.flow.first
 
 /** Snapshot inmutable de las preferencias visuales configurables desde WidgetSettings. */

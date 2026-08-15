@@ -6,7 +6,7 @@
 
 
 
-package com.arturo254.opentune.db.entities
+package com.aromaappu.akmusic.db.entities
 
 sealed class LocalItem {
     abstract val id: String

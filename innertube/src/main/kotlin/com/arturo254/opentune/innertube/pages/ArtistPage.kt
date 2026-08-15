@@ -4,24 +4,24 @@
  * Licensed Under GPL-3.0 | see git history for contributors
  */
 
-package com.arturo254.opentune.innertube.pages
+package com.aromaappu.akmusic.innertube.pages
 
-import com.arturo254.opentune.innertube.models.Album
-import com.arturo254.opentune.innertube.models.AlbumItem
-import com.arturo254.opentune.innertube.models.Artist
-import com.arturo254.opentune.innertube.models.ArtistItem
-import com.arturo254.opentune.innertube.models.BrowseEndpoint
-import com.arturo254.opentune.innertube.models.MusicCarouselShelfRenderer
-import com.arturo254.opentune.innertube.models.MusicResponsiveListItemRenderer
-import com.arturo254.opentune.innertube.models.MusicShelfRenderer
-import com.arturo254.opentune.innertube.models.MusicTwoRowItemRenderer
-import com.arturo254.opentune.innertube.models.PlaylistItem
-import com.arturo254.opentune.innertube.models.SectionListRenderer
-import com.arturo254.opentune.innertube.models.SongItem
-import com.arturo254.opentune.innertube.models.YTItem
-import com.arturo254.opentune.innertube.models.filterExplicit
-import com.arturo254.opentune.innertube.models.getItems
-import com.arturo254.opentune.innertube.models.oddElements
+import com.aromaappu.akmusic.innertube.models.Album
+import com.aromaappu.akmusic.innertube.models.AlbumItem
+import com.aromaappu.akmusic.innertube.models.Artist
+import com.aromaappu.akmusic.innertube.models.ArtistItem
+import com.aromaappu.akmusic.innertube.models.BrowseEndpoint
+import com.aromaappu.akmusic.innertube.models.MusicCarouselShelfRenderer
+import com.aromaappu.akmusic.innertube.models.MusicResponsiveListItemRenderer
+import com.aromaappu.akmusic.innertube.models.MusicShelfRenderer
+import com.aromaappu.akmusic.innertube.models.MusicTwoRowItemRenderer
+import com.aromaappu.akmusic.innertube.models.PlaylistItem
+import com.aromaappu.akmusic.innertube.models.SectionListRenderer
+import com.aromaappu.akmusic.innertube.models.SongItem
+import com.aromaappu.akmusic.innertube.models.YTItem
+import com.aromaappu.akmusic.innertube.models.filterExplicit
+import com.aromaappu.akmusic.innertube.models.getItems
+import com.aromaappu.akmusic.innertube.models.oddElements
 
 data class ArtistSection(
     val title: String,

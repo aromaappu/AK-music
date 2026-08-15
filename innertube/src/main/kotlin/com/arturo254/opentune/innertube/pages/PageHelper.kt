@@ -4,10 +4,10 @@
  * Licensed Under GPL-3.0 | see git history for contributors
  */
 
-package com.arturo254.opentune.innertube.pages
+package com.aromaappu.akmusic.innertube.pages
 
-import com.arturo254.opentune.innertube.models.MusicResponsiveListItemRenderer.FlexColumn
-import com.arturo254.opentune.innertube.models.Run
+import com.aromaappu.akmusic.innertube.models.MusicResponsiveListItemRenderer.FlexColumn
+import com.aromaappu.akmusic.innertube.models.Run
 
 object PageHelper {
     fun extractRuns(columns: List<FlexColumn>, typeLike: String): List<Run> {

@@ -5,7 +5,7 @@
  * Do not remove or alter this notice. - Per GPL-3.0 Section 4 & Section 5
  */
 
-package com.arturo254.opentune.spotify
+package com.aromaappu.akmusic.spotify
 
 import android.content.Context
 import androidx.datastore.preferences.core.edit
@@ -19,20 +19,20 @@ import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.withContext
 import kotlinx.serialization.builtins.ListSerializer
 import kotlinx.serialization.json.Json
-import com.arturo254.opentune.R
-import com.arturo254.opentune.constants.SpotifyAccessTokenExpiresAtKey
-import com.arturo254.opentune.constants.SpotifyAccessTokenKey
-import com.arturo254.opentune.constants.SpotifyAccountAvatarUrlKey
-import com.arturo254.opentune.constants.SpotifyAccountNameKey
-import com.arturo254.opentune.constants.SpotifyLibraryPlaylistsCacheKey
-import com.arturo254.opentune.constants.SpotifySpDcKey
-import com.arturo254.opentune.constants.SpotifySpKeyKey
-import com.arturo254.opentune.spotify.models.SpotifyPlaylist
-import com.arturo254.opentune.spotify.models.SpotifyPlaylistTracksRef
-import com.arturo254.opentune.spotify.models.SpotifyTrack
-import com.arturo254.opentune.utils.clearWebAuthSession
-import com.arturo254.opentune.utils.dataStore
-import com.arturo254.opentune.utils.reportException
+import com.aromaappu.akmusic.R
+import com.aromaappu.akmusic.constants.SpotifyAccessTokenExpiresAtKey
+import com.aromaappu.akmusic.constants.SpotifyAccessTokenKey
+import com.aromaappu.akmusic.constants.SpotifyAccountAvatarUrlKey
+import com.aromaappu.akmusic.constants.SpotifyAccountNameKey
+import com.aromaappu.akmusic.constants.SpotifyLibraryPlaylistsCacheKey
+import com.aromaappu.akmusic.constants.SpotifySpDcKey
+import com.aromaappu.akmusic.constants.SpotifySpKeyKey
+import com.aromaappu.akmusic.spotify.models.SpotifyPlaylist
+import com.aromaappu.akmusic.spotify.models.SpotifyPlaylistTracksRef
+import com.aromaappu.akmusic.spotify.models.SpotifyTrack
+import com.aromaappu.akmusic.utils.clearWebAuthSession
+import com.aromaappu.akmusic.utils.dataStore
+import com.aromaappu.akmusic.utils.reportException
 import javax.inject.Inject
 import javax.inject.Singleton
 

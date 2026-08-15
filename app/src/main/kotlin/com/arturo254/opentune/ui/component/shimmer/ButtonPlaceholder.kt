@@ -6,7 +6,7 @@
 
 
 
-package com.arturo254.opentune.ui.component.shimmer
+package com.aromaappu.akmusic.ui.component.shimmer
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Spacer

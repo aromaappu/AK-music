@@ -6,7 +6,7 @@
 
 
 
-package com.arturo254.opentune.ui.component.shimmer
+package com.aromaappu.akmusic.ui.component.shimmer
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
@@ -23,8 +23,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.unit.dp
-import com.arturo254.opentune.constants.GridThumbnailCornerRadius
-import com.arturo254.opentune.constants.GridThumbnailHeight
+import com.aromaappu.akmusic.constants.GridThumbnailCornerRadius
+import com.aromaappu.akmusic.constants.GridThumbnailHeight
 
 @Composable
 fun GridItemPlaceHolder(

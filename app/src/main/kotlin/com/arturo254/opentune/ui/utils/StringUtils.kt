@@ -6,7 +6,7 @@
 
 
 
-package com.arturo254.opentune.ui.utils
+package com.aromaappu.akmusic.ui.utils
 
 import java.text.DecimalFormat
 import kotlin.math.absoluteValue

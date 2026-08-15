@@ -6,7 +6,7 @@
 
 
 
-package com.arturo254.opentune.ui.menu
+package com.aromaappu.akmusic.ui.menu
 
 import androidx.compose.animation.animateColorAsState
 import androidx.compose.animation.core.tween
@@ -56,16 +56,16 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Dialog
 import androidx.compose.ui.window.DialogProperties
-import com.arturo254.opentune.innertube.utils.parseCookieString
-import com.arturo254.opentune.LocalDatabase
-import com.arturo254.opentune.R
-import com.arturo254.opentune.constants.InnerTubeCookieKey
-import com.arturo254.opentune.db.entities.Playlist
-import com.arturo254.opentune.ui.component.CreatePlaylistDialog
-import com.arturo254.opentune.ui.component.DefaultDialog
-import com.arturo254.opentune.ui.component.PlaylistListItem
-import com.arturo254.opentune.utils.rememberPreference
-import com.arturo254.opentune.innertube.YouTube
+import com.aromaappu.akmusic.innertube.utils.parseCookieString
+import com.aromaappu.akmusic.LocalDatabase
+import com.aromaappu.akmusic.R
+import com.aromaappu.akmusic.constants.InnerTubeCookieKey
+import com.aromaappu.akmusic.db.entities.Playlist
+import com.aromaappu.akmusic.ui.component.CreatePlaylistDialog
+import com.aromaappu.akmusic.ui.component.DefaultDialog
+import com.aromaappu.akmusic.ui.component.PlaylistListItem
+import com.aromaappu.akmusic.utils.rememberPreference
+import com.aromaappu.akmusic.innertube.YouTube
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.delay

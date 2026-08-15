@@ -6,7 +6,7 @@
 
 
 
-package com.arturo254.opentune.ui.menu
+package com.aromaappu.akmusic.ui.menu
 
 import android.content.Intent
 import android.content.res.Configuration
@@ -33,16 +33,16 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import com.arturo254.opentune.LocalDatabase
-import com.arturo254.opentune.LocalPlayerConnection
-import com.arturo254.opentune.R
-import com.arturo254.opentune.constants.ArtistSongSortType
-import com.arturo254.opentune.db.entities.Artist
-import com.arturo254.opentune.extensions.toMediaItem
-import com.arturo254.opentune.playback.queues.ListQueue
-import com.arturo254.opentune.ui.component.ArtistListItem
-import com.arturo254.opentune.ui.component.NewAction
-import com.arturo254.opentune.ui.component.NewActionGrid
+import com.aromaappu.akmusic.LocalDatabase
+import com.aromaappu.akmusic.LocalPlayerConnection
+import com.aromaappu.akmusic.R
+import com.aromaappu.akmusic.constants.ArtistSongSortType
+import com.aromaappu.akmusic.db.entities.Artist
+import com.aromaappu.akmusic.extensions.toMediaItem
+import com.aromaappu.akmusic.playback.queues.ListQueue
+import com.aromaappu.akmusic.ui.component.ArtistListItem
+import com.aromaappu.akmusic.ui.component.NewAction
+import com.aromaappu.akmusic.ui.component.NewActionGrid
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.first

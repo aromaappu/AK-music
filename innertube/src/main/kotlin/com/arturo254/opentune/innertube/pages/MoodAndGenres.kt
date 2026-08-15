@@ -4,12 +4,12 @@
  * Licensed Under GPL-3.0 | see git history for contributors
  */
 
-package com.arturo254.opentune.innertube.pages
+package com.aromaappu.akmusic.innertube.pages
 
-import com.arturo254.opentune.innertube.models.BrowseEndpoint
-import com.arturo254.opentune.innertube.models.GridRenderer
-import com.arturo254.opentune.innertube.models.MusicNavigationButtonRenderer
-import com.arturo254.opentune.innertube.models.SectionListRenderer
+import com.aromaappu.akmusic.innertube.models.BrowseEndpoint
+import com.aromaappu.akmusic.innertube.models.GridRenderer
+import com.aromaappu.akmusic.innertube.models.MusicNavigationButtonRenderer
+import com.aromaappu.akmusic.innertube.models.SectionListRenderer
 
 data class MoodAndGenres(
     val title: String,

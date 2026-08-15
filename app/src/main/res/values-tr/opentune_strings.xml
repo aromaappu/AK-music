@@ -103,7 +103,6 @@
     <string name="default_style">Varsayılan</string>
     <string name="secondary_color_style">İkincil</string>
     <string name="enable_squiggly_slider">Dalgalı kaydırıcıyı etkinleştir</string>
-    <string name="enable_swipe_thumbnail">Şarkıyı değiştirmek için kaydırmayı etkinleştirin</string>
     <string name="swipe_song_to_add">Şarkıyı sıraya eklemek için sola, sonraki çalmak için sağa kaydırın</string>
     <string name="lyrics_click_change">Tıkladığınızda şarkı sözlerini değiştirin</string>
     <string name="lyrics_auto_scroll">Otomatik kaydırma şarkı sözleri</string>

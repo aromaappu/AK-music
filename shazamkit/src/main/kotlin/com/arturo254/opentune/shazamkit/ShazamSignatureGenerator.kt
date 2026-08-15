@@ -1,4 +1,4 @@
-package com.arturo254.opentune.shazamkit
+package com.aromaappu.akmusic.shazamkit
 
 import java.io.ByteArrayOutputStream
 import java.nio.ByteBuffer

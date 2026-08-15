@@ -6,7 +6,7 @@
 
 
 
-package com.arturo254.opentune.ui.menu
+package com.aromaappu.akmusic.ui.menu
 
 import android.annotation.SuppressLint
 import android.widget.Toast
@@ -48,21 +48,21 @@ import androidx.media3.common.Timeline
 import androidx.media3.exoplayer.offline.Download
 import androidx.media3.exoplayer.offline.DownloadRequest
 import androidx.media3.exoplayer.offline.DownloadService
-import com.arturo254.opentune.LocalDatabase
-import com.arturo254.opentune.LocalDownloadUtil
-import com.arturo254.opentune.LocalPlayerConnection
-import com.arturo254.opentune.LocalSyncUtils
-import com.arturo254.opentune.R
-import com.arturo254.opentune.db.entities.PlaylistSongMap
-import com.arturo254.opentune.db.entities.Song
-import com.arturo254.opentune.extensions.toMediaItem
-import com.arturo254.opentune.models.MediaMetadata
-import com.arturo254.opentune.models.toMediaMetadata
-import com.arturo254.opentune.playback.ExoDownloadService
-import com.arturo254.opentune.playback.queues.ListQueue
-import com.arturo254.opentune.ui.component.DefaultDialog
-import com.arturo254.opentune.ui.component.NewAction
-import com.arturo254.opentune.ui.component.NewActionGrid
+import com.aromaappu.akmusic.LocalDatabase
+import com.aromaappu.akmusic.LocalDownloadUtil
+import com.aromaappu.akmusic.LocalPlayerConnection
+import com.aromaappu.akmusic.LocalSyncUtils
+import com.aromaappu.akmusic.R
+import com.aromaappu.akmusic.db.entities.PlaylistSongMap
+import com.aromaappu.akmusic.db.entities.Song
+import com.aromaappu.akmusic.extensions.toMediaItem
+import com.aromaappu.akmusic.models.MediaMetadata
+import com.aromaappu.akmusic.models.toMediaMetadata
+import com.aromaappu.akmusic.playback.ExoDownloadService
+import com.aromaappu.akmusic.playback.queues.ListQueue
+import com.aromaappu.akmusic.ui.component.DefaultDialog
+import com.aromaappu.akmusic.ui.component.NewAction
+import com.aromaappu.akmusic.ui.component.NewActionGrid
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 

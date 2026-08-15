@@ -6,7 +6,7 @@
 
 
 
-package com.arturo254.opentune.ui.screens
+package com.aromaappu.akmusic.ui.screens
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
@@ -31,7 +31,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import com.arturo254.opentune.R
+import com.aromaappu.akmusic.R
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.hapticfeedback.HapticFeedbackType
 import androidx.compose.ui.platform.LocalHapticFeedback
@@ -41,25 +41,25 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.navigation.NavController
 import androidx.navigation.compose.currentBackStackEntryAsState
-import com.arturo254.opentune.innertube.models.*
-import com.arturo254.opentune.LocalPlayerAwareWindowInsets
-import com.arturo254.opentune.LocalPlayerConnection
-import com.arturo254.opentune.constants.ListItemHeight
-import com.arturo254.opentune.extensions.togglePlayPause
-import com.arturo254.opentune.models.toMediaMetadata
-import com.arturo254.opentune.playback.queues.YouTubeQueue
-import com.arturo254.opentune.ui.component.LocalMenuState
-import com.arturo254.opentune.ui.component.NavigationTitle
-import com.arturo254.opentune.ui.component.YouTubeGridItem
-import com.arturo254.opentune.ui.component.YouTubeListItem
-import com.arturo254.opentune.ui.component.shimmer.GridItemPlaceHolder
-import com.arturo254.opentune.ui.component.shimmer.ShimmerHost
-import com.arturo254.opentune.ui.component.shimmer.TextPlaceholder
-import com.arturo254.opentune.ui.menu.YouTubeAlbumMenu
-import com.arturo254.opentune.ui.menu.YouTubeSongMenu
-import com.arturo254.opentune.ui.utils.SnapLayoutInfoProvider
-import com.arturo254.opentune.viewmodels.ChartsViewModel
-import com.arturo254.opentune.viewmodels.ExploreViewModel
+import com.aromaappu.akmusic.innertube.models.*
+import com.aromaappu.akmusic.LocalPlayerAwareWindowInsets
+import com.aromaappu.akmusic.LocalPlayerConnection
+import com.aromaappu.akmusic.constants.ListItemHeight
+import com.aromaappu.akmusic.extensions.togglePlayPause
+import com.aromaappu.akmusic.models.toMediaMetadata
+import com.aromaappu.akmusic.playback.queues.YouTubeQueue
+import com.aromaappu.akmusic.ui.component.LocalMenuState
+import com.aromaappu.akmusic.ui.component.NavigationTitle
+import com.aromaappu.akmusic.ui.component.YouTubeGridItem
+import com.aromaappu.akmusic.ui.component.YouTubeListItem
+import com.aromaappu.akmusic.ui.component.shimmer.GridItemPlaceHolder
+import com.aromaappu.akmusic.ui.component.shimmer.ShimmerHost
+import com.aromaappu.akmusic.ui.component.shimmer.TextPlaceholder
+import com.aromaappu.akmusic.ui.menu.YouTubeAlbumMenu
+import com.aromaappu.akmusic.ui.menu.YouTubeSongMenu
+import com.aromaappu.akmusic.ui.utils.SnapLayoutInfoProvider
+import com.aromaappu.akmusic.viewmodels.ChartsViewModel
+import com.aromaappu.akmusic.viewmodels.ExploreViewModel
 
 @OptIn(ExperimentalMaterial3Api::class, ExperimentalFoundationApi::class)
 @Composable

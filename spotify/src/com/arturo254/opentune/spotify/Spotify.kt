@@ -5,7 +5,7 @@
  * Do not remove or alter this notice. - Per GPL-3.0 Section 4 & Section 5
  */
 
-package com.arturo254.opentune.spotify
+package com.aromaappu.akmusic.spotify
 
 import io.ktor.client.HttpClient
 import io.ktor.client.call.body
@@ -37,21 +37,21 @@ import kotlinx.serialization.json.jsonPrimitive
 import kotlinx.serialization.json.put
 import kotlinx.serialization.json.putJsonArray
 import kotlinx.serialization.json.putJsonObject
-import com.arturo254.opentune.spotify.models.SpotifyAlbum
-import com.arturo254.opentune.spotify.models.SpotifyArtist
-import com.arturo254.opentune.spotify.models.SpotifyImage
-import com.arturo254.opentune.spotify.models.SpotifyPaging
-import com.arturo254.opentune.spotify.models.SpotifyPlaylist
-import com.arturo254.opentune.spotify.models.SpotifyPlaylistOwner
-import com.arturo254.opentune.spotify.models.SpotifyPlaylistTrack
-import com.arturo254.opentune.spotify.models.SpotifyPlaylistTracksRef
-import com.arturo254.opentune.spotify.models.SpotifyRecommendations
-import com.arturo254.opentune.spotify.models.SpotifySavedTrack
-import com.arturo254.opentune.spotify.models.SpotifySearchResult
-import com.arturo254.opentune.spotify.models.SpotifySimpleAlbum
-import com.arturo254.opentune.spotify.models.SpotifySimpleArtist
-import com.arturo254.opentune.spotify.models.SpotifyTrack
-import com.arturo254.opentune.spotify.models.SpotifyUser
+import com.aromaappu.akmusic.spotify.models.SpotifyAlbum
+import com.aromaappu.akmusic.spotify.models.SpotifyArtist
+import com.aromaappu.akmusic.spotify.models.SpotifyImage
+import com.aromaappu.akmusic.spotify.models.SpotifyPaging
+import com.aromaappu.akmusic.spotify.models.SpotifyPlaylist
+import com.aromaappu.akmusic.spotify.models.SpotifyPlaylistOwner
+import com.aromaappu.akmusic.spotify.models.SpotifyPlaylistTrack
+import com.aromaappu.akmusic.spotify.models.SpotifyPlaylistTracksRef
+import com.aromaappu.akmusic.spotify.models.SpotifyRecommendations
+import com.aromaappu.akmusic.spotify.models.SpotifySavedTrack
+import com.aromaappu.akmusic.spotify.models.SpotifySearchResult
+import com.aromaappu.akmusic.spotify.models.SpotifySimpleAlbum
+import com.aromaappu.akmusic.spotify.models.SpotifySimpleArtist
+import com.aromaappu.akmusic.spotify.models.SpotifyTrack
+import com.aromaappu.akmusic.spotify.models.SpotifyUser
 
 /**
  * Spotify API client that uses the internal GraphQL API (api-partner.spotify.com)
@@ -572,7 +572,7 @@ object Spotify {
         folderUri: String? = null,
         limit: Int = 50,
         offset: Int = 0,
-    ): Result<SpotifyPaging<com.arturo254.opentune.spotify.models.SpotifyLibraryItem>> =
+    ): Result<SpotifyPaging<com.aromaappu.akmusic.spotify.models.SpotifyLibraryItem>> =
         runCatching {
             val vars =
                 buildJsonObject {
@@ -635,7 +635,7 @@ object Spotify {
                         ) -> {
                             parsePlaylistWrapper(wrapper)
                                 ?.let {
-                                    com.arturo254.opentune.spotify.models.SpotifyLibraryItem
+                                    com.aromaappu.akmusic.spotify.models.SpotifyLibraryItem
                                         .Playlist(it)
                                 }
                         }
@@ -646,7 +646,7 @@ object Spotify {
                         ) -> {
                             parseFolderWrapper(wrapper)
                                 ?.let {
-                                    com.arturo254.opentune.spotify.models.SpotifyLibraryItem
+                                    com.aromaappu.akmusic.spotify.models.SpotifyLibraryItem
                                         .Folder(it)
                                 }
                                 ?: run {
@@ -712,7 +712,7 @@ object Spotify {
             ?: data.int("trackCount")
             ?: data.int("numTracks")
 
-    private fun parseFolderWrapper(wrapper: JsonObject): com.arturo254.opentune.spotify.models.SpotifyLibraryFolder? {
+    private fun parseFolderWrapper(wrapper: JsonObject): com.aromaappu.akmusic.spotify.models.SpotifyLibraryFolder? {
         val uri = wrapper.str("_uri") ?: return null
         // Spotify has shipped this object under several shapes over time; the name
         // and child count have lived in `data` and at the root of the wrapper.
@@ -726,7 +726,7 @@ object Spotify {
                 ?: wrapper.obj("data")?.int("numberOfItems")
                 ?: wrapper.int("totalLength")
                 ?: 0
-        return com.arturo254.opentune.spotify.models.SpotifyLibraryFolder(
+        return com.aromaappu.akmusic.spotify.models.SpotifyLibraryFolder(
             uri = uri,
             name = name,
             totalChildren = total,
@@ -1400,7 +1400,7 @@ object Spotify {
             java.util.TimeZone
                 .getDefault()
                 .id,
-    ): Result<com.arturo254.opentune.spotify.models.SpotifyHomeFeed> =
+    ): Result<com.aromaappu.akmusic.spotify.models.SpotifyHomeFeed> =
         runCatching {
             log(
                 "D",
@@ -1442,7 +1442,7 @@ object Spotify {
                     ?.arr("items")
                     ?: run {
                         log("W", "spotifyHome: no sectionContainer.sections.items in response")
-                        return@runCatching com.arturo254.opentune.spotify.models.SpotifyHomeFeed(
+                        return@runCatching com.aromaappu.akmusic.spotify.models.SpotifyHomeFeed(
                             greeting = greeting,
                             sections = emptyList(),
                         )
@@ -1458,13 +1458,13 @@ object Spotify {
                 "spotifyHome: parsed ${sections.size}/${sectionElements.size} sections successfully"
             )
 
-            com.arturo254.opentune.spotify.models.SpotifyHomeFeed(
+            com.aromaappu.akmusic.spotify.models.SpotifyHomeFeed(
                 greeting = greeting,
                 sections = sections,
             )
         }
 
-    private fun parseHomeSection(sectionObj: JsonObject): com.arturo254.opentune.spotify.models.SpotifyHomeFeedSection? {
+    private fun parseHomeSection(sectionObj: JsonObject): com.aromaappu.akmusic.spotify.models.SpotifyHomeFeedSection? {
         val sectionData = sectionObj.obj("data") ?: return null
         val typename = sectionData.str("__typename") ?: return null
         val titleObj = sectionData.obj("title")
@@ -1484,7 +1484,7 @@ object Spotify {
 
         if (items.isEmpty()) return null
 
-        return com.arturo254.opentune.spotify.models.SpotifyHomeFeedSection(
+        return com.aromaappu.akmusic.spotify.models.SpotifyHomeFeedSection(
             sectionUri = sectionObj.str("uri") ?: "",
             title = title,
             typename = typename,
@@ -1493,7 +1493,7 @@ object Spotify {
         )
     }
 
-    private fun parseHomeItem(itemObj: JsonObject): com.arturo254.opentune.spotify.models.SpotifyHomeFeedItem? {
+    private fun parseHomeItem(itemObj: JsonObject): com.aromaappu.akmusic.spotify.models.SpotifyHomeFeedItem? {
         val content = itemObj.obj("content") ?: return null
         val wrapper = content.str("__typename") ?: return null
         val data = content.obj("data") ?: return null
@@ -1506,7 +1506,7 @@ object Spotify {
         }
     }
 
-    private fun parseHomePlaylist(data: JsonObject): com.arturo254.opentune.spotify.models.SpotifyHomeFeedItem.Playlist? {
+    private fun parseHomePlaylist(data: JsonObject): com.aromaappu.akmusic.spotify.models.SpotifyHomeFeedItem.Playlist? {
         val uri = data.str("uri") ?: return null
         val imageItem =
             data
@@ -1528,7 +1528,7 @@ object Spotify {
                 ?.jsonObject
                 ?.str("value")
 
-        return com.arturo254.opentune.spotify.models.SpotifyHomeFeedItem.Playlist(
+        return com.aromaappu.akmusic.spotify.models.SpotifyHomeFeedItem.Playlist(
             uri = uri,
             id = uri.substringAfterLast(":"),
             name = data.str("name") ?: "",
@@ -1542,7 +1542,7 @@ object Spotify {
         )
     }
 
-    private fun parseHomeAlbum(data: JsonObject): com.arturo254.opentune.spotify.models.SpotifyHomeFeedItem.Album? {
+    private fun parseHomeAlbum(data: JsonObject): com.aromaappu.akmusic.spotify.models.SpotifyHomeFeedItem.Album? {
         val uri = data.str("uri") ?: return null
         val artists =
             data.obj("artists")?.arr("items")?.mapNotNull {
@@ -1556,7 +1556,7 @@ object Spotify {
                 ?.jsonObject
                 ?.str("url")
 
-        return com.arturo254.opentune.spotify.models.SpotifyHomeFeedItem.Album(
+        return com.aromaappu.akmusic.spotify.models.SpotifyHomeFeedItem.Album(
             uri = uri,
             id = uri.substringAfterLast(":"),
             name = data.str("name") ?: "",
@@ -1566,7 +1566,7 @@ object Spotify {
         )
     }
 
-    private fun parseHomeArtist(data: JsonObject): com.arturo254.opentune.spotify.models.SpotifyHomeFeedItem.Artist? {
+    private fun parseHomeArtist(data: JsonObject): com.aromaappu.akmusic.spotify.models.SpotifyHomeFeedItem.Artist? {
         val uri = data.str("uri") ?: return null
         val profile = data.obj("profile")
         val imageUrl =
@@ -1577,7 +1577,7 @@ object Spotify {
                 ?.firstOrNull()
                 ?.jsonObject
                 ?.str("url")
-        return com.arturo254.opentune.spotify.models.SpotifyHomeFeedItem.Artist(
+        return com.aromaappu.akmusic.spotify.models.SpotifyHomeFeedItem.Artist(
             uri = uri,
             id = uri.substringAfterLast(":"),
             name = profile?.str("name") ?: "",

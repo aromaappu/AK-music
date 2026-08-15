@@ -6,7 +6,7 @@
 
 
 
-package com.arturo254.opentune.ui.theme
+package com.aromaappu.akmusic.ui.theme
 
 import android.graphics.Bitmap
 import android.os.Build

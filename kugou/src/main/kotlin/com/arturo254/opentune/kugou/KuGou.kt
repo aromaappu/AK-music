@@ -6,12 +6,12 @@
 
 
 
-package com.arturo254.opentune.kugou
+package com.aromaappu.akmusic.kugou
 
-import com.arturo254.opentune.kugou.models.DownloadLyricsResponse
-import com.arturo254.opentune.kugou.models.Keyword
-import com.arturo254.opentune.kugou.models.SearchLyricsResponse
-import com.arturo254.opentune.kugou.models.SearchSongResponse
+import com.aromaappu.akmusic.kugou.models.DownloadLyricsResponse
+import com.aromaappu.akmusic.kugou.models.Keyword
+import com.aromaappu.akmusic.kugou.models.SearchLyricsResponse
+import com.aromaappu.akmusic.kugou.models.SearchSongResponse
 import io.ktor.client.HttpClient
 import io.ktor.client.call.body
 import io.ktor.client.plugins.compression.ContentEncoding

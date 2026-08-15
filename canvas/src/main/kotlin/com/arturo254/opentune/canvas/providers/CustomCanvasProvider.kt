@@ -13,10 +13,10 @@
  * acentos y mayúsculas), porque el servidor no filtra.
  */
 
-package com.arturo254.opentune.canvas.providers
+package com.aromaappu.akmusic.canvas.providers
 
-import com.arturo254.opentune.canvas.CanvasCacheManager
-import com.arturo254.opentune.canvas.models.CanvasArtwork
+import com.aromaappu.akmusic.canvas.CanvasCacheManager
+import com.aromaappu.akmusic.canvas.models.CanvasArtwork
 import io.ktor.client.HttpClient
 import io.ktor.client.engine.okhttp.OkHttp
 import io.ktor.client.plugins.HttpTimeout

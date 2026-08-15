@@ -4,7 +4,7 @@
  * Licensed Under GPL-3.0 | see git history for contributors
  */
 
-package com.arturo254.opentune.together
+package com.aromaappu.akmusic.together
 
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertNotNull

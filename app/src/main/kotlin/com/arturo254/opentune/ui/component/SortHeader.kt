@@ -6,7 +6,7 @@
 
 
 
-package com.arturo254.opentune.ui.component
+package com.aromaappu.akmusic.ui.component
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.interaction.MutableInteractionSource
@@ -32,9 +32,9 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.arturo254.opentune.R
-import com.arturo254.opentune.constants.PlaylistSortType
-import com.arturo254.opentune.constants.PlaylistSongSortType
+import com.aromaappu.akmusic.R
+import com.aromaappu.akmusic.constants.PlaylistSortType
+import com.aromaappu.akmusic.constants.PlaylistSongSortType
 
 @Composable
 inline fun <reified T : Enum<T>> SortHeader(

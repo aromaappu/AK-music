@@ -6,7 +6,7 @@
  * Canvas artwork model unificado — compatible con todos los proveedores.
  */
 
-package com.arturo254.opentune.canvas
+package com.aromaappu.akmusic.canvas
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable

@@ -4,7 +4,7 @@
  * Licensed Under GPL-3.0 | see git history for contributors
  */
 
-package com.arturo254.opentune.betterlyrics
+package com.aromaappu.akmusic.betterlyrics
 
 import org.w3c.dom.Element
 import org.w3c.dom.Node

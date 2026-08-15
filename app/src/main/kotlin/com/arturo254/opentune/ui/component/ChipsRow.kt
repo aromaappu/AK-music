@@ -6,7 +6,7 @@
 
 
 
-package com.arturo254.opentune.ui.component
+package com.aromaappu.akmusic.ui.component
 
 import android.annotation.SuppressLint
 import androidx.compose.animation.AnimatedContent
@@ -51,8 +51,8 @@ import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import com.arturo254.opentune.R
-import com.arturo254.opentune.ui.screens.OptionStats
+import com.aromaappu.akmusic.R
+import com.aromaappu.akmusic.ui.screens.OptionStats
 
 @Composable
 fun <E> ChipsRow(

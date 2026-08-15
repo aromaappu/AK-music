@@ -6,7 +6,7 @@
 
 
 
-package com.arturo254.opentune.constants
+package com.aromaappu.akmusic.constants
 
 enum class HistorySource {
     LOCAL, REMOTE

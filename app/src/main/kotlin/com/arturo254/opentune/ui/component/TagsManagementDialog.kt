@@ -6,7 +6,7 @@
 
 
 
-package com.arturo254.opentune.ui.component
+package com.aromaappu.akmusic.ui.component
 
 import androidx.compose.animation.animateColorAsState
 import androidx.compose.animation.core.animateDpAsState
@@ -54,9 +54,9 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Dialog
 import androidx.compose.ui.window.DialogProperties
 import androidx.core.graphics.toColorInt
-import com.arturo254.opentune.R
-import com.arturo254.opentune.db.MusicDatabase
-import com.arturo254.opentune.db.entities.TagEntity
+import com.aromaappu.akmusic.R
+import com.aromaappu.akmusic.db.MusicDatabase
+import com.aromaappu.akmusic.db.entities.TagEntity
 
 @OptIn(ExperimentalLayoutApi::class)
 @Composable

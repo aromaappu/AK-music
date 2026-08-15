@@ -105,7 +105,6 @@
     <string name="default_style">Predefinito</string>
     <string name="secondary_color_style">Secondario</string>
     <string name="enable_squiggly_slider">Abilita il cursore ondulato</string>
-    <string name="enable_swipe_thumbnail">Abilita lo scorrimento per cambiare brano</string>
     <string name="swipe_song_to_add">Scorri il brano verso sinistra per aggiungerlo alla coda o verso destra per riprodurlo successivamente</string>
     <string name="lyrics_click_change">Cambia il testo con un clic</string>
     <string name="lyrics_auto_scroll">Testi a scorrimento automatico</string>

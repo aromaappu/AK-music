@@ -6,7 +6,7 @@
 
 
 
-package com.arturo254.opentune.ui.screens
+package com.aromaappu.akmusic.ui.screens
 
 import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.ExperimentalFoundationApi
@@ -44,20 +44,20 @@ import androidx.compose.material3.MaterialTheme
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.navigation.NavController
 import androidx.navigation.compose.currentBackStackEntryAsState
-import com.arturo254.opentune.innertube.utils.parseCookieString
-import com.arturo254.opentune.LocalPlayerAwareWindowInsets
-import com.arturo254.opentune.LocalPlayerConnection
-import com.arturo254.opentune.R
-import com.arturo254.opentune.constants.InnerTubeCookieKey
-import com.arturo254.opentune.constants.DisableBlurKey
-import com.arturo254.opentune.constants.ShowHomeCategoryChipsKey
-import com.arturo254.opentune.ui.component.ChipsRow
-import com.arturo254.opentune.ui.component.LocalBottomSheetPageState
-import com.arturo254.opentune.ui.component.LocalMenuState
-import com.arturo254.opentune.ui.component.NavigationTitle
-import com.arturo254.opentune.ui.utils.SnapLayoutInfoProvider
-import com.arturo254.opentune.utils.rememberPreference
-import com.arturo254.opentune.viewmodels.HomeViewModel
+import com.aromaappu.akmusic.innertube.utils.parseCookieString
+import com.aromaappu.akmusic.LocalPlayerAwareWindowInsets
+import com.aromaappu.akmusic.LocalPlayerConnection
+import com.aromaappu.akmusic.R
+import com.aromaappu.akmusic.constants.InnerTubeCookieKey
+import com.aromaappu.akmusic.constants.DisableBlurKey
+import com.aromaappu.akmusic.constants.ShowHomeCategoryChipsKey
+import com.aromaappu.akmusic.ui.component.ChipsRow
+import com.aromaappu.akmusic.ui.component.LocalBottomSheetPageState
+import com.aromaappu.akmusic.ui.component.LocalMenuState
+import com.aromaappu.akmusic.ui.component.NavigationTitle
+import com.aromaappu.akmusic.ui.utils.SnapLayoutInfoProvider
+import com.aromaappu.akmusic.utils.rememberPreference
+import com.aromaappu.akmusic.viewmodels.HomeViewModel
 
 
 @OptIn(ExperimentalFoundationApi::class, ExperimentalMaterial3Api::class)

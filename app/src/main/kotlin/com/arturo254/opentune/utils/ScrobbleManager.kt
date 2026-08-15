@@ -6,10 +6,10 @@
 
 
 
-package com.arturo254.opentune.utils
+package com.aromaappu.akmusic.utils
 
-import com.arturo254.opentune.models.MediaMetadata
-import com.arturo254.opentune.lastfm.LastFM
+import com.aromaappu.akmusic.models.MediaMetadata
+import com.aromaappu.akmusic.lastfm.LastFM
 import kotlinx.coroutines.*
 import timber.log.Timber
 import kotlin.math.min

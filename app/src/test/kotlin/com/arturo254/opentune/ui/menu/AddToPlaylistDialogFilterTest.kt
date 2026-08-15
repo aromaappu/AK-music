@@ -1,7 +1,7 @@
-package com.arturo254.opentune.ui.menu
+package com.aromaappu.akmusic.ui.menu
 
-import com.arturo254.opentune.db.entities.Playlist
-import com.arturo254.opentune.db.entities.PlaylistEntity
+import com.aromaappu.akmusic.db.entities.Playlist
+import com.aromaappu.akmusic.db.entities.PlaylistEntity
 import org.junit.Assert.assertEquals
 import org.junit.Test
 

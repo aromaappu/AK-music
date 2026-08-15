@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.arturo254.opentune.canvas"
+    namespace = "com.aromaappu.akmusic.canvas"
     compileSdk = 36
 
     defaultConfig {

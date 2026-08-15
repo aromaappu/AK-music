@@ -6,17 +6,17 @@
 
 
 
-package com.arturo254.opentune.utils
+package com.aromaappu.akmusic.utils
 
 import android.content.Context
 import androidx.work.CoroutineWorker
 import androidx.work.WorkerParameters
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.map
-import com.arturo254.opentune.BuildConfig
-import com.arturo254.opentune.constants.EnableUpdateNotificationKey
-import com.arturo254.opentune.constants.UpdateChannel
-import com.arturo254.opentune.constants.UpdateChannelKey
+import com.aromaappu.akmusic.BuildConfig
+import com.aromaappu.akmusic.constants.EnableUpdateNotificationKey
+import com.aromaappu.akmusic.constants.UpdateChannel
+import com.aromaappu.akmusic.constants.UpdateChannelKey
 
 class UpdateCheckWorker(
     context: Context,

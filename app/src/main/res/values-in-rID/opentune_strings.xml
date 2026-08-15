@@ -87,7 +87,6 @@
     <string name="default_style">Bawaan</string>
     <string name="secondary_color_style">Sekunder</string>
     <string name="enable_squiggly_slider">Aktifkan penggeser berlekuk-lekuk</string>
-    <string name="enable_swipe_thumbnail">Aktifkan gesek untuk mengubah lagu</string>
     <string name="swipe_song_to_add">Gesek lagu ke kiri untuk menambahkannya ke antrean atau ke kanan untuk memutarnya berikutnya</string>
     <string name="lyrics_click_change">Ubah lirik saat diklik</string>
     <string name="lyrics_auto_scroll">Lirik gulir otomatis</string>

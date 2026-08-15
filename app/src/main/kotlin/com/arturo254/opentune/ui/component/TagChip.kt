@@ -6,7 +6,7 @@
 
 
 
-package com.arturo254.opentune.ui.component
+package com.aromaappu.akmusic.ui.component
 
 import androidx.compose.animation.animateColorAsState
 import androidx.compose.foundation.BorderStroke
@@ -39,9 +39,9 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.core.graphics.toColorInt
-import com.arturo254.opentune.R
-import com.arturo254.opentune.db.MusicDatabase
-import com.arturo254.opentune.db.entities.TagEntity
+import com.aromaappu.akmusic.R
+import com.aromaappu.akmusic.db.MusicDatabase
+import com.aromaappu.akmusic.db.entities.TagEntity
 
 @OptIn(ExperimentalLayoutApi::class)
 @Composable

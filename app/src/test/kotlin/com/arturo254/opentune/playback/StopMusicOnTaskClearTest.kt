@@ -1,4 +1,4 @@
-package com.arturo254.opentune.playback
+package com.aromaappu.akmusic.playback
 
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue

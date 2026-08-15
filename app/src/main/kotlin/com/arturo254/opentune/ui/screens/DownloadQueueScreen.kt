@@ -8,7 +8,7 @@
  * Licensed Under GPL-3.0 | see git history for contributors
  */
 
-package com.arturo254.opentune.ui.screens
+package com.aromaappu.akmusic.ui.screens
 
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.foundation.layout.*
@@ -30,10 +30,10 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.media3.exoplayer.offline.Download
 import androidx.navigation.NavController
 import coil3.compose.AsyncImage
-import com.arturo254.opentune.R
-import com.arturo254.opentune.ui.component.EmptyPlaceholder
-import com.arturo254.opentune.viewmodels.DownloadItem
-import com.arturo254.opentune.viewmodels.DownloadQueueViewModel
+import com.aromaappu.akmusic.R
+import com.aromaappu.akmusic.ui.component.EmptyPlaceholder
+import com.aromaappu.akmusic.viewmodels.DownloadItem
+import com.aromaappu.akmusic.viewmodels.DownloadQueueViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

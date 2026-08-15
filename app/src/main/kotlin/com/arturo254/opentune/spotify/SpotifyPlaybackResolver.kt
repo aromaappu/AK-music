@@ -5,19 +5,19 @@
  * Do not remove or alter this notice. - Per GPL-3.0 Section 4 & Section 5
  */
 
-package com.arturo254.opentune.spotify
+package com.aromaappu.akmusic.spotify
 
 import androidx.media3.common.MediaItem
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.sync.withLock
 import kotlinx.coroutines.withContext
-import com.arturo254.opentune.extensions.toMediaItem
-import com.arturo254.opentune.innertube.YouTube
-import com.arturo254.opentune.innertube.models.SongItem
-import com.arturo254.opentune.models.MediaMetadata
-import com.arturo254.opentune.models.toMediaMetadata
-import com.arturo254.opentune.spotify.models.SpotifyTrack
+import com.aromaappu.akmusic.extensions.toMediaItem
+import com.aromaappu.akmusic.innertube.YouTube
+import com.aromaappu.akmusic.innertube.models.SongItem
+import com.aromaappu.akmusic.models.MediaMetadata
+import com.aromaappu.akmusic.models.toMediaMetadata
+import com.aromaappu.akmusic.spotify.models.SpotifyTrack
 
 object SpotifyPlaybackResolver {
     private const val MIN_MATCH_THRESHOLD = 0.35

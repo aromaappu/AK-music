@@ -1,4 +1,4 @@
-package com.arturo254.opentune.ui.player
+package com.aromaappu.akmusic.ui.player
 
 /*
  * ArchiveTune (2026)
@@ -12,8 +12,8 @@ package com.arturo254.opentune.ui.player
 
 import androidx.media3.common.PlaybackException
 import androidx.media3.datasource.HttpDataSource
-import com.arturo254.opentune.ui.player.findCause
-import com.arturo254.opentune.utils.YTPlayerUtils
+import com.aromaappu.akmusic.ui.player.findCause
+import com.aromaappu.akmusic.utils.YTPlayerUtils
 
 internal enum class PlaybackErrorKind {
     LoginRefreshRequired,

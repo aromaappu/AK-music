@@ -5,7 +5,7 @@
  */
 
 
-package com.arturo254.opentune.ui.screens.search
+package com.aromaappu.akmusic.ui.screens.search
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
@@ -35,17 +35,17 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.navigation.NavController
-import com.arturo254.opentune.innertube.models.*
-import com.arturo254.opentune.LocalDatabase
-import com.arturo254.opentune.LocalPlayerConnection
-import com.arturo254.opentune.extensions.togglePlayPause
-import com.arturo254.opentune.models.toMediaMetadata
-import com.arturo254.opentune.playback.queues.YouTubeQueue
-import com.arturo254.opentune.ui.component.LocalMenuState
-import com.arturo254.opentune.ui.component.YouTubeListItem
-import com.arturo254.opentune.ui.menu.*
-import com.arturo254.opentune.R
-import com.arturo254.opentune.viewmodels.OnlineSearchSuggestionViewModel
+import com.aromaappu.akmusic.innertube.models.*
+import com.aromaappu.akmusic.LocalDatabase
+import com.aromaappu.akmusic.LocalPlayerConnection
+import com.aromaappu.akmusic.extensions.togglePlayPause
+import com.aromaappu.akmusic.models.toMediaMetadata
+import com.aromaappu.akmusic.playback.queues.YouTubeQueue
+import com.aromaappu.akmusic.ui.component.LocalMenuState
+import com.aromaappu.akmusic.ui.component.YouTubeListItem
+import com.aromaappu.akmusic.ui.menu.*
+import com.aromaappu.akmusic.R
+import com.aromaappu.akmusic.viewmodels.OnlineSearchSuggestionViewModel
 import kotlinx.coroutines.flow.drop
 import androidx.compose.ui.graphics.Color
 

@@ -6,7 +6,7 @@
 
 
 
-package com.arturo254.opentune.ui.screens.search
+package com.aromaappu.akmusic.ui.screens.search
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
@@ -21,7 +21,7 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import com.arturo254.opentune.R
+import com.aromaappu.akmusic.R
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalSoftwareKeyboardController
@@ -31,19 +31,19 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.navigation.NavController
-import com.arturo254.opentune.LocalPlayerConnection
-import com.arturo254.opentune.constants.CONTENT_TYPE_LIST
-import com.arturo254.opentune.db.entities.Album
-import com.arturo254.opentune.db.entities.Artist
-import com.arturo254.opentune.db.entities.Playlist
-import com.arturo254.opentune.db.entities.Song
-import com.arturo254.opentune.extensions.toMediaItem
-import com.arturo254.opentune.extensions.togglePlayPause
-import com.arturo254.opentune.playback.queues.ListQueue
-import com.arturo254.opentune.ui.component.*
-import com.arturo254.opentune.ui.menu.SongMenu
-import com.arturo254.opentune.viewmodels.LocalFilter
-import com.arturo254.opentune.viewmodels.LocalSearchViewModel
+import com.aromaappu.akmusic.LocalPlayerConnection
+import com.aromaappu.akmusic.constants.CONTENT_TYPE_LIST
+import com.aromaappu.akmusic.db.entities.Album
+import com.aromaappu.akmusic.db.entities.Artist
+import com.aromaappu.akmusic.db.entities.Playlist
+import com.aromaappu.akmusic.db.entities.Song
+import com.aromaappu.akmusic.extensions.toMediaItem
+import com.aromaappu.akmusic.extensions.togglePlayPause
+import com.aromaappu.akmusic.playback.queues.ListQueue
+import com.aromaappu.akmusic.ui.component.*
+import com.aromaappu.akmusic.ui.menu.SongMenu
+import com.aromaappu.akmusic.viewmodels.LocalFilter
+import com.aromaappu.akmusic.viewmodels.LocalSearchViewModel
 import kotlinx.coroutines.flow.drop
 
 @OptIn(ExperimentalFoundationApi::class)

@@ -4,7 +4,7 @@
  * Licensed Under GPL-3.0 | see git history for contributors
  */
 
-package com.arturo254.opentune.canvas
+package com.aromaappu.akmusic.canvas
 
 import android.content.Context
 import kotlinx.coroutines.Dispatchers

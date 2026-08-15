@@ -5,7 +5,7 @@
  *
  */
 
-package com.arturo254.opentune.utils
+package com.aromaappu.akmusic.utils
 
 import android.os.Build
 import android.view.HapticFeedbackConstants
@@ -144,7 +144,7 @@ class HapticManager(
 
 @Composable
 fun rememberHaptic(
-    enabled: Boolean = true,
+    enabled: Boolean = false,
 ): HapticManager {
     val view = LocalView.current
 
@@ -167,12 +167,10 @@ fun rememberHaptic(
  *
  * ## Uso básico en un Composable:
  *
- * @sample com.arturo254.opentune.utils.samples.BasicHapticUsage
+ * @sample com.aromaappu.akmusic.utils.samples.BasicHapticUsage
  *
  * ```
- * val (enableHaptic) = rememberPreference(EnableHapticFeedbackKey, true)
- *
- *     val haptic = rememberHaptic(enabled = enableHaptic)
+ * val haptic = rememberHaptic()
  *
  * Button(onClick = {
  *     haptic.click()
@@ -198,8 +196,7 @@ fun rememberHaptic(
  * ## Control global:
  *
  * ```
- * val (enableHaptic) = rememberPreference(EnableHapticKey, true)
- * val haptic = rememberHaptic(enabled = enableHaptic)
+ * val haptic = rememberHaptic()
  * ```
  *
  * ## Compatibilidad con versiones de Android:

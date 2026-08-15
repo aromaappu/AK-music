@@ -6,15 +6,15 @@
 
 
 
-package com.arturo254.opentune.lyrics
+package com.aromaappu.akmusic.lyrics
 
 import android.content.Context
-import com.arturo254.opentune.betterlyrics.BetterLyrics
-import com.arturo254.opentune.constants.EnableBetterLyricsKey
-import com.arturo254.opentune.utils.dataStore
-import com.arturo254.opentune.utils.get
+import com.aromaappu.akmusic.betterlyrics.BetterLyrics
+import com.aromaappu.akmusic.constants.EnableBetterLyricsKey
+import com.aromaappu.akmusic.utils.dataStore
+import com.aromaappu.akmusic.utils.get
 
-import com.arturo254.opentune.utils.GlobalLog
+import com.aromaappu.akmusic.utils.GlobalLog
 import android.util.Log
 
 object BetterLyricsProvider : LyricsProvider {

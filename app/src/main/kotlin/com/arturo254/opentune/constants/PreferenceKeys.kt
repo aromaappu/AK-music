@@ -6,7 +6,7 @@
 
 
 
-package com.arturo254.opentune.constants
+package com.aromaappu.akmusic.constants
 
 import androidx.datastore.preferences.core.booleanPreferencesKey
 import androidx.datastore.preferences.core.floatPreferencesKey
@@ -42,9 +42,7 @@ val SeekExtraSeconds = booleanPreferencesKey("seekExtraSeconds")
 val DisableBlurKey = booleanPreferencesKey("disableBlur")
 val BlurRadiusKey = floatPreferencesKey("blurRadius")
 val MiniPlayerLastAnchorKey = intPreferencesKey("miniPlayerLastAnchor")
-val EnableHapticFeedbackKey = booleanPreferencesKey("enableHapticFeedback")
-val PlayerFullscreenKey = booleanPreferencesKey("player_fullscreen")
-val EnableLiquidGlassKey = booleanPreferencesKey("enableLiquidGlass")
+
 
 val ProviderOrderKey = stringPreferencesKey("lyrics_provider_order")
 
@@ -149,7 +147,6 @@ val ExternalDownloaderPackageKey = stringPreferencesKey("externalDownloaderPacka
 val PlaylistTagsFilterKey = stringPreferencesKey("playlistTagsFilter")
 val ShowHomeCategoryChipsKey = booleanPreferencesKey("showHomeCategoryChips")
 val ShowTagsInLibraryKey = booleanPreferencesKey("showTagsInLibrary")
-val LiquidGlassNavBarKey = booleanPreferencesKey("liquid_glass_nav_bar")
 
 val EqualizerEnabledKey = booleanPreferencesKey("equalizerEnabled")
 val EqualizerBandLevelsMbKey = stringPreferencesKey("equalizerBandLevelsMb")

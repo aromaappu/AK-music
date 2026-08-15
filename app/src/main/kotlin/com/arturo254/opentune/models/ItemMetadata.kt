@@ -4,7 +4,7 @@
  * Licensed Under GPL-3.0 | see git history for contributors
  */
 
-package com.arturo254.opentune.models
+package com.aromaappu.akmusic.models
 
 import androidx.compose.runtime.Immutable
 

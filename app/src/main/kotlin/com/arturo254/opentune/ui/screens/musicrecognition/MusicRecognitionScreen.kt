@@ -6,7 +6,7 @@
 
 @file:OptIn(ExperimentalMaterial3ExpressiveApi::class)
 
-package com.arturo254.opentune.ui.screens.musicrecognition
+package com.aromaappu.akmusic.ui.screens.musicrecognition
 
 import android.Manifest
 import android.annotation.SuppressLint
@@ -121,11 +121,11 @@ import kotlinx.coroutines.Job
 import kotlinx.coroutines.isActive
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import com.arturo254.opentune.R
-import com.arturo254.opentune.shazamkit.Shazam
-import com.arturo254.opentune.shazamkit.ShazamSignatureGenerator
-import com.arturo254.opentune.shazamkit.models.RecognitionResult
-import com.arturo254.opentune.ui.utils.appBarScrollBehavior
+import com.aromaappu.akmusic.R
+import com.aromaappu.akmusic.shazamkit.Shazam
+import com.aromaappu.akmusic.shazamkit.ShazamSignatureGenerator
+import com.aromaappu.akmusic.shazamkit.models.RecognitionResult
+import com.aromaappu.akmusic.ui.utils.appBarScrollBehavior
 
 @SuppressLint("LocalContextGetResourceValueCall", "UnrememberedGetBackStackEntry")
 @OptIn(ExperimentalMaterial3Api::class)

@@ -6,7 +6,7 @@
 
 
 
-package com.arturo254.opentune.ui.screens
+package com.aromaappu.akmusic.ui.screens
 
 import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.ExperimentalFoundationApi
@@ -55,34 +55,34 @@ import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.navigation.NavController
-import com.arturo254.opentune.innertube.utils.parseCookieString
-import com.arturo254.opentune.LocalDatabase
-import com.arturo254.opentune.LocalPlayerAwareWindowInsets
-import com.arturo254.opentune.LocalPlayerConnection
-import com.arturo254.opentune.R
-import com.arturo254.opentune.constants.HistorySource
-import com.arturo254.opentune.constants.InnerTubeCookieKey
-import com.arturo254.opentune.db.entities.EventWithSong
-import com.arturo254.opentune.extensions.metadata
-import com.arturo254.opentune.extensions.toMediaItem
-import com.arturo254.opentune.extensions.togglePlayPause
-import com.arturo254.opentune.models.toMediaMetadata
-import com.arturo254.opentune.playback.queues.ListQueue
-import com.arturo254.opentune.playback.queues.YouTubeQueue
-import com.arturo254.opentune.ui.component.ChipsRow
-import com.arturo254.opentune.ui.component.HideOnScrollFAB
-import com.arturo254.opentune.ui.component.IconButton
-import com.arturo254.opentune.ui.component.LocalMenuState
-import com.arturo254.opentune.ui.component.NavigationTitle
-import com.arturo254.opentune.ui.component.SongListItem
-import com.arturo254.opentune.ui.component.YouTubeListItem
-import com.arturo254.opentune.ui.menu.SelectionMediaMetadataMenu
-import com.arturo254.opentune.ui.menu.SongMenu
-import com.arturo254.opentune.ui.menu.YouTubeSongMenu
-import com.arturo254.opentune.ui.utils.backToMain
-import com.arturo254.opentune.utils.rememberPreference
-import com.arturo254.opentune.viewmodels.DateAgo
-import com.arturo254.opentune.viewmodels.HistoryViewModel
+import com.aromaappu.akmusic.innertube.utils.parseCookieString
+import com.aromaappu.akmusic.LocalDatabase
+import com.aromaappu.akmusic.LocalPlayerAwareWindowInsets
+import com.aromaappu.akmusic.LocalPlayerConnection
+import com.aromaappu.akmusic.R
+import com.aromaappu.akmusic.constants.HistorySource
+import com.aromaappu.akmusic.constants.InnerTubeCookieKey
+import com.aromaappu.akmusic.db.entities.EventWithSong
+import com.aromaappu.akmusic.extensions.metadata
+import com.aromaappu.akmusic.extensions.toMediaItem
+import com.aromaappu.akmusic.extensions.togglePlayPause
+import com.aromaappu.akmusic.models.toMediaMetadata
+import com.aromaappu.akmusic.playback.queues.ListQueue
+import com.aromaappu.akmusic.playback.queues.YouTubeQueue
+import com.aromaappu.akmusic.ui.component.ChipsRow
+import com.aromaappu.akmusic.ui.component.HideOnScrollFAB
+import com.aromaappu.akmusic.ui.component.IconButton
+import com.aromaappu.akmusic.ui.component.LocalMenuState
+import com.aromaappu.akmusic.ui.component.NavigationTitle
+import com.aromaappu.akmusic.ui.component.SongListItem
+import com.aromaappu.akmusic.ui.component.YouTubeListItem
+import com.aromaappu.akmusic.ui.menu.SelectionMediaMetadataMenu
+import com.aromaappu.akmusic.ui.menu.SongMenu
+import com.aromaappu.akmusic.ui.menu.YouTubeSongMenu
+import com.aromaappu.akmusic.ui.utils.backToMain
+import com.aromaappu.akmusic.utils.rememberPreference
+import com.aromaappu.akmusic.viewmodels.DateAgo
+import com.aromaappu.akmusic.viewmodels.HistoryViewModel
 import java.time.format.DateTimeFormatter
 
 @OptIn(ExperimentalMaterial3Api::class, ExperimentalFoundationApi::class)

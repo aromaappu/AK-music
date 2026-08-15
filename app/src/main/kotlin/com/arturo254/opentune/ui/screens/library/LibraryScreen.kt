@@ -6,7 +6,7 @@
 
 
 
-package com.arturo254.opentune.ui.screens.library
+package com.aromaappu.akmusic.ui.screens.library
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -29,17 +29,17 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.zIndex
 import androidx.navigation.NavController
-import com.arturo254.opentune.LocalDatabase
-import com.arturo254.opentune.R
-import com.arturo254.opentune.constants.ChipSortTypeKey
-import com.arturo254.opentune.constants.DisableBlurKey
-import com.arturo254.opentune.constants.LibraryFilter
-import com.arturo254.opentune.constants.PlaylistTagsFilterKey
-import com.arturo254.opentune.constants.ShowTagsInLibraryKey
-import com.arturo254.opentune.ui.component.ChipsRow
-import com.arturo254.opentune.ui.component.TagsFilterChips
-import com.arturo254.opentune.utils.rememberEnumPreference
-import com.arturo254.opentune.utils.rememberPreference
+import com.aromaappu.akmusic.LocalDatabase
+import com.aromaappu.akmusic.R
+import com.aromaappu.akmusic.constants.ChipSortTypeKey
+import com.aromaappu.akmusic.constants.DisableBlurKey
+import com.aromaappu.akmusic.constants.LibraryFilter
+import com.aromaappu.akmusic.constants.PlaylistTagsFilterKey
+import com.aromaappu.akmusic.constants.ShowTagsInLibraryKey
+import com.aromaappu.akmusic.ui.component.ChipsRow
+import com.aromaappu.akmusic.ui.component.TagsFilterChips
+import com.aromaappu.akmusic.utils.rememberEnumPreference
+import com.aromaappu.akmusic.utils.rememberPreference
 
 @Composable
 fun LibraryScreen(navController: NavController) {

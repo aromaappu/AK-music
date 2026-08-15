@@ -6,33 +6,33 @@
 
 
 
-package com.arturo254.opentune.utils
+package com.aromaappu.akmusic.utils
 
 import android.net.ConnectivityManager
 import androidx.media3.common.PlaybackException
-import com.arturo254.opentune.constants.AudioQuality
-import com.arturo254.opentune.constants.PlayerStreamClient
-import com.arturo254.opentune.innertube.NewPipeUtils
-import com.arturo254.opentune.innertube.YouTube
-import com.arturo254.opentune.innertube.models.YouTubeClient
-import com.arturo254.opentune.innertube.models.YouTubeClient.Companion.IOS
-import com.arturo254.opentune.innertube.models.YouTubeClient.Companion.TVHTML5_SIMPLY_EMBEDDED_PLAYER
-import com.arturo254.opentune.innertube.models.YouTubeClient.Companion.WEB_REMIX
-import com.arturo254.opentune.innertube.models.response.PlayerResponse
-import com.arturo254.opentune.innertube.models.YouTubeClient.Companion.ANDROID_CREATOR
-import com.arturo254.opentune.innertube.models.YouTubeClient.Companion.ANDROID_MUSIC
-import com.arturo254.opentune.innertube.models.YouTubeClient.Companion.ANDROID_TESTSUITE
-import com.arturo254.opentune.innertube.models.YouTubeClient.Companion.ANDROID_UNPLUGGED
-import com.arturo254.opentune.innertube.models.YouTubeClient.Companion.ANDROID_VR_1_43_32
-import com.arturo254.opentune.innertube.models.YouTubeClient.Companion.ANDROID_VR_1_61_48
-import com.arturo254.opentune.innertube.models.YouTubeClient.Companion.ANDROID_VR_NO_AUTH
-import com.arturo254.opentune.innertube.models.YouTubeClient.Companion.IPADOS
-import com.arturo254.opentune.innertube.models.YouTubeClient.Companion.IOS_MUSIC
-import com.arturo254.opentune.innertube.models.YouTubeClient.Companion.MOBILE
-import com.arturo254.opentune.innertube.models.YouTubeClient.Companion.TVHTML5
-import com.arturo254.opentune.innertube.models.YouTubeClient.Companion.VISIONOS
-import com.arturo254.opentune.innertube.models.YouTubeClient.Companion.WEB
-import com.arturo254.opentune.innertube.models.YouTubeClient.Companion.WEB_CREATOR
+import com.aromaappu.akmusic.constants.AudioQuality
+import com.aromaappu.akmusic.constants.PlayerStreamClient
+import com.aromaappu.akmusic.innertube.NewPipeUtils
+import com.aromaappu.akmusic.innertube.YouTube
+import com.aromaappu.akmusic.innertube.models.YouTubeClient
+import com.aromaappu.akmusic.innertube.models.YouTubeClient.Companion.IOS
+import com.aromaappu.akmusic.innertube.models.YouTubeClient.Companion.TVHTML5_SIMPLY_EMBEDDED_PLAYER
+import com.aromaappu.akmusic.innertube.models.YouTubeClient.Companion.WEB_REMIX
+import com.aromaappu.akmusic.innertube.models.response.PlayerResponse
+import com.aromaappu.akmusic.innertube.models.YouTubeClient.Companion.ANDROID_CREATOR
+import com.aromaappu.akmusic.innertube.models.YouTubeClient.Companion.ANDROID_MUSIC
+import com.aromaappu.akmusic.innertube.models.YouTubeClient.Companion.ANDROID_TESTSUITE
+import com.aromaappu.akmusic.innertube.models.YouTubeClient.Companion.ANDROID_UNPLUGGED
+import com.aromaappu.akmusic.innertube.models.YouTubeClient.Companion.ANDROID_VR_1_43_32
+import com.aromaappu.akmusic.innertube.models.YouTubeClient.Companion.ANDROID_VR_1_61_48
+import com.aromaappu.akmusic.innertube.models.YouTubeClient.Companion.ANDROID_VR_NO_AUTH
+import com.aromaappu.akmusic.innertube.models.YouTubeClient.Companion.IPADOS
+import com.aromaappu.akmusic.innertube.models.YouTubeClient.Companion.IOS_MUSIC
+import com.aromaappu.akmusic.innertube.models.YouTubeClient.Companion.MOBILE
+import com.aromaappu.akmusic.innertube.models.YouTubeClient.Companion.TVHTML5
+import com.aromaappu.akmusic.innertube.models.YouTubeClient.Companion.VISIONOS
+import com.aromaappu.akmusic.innertube.models.YouTubeClient.Companion.WEB
+import com.aromaappu.akmusic.innertube.models.YouTubeClient.Companion.WEB_CREATOR
 import okhttp3.HttpUrl.Companion.toHttpUrlOrNull
 import okhttp3.OkHttpClient
 import timber.log.Timber
@@ -73,7 +73,7 @@ object YTPlayerUtils {
      * Do not use other clients for this because it can result in inconsistent metadata.
      * For example other clients can have different normalization targets (loudnessDb).
      *
-     * [com.arturo254.opentune.innertube.models.YouTubeClient.WEB_REMIX] should be preferred here because currently it is the only client which provides:
+     * [com.aromaappu.akmusic.innertube.models.YouTubeClient.WEB_REMIX] should be preferred here because currently it is the only client which provides:
      * - the correct metadata (like loudnessDb)
      * - premium formats
      */

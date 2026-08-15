@@ -4,21 +4,21 @@
  * Licensed Under GPL-3.0 | see git history for contributors
  */
 
-package com.arturo254.opentune.innertube.models.response
+package com.aromaappu.akmusic.innertube.models.response
 
-import com.arturo254.opentune.innertube.models.Button
-import com.arturo254.opentune.innertube.models.Continuation
-import com.arturo254.opentune.innertube.models.GridRenderer
-import com.arturo254.opentune.innertube.models.Menu
-import com.arturo254.opentune.innertube.models.MusicDetailHeaderRenderer
-import com.arturo254.opentune.innertube.models.MusicEditablePlaylistDetailHeaderRenderer
-import com.arturo254.opentune.innertube.models.MusicShelfRenderer
-import com.arturo254.opentune.innertube.models.ResponseContext
-import com.arturo254.opentune.innertube.models.Runs
-import com.arturo254.opentune.innertube.models.SectionListRenderer
-import com.arturo254.opentune.innertube.models.SubscriptionButton
-import com.arturo254.opentune.innertube.models.Tabs
-import com.arturo254.opentune.innertube.models.ThumbnailRenderer
+import com.aromaappu.akmusic.innertube.models.Button
+import com.aromaappu.akmusic.innertube.models.Continuation
+import com.aromaappu.akmusic.innertube.models.GridRenderer
+import com.aromaappu.akmusic.innertube.models.Menu
+import com.aromaappu.akmusic.innertube.models.MusicDetailHeaderRenderer
+import com.aromaappu.akmusic.innertube.models.MusicEditablePlaylistDetailHeaderRenderer
+import com.aromaappu.akmusic.innertube.models.MusicShelfRenderer
+import com.aromaappu.akmusic.innertube.models.ResponseContext
+import com.aromaappu.akmusic.innertube.models.Runs
+import com.aromaappu.akmusic.innertube.models.SectionListRenderer
+import com.aromaappu.akmusic.innertube.models.SubscriptionButton
+import com.aromaappu.akmusic.innertube.models.Tabs
+import com.aromaappu.akmusic.innertube.models.ThumbnailRenderer
 import kotlinx.serialization.Serializable
 
 @Serializable

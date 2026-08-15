@@ -4,7 +4,7 @@
  * Licensed Under GPL-3.0 | see git history for contributors
  */
 
-package com.arturo254.opentune.widget
+package com.aromaappu.akmusic.widget
 
 import android.content.Context
 import android.graphics.Bitmap
@@ -30,7 +30,7 @@ import coil3.request.ImageRequest
 import coil3.request.SuccessResult
 import coil3.request.allowHardware
 import coil3.toBitmap
-import com.arturo254.opentune.extensions.currentMetadata
+import com.aromaappu.akmusic.extensions.currentMetadata
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import timber.log.Timber

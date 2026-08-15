@@ -5,7 +5,7 @@
  * Do not remove or alter this notice. - Per GPL-3.0 Section 4 & Section 5
  */
 
-package com.arturo254.opentune.spotify.models
+package com.aromaappu.akmusic.spotify.models
 
 import kotlinx.serialization.Serializable
 

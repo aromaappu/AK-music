@@ -4,7 +4,7 @@
  * Licensed Under GPL-3.0 | see git history for contributors
  */
 
-package com.arturo254.opentune.ui.screens
+package com.aromaappu.akmusic.ui.screens
 
 import android.content.Intent
 import android.view.View
@@ -52,22 +52,22 @@ import androidx.navigation.NavController
 import coil3.compose.AsyncImage
 import coil3.request.ImageRequest
 import coil3.request.allowHardware
-import com.arturo254.opentune.LocalPlayerAwareWindowInsets
-import com.arturo254.opentune.LocalPlayerConnection
-import com.arturo254.opentune.R
-import com.arturo254.opentune.db.entities.Album
-import com.arturo254.opentune.db.entities.Artist
-import com.arturo254.opentune.db.entities.Song
-import com.arturo254.opentune.db.entities.SongWithStats
-import com.arturo254.opentune.ui.component.IconButton
-import com.arturo254.opentune.ui.component.LocalMenuState
-import com.arturo254.opentune.ui.menu.ArtistMenu
-import com.arturo254.opentune.ui.menu.SongMenu
-import com.arturo254.opentune.ui.utils.backToMain
-import com.arturo254.opentune.utils.ComposeToImage
-import com.arturo254.opentune.utils.joinByBullet
-import com.arturo254.opentune.utils.makeTimeString
-import com.arturo254.opentune.viewmodels.YearInMusicViewModel
+import com.aromaappu.akmusic.LocalPlayerAwareWindowInsets
+import com.aromaappu.akmusic.LocalPlayerConnection
+import com.aromaappu.akmusic.R
+import com.aromaappu.akmusic.db.entities.Album
+import com.aromaappu.akmusic.db.entities.Artist
+import com.aromaappu.akmusic.db.entities.Song
+import com.aromaappu.akmusic.db.entities.SongWithStats
+import com.aromaappu.akmusic.ui.component.IconButton
+import com.aromaappu.akmusic.ui.component.LocalMenuState
+import com.aromaappu.akmusic.ui.menu.ArtistMenu
+import com.aromaappu.akmusic.ui.menu.SongMenu
+import com.aromaappu.akmusic.ui.utils.backToMain
+import com.aromaappu.akmusic.utils.ComposeToImage
+import com.aromaappu.akmusic.utils.joinByBullet
+import com.aromaappu.akmusic.utils.makeTimeString
+import com.aromaappu.akmusic.viewmodels.YearInMusicViewModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
@@ -350,7 +350,7 @@ fun YearInMusicScreen(
                     // Brand label — centered
                     Column(horizontalAlignment = Alignment.CenterHorizontally) {
                         Text(
-                            text       = "OpenTune",
+                            text       = "AK music",
                             style      = MaterialTheme.typography.labelSmall,
                             fontWeight = FontWeight.Bold,
                             color      = SnowDim,
@@ -469,7 +469,7 @@ private fun InsightPageContent(
     topSongs: List<Song>,
     topArtists: List<Artist>,
     topAlbums: List<Album>,
-    menuState: com.arturo254.opentune.ui.component.MenuState,
+    menuState: com.aromaappu.akmusic.ui.component.MenuState,
     haptic: androidx.compose.ui.hapticfeedback.HapticFeedback,
     navController: NavController,
     coroutineScope: CoroutineScope,
@@ -1456,7 +1456,7 @@ private fun SummaryPage(
                     }
                     Column {
                         Text(
-                            "OpenTune Insight",
+                            "AK music Insight",
                             style = MaterialTheme.typography.labelLarge,
                             fontWeight = FontWeight.Bold,
                             color = Snow,
@@ -1563,12 +1563,12 @@ private fun SummaryPage(
                 verticalAlignment = Alignment.CenterVertically,
             ) {
                 Text(
-                    joinByBullet("OpenTune", year.toString()),
+                    joinByBullet("AK music", year.toString()),
                     style = MaterialTheme.typography.labelSmall,
                     color = SnowDim,
                 )
                 Text(
-                    "OpenTune Insight",
+                    "AK music Insight",
                     style = MaterialTheme.typography.labelSmall,
                     color = SnowDim,
                 )

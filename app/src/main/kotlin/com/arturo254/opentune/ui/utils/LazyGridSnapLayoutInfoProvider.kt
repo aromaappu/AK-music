@@ -6,7 +6,7 @@
 
 
 
-package com.arturo254.opentune.ui.utils
+package com.aromaappu.akmusic.ui.utils
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.gestures.Orientation

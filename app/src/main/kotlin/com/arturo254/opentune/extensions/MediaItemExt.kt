@@ -6,20 +6,20 @@
 
 
 
-package com.arturo254.opentune.extensions
+package com.aromaappu.akmusic.extensions
 
 import android.os.Bundle
 import androidx.core.net.toUri
 import androidx.media3.common.MediaItem
 import androidx.media3.common.MediaMetadata.MEDIA_TYPE_MUSIC
-import com.arturo254.opentune.innertube.models.SongItem
-import com.arturo254.opentune.innertube.models.WatchEndpoint.WatchEndpointMusicSupportedConfigs.WatchEndpointMusicConfig.Companion.MUSIC_VIDEO_TYPE_OMV
-import com.arturo254.opentune.innertube.models.WatchEndpoint.WatchEndpointMusicSupportedConfigs.WatchEndpointMusicConfig.Companion.MUSIC_VIDEO_TYPE_UGC
-import com.arturo254.opentune.db.entities.Song
-import com.arturo254.opentune.models.MediaMetadata
-import com.arturo254.opentune.models.toMediaMetadata
+import com.aromaappu.akmusic.innertube.models.SongItem
+import com.aromaappu.akmusic.innertube.models.WatchEndpoint.WatchEndpointMusicSupportedConfigs.WatchEndpointMusicConfig.Companion.MUSIC_VIDEO_TYPE_OMV
+import com.aromaappu.akmusic.innertube.models.WatchEndpoint.WatchEndpointMusicSupportedConfigs.WatchEndpointMusicConfig.Companion.MUSIC_VIDEO_TYPE_UGC
+import com.aromaappu.akmusic.db.entities.Song
+import com.aromaappu.akmusic.models.MediaMetadata
+import com.aromaappu.akmusic.models.toMediaMetadata
 
-const val ExtraIsMusicVideo = "com.arturo254.opentune.extra.IS_MUSIC_VIDEO"
+const val ExtraIsMusicVideo = "com.aromaappu.akmusic.extra.IS_MUSIC_VIDEO"
 
 val MediaItem.metadata: MediaMetadata?
     get() = localConfiguration?.tag as? MediaMetadata

@@ -6,13 +6,13 @@
 
 
 
-package com.arturo254.opentune.utils
+package com.aromaappu.akmusic.utils
 
 import android.content.Context
 import androidx.datastore.preferences.core.stringPreferencesKey
-import com.arturo254.opentune.constants.DiscordPresenceIntervalUnitKey
-import com.arturo254.opentune.constants.DiscordPresenceIntervalValueKey
-import com.arturo254.opentune.utils.dataStore
+import com.aromaappu.akmusic.constants.DiscordPresenceIntervalUnitKey
+import com.aromaappu.akmusic.constants.DiscordPresenceIntervalValueKey
+import com.aromaappu.akmusic.utils.dataStore
 
 fun getPresenceIntervalMillis(context: Context): Long {
     val intervalPreset = context.dataStore[stringPreferencesKey("discordPresenceIntervalPreset")] ?: "20s"

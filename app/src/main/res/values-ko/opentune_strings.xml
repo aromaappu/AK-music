@@ -89,7 +89,6 @@
     <string name="default_style">기본</string>
     <string name="secondary_color_style">반성</string>
     <string name="enable_squiggly_slider">구불구불한 슬라이더 활성화</string>
-    <string name="enable_swipe_thumbnail">노래를 변경하려면 스와이프를 활성화하세요.</string>
     <string name="swipe_song_to_add">노래를 왼쪽으로 스와이프하여 대기열에 추가하거나 오른쪽으로 스와이프하여 다음 곡 재생</string>
     <string name="lyrics_click_change">클릭 시 가사 변경</string>
     <string name="lyrics_auto_scroll">자동 스크롤 가사</string>

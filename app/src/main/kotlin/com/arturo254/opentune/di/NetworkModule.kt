@@ -6,9 +6,9 @@
 
 
 
-package com.arturo254.opentune.di
+package com.aromaappu.akmusic.di
 
-import com.arturo254.opentune.utils.NetworkConnectivityObserver
+import com.aromaappu.akmusic.utils.NetworkConnectivityObserver
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

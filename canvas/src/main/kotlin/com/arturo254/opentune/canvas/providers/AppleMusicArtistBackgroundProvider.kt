@@ -6,7 +6,7 @@
  * Proveedor de fondo animado para la pantalla de artista (Apple Music editorial video).
  */
 
-package com.arturo254.opentune.canvas.providers
+package com.aromaappu.akmusic.canvas.providers
 
 import io.ktor.client.HttpClient
 import io.ktor.client.call.body

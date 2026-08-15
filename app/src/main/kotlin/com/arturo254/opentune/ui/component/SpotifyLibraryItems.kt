@@ -5,7 +5,7 @@
  * Do not remove or alter this notice. - Per GPL-3.0 Section 4 & Section 5
  */
 
-package com.arturo254.opentune.ui.component
+package com.aromaappu.akmusic.ui.component
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.focusable
@@ -24,17 +24,17 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import com.arturo254.opentune.R
-import com.arturo254.opentune.constants.ListThumbnailSize
-import com.arturo254.opentune.constants.ThumbnailCornerRadius
-import com.arturo254.opentune.db.entities.Playlist
-import com.arturo254.opentune.db.entities.PlaylistEntity
-import com.arturo254.opentune.spotify.SpotifyMapper
-import com.arturo254.opentune.spotify.models.SpotifyPlaylist
-import com.arturo254.opentune.spotify.models.SpotifyTrack
-import com.arturo254.opentune.ui.utils.resize
-import com.arturo254.opentune.utils.joinByBullet
-import com.arturo254.opentune.utils.makeTimeString
+import com.aromaappu.akmusic.R
+import com.aromaappu.akmusic.constants.ListThumbnailSize
+import com.aromaappu.akmusic.constants.ThumbnailCornerRadius
+import com.aromaappu.akmusic.db.entities.Playlist
+import com.aromaappu.akmusic.db.entities.PlaylistEntity
+import com.aromaappu.akmusic.spotify.SpotifyMapper
+import com.aromaappu.akmusic.spotify.models.SpotifyPlaylist
+import com.aromaappu.akmusic.spotify.models.SpotifyTrack
+import com.aromaappu.akmusic.ui.utils.resize
+import com.aromaappu.akmusic.utils.joinByBullet
+import com.aromaappu.akmusic.utils.makeTimeString
 
 @Composable
 fun SpotifyLibraryPlaylistListItem(

@@ -6,7 +6,7 @@
 
 
 
-package com.arturo254.opentune.lastfm.models
+package com.aromaappu.akmusic.lastfm.models
 
 import kotlinx.serialization.Serializable
 

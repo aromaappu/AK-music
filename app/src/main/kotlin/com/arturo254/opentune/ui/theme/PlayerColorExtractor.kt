@@ -6,7 +6,7 @@
 
 
 
-package com.arturo254.opentune.ui.theme
+package com.aromaappu.akmusic.ui.theme
 
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.toArgb

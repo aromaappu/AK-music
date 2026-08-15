@@ -6,7 +6,7 @@
 
 @file:OptIn(ExperimentalMaterial3ExpressiveApi::class)
 
-package com.arturo254.opentune.ui.component
+package com.aromaappu.akmusic.ui.component
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.Crossfade
@@ -75,13 +75,8 @@ import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import com.arturo254.opentune.R
-import com.arturo254.opentune.ui.screens.Screens
-import androidx.compose.ui.graphics.rememberGraphicsLayer
-import androidx.compose.ui.graphics.graphicsLayer
-import androidx.compose.animation.core.Animatable
-import com.arturo254.opentune.constants.EnableLiquidGlassKey
-import com.arturo254.opentune.utils.rememberPreference
+import com.aromaappu.akmusic.R
+import com.aromaappu.akmusic.ui.screens.Screens
 
 @Composable
 fun FloatingNavigationToolbar(
@@ -100,8 +95,7 @@ fun FloatingNavigationToolbar(
     isSelected: (Screens) -> Boolean,
     onItemClick: (Screens, Boolean) -> Unit,
 ) {
-    val enableLiquidGlass by rememberPreference(EnableLiquidGlassKey, defaultValue = false)
-    val toolbarContainerColor = if (enableLiquidGlass) Color.Transparent else floatingToolbarContainerColor(pureBlack = pureBlack)
+    val toolbarContainerColor = floatingToolbarContainerColor(pureBlack = pureBlack)
     val toolbarColors = FloatingToolbarDefaults.standardFloatingToolbarColors(
         toolbarContainerColor = toolbarContainerColor,
     )
@@ -110,9 +104,6 @@ fun FloatingNavigationToolbar(
 
     val toolbarModifier = Modifier
         .widthIn(max = 480.dp)
-        .let {
-            if (enableLiquidGlass) it.graphicsLayer { shadowElevation = 0f } else it
-        }
 
     BoxWithConstraints(
         modifier = modifier.fillMaxWidth(),
@@ -174,10 +165,7 @@ fun FloatingNavigationToolbar(
             HorizontalFloatingToolbar(
                 expanded = true,
                 modifier = Modifier
-                    .widthIn(max = 420.dp)
-                    .let {
-                        if (enableLiquidGlass) it.graphicsLayer { shadowElevation = 0f } else it
-                    },
+                    .widthIn(max = 420.dp),
                 colors = toolbarColors,
                 scrollBehavior = scrollBehavior,
             ) {
@@ -227,25 +215,8 @@ private fun ToolbarItemsContainer(
         label = "pillOffset"
     )
 
-    val enableLiquidGlass by rememberPreference(EnableLiquidGlassKey, defaultValue = false)
-    val layer = rememberGraphicsLayer()
-    val luminanceAnimation = remember { Animatable(0.3f) }
-    val backdrop = LocalBackdrop.current
-
     Box(
         modifier = Modifier
-            .let {
-                if (enableLiquidGlass && backdrop != null) {
-                    it
-                        .drawBackdropCustomShape(
-                            backdrop = backdrop,
-                            layer = layer,
-                            luminanceAnimation = luminanceAnimation.value,
-                            shape = CircleShape
-                        )
-                        .padding(horizontal = 8.dp, vertical = 4.dp)
-                } else it
-            }
             .height(IntrinsicSize.Min)
     ) {
         if (targetWidth > 0.dp) {

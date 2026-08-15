@@ -6,7 +6,7 @@
 
 
 
-package com.arturo254.opentune.ui.screens.settings
+package com.aromaappu.akmusic.ui.screens.settings
 
 import android.content.Context
 import kotlinx.coroutines.*
@@ -17,9 +17,9 @@ import kotlinx.coroutines.flow.asStateFlow
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleEventObserver
 import androidx.lifecycle.ProcessLifecycleOwner
-import com.arturo254.opentune.db.entities.Song
-import com.arturo254.opentune.utils.DiscordRPC
-import com.arturo254.opentune.utils.DiscordImageResolver
+import com.aromaappu.akmusic.db.entities.Song
+import com.aromaappu.akmusic.utils.DiscordRPC
+import com.aromaappu.akmusic.utils.DiscordImageResolver
 import timber.log.Timber
 import java.util.concurrent.atomic.AtomicBoolean
 

@@ -4,7 +4,7 @@
  * Licensed Under GPL-3.0 | see git history for contributors
  */
 
-package com.arturo254.opentune.ui.screens.settings
+package com.aromaappu.akmusic.ui.screens.settings
 
 import android.Manifest
 import android.content.pm.PackageManager
@@ -86,24 +86,24 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.core.content.ContextCompat
 import androidx.navigation.NavController
-import com.arturo254.opentune.BuildConfig
-import com.arturo254.opentune.LocalPlayerAwareWindowInsets
-import com.arturo254.opentune.R
-import com.arturo254.opentune.constants.EnableUpdateNotificationKey
-import com.arturo254.opentune.constants.UpdateChannel
-import com.arturo254.opentune.constants.UpdateChannelKey
-import com.arturo254.opentune.ui.component.EnumListPreference
-import com.arturo254.opentune.ui.component.IconButton
-import com.arturo254.opentune.ui.component.MarkdownText
-import com.arturo254.opentune.ui.component.PreferenceGroupTitle
-import com.arturo254.opentune.ui.component.SwitchPreference
-import com.arturo254.opentune.ui.utils.backToMain
-import com.arturo254.opentune.utils.GitCommit
-import com.arturo254.opentune.utils.UpdateInfo
-import com.arturo254.opentune.utils.UpdateNotificationManager
-import com.arturo254.opentune.utils.Updater
-import com.arturo254.opentune.utils.rememberEnumPreference
-import com.arturo254.opentune.utils.rememberPreference
+import com.aromaappu.akmusic.BuildConfig
+import com.aromaappu.akmusic.LocalPlayerAwareWindowInsets
+import com.aromaappu.akmusic.R
+import com.aromaappu.akmusic.constants.EnableUpdateNotificationKey
+import com.aromaappu.akmusic.constants.UpdateChannel
+import com.aromaappu.akmusic.constants.UpdateChannelKey
+import com.aromaappu.akmusic.ui.component.EnumListPreference
+import com.aromaappu.akmusic.ui.component.IconButton
+import com.aromaappu.akmusic.ui.component.MarkdownText
+import com.aromaappu.akmusic.ui.component.PreferenceGroupTitle
+import com.aromaappu.akmusic.ui.component.SwitchPreference
+import com.aromaappu.akmusic.ui.utils.backToMain
+import com.aromaappu.akmusic.utils.GitCommit
+import com.aromaappu.akmusic.utils.UpdateInfo
+import com.aromaappu.akmusic.utils.UpdateNotificationManager
+import com.aromaappu.akmusic.utils.Updater
+import com.aromaappu.akmusic.utils.rememberEnumPreference
+import com.aromaappu.akmusic.utils.rememberPreference
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 import java.io.File
@@ -700,7 +700,7 @@ private fun BuildChannelInfoDialog(
         title = { Text(title) },
         text = {
             Column(verticalArrangement = Arrangement.spacedBy(12.dp), modifier = Modifier.fillMaxWidth()) {
-                Text("OpenTune provides two download channels for builds:", style = MaterialTheme.typography.bodyMedium)
+                Text("AK music provides two download channels for builds:", style = MaterialTheme.typography.bodyMedium)
                 Column(verticalArrangement = Arrangement.spacedBy(2.dp)) {
                     Text("• Stable builds", style = MaterialTheme.typography.bodyMedium, fontWeight = FontWeight.SemiBold)
                     Text("Distributed via official GitHub Releases.", style = MaterialTheme.typography.bodySmall)

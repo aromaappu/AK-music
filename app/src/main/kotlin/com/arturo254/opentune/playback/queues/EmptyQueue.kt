@@ -6,10 +6,10 @@
 
 
 
-package com.arturo254.opentune.playback.queues
+package com.aromaappu.akmusic.playback.queues
 
 import androidx.media3.common.MediaItem
-import com.arturo254.opentune.models.MediaMetadata
+import com.aromaappu.akmusic.models.MediaMetadata
 
 object EmptyQueue : Queue {
     override val preloadItem: MediaMetadata? = null

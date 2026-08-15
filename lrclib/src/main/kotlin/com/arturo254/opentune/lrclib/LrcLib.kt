@@ -6,10 +6,10 @@
 
 
 
-package com.arturo254.opentune.lrclib
+package com.aromaappu.akmusic.lrclib
 
-import com.arturo254.opentune.lrclib.models.Track
-import com.arturo254.opentune.lrclib.models.bestMatchingFor
+import com.aromaappu.akmusic.lrclib.models.Track
+import com.aromaappu.akmusic.lrclib.models.bestMatchingFor
 import io.ktor.client.HttpClient
 import io.ktor.client.call.body
 import io.ktor.client.engine.cio.CIO

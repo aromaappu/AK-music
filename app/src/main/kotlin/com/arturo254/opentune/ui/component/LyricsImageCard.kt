@@ -4,7 +4,7 @@
  * Licensed Under GPL-3.0 | see git history for contributors
  */
 
-package com.arturo254.opentune.ui.component
+package com.aromaappu.akmusic.ui.component
 
 import android.annotation.SuppressLint
 import androidx.compose.runtime.*
@@ -14,7 +14,7 @@ import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.rememberTextMeasurer
 import androidx.compose.ui.unit.*
-import com.arturo254.opentune.models.MediaMetadata
+import com.aromaappu.akmusic.models.MediaMetadata
 
 // ─────────────────────────────────────────────────────────────────────────────
 // rememberAdjustedFontSize

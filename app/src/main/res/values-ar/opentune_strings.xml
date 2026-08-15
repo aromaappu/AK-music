@@ -111,7 +111,6 @@
     <string name="default_style">عادي</string>
     <string name="secondary_color_style">ثانوي</string>
     <string name="enable_squiggly_slider">تمكين الشريط المتعرج</string>
-    <string name="enable_swipe_thumbnail">تمكين التمرير لتغيير الأغنية</string>
     <string name="swipe_song_to_add">اسحب الأغنية إلى اليسار لإضافتها إلى قائمة التشغيل أو إلى اليمين لتشغيلها لاحقًا</string>
     <string name="lyrics_click_change">تغيير كلمات الأغنية عند النقر عليها</string>
     <string name="lyrics_auto_scroll">تمرير الكلمات تلقائياً</string>

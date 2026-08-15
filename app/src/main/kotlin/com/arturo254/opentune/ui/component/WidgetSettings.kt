@@ -4,7 +4,7 @@
  * Licensed Under GPL-3.0 | see git history for contributors
  */
 
-package com.arturo254.opentune.ui.component
+package com.aromaappu.akmusic.ui.component
 
 import android.os.Build
 import androidx.compose.foundation.background
@@ -48,11 +48,11 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.NavController
-import com.arturo254.opentune.LocalPlayerAwareWindowInsets
-import com.arturo254.opentune.R
-import com.arturo254.opentune.constants.WidgetBackgroundMode
-import com.arturo254.opentune.ui.utils.backToMain
-import com.arturo254.opentune.widget.WidgetPreferences
+import com.aromaappu.akmusic.LocalPlayerAwareWindowInsets
+import com.aromaappu.akmusic.R
+import com.aromaappu.akmusic.constants.WidgetBackgroundMode
+import com.aromaappu.akmusic.ui.utils.backToMain
+import com.aromaappu.akmusic.widget.WidgetPreferences
 import kotlin.math.roundToInt
 import kotlinx.coroutines.launch
 

@@ -6,7 +6,7 @@
 
 
 
-package com.arturo254.opentune.ui.screens.settings
+package com.aromaappu.akmusic.ui.screens.settings
 
 import android.content.Intent
 import android.text.format.DateFormat
@@ -93,16 +93,16 @@ import androidx.navigation.NavController
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.isActive
 import kotlinx.coroutines.launch
-import com.arturo254.opentune.LocalPlayerConnection
-import com.arturo254.opentune.R
-import com.arturo254.opentune.ui.component.IconButton
-import com.arturo254.opentune.ui.component.PreferenceGroupTitle
-import com.arturo254.opentune.ui.component.SwitchPreference
-import com.arturo254.opentune.ui.utils.backToMain
-import com.arturo254.opentune.utils.GlobalLog
-import com.arturo254.opentune.utils.LogEntry
-import com.arturo254.opentune.utils.makeTimeString
-import com.arturo254.opentune.utils.rememberPreference
+import com.aromaappu.akmusic.LocalPlayerConnection
+import com.aromaappu.akmusic.R
+import com.aromaappu.akmusic.ui.component.IconButton
+import com.aromaappu.akmusic.ui.component.PreferenceGroupTitle
+import com.aromaappu.akmusic.ui.component.SwitchPreference
+import com.aromaappu.akmusic.ui.utils.backToMain
+import com.aromaappu.akmusic.utils.GlobalLog
+import com.aromaappu.akmusic.utils.LogEntry
+import com.aromaappu.akmusic.utils.makeTimeString
+import com.aromaappu.akmusic.utils.rememberPreference
 import kotlin.math.roundToInt
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -821,7 +821,7 @@ private fun LogLevelBadge(level: Int, compact: Boolean = false) {
 }
 
 @Composable
-private fun NerdStatsSection(playerConnection: com.arturo254.opentune.playback.PlayerConnection?) {
+private fun NerdStatsSection(playerConnection: com.aromaappu.akmusic.playback.PlayerConnection?) {
     if (playerConnection == null) return
 
     val currentFormat by playerConnection.currentFormat.collectAsState(initial = null)

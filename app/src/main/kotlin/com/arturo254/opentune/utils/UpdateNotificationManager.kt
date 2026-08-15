@@ -6,7 +6,7 @@
 
 
 
-package com.arturo254.opentune.utils
+package com.aromaappu.akmusic.utils
 
 import android.app.NotificationChannel
 import android.app.NotificationManager
@@ -29,14 +29,14 @@ import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
-import com.arturo254.opentune.BuildConfig
-import com.arturo254.opentune.MainActivity
-import com.arturo254.opentune.R
-import com.arturo254.opentune.constants.EnableUpdateNotificationKey
-import com.arturo254.opentune.constants.LastNotifiedVersionKey
-import com.arturo254.opentune.constants.LastUpdateCheckKey
-import com.arturo254.opentune.constants.UpdateChannel
-import com.arturo254.opentune.constants.UpdateChannelKey
+import com.aromaappu.akmusic.BuildConfig
+import com.aromaappu.akmusic.MainActivity
+import com.aromaappu.akmusic.R
+import com.aromaappu.akmusic.constants.EnableUpdateNotificationKey
+import com.aromaappu.akmusic.constants.LastNotifiedVersionKey
+import com.aromaappu.akmusic.constants.LastUpdateCheckKey
+import com.aromaappu.akmusic.constants.UpdateChannel
+import com.aromaappu.akmusic.constants.UpdateChannelKey
 import java.util.concurrent.TimeUnit
 
 object UpdateNotificationManager {

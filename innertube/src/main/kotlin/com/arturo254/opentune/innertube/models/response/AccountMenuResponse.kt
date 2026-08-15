@@ -4,12 +4,12 @@
  * Licensed Under GPL-3.0 | see git history for contributors
  */
 
-package com.arturo254.opentune.innertube.models.response
+package com.aromaappu.akmusic.innertube.models.response
 
-import com.arturo254.opentune.innertube.models.AccountInfo
-import com.arturo254.opentune.innertube.models.Runs
-import com.arturo254.opentune.innertube.models.Thumbnails
-import com.arturo254.opentune.innertube.models.Thumbnail
+import com.aromaappu.akmusic.innertube.models.AccountInfo
+import com.aromaappu.akmusic.innertube.models.Runs
+import com.aromaappu.akmusic.innertube.models.Thumbnails
+import com.aromaappu.akmusic.innertube.models.Thumbnail
 import kotlinx.serialization.Serializable
 
 @Serializable
