@@ -131,14 +131,6 @@ fun ContentSettings(
         QueueLyricsPreloadCountKey,
         defaultValue = 1
     )
-    val (lengthTop, onLengthTopChange) = rememberPreference(
-        key = TopSize,
-        defaultValue = "50"
-    )
-    val (quickPicks, onQuickPicksChange) = rememberEnumPreference(
-        key = QuickPicksKey,
-        defaultValue = QuickPicks.QUICK_PICKS
-    )
     val (jossRedEnabled, onJossRedEnabledChange) = rememberPreference(
         key = JossRedMultimediaKey,
         defaultValue = true
@@ -402,30 +394,6 @@ fun ContentSettings(
             icon = { Icon(painterResource(R.drawable.cloud_off), null) },
             checked = jossRedEnabled,
             onCheckedChange = onJossRedEnabledChange,
-        )
-
-        PreferenceGroupTitle(title = stringResource(R.string.misc))
-
-        EditTextPreference(
-            title = { Text(stringResource(R.string.top_length)) },
-            icon = { Icon(painterResource(R.drawable.trending_up), null) },
-            value = lengthTop,
-            isInputValid = { it.toIntOrNull()?.let { num -> num > 0 } == true },
-            onValueChange = onLengthTopChange,
-        )
-
-        ListPreference(
-            title = { Text(stringResource(R.string.set_quick_picks)) },
-            icon = { Icon(painterResource(R.drawable.home_outlined), null) },
-            selectedValue = quickPicks,
-            values = listOf(QuickPicks.QUICK_PICKS, QuickPicks.LAST_LISTEN),
-            valueText = {
-                when (it) {
-                    QuickPicks.QUICK_PICKS -> stringResource(R.string.quick_picks)
-                    QuickPicks.LAST_LISTEN -> stringResource(R.string.last_song_listened)
-                }
-            },
-            onValueSelected = onQuickPicksChange,
         )
     }
 

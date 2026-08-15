@@ -89,7 +89,6 @@ import androidx.compose.ui.platform.LocalUriHandler
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -101,21 +100,14 @@ import kotlinx.coroutines.launch
 import com.aromaappu.akmusic.App.Companion.forgetAccount
 import com.aromaappu.akmusic.BuildConfig
 import com.aromaappu.akmusic.R
-import com.aromaappu.akmusic.constants.AccountChannelHandleKey
 import com.aromaappu.akmusic.constants.AccountEmailKey
-import com.aromaappu.akmusic.constants.AccountNameKey
-import com.aromaappu.akmusic.constants.DataSyncIdKey
 import com.aromaappu.akmusic.constants.InnerTubeCookieKey
-import com.aromaappu.akmusic.constants.PoTokenKey
 import com.aromaappu.akmusic.constants.SelectedYtmPlaylistsKey
 import com.aromaappu.akmusic.constants.UseLoginForBrowse
-import com.aromaappu.akmusic.constants.VisitorDataKey
 import com.aromaappu.akmusic.constants.YtmSyncKey
 import com.aromaappu.akmusic.innertube.YouTube
 import com.aromaappu.akmusic.innertube.utils.completed
 import com.aromaappu.akmusic.innertube.utils.parseCookieString
-import com.aromaappu.akmusic.ui.component.InfoLabel
-import com.aromaappu.akmusic.ui.component.TextFieldDialog
 import com.aromaappu.akmusic.ui.screens.buildLoginRoute
 import com.aromaappu.akmusic.utils.Updater
 import com.aromaappu.akmusic.utils.dataStore
@@ -132,13 +124,8 @@ fun AccountSettings(
     val context = LocalContext.current
     val uriHandler = LocalUriHandler.current
 
-    val (accountNamePref, onAccountNameChange) = rememberPreference(AccountNameKey, "")
     val (accountEmail, onAccountEmailChange) = rememberPreference(AccountEmailKey, "")
-    val (accountChannelHandle, onAccountChannelHandleChange) = rememberPreference(AccountChannelHandleKey, "")
     val (innerTubeCookie, onInnerTubeCookieChange) = rememberPreference(InnerTubeCookieKey, "")
-    val (poToken, onPoTokenChange) = rememberPreference(PoTokenKey, "")
-    val (visitorData, onVisitorDataChange) = rememberPreference(VisitorDataKey, "")
-    val (dataSyncId, onDataSyncIdChange) = rememberPreference(DataSyncIdKey, "")
 
     val isLoggedIn = remember(innerTubeCookie) {
         "SAPISID" in parseCookieString(innerTubeCookie)
@@ -150,8 +137,6 @@ fun AccountSettings(
     val accountName by viewModel.accountName.collectAsState()
     val accountImageUrl by viewModel.accountImageUrl.collectAsState()
 
-    var showToken by remember { mutableStateOf(false) }
-    var showTokenEditor by remember { mutableStateOf(false) }
     var showPlaylistDialog by remember { mutableStateOf(false) }
 
     val hasUpdate = !Updater.isSameVersion(latestVersionName, BuildConfig.VERSION_NAME)
@@ -205,26 +190,6 @@ fun AccountSettings(
                         forgetAccount(context)
                     }
                 )
-
-                // Token Editor Dialog
-                if (showTokenEditor) {
-                    TokenEditorDialog(
-                        innerTubeCookie = innerTubeCookie,
-                        visitorData = visitorData,
-                        dataSyncId = dataSyncId,
-                        accountNamePref = accountNamePref,
-                        accountEmail = accountEmail,
-                        accountChannelHandle = accountChannelHandle,
-                        onInnerTubeCookieChange = onInnerTubeCookieChange,
-                        onPoTokenChange = onPoTokenChange,
-                        onVisitorDataChange = onVisitorDataChange,
-                        onDataSyncIdChange = onDataSyncIdChange,
-                        onAccountNameChange = onAccountNameChange,
-                        onAccountEmailChange = onAccountEmailChange,
-                        onAccountChannelHandleChange = onAccountChannelHandleChange,
-                        onDismiss = { showTokenEditor = false }
-                    )
-                }
 
                 // Account Options Section
                 AnimatedVisibility(
@@ -292,23 +257,6 @@ fun AccountSettings(
                             onClick = { uriHandler.openUri(Updater.getLatestDownloadUrl()) }
                         )
                     }
-                }
-
-                // Advanced Section
-                SettingsSection(title = stringResource(R.string.misc)) {
-                    SettingsClickableItem(
-                        icon = painterResource(R.drawable.token),
-                        title = when {
-                            !isLoggedIn -> stringResource(R.string.advanced_login)
-                            showToken -> stringResource(R.string.token_shown)
-                            else -> stringResource(R.string.token_hidden)
-                        },
-                        onClick = {
-                            if (!isLoggedIn) showTokenEditor = true
-                            else if (!showToken) showToken = true
-                            else showTokenEditor = true
-                        }
-                    )
                 }
 
                 // App Version Footer
@@ -783,60 +731,6 @@ private fun AppVersionFooter() {
             color = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.5f)
         )
     }
-}
-
-@Composable
-private fun TokenEditorDialog(
-    innerTubeCookie: String,
-    visitorData: String,
-    dataSyncId: String,
-    accountNamePref: String,
-    accountEmail: String,
-    accountChannelHandle: String,
-    onInnerTubeCookieChange: (String) -> Unit,
-    onPoTokenChange: (String) -> Unit,
-    onVisitorDataChange: (String) -> Unit,
-    onDataSyncIdChange: (String) -> Unit,
-    onAccountNameChange: (String) -> Unit,
-    onAccountEmailChange: (String) -> Unit,
-    onAccountChannelHandleChange: (String) -> Unit,
-    onDismiss: () -> Unit
-) {
-    val text = """
-        ***INNERTUBE COOKIE*** =$innerTubeCookie
-        ***VISITOR DATA*** =$visitorData
-        ***DATASYNC ID*** =$dataSyncId
-        ***PO TOKEN*** =${YouTube.poToken.orEmpty()}
-        ***ACCOUNT NAME*** =$accountNamePref
-        ***ACCOUNT EMAIL*** =$accountEmail
-        ***ACCOUNT CHANNEL HANDLE*** =$accountChannelHandle
-    """.trimIndent()
-
-    TextFieldDialog(
-        initialTextFieldValue = TextFieldValue(text),
-        onDone = { data ->
-            data.split("\n").forEach {
-                when {
-                    it.startsWith("***INNERTUBE COOKIE*** =") -> onInnerTubeCookieChange(it.substringAfter("="))
-                    it.startsWith("***VISITOR DATA*** =") -> onVisitorDataChange(it.substringAfter("="))
-                    it.startsWith("***DATASYNC ID*** =") -> onDataSyncIdChange(it.substringAfter("="))
-                    it.startsWith("***PO TOKEN*** =") -> onPoTokenChange(it.substringAfter("="))
-                    it.startsWith("***ACCOUNT NAME*** =") -> onAccountNameChange(it.substringAfter("="))
-                    it.startsWith("***ACCOUNT EMAIL*** =") -> onAccountEmailChange(it.substringAfter("="))
-                    it.startsWith("***ACCOUNT CHANNEL HANDLE*** =") -> onAccountChannelHandleChange(it.substringAfter("="))
-                }
-            }
-        },
-        onDismiss = onDismiss,
-        singleLine = false,
-        maxLines = 20,
-        isInputValid = {
-            it.isNotEmpty() && "SAPISID" in parseCookieString(it)
-        },
-        extraContent = {
-            InfoLabel(text = stringResource(R.string.token_adv_login_description))
-        }
-    )
 }
 
 // ============================================================

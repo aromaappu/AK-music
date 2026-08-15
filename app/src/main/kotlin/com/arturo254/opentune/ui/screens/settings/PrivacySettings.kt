@@ -36,7 +36,6 @@ import androidx.navigation.NavController
 import com.aromaappu.akmusic.LocalDatabase
 import com.aromaappu.akmusic.LocalPlayerAwareWindowInsets
 import com.aromaappu.akmusic.R
-import com.aromaappu.akmusic.constants.DisableScreenshotKey
 import com.aromaappu.akmusic.constants.PauseListenHistoryKey
 import com.aromaappu.akmusic.constants.PauseSearchHistoryKey
 import com.aromaappu.akmusic.ui.component.DefaultDialog
@@ -60,10 +59,6 @@ fun PrivacySettings(
     )
     val (pauseSearchHistory, onPauseSearchHistoryChange) = rememberPreference(
         key = PauseSearchHistoryKey,
-        defaultValue = false
-    )
-    val (disableScreenshot, onDisableScreenshotChange) = rememberPreference(
-        key = DisableScreenshotKey,
         defaultValue = false
     )
 
@@ -180,18 +175,6 @@ fun PrivacySettings(
             title = { Text(stringResource(R.string.clear_search_history)) },
             icon = { Icon(painterResource(R.drawable.clear_all), null) },
             onClick = { showClearSearchHistoryDialog = true },
-        )
-
-        PreferenceGroupTitle(
-            title = stringResource(R.string.misc),
-        )
-
-        SwitchPreference(
-            title = { Text(stringResource(R.string.disable_screenshot)) },
-            description = stringResource(R.string.disable_screenshot_desc),
-            icon = { Icon(painterResource(R.drawable.screenshot), null) },
-            checked = disableScreenshot,
-            onCheckedChange = onDisableScreenshotChange,
         )
     }
 

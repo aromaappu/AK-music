@@ -34,12 +34,6 @@ fun buildQuickActions(
             accentColor = MaterialTheme.colorScheme.tertiary,
         ),
         SettingsQuickAction(
-            icon = painterResource(R.drawable.storage),
-            label = stringResource(R.string.storage),
-            onClick = { resetSearch(); navController.navigate("settings/storage") },
-            accentColor = MaterialTheme.colorScheme.secondary,
-        ),
-        SettingsQuickAction(
             icon = painterResource(R.drawable.security),
             label = stringResource(R.string.privacy),
             onClick = { resetSearch(); navController.navigate("settings/privacy") },
@@ -65,46 +59,6 @@ fun buildSettingsGroups(
                         accentColor = MaterialTheme.colorScheme.secondary,
                         keywords = listOf("language", "content", "lyrics", "translation", "region"),
                         onClick = { resetSearch(); navController.navigate("settings/content") },
-                    ),
-                ),
-            ),
-        )
-
-        add(
-            SettingsGroup(
-                title = stringResource(R.string.settings_section_storage),
-                items = listOf(
-                    SettingsItem(
-                        icon = painterResource(R.drawable.storage),
-                        title = stringResource(R.string.storage),
-                        subtitle = stringResource(R.string.cache),
-                        accentColor = MaterialTheme.colorScheme.secondary,
-                        keywords = listOf("storage", "cache", "offline", "downloads", "cleanup"),
-                        onClick = { resetSearch(); navController.navigate("settings/storage") },
-                    ),
-                    SettingsItem(
-                        icon = painterResource(R.drawable.restore),
-                        title = stringResource(R.string.backup_restore),
-                        subtitle = stringResource(R.string.action_backup),
-                        accentColor = MaterialTheme.colorScheme.tertiary,
-                        keywords = listOf("backup", "restore", "import", "export", "migration"),
-                        onClick = { resetSearch(); navController.navigate("settings/backup_restore") },
-                    ),
-                ),
-            ),
-        )
-
-        add(
-            SettingsGroup(
-                title = stringResource(R.string.aod_screen_title),
-                items = listOf(
-                    SettingsItem(
-                        icon = painterResource(R.drawable.bedtime),
-                        title = stringResource(R.string.aod_screen_title),
-                        subtitle = stringResource(R.string.aod_screen_title),
-                        accentColor = MaterialTheme.colorScheme.primary,
-                        keywords = listOf("AOD", "Always On Display", "Display"),
-                        onClick = { resetSearch(); navController.navigate("settings/appearance/always_on_display") },
                     ),
                 ),
             ),

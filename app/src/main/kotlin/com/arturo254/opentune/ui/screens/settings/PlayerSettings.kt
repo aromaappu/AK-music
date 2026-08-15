@@ -40,9 +40,6 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.aromaappu.akmusic.LocalPlayerAwareWindowInsets
 import com.aromaappu.akmusic.R
-import com.aromaappu.akmusic.constants.ArtistSeparatorsKey
-import com.aromaappu.akmusic.constants.ExternalDownloaderEnabledKey
-import com.aromaappu.akmusic.constants.ExternalDownloaderPackageKey
 import com.aromaappu.akmusic.constants.AudioNormalizationKey
 import com.aromaappu.akmusic.constants.AudioOffload
 import com.aromaappu.akmusic.constants.AudioQuality
@@ -56,16 +53,11 @@ import com.aromaappu.akmusic.constants.PermanentShuffleKey
 import com.aromaappu.akmusic.constants.PersistentQueueKey
 
 import com.aromaappu.akmusic.constants.SkipSilenceKey
-import com.aromaappu.akmusic.constants.StopMusicOnTaskClearKey
-import com.aromaappu.akmusic.constants.WakelockKey
 import com.aromaappu.akmusic.constants.HistoryDuration
 import com.aromaappu.akmusic.constants.AudioCrossfadeDurationKey
 import com.aromaappu.akmusic.constants.PlayerStreamClient
 import com.aromaappu.akmusic.constants.PlayerStreamClientKey
 import com.aromaappu.akmusic.constants.SeekExtraSeconds
-import com.aromaappu.akmusic.ui.component.ArtistSeparatorsDialog
-import com.aromaappu.akmusic.ui.component.TagsManagementDialog
-import com.aromaappu.akmusic.ui.component.TextFieldDialog
 import com.aromaappu.akmusic.ui.component.EnumListPreference
 import com.aromaappu.akmusic.ui.component.IconButton
 import com.aromaappu.akmusic.ui.component.ListDialog
@@ -77,7 +69,6 @@ import com.aromaappu.akmusic.ui.component.SwitchPreference
 import com.aromaappu.akmusic.ui.utils.backToMain
 import com.aromaappu.akmusic.utils.rememberEnumPreference
 import com.aromaappu.akmusic.utils.rememberPreference
-import com.aromaappu.akmusic.LocalDatabase
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -139,10 +130,6 @@ fun PlayerSettings(
         AutoStartOnBluetoothKey,
         defaultValue = false
     )
-    val (stopMusicOnTaskClear, onStopMusicOnTaskClearChange) = rememberPreference(
-        StopMusicOnTaskClearKey,
-        defaultValue = false
-    )
     val (historyDuration, onHistoryDurationChange) = rememberPreference(
         HistoryDuration,
         defaultValue = 30f
@@ -153,60 +140,7 @@ fun PlayerSettings(
         defaultValue = 0
     )
 
-    val (artistSeparators, onArtistSeparatorsChange) = rememberPreference(
-        ArtistSeparatorsKey,
-        defaultValue = ",;/&"
-    )
-    val (externalDownloaderEnabled, onExternalDownloaderEnabledChange) = rememberPreference(
-        ExternalDownloaderEnabledKey,
-        defaultValue = false
-    )
-    val (externalDownloaderPackage, onExternalDownloaderPackageChange) = rememberPreference(
-        ExternalDownloaderPackageKey,
-        defaultValue = ""
-    )
-
-    val (wakelockEnabled, onWakelockChange) = rememberPreference(
-        WakelockKey,
-        defaultValue = false
-    )
-
-    var showArtistSeparatorsDialog by remember { mutableStateOf(false) }
-    var showTagsManagementDialog by remember { mutableStateOf(false) }
     var showPlayerStreamClientDialog by remember { mutableStateOf(false) }
-    var showExternalDownloaderPackageDialog by remember { mutableStateOf(false) }
-    val database = LocalDatabase.current
-
-    if (showArtistSeparatorsDialog) {
-        ArtistSeparatorsDialog(
-            currentSeparators = artistSeparators,
-            onDismiss = { showArtistSeparatorsDialog = false },
-            onSave = { newSeparators ->
-                onArtistSeparatorsChange(newSeparators)
-                showArtistSeparatorsDialog = false
-            }
-        )
-    }
-
-    if (showTagsManagementDialog) {
-        TagsManagementDialog(
-            database = database,
-            onDismiss = { showTagsManagementDialog = false }
-        )
-    }
-
-    if (showExternalDownloaderPackageDialog) {
-        TextFieldDialog(
-            initialTextFieldValue = androidx.compose.ui.text.input.TextFieldValue(externalDownloaderPackage),
-            onDone = { pkg ->
-                onExternalDownloaderPackageChange(pkg)
-                showExternalDownloaderPackageDialog = false
-            },
-            onDismiss = { showExternalDownloaderPackageDialog = false },
-            singleLine = true,
-            maxLines = 1,
-        )
-    }
 
     if (showPlayerStreamClientDialog) {
         ListDialog(
@@ -403,55 +337,6 @@ fun PlayerSettings(
             icon = { Icon(painterResource(R.drawable.skip_next), null) },
             checked = autoSkipNextOnError,
             onCheckedChange = onAutoSkipNextOnErrorChange
-        )
-
-        PreferenceGroupTitle(
-            title = stringResource(R.string.misc)
-        )
-
-        SwitchPreference(
-            title = { Text(stringResource(R.string.stop_music_on_task_clear)) },
-            icon = { Icon(painterResource(R.drawable.clear_all), null) },
-            checked = stopMusicOnTaskClear,
-            onCheckedChange = onStopMusicOnTaskClearChange
-        )
-
-        SwitchPreference(
-            title = { Text(stringResource(R.string.wakelock)) },
-            description = stringResource(R.string.wakelock_desc),
-            icon = { Icon(painterResource(R.drawable.bolt), null) },
-            checked = wakelockEnabled,
-            onCheckedChange = onWakelockChange
-        )
-
-        PreferenceEntry(
-            title = { Text(stringResource(R.string.artist_separators)) },
-            description = artistSeparators.map { "\"$it\"" }.joinToString("  "),
-            icon = { Icon(painterResource(R.drawable.artist), null) },
-            onClick = { showArtistSeparatorsDialog = true }
-        )
-
-        PreferenceEntry(
-            title = { Text(stringResource(R.string.manage_playlist_tags)) },
-            description = stringResource(R.string.manage_playlist_tags_desc),
-            icon = { Icon(painterResource(R.drawable.style), null) },
-            onClick = { showTagsManagementDialog = true }
-        )
-
-        SwitchPreference(
-            title = { Text(stringResource(R.string.external_downloader)) },
-            description = stringResource(R.string.external_downloader_desc),
-            icon = { Icon(painterResource(R.drawable.download), null) },
-            checked = externalDownloaderEnabled,
-            onCheckedChange = onExternalDownloaderEnabledChange
-        )
-
-        PreferenceEntry(
-            title = { Text(stringResource(R.string.external_downloader_package)) },
-            description = externalDownloaderPackage.ifEmpty { stringResource(R.string.external_downloader_package_desc) },
-            icon = { Icon(painterResource(R.drawable.integration), null) },
-            onClick = { showExternalDownloaderPackageDialog = true },
-            isEnabled = externalDownloaderEnabled
         )
     }
 
