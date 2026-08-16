@@ -102,7 +102,7 @@ fun SettingsProfileHeader(modifier: Modifier = Modifier) {
                     Icon(
                         painter = painterResource(R.drawable.opentune),
                         contentDescription = null,
-                        tint = MaterialTheme.colorScheme.primary,
+                        tint = Color.Unspecified,
                         modifier = Modifier.size(SettingsDimensions.HeroIconInnerSize),
                     )
                 }

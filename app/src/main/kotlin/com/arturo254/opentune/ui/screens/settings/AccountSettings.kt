@@ -305,6 +305,7 @@ private fun AccountSettingsHeader(onClose: () -> Unit) {
                 Icon(
                     painter = painterResource(R.drawable.opentune),
                     contentDescription = null,
+                    tint = Color.Unspecified,
                     modifier = Modifier
                         .size(44.dp)
                 )
