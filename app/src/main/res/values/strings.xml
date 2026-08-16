@@ -689,9 +689,16 @@ AK music will only extract your token, and everything else is stored locally.</s
     <string name="notification_settings">Notification</string>
     <string name="enable_update_notification">Enable Update Notification</string>
     <string name="enable_update_notification_desc">Get notified when a new stable version is released</string>
+    <string name="enable_notification_confirm_title">Enable update notifications?</string>
+    <string name="enable_notification_confirm_message">When enabled, the app checks for new updates in the background and shows you a notification when a new version is available.</string>
+    <string name="notification_permission_denied">Notification permission was denied. You can enable it later in your device Settings.</string>
+    <string name="notification_enabled_message">Update notifications enabled. You will be notified when a new version is available.</string>
     <string name="update_channel">Update Channel</string>
     <string name="channel_stable">Stable</string>
     <string name="channel_nightly">Nightly</string>
+    <string name="channel_info_title">Choose update channel</string>
+    <string name="channel_stable_desc">Tested, recommended releases published on GitHub Releases.</string>
+    <string name="channel_nightly_desc">Experimental development builds. May contain bugs or unfinished features.</string>
     <string name="commit_history">Development</string>
     <string name="recent_commits">Recent Commits</string>
     <string name="changelog">Changelog</string>

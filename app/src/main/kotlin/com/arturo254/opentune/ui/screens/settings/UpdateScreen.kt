@@ -9,6 +9,7 @@ package com.aromaappu.akmusic.ui.screens.settings
 import android.Manifest
 import android.content.pm.PackageManager
 import android.os.Build
+import android.widget.Toast
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.animation.AnimatedContent
@@ -170,6 +171,17 @@ fun UpdateScreen(
         if (granted) {
             onEnableUpdateNotificationChange(true)
             UpdateNotificationManager.schedulePeriodicUpdateCheck(context)
+            Toast.makeText(
+                context,
+                R.string.notification_enabled_message,
+                Toast.LENGTH_LONG
+            ).show()
+        } else {
+            Toast.makeText(
+                context,
+                R.string.notification_permission_denied,
+                Toast.LENGTH_LONG
+            ).show()
         }
     }
 
@@ -218,24 +230,38 @@ fun UpdateScreen(
     }
 
     if (showNotifConfirmDialog) {
-        BuildChannelInfoDialog(
-            title = stringResource(R.string.enable_update_notification),
-            onConfirm = {
-                showNotifConfirmDialog = false
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU && !hasNotificationPermission)
-                    permissionLauncher.launch(Manifest.permission.POST_NOTIFICATIONS)
-                else {
-                    onEnableUpdateNotificationChange(true)
-                    UpdateNotificationManager.schedulePeriodicUpdateCheck(context)
-                }
+        AlertDialog(
+            onDismissRequest = { showNotifConfirmDialog = false },
+            title = { Text(stringResource(R.string.enable_notification_confirm_title)) },
+            text = { Text(stringResource(R.string.enable_notification_confirm_message)) },
+            confirmButton = {
+                TextButton(
+                    onClick = {
+                        showNotifConfirmDialog = false
+                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU && !hasNotificationPermission)
+                            permissionLauncher.launch(Manifest.permission.POST_NOTIFICATIONS)
+                        else {
+                            onEnableUpdateNotificationChange(true)
+                            UpdateNotificationManager.schedulePeriodicUpdateCheck(context)
+                            Toast.makeText(
+                                context,
+                                R.string.notification_enabled_message,
+                                Toast.LENGTH_LONG
+                            ).show()
+                        }
+                    }
+                ) { Text(stringResource(android.R.string.ok)) }
             },
-            onDismiss = { showNotifConfirmDialog = false }
+            dismissButton = {
+                TextButton(onClick = { showNotifConfirmDialog = false }) {
+                    Text(stringResource(android.R.string.cancel))
+                }
+            }
         )
     }
 
     if (showNightlyConfirmDialog) {
-        BuildChannelInfoDialog(
-            title = stringResource(R.string.channel_nightly),
+        ChannelInfoDialog(
             onConfirm = { showNightlyConfirmDialog = false; onUpdateChannelChange(UpdateChannel.NIGHTLY) },
             onDismiss = { showNightlyConfirmDialog = false }
         )
@@ -690,32 +716,27 @@ private fun UpdateDetailsBottomSheet(
 }
 
 @Composable
-private fun BuildChannelInfoDialog(
-    title: String,
+private fun ChannelInfoDialog(
     onConfirm: () -> Unit,
     onDismiss: () -> Unit,
 ) {
     AlertDialog(
         onDismissRequest = onDismiss,
-        title = { Text(title) },
+        title = { Text(stringResource(R.string.channel_info_title)) },
         text = {
             Column(verticalArrangement = Arrangement.spacedBy(12.dp), modifier = Modifier.fillMaxWidth()) {
-                Text("AK music provides two download channels for builds:", style = MaterialTheme.typography.bodyMedium)
                 Column(verticalArrangement = Arrangement.spacedBy(2.dp)) {
-                    Text("• Stable builds", style = MaterialTheme.typography.bodyMedium, fontWeight = FontWeight.SemiBold)
-                    Text("Distributed via official GitHub Releases.", style = MaterialTheme.typography.bodySmall)
-                    Text("These versions are tested and recommended for most users.", style = MaterialTheme.typography.bodySmall)
+                    Text(stringResource(R.string.channel_stable), style = MaterialTheme.typography.bodyMedium, fontWeight = FontWeight.SemiBold)
+                    Text(stringResource(R.string.channel_stable_desc), style = MaterialTheme.typography.bodySmall)
                 }
                 Column(verticalArrangement = Arrangement.spacedBy(2.dp)) {
-                    Text("• Nightly builds", style = MaterialTheme.typography.bodyMedium, fontWeight = FontWeight.SemiBold)
-                    Text("Automatically generated development builds hosted via nightly.link.", style = MaterialTheme.typography.bodySmall)
-                    Text("Nightly builds may include experimental features, unfinished changes, or temporary regressions.", style = MaterialTheme.typography.bodySmall)
+                    Text(stringResource(R.string.channel_nightly), style = MaterialTheme.typography.bodyMedium, fontWeight = FontWeight.SemiBold)
+                    Text(stringResource(R.string.channel_nightly_desc), style = MaterialTheme.typography.bodySmall)
                 }
-                Text("By continuing, you acknowledge that nightly builds may be unstable and use them at your own risk.", style = MaterialTheme.typography.bodySmall)
             }
         },
-        confirmButton = { TextButton(onClick = onConfirm) { Text(stringResource(android.R.string.ok)) } },
-        dismissButton = { TextButton(onClick = onDismiss) { Text(stringResource(android.R.string.cancel)) } }
+        confirmButton = { TextButton(onClick = onConfirm) { Text(stringResource(R.string.channel_nightly)) } },
+        dismissButton = { TextButton(onClick = onDismiss) { Text(stringResource(R.string.channel_stable)) } }
     )
 }
 
