@@ -93,44 +93,6 @@ fun ContentSettings(
         key = StreamBypassProxyKey,
         defaultValue = false
     )
-    val (enableKugou, onEnableKugouChange) = rememberPreference(
-        key = EnableKugouKey,
-        defaultValue = true
-    )
-    val (enableLrclib, onEnableLrclibChange) = rememberPreference(
-        key = EnableLrcLibKey,
-        defaultValue = true
-    )
-    val (enableBetterLyrics, onEnableBetterLyricsChange) = rememberPreference(
-        key = EnableBetterLyricsKey,
-        defaultValue = true
-    )
-    val (enableSimpMusicLyrics, onEnableSimpMusicLyricsChange) =
-        rememberPreference(
-            key = EnableSimpMusicLyricsKey,
-            defaultValue = true
-        )
-    val (preferredProvider, onPreferredProviderChange) =
-        rememberEnumPreference(
-            key = PreferredLyricsProviderKey,
-            defaultValue = PreferredLyricsProvider.LRCLIB,
-        )
-    val (lyricsRomanizeJapanese, onLyricsRomanizeJapaneseChange) = rememberPreference(
-        LyricsRomanizeJapaneseKey,
-        defaultValue = true
-    )
-    val (lyricsRomanizeKorean, onLyricsRomanizeKoreanChange) = rememberPreference(
-        LyricsRomanizeKoreanKey,
-        defaultValue = true
-    )
-    val (preloadQueueLyricsEnabled, onPreloadQueueLyricsEnabledChange) = rememberPreference(
-        PreloadQueueLyricsEnabledKey,
-        defaultValue = true
-    )
-    val (queueLyricsPreloadCount, onQueueLyricsPreloadCountChange) = rememberPreference(
-        QueueLyricsPreloadCountKey,
-        defaultValue = 1
-    )
     val (jossRedEnabled, onJossRedEnabledChange) = rememberPreference(
         key = JossRedMultimediaKey,
         defaultValue = true
@@ -143,13 +105,6 @@ fun ContentSettings(
             LanguageOption(code = code, displayName = name)
         }
     }
-
-    var showProviderOrderDialog by remember { mutableStateOf(false) }
-
-    val (providerOrder, onProviderOrderChange) = rememberPreference(
-        key = ProviderOrderKey,
-        defaultValue = DefaultProviderOrder.joinToString(",") { it.name },
-    )
 
     Column(
         Modifier
@@ -283,107 +238,6 @@ fun ContentSettings(
                     },
                 )
             }
-        }
-
-        PreferenceGroupTitle(title = stringResource(R.string.lyrics))
-
-        SwitchPreference(
-            title = { Text(stringResource(R.string.enable_lrclib)) },
-            icon = { Icon(painterResource(R.drawable.lyrics), null) },
-            checked = enableLrclib,
-            onCheckedChange = onEnableLrclibChange,
-        )
-        SwitchPreference(
-            title = { Text(stringResource(R.string.enable_kugou)) },
-            icon = { Icon(painterResource(R.drawable.lyrics), null) },
-            checked = enableKugou,
-            onCheckedChange = onEnableKugouChange,
-        )
-        SwitchPreference(
-            title = { Text(stringResource(R.string.enable_betterlyrics)) },
-            icon = { Icon(painterResource(R.drawable.lyrics), null) },
-            checked = enableBetterLyrics,
-            onCheckedChange = onEnableBetterLyricsChange,
-        )
-        SwitchPreference(
-            title = { Text(stringResource(R.string.enable_simpmusic_lyrics)) },
-            icon = { Icon(painterResource(R.drawable.lyrics), null) },
-            checked = enableSimpMusicLyrics,
-            onCheckedChange = onEnableSimpMusicLyricsChange,
-        )
-
-        val savedOrder = remember(providerOrder) {
-            val parsed = providerOrder.split(",")
-                .mapNotNull { name -> PreferredLyricsProvider.entries.find { it.name == name } }
-
-            val missing = DefaultProviderOrder.filterNot { it in parsed }
-            (parsed + missing).ifEmpty { DefaultProviderOrder }
-        }
-
-        PreferenceEntry(
-            title = {
-                Text(stringResource(R.string.lyrics_provider_order))
-            },
-            subtitle = {
-                Text(
-                    stringResource(
-                        R.string.lyrics_provider_priority,
-                        savedOrder.joinToString(" → ") { it.displayName() }
-                    )
-                )
-            },
-            icon = { Icon(painterResource(R.drawable.lyrics), null) },
-            onClick = { showProviderOrderDialog = true },
-        )
-
-        if (showProviderOrderDialog) {
-            DragDropLyricsProviderDialog(
-                providers = savedOrder,
-                selectedProvider = preferredProvider,
-                onDismiss = { showProviderOrderDialog = false },
-                onOrderConfirmed = { newOrder ->
-                    onProviderOrderChange(newOrder.joinToString(",") { it.name })
-
-                    val newPreferred = newOrder.firstOrNull() ?: PreferredLyricsProvider.LRCLIB
-                    if (newPreferred != preferredProvider) {
-                        onPreferredProviderChange(newPreferred)
-                    }
-                },
-                valueText = { it.displayName() },
-            )
-        }
-
-        SwitchPreference(
-            title = { Text(stringResource(R.string.lyrics_romanize_japanese)) },
-            icon = { Icon(painterResource(R.drawable.lyrics), null) },
-            checked = lyricsRomanizeJapanese,
-            onCheckedChange = onLyricsRomanizeJapaneseChange,
-        )
-
-        SwitchPreference(
-            title = { Text(stringResource(R.string.lyrics_romanize_korean)) },
-            icon = { Icon(painterResource(R.drawable.lyrics), null) },
-            checked = lyricsRomanizeKorean,
-            onCheckedChange = onLyricsRomanizeKoreanChange,
-        )
-
-        SwitchPreference(
-            title = { Text(stringResource(R.string.preload_queue_lyrics)) },
-            icon = { Icon(painterResource(R.drawable.lyrics), null) },
-            checked = preloadQueueLyricsEnabled,
-            onCheckedChange = onPreloadQueueLyricsEnabledChange,
-        )
-
-        if (preloadQueueLyricsEnabled) {
-            NumberPickerPreference(
-                title = { Text(stringResource(R.string.queue_lyrics_preload_count)) },
-                icon = { Icon(painterResource(R.drawable.lyrics), null) },
-                value = queueLyricsPreloadCount,
-                onValueChange = onQueueLyricsPreloadCountChange,
-                minValue = 0,
-                maxValue = 10,
-                valueText = { if (it == 0) "Off" else it.toString() },
-            )
         }
 
         PreferenceGroupTitle(title = stringResource(R.string.playback))
